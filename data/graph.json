@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "_note": "Stub data. Replaced by the pipeline output on the backend branch.",
+  "edges": [
+    { "from": "nargisi-seekh-kebab", "to": "paneer", "kind": "uses" },
+    { "from": "nargisi-seekh-kebab", "to": "garlic-paste", "kind": "uses" },
+    { "from": "nargisi-seekh-kebab", "to": "chaat-masala", "kind": "uses" },
+    { "from": "khumb-shabnam", "to": "garam-masala", "kind": "uses" }
+  ],
+  "used_in": {
+    "paneer": ["nargisi-seekh-kebab"],
+    "garlic-paste": ["nargisi-seekh-kebab"],
+    "chaat-masala": ["nargisi-seekh-kebab"],
+    "garam-masala": ["khumb-shabnam"]
+  }
+}

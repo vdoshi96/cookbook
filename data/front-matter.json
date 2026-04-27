@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "_note": "Stub data. Replaced by the pipeline output on the backend branch.",
+  "introduction": {
+    "title": "Introduction",
+    "markdown": "For many people Indian cuisine is synonymous with the food of the Mughal shahs, the illustrious rulers of most of India from the sixteenth to the nineteenth century. And, while it is true that a wonderful gastronomic revival took place during their reign — bringing us famous dishes such as korma and biryani — it must be remembered that there is far, far more to Indian food than curries alone."
+  },
+  "history": {
+    "title": "A Brief History of Indian Food",
+    "markdown": "The foods of India are as significant to its civilization as its majestic monuments, art and literature. Indian food has taken on influences from as far afield as central Asia, southeast Asia and Turkey..."
+  },
+  "ayurveda": {
+    "title": "Ayurveda and Indian Food",
+    "markdown": "Ayurveda is a traditional system of Hindu medicine, which is based on the idea of balance in bodily systems. It is an ancient art of living a good life and forms the bedrock of Indian culinary philosophy..."
+  },
+  "regions_overview": {
+    "title": "Regions of India",
+    "markdown": "India's culinary geography is shaped by climate, religion, trade routes, and royal patronage. Each region has its own staples, spices, and signature techniques.",
+    "map_image": null
+  },
+  "notes_on_recipes": {
+    "title": "Notes on the Recipes",
+    "markdown": "Recipes serve four unless otherwise stated. Quantities are given in metric, imperial, and US cup measurements where appropriate..."
+  }
+}

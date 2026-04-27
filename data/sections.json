@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "_note": "Stub data. Replaced by the pipeline output on the backend branch.",
+  "sections": [
+    {
+      "id": "snacks-and-appetizers",
+      "name": "Snacks and Appetizers",
+      "intro_markdown": "Across India, snacks and appetizers are eaten at all hours of the day. From the spiced potato fritters of the north to the tangy chaats of street stalls, this chapter is a tour of the small plates that begin meals and fill the gaps between them.",
+      "page_range": [88, 168],
+      "recipe_ids": ["nargisi-seekh-kebab", "pakoras", "khumb-shabnam"],
+      "start_here": [
+        { "id": "pakoras", "rationale": "The most universal Indian snack — chickpea-flour fritters that work with almost any vegetable." },
+        { "id": "nargisi-seekh-kebab", "rationale": "A showcase of Awadhi technique: a vegetarian take on a kebab, grilled on skewers." }
+      ],
+      "hero_image": null
+    },
+    {
+      "id": "vegetables",
+      "name": "Vegetables",
+      "intro_markdown": "Indian vegetable cookery is the heart of the cuisine. With dozens of regional traditions and centuries of vegetarian practice, vegetables are never an afterthought.",
+      "page_range": [170, 380],
+      "recipe_ids": [],
+      "start_here": [],
+      "hero_image": null
+    },
+    {
+      "id": "rice",
+      "name": "Rice",
+      "intro_markdown": "From the long-grain basmati of the north to the short, fragrant rices of the south, rice anchors most Indian meals.",
+      "page_range": [560, 620],
+      "recipe_ids": [],
+      "start_here": [],
+      "hero_image": null
+    }
+  ]
+}

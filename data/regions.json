@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "_note": "Stub data. Replaced by the pipeline output on the backend branch.",
+  "regions": [
+    {
+      "id": "awadh",
+      "name": "Awadh",
+      "intro_markdown": "Awadhi cuisine, born in the royal kitchens of Lucknow, is famous for its dum (slow-cooking) technique, its delicate kebabs, and its layered biryanis. The flavours are subtle, aromatic, and unhurried.",
+      "recipe_ids": ["nargisi-seekh-kebab", "khumb-shabnam"],
+      "map_coords": { "lat": 26.85, "lng": 80.95 }
+    },
+    {
+      "id": "tamil-nadu",
+      "name": "Tamil Nadu",
+      "intro_markdown": "Tamil cooking favours rice, lentils, tamarind, coconut, and curry leaves. Vegetarian traditions run deep, and breakfasts of dosa, idli, and uttapam are eaten across the south.",
+      "recipe_ids": ["pakoras"],
+      "map_coords": { "lat": 11.13, "lng": 78.66 }
+    },
+    {
+      "id": "punjab",
+      "name": "Punjab",
+      "intro_markdown": "Punjabi food is generous and richly flavoured: tandoori meats, dal makhani, robust breads, and a love of butter and cream.",
+      "recipe_ids": [],
+      "map_coords": { "lat": 31.15, "lng": 75.34 }
+    }
+  ]
+}

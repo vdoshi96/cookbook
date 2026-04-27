@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "_note": "Stub data. Replaced by the pipeline output on the backend branch.",
+  "tags": {
+    "vegetarian": { "kind": "dietary", "recipe_ids": ["nargisi-seekh-kebab", "pakoras", "khumb-shabnam"], "count": 3 },
+    "contains-egg": { "kind": "dietary", "recipe_ids": ["nargisi-seekh-kebab"], "count": 1 },
+    "vegan-possible": { "kind": "dietary", "recipe_ids": ["pakoras"], "count": 1 },
+    "tandoor": { "kind": "technique", "recipe_ids": ["nargisi-seekh-kebab"], "count": 1 },
+    "grill": { "kind": "technique", "recipe_ids": ["nargisi-seekh-kebab"], "count": 1 },
+    "deep-fry": { "kind": "technique", "recipe_ids": ["pakoras"], "count": 1 },
+    "stir-fry": { "kind": "technique", "recipe_ids": ["khumb-shabnam"], "count": 1 },
+    "everyday": { "kind": "occasion", "recipe_ids": ["pakoras"], "count": 1 }
+  }
+}

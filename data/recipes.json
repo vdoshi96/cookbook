@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "_note": "Stub data. The real ~1000-recipe corpus lands on the backend branch as the pipeline produces it. These three records are hand-authored from the source PDF and exist so the frontend can build, type-check, and render against the full contract from day one. Do not commit changes to this file from the frontend branch.",
+  "recipes": [
+    {
+      "id": "nargisi-seekh-kebab",
+      "name": "Nargisi Seekh Kebab",
+      "subtitle": "Vegetable & Egg Skewers",
+      "section_id": "snacks-and-appetizers",
+      "section_name": "Snacks and Appetizers",
+      "origin_region_id": "awadh",
+      "origin_region_name": "Awadh",
+      "prep_minutes": 30,
+      "prep_notes": "plus cooling time",
+      "cook_minutes": 15,
+      "cook_notes": null,
+      "serves": 4,
+      "heat_level": 1,
+      "dietary_tags": ["contains-egg", "vegetarian"],
+      "technique_tags": ["tandoor", "grill"],
+      "occasion_tags": [],
+      "ingredients": [
+        { "qty_metric": "300g", "qty_imperial": "11oz", "qty_count": "3 medium", "item": "potatoes", "notes": "unpeeled" },
+        { "qty_metric": "15g", "qty_imperial": "½oz", "qty_count": null, "item": "mint leaves", "notes": null },
+        { "qty_metric": "15g", "qty_imperial": "½oz", "qty_count": null, "item": "curry leaves", "notes": null },
+        { "qty_metric": "300g", "qty_imperial": "11oz", "qty_count": null, "item": "paneer", "notes": "grated" },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "1", "item": "egg", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "2 tablespoons", "item": "garlic paste", "notes": null }
+      ],
+      "instructions": [
+        "Cook the potatoes in a pan of boiling water for about 15 minutes, or until cooked but still firm. Drain and allow to cool. When cool, peel off the skins and grate the flesh. Set aside.",
+        "Prepare a tandoor or charcoal grill for a moderate heat, or alternatively heat the grill (broiler). Put the mint and curry leaves in a small dry frying pan (skillet) and fry for about 1 minute, or until fragrant. Remove from the heat and set aside.",
+        "Mix the grated potatoes, paneer, egg, garlic paste, onion, tomatoes, red pepper, coriander, carrot, garlic, chilli, fried mint and curry leaves and sesame seeds together in a large bowl. Season with salt, then mix in the white pepper, cardamom, mace, chaat masala and enough breadcrumbs to bind the mixture together. Divide the mixture into 16 equal portions and roll into balls.",
+        "Using damp hands, spread the balls along the length of metal skewers, flattening the mixture into a sausage shape until the kebabs are 10cm / 4 inches long and leaving 5cm / 2 inches between each one. Roast in a moderately hot tandoor, over a charcoal grill (broiler) or under the hot grill for 6–8 minutes."
+      ],
+      "cross_refs": [
+        { "name": "Paneer", "page": 59, "id": "paneer" },
+        { "name": "Garlic Paste", "page": 57, "id": "garlic-paste" },
+        { "name": "Chaat Masala", "page": 31, "id": "chaat-masala" }
+      ],
+      "source_page": 96,
+      "image": null
+    },
+    {
+      "id": "pakoras",
+      "name": "Pakoras",
+      "subtitle": "Deep-fried Vegetable Fritters",
+      "section_id": "snacks-and-appetizers",
+      "section_name": "Snacks and Appetizers",
+      "origin_region_id": "tamil-nadu",
+      "origin_region_name": "Tamil Nadu",
+      "prep_minutes": 10,
+      "prep_notes": null,
+      "cook_minutes": 20,
+      "cook_notes": null,
+      "serves": 4,
+      "heat_level": 2,
+      "dietary_tags": ["vegetarian", "vegan-possible"],
+      "technique_tags": ["deep-fry"],
+      "occasion_tags": ["everyday"],
+      "ingredients": [
+        { "qty_metric": "250g", "qty_imperial": "9oz", "qty_count": "1⅔ cups", "item": "gram (chickpea) flour", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "½ teaspoon", "item": "baking powder", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "½ teaspoon", "item": "chilli powder", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "1 teaspoon", "item": "coriander leaves", "notes": "chopped" },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "1", "item": "green chilli", "notes": "de-seeded and chopped" },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "pinch", "item": "ground turmeric", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "1", "item": "onion", "notes": "chopped or sliced" },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": null, "item": "vegetable oil", "notes": "for deep-frying" },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": null, "item": "salt", "notes": null }
+      ],
+      "instructions": [
+        "Put the flour, baking powder, chilli powder, coriander, chilli, turmeric and onion in a large bowl. Season with salt and mix together with enough water to make a thick batter.",
+        "Heat enough oil for deep-frying in a kadhai or deep, heavy-based pan to 180°C/350°F, or until a cube of bread browns in 30 seconds. Working in batches, drop spoonfuls of the batter into the hot oil and deep-fry for 3–4 minutes, or until golden brown. Remove from the heat with a slotted spoon and drain on crumpled up kitchen paper (paper towels). Serve plain."
+      ],
+      "cross_refs": [],
+      "source_page": 97,
+      "image": null
+    },
+    {
+      "id": "khumb-shabnam",
+      "name": "Khumb Shabnam",
+      "subtitle": "Button (White) Mushrooms in Yoghurt Sauce",
+      "section_id": "snacks-and-appetizers",
+      "section_name": "Snacks and Appetizers",
+      "origin_region_id": "awadh",
+      "origin_region_name": "Awadh",
+      "prep_minutes": 20,
+      "prep_notes": "plus cooling time",
+      "cook_minutes": 10,
+      "cook_notes": null,
+      "serves": 4,
+      "heat_level": 1,
+      "dietary_tags": ["vegetarian"],
+      "technique_tags": ["stir-fry", "no-cook"],
+      "occasion_tags": [],
+      "ingredients": [
+        { "qty_metric": "250ml", "qty_imperial": "8fl oz", "qty_count": "1 cup", "item": "natural (plain) yoghurt", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "1 teaspoon", "item": "ground cumin", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "1 teaspoon", "item": "garam masala", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "1 teaspoon", "item": "Kashmiri chilli powder", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "pinch", "item": "ground turmeric", "notes": null },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "1 tablespoon", "item": "vegetable oil", "notes": null },
+        { "qty_metric": "200g", "qty_imperial": "7oz", "qty_count": "3 cups", "item": "button (white) mushrooms", "notes": "sliced" },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": "2", "item": "green chillies", "notes": "slit lengthways" },
+        { "qty_metric": null, "qty_imperial": null, "qty_count": null, "item": "salt", "notes": null }
+      ],
+      "instructions": [
+        "Beat the yoghurt with the ground spices in a bowl and set aside.",
+        "Heat the oil in a non-stick frying pan (skillet), add the mushrooms and stir-fry over a low heat for about 10 minutes, or until cooked. Remove from the heat and allow to cool.",
+        "When the mushrooms are cool, pour in the spiced beaten yoghurt and mix well. Season with salt and then garnish with the chillies."
+      ],
+      "cross_refs": [
+        { "name": "Garam Masala", "page": 31, "id": "garam-masala" }
+      ],
+      "source_page": 96,
+      "image": null
+    }
+  ]
+}

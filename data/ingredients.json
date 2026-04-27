@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "_note": "Stub data. Replaced by the pipeline output on the backend branch.",
+  "ingredients": {
+    "paneer": {
+      "display_name": "Paneer",
+      "recipe_ids": ["nargisi-seekh-kebab"],
+      "count": 1
+    },
+    "potatoes": {
+      "display_name": "Potatoes",
+      "recipe_ids": ["nargisi-seekh-kebab"],
+      "count": 1
+    },
+    "yoghurt": {
+      "display_name": "Yoghurt",
+      "recipe_ids": ["khumb-shabnam"],
+      "count": 1
+    },
+    "gram-flour": {
+      "display_name": "Gram (chickpea) flour",
+      "recipe_ids": ["pakoras"],
+      "count": 1
+    }
+  }
+}
