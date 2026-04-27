@@ -36,5 +36,5 @@ FRONT_MATTER_JSON = DATA_DIR / "front-matter.json"
 
 
 def ensure_build_dirs() -> None:
-    for d in (BUILD_DIR, BUILD_PAGES, BUILD_PAGE_IMAGES, DATA_IMAGES):
+    for d in (BUILD_DIR, BUILD_PAGES, BUILD_PAGE_IMAGES, DATA_DIR, DATA_IMAGES):
         d.mkdir(parents=True, exist_ok=True)
