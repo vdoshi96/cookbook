@@ -289,6 +289,11 @@ main {
   background: var(--surface);
 }
 
+.search-input-wrap:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .search-input-wrap input {
   min-width: 0;
   border: 0;
