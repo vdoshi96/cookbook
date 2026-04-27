@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { SearchPageClient } from "@/components/SearchPageClient";
+import { getSearchFilterOptions, parseSearchFilters } from "@/lib/search";
 
 interface SearchPageProps {
-  searchParams: Promise<{ q?: string | string[] }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 export const metadata: Metadata = {
@@ -17,8 +18,23 @@ function normalizeQueryParam(query: string | string[] | undefined) {
   return query ?? "";
 }
 
+function toSearchParams(searchParams: Record<string, string | string[] | undefined>) {
+  const params = new URLSearchParams();
+
+  for (const [key, value] of Object.entries(searchParams)) {
+    if (Array.isArray(value)) {
+      value.forEach((entry) => params.append(key, entry));
+    } else if (value) {
+      params.set(key, value);
+    }
+  }
+
+  return params;
+}
+
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const { q } = await searchParams;
+  const resolvedSearchParams = await searchParams;
+  const filters = parseSearchFilters(toSearchParams(resolvedSearchParams));
 
   return (
     <div className="page-shell search-page">
@@ -30,7 +46,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           collection.
         </p>
       </header>
-      <SearchPageClient initialQuery={normalizeQueryParam(q)} />
+      <SearchPageClient
+        filterOptions={getSearchFilterOptions()}
+        initialFilters={filters}
+        initialQuery={normalizeQueryParam(resolvedSearchParams.q)}
+      />
     </div>
   );
 }

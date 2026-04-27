@@ -40,4 +40,41 @@ describe("SearchPage", () => {
     expect(screen.getByRole("textbox", { name: "Search recipes, ingredients, regions" })).toHaveValue("paneer");
     expect(screen.getByRole("list", { name: "Search results" })).toBeInTheDocument();
   });
+
+  it("restores repeated filter query params and applies them to search results", async () => {
+    const { default: SearchPage } = await import("./page");
+
+    render(
+      <>
+        {await SearchPage({
+          searchParams: Promise.resolve({
+            q: ["awadh", "paneer"],
+            kind: ["recipe", "region"],
+            region: "awadh",
+            section: "snacks-and-appetizers",
+            dietary: ["vegetarian"],
+            technique: ["tandoor"],
+            maxTime: "45",
+            heat: "1"
+          })
+        })}
+      </>
+    );
+
+    expect(screen.getByRole("textbox", { name: "Search recipes, ingredients, regions" })).toHaveValue("awadh");
+    expect(screen.getByRole("checkbox", { name: "Recipe" })).toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "Region" })).toBeChecked();
+    expect(screen.getByRole("radio", { name: "Awadh" })).toBeChecked();
+    expect(screen.getByRole("radio", { name: "Snacks and Appetizers" })).toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "Vegetarian" })).toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "Tandoor" })).toBeChecked();
+    expect(screen.getByRole("spinbutton", { name: "Maximum total minutes" })).toHaveValue(45);
+    expect(screen.getByRole("radio", { name: "Mild" })).toBeChecked();
+    expect(screen.getByRole("link", { name: /Nargisi Seekh Kebab/i })).toHaveAttribute(
+      "href",
+      recipePath("nargisi-seekh-kebab")
+    );
+    expect(screen.queryByText("Khumb Shabnam")).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /^Region\s+Awadh/i })).not.toBeInTheDocument();
+  });
 });

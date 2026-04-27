@@ -337,7 +337,7 @@ main {
 .search-page {
   display: grid;
   gap: 28px;
-  max-width: 900px;
+  max-width: 1120px;
   padding-top: 52px;
 }
 
@@ -353,6 +353,17 @@ main {
 .search-page-client {
   display: grid;
   gap: 22px;
+}
+
+.search-page-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.search-results-column {
+  min-width: 0;
 }
 
 .search-page-form {
@@ -497,6 +508,28 @@ main {
   font-size: 0.9rem;
 }
 
+.filter-group input[type="number"] {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--page);
+  color: var(--ink);
+}
+
+.search-filter-heading {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-filter-heading .text-button {
+  padding: 6px 10px;
+  font-size: 0.84rem;
+}
+
 .text-button,
 .filter-open-button {
   display: inline-flex;
@@ -543,6 +576,10 @@ main {
 
   .filter-sheet-wrap {
     display: block;
+  }
+
+  .search-page-layout {
+    grid-template-columns: 1fr;
   }
 }
 
