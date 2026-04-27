@@ -80,6 +80,28 @@ def stage_5_through_10() -> None:
     recipes_with_ids, edges, used_in = resolve_xrefs(cleaned)
     print(f"Stage 5: resolved {len(edges)} cross-ref edges.")
 
+    # Re-assign recipe section_id/section_name from canonical sections.
+    # Stage 4 baked in section_ids from the pre-canonicalization sections.raw.json.
+    # If Stage 1 was re-run with canonicalization, those old IDs no longer exist.
+    # Reassign by source_page using the current sections_raw page ranges.
+    page_to_canonical: dict[int, dict] = {}
+    for sec in sections_raw:
+        lo, hi = sec["page_range"]
+        for p in range(lo, hi + 1):
+            page_to_canonical[p] = {"id": sec["id"], "name": sec["name"]}
+    reassigned = 0
+    orphaned = 0
+    for r in recipes_with_ids:
+        canon = page_to_canonical.get(r["source_page"])
+        if canon is None:
+            orphaned += 1
+            continue
+        if r["section_id"] != canon["id"]:
+            r["section_id"] = canon["id"]
+            r["section_name"] = canon["name"]
+            reassigned += 1
+    print(f"Stage 5b: reassigned {reassigned} recipes to canonical sections; {orphaned} orphaned (no canonical section for source page).")
+
     # Stage 6: section + region intros
     section_intros = extract_section_intros(
         sections_raw, paths.BUILD_PAGES, paths.BUILD_PAGE_IMAGES
