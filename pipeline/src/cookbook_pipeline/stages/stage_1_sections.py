@@ -18,7 +18,7 @@ from cookbook_pipeline.utils.text import slugify
 
 # A section-name footer: ALL CAPS line of letters and ampersands, length 4..40
 # Leading whitespace is allowed because pdftotext -layout may indent the footer.
-_FOOTER_LINE = re.compile(r"^\s*([A-Z][A-Z &]{2,40}[A-Z])\s*$", re.MULTILINE)
+_FOOTER_LINE = re.compile(r"^\s*([A-Z][A-Z &,]{2,40}[A-Z])\s*$", re.MULTILINE)
 
 
 def extract_section_name(page_text: str) -> str | None:
@@ -35,32 +35,47 @@ def extract_section_name(page_text: str) -> str | None:
 
 
 def detect_sections(pages_dir: Path) -> list[dict]:
-    """Group consecutive pages with the same section into ranges."""
+    """Group consecutive pages with the same section into ranges.
+
+    Pages with no detectable footer (front matter, chapter openers) are skipped
+    without splitting the surrounding section. Adjacent runs with the same id
+    are merged.
+    """
     page_files = sorted(pages_dir.glob("page-*.txt"))
-    out: list[dict] = []
+    raw: list[dict] = []
     current: dict | None = None
     for pf in page_files:
         page_num = int(pf.stem.split("-")[1])
         section = extract_section_name(pf.read_text())
         if section is None:
-            # Front matter or chapter opener; close any current run.
             if current is not None:
-                out.append(current)
+                raw.append(current)
                 current = None
             continue
         if current is not None and current["name"] == section:
             current["page_range"] = (current["page_range"][0], page_num)
         else:
             if current is not None:
-                out.append(current)
+                raw.append(current)
             current = {
                 "id": slugify(section),
                 "name": section,
                 "page_range": (page_num, page_num),
             }
     if current is not None:
-        out.append(current)
-    return out
+        raw.append(current)
+
+    # Merge adjacent runs that share the same id (chapter opener gaps)
+    merged: list[dict] = []
+    for entry in raw:
+        if merged and merged[-1]["id"] == entry["id"]:
+            merged[-1]["page_range"] = (
+                merged[-1]["page_range"][0],
+                entry["page_range"][1],
+            )
+        else:
+            merged.append(entry)
+    return merged
 
 
 def write_sections_raw(pages_dir: Path, output_path: Path) -> None:
