@@ -334,6 +334,113 @@ main {
   color: var(--muted);
 }
 
+.search-page {
+  display: grid;
+  gap: 28px;
+  max-width: 900px;
+  padding-top: 52px;
+}
+
+.search-page-hero {
+  display: grid;
+  gap: 12px;
+}
+
+.search-page-hero .lede {
+  margin: 0;
+}
+
+.search-page-client {
+  display: grid;
+  gap: 22px;
+}
+
+.search-page-form {
+  display: grid;
+  gap: 10px;
+}
+
+.search-page-form label,
+.search-result-kind {
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.86rem;
+}
+
+.search-page-input-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.search-page-input-wrap:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.search-page-input-wrap input {
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
+.search-result-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-result-link {
+  display: grid;
+  gap: 5px;
+  padding: 14px 16px;
+}
+
+.search-result-link:hover {
+  background: var(--accent-soft);
+}
+
+.search-result-link strong {
+  font-size: 1.18rem;
+  line-height: 1.18;
+}
+
+.search-result-link span:last-child {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.search-page-empty {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.search-page-empty h2,
+.search-page-empty p {
+  margin: 0;
+}
+
+.search-page-empty h2 {
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.search-page-empty > p:not(.eyebrow) {
+  max-width: 62ch;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 @media (max-width: 700px) {
   .recipe-card {
     grid-template-columns: 1fr;
@@ -341,6 +448,10 @@ main {
 
   .recipe-meta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .search-page {
+    padding-top: 36px;
   }
 }
 
