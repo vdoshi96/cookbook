@@ -79,7 +79,9 @@ export function FilterSideSheet({ options, filters }: FilterSideSheetProps) {
             <button className="icon-button filter-close" type="button" aria-label="Close filters" ref={closeButtonRef} onClick={closeSheet}>
               <X aria-hidden="true" size={18} />
             </button>
-            <FilterSidebar options={options} filters={filters} />
+            <form aria-label="Mobile recipe filters" method="get">
+              <FilterSidebar options={options} filters={filters} />
+            </form>
           </div>
         </div>
       ) : null}

@@ -76,10 +76,10 @@ export default async function SectionPage({ params, searchParams }: SectionPageP
         </section>
       ) : null}
 
-      <form className="listing-layout">
-        <div className="desktop-filters">
+      <div className="listing-layout">
+        <form className="desktop-filters" aria-label="Desktop recipe filters" method="get">
           <FilterSidebar options={filterOptions} filters={filters} />
-        </div>
+        </form>
         <div>
           <FilterSideSheet options={filterOptions} filters={filters} />
           <ActiveFilters filters={filters} />
@@ -89,7 +89,7 @@ export default async function SectionPage({ params, searchParams }: SectionPageP
             ))}
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
