@@ -1,4 +1,4 @@
-import { formatTagLabel } from "@/lib/format";
+import { formatHeatLevel, formatTagLabel } from "@/lib/format";
 import type { RecipeFilterOptions, RecipeFilters } from "@/lib/filters";
 
 interface FilterSidebarProps {
@@ -34,6 +34,33 @@ export function FilterSidebar({ options, filters }: FilterSidebarProps) {
           <label key={tag}>
             <input type="checkbox" name="technique" value={tag} defaultChecked={filters.technique?.includes(tag)} />
             {formatTagLabel(tag)}
+          </label>
+        ))}
+      </div>
+      <div className="filter-group">
+        <h3>Time</h3>
+        <label>
+          Maximum total minutes
+          <input
+            min={1}
+            name="maxTime"
+            placeholder="Any"
+            step={5}
+            type="number"
+            defaultValue={filters.maxTotalMinutes ?? ""}
+          />
+        </label>
+      </div>
+      <div className="filter-group">
+        <h3>Heat</h3>
+        <label>
+          <input type="radio" name="heat" value="" defaultChecked={!filters.heatLevel} />
+          Any heat
+        </label>
+        {[1, 2, 3].map((level) => (
+          <label key={level}>
+            <input type="radio" name="heat" value={level} defaultChecked={filters.heatLevel === level} />
+            {formatHeatLevel(level)}
           </label>
         ))}
       </div>
