@@ -1,0 +1,19 @@
+{
+  "name": "Nargisi Seekh Kebab",
+  "subtitle": "Vegetable & Egg Skewers",
+  "origin_region_name": "Awadh",
+  "prep_minutes": 30,
+  "prep_notes": "plus cooling time",
+  "cook_minutes": 15,
+  "cook_notes": null,
+  "serves": 4,
+  "heat_level": 1,
+  "dietary_tags": ["contains-egg", "vegetarian"],
+  "technique_tags": ["tandoor", "grill"],
+  "occasion_tags": [],
+  "ingredients": [
+    {"qty_metric": "300g", "qty_imperial": "11oz", "qty_count": "3 medium", "item": "potatoes", "notes": "unpeeled"}
+  ],
+  "instructions": ["Cook the potatoes..."],
+  "cross_refs": [{"name": "Paneer", "page": 59}]
+}
