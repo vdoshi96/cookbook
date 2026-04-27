@@ -5,6 +5,16 @@ import type { Recipe } from "./types";
 
 export type SearchKind = "recipe" | "ingredient" | "region" | "section" | "tag";
 
+const SCORE_TIE_EPSILON = 0.02;
+
+const KIND_TIE_BREAKER: Record<SearchKind, number> = {
+  recipe: 0,
+  ingredient: 1,
+  region: 1,
+  section: 1,
+  tag: 1
+};
+
 export interface SearchDocument {
   id: string;
   kind: SearchKind;
@@ -26,6 +36,20 @@ function recipeKeywords(recipe: Recipe): string[] {
     ...recipe.occasion_tags,
     ...recipe.cross_refs.map((reference) => reference.name)
   ];
+}
+
+function normalizeSearchValue(value: string) {
+  return value.trim().toLowerCase();
+}
+
+function isExactNavigationMatch(document: SearchDocument, query: string) {
+  if (document.kind !== "region" && document.kind !== "section" && document.kind !== "tag") {
+    return false;
+  }
+
+  const normalizedQuery = normalizeSearchValue(query);
+
+  return normalizeSearchValue(document.title) === normalizedQuery || normalizeSearchValue(document.id) === normalizedQuery;
 }
 
 export function buildSearchDocuments(): SearchDocument[] {
@@ -102,15 +126,26 @@ export function searchCookbook(query: string, limit = 8): SearchDocument[] {
   return createSearchIndex()
     .search(normalizedQuery, { limit: limit * 3 })
     .sort((a, b) => {
-      if (a.item.kind === "recipe" && b.item.kind !== "recipe") {
-        return -1;
+      const aExactNavigation = isExactNavigationMatch(a.item, normalizedQuery);
+      const bExactNavigation = isExactNavigationMatch(b.item, normalizedQuery);
+
+      if (aExactNavigation !== bExactNavigation) {
+        return aExactNavigation ? -1 : 1;
       }
 
-      if (a.item.kind !== "recipe" && b.item.kind === "recipe") {
-        return 1;
+      const scoreDifference = (a.score ?? 0) - (b.score ?? 0);
+
+      if (Math.abs(scoreDifference) > SCORE_TIE_EPSILON) {
+        return scoreDifference;
       }
 
-      return (a.score ?? 0) - (b.score ?? 0);
+      const kindDifference = KIND_TIE_BREAKER[a.item.kind] - KIND_TIE_BREAKER[b.item.kind];
+
+      if (kindDifference !== 0) {
+        return kindDifference;
+      }
+
+      return a.item.title.localeCompare(b.item.title);
     })
     .slice(0, limit)
     .map((result) => result.item);

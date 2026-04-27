@@ -41,6 +41,28 @@ describe("recipe filters", () => {
     });
   });
 
+  it("ignores blank and invalid URL search params", () => {
+    expect(
+      parseRecipeFilters(new URLSearchParams("region=&dietary=&technique=&technique=grill&maxTime=abc&heat=abc"))
+    ).toEqual({
+      region: undefined,
+      dietary: [],
+      technique: ["grill"],
+      maxTotalMinutes: undefined,
+      heatLevel: undefined
+    });
+  });
+
+  it("trims URL search param values", () => {
+    expect(parseRecipeFilters(new URLSearchParams("dietary=%20vegetarian%20&region=%20awadh%20"))).toEqual({
+      region: "awadh",
+      dietary: ["vegetarian"],
+      technique: [],
+      maxTotalMinutes: undefined,
+      heatLevel: undefined
+    });
+  });
+
   it("builds unique filter options", () => {
     const options = getRecipeFilterOptions(getAllRecipes());
 

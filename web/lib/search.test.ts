@@ -27,6 +27,13 @@ describe("cookbook search", () => {
     expect(searchCookbook("tandoor").some((result) => result.kind === "tag" && result.id === "tandoor")).toBe(true);
   });
 
+  it("ranks exact region matches before recipe matches", () => {
+    expect(searchCookbook("awadh")[0]).toMatchObject({
+      kind: "region",
+      id: "awadh"
+    });
+  });
+
   it("returns an empty array for blank search", () => {
     expect(searchCookbook("   ")).toEqual([]);
   });

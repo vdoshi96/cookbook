@@ -22,6 +22,16 @@ function includesEvery(selected: string[] | undefined, values: string[]) {
   return selected.every((value) => values.includes(value));
 }
 
+function cleanParam(value: string | null) {
+  const trimmed = value?.trim();
+
+  return trimmed ? trimmed : undefined;
+}
+
+function cleanParamList(values: string[]) {
+  return values.map((value) => value.trim()).filter(Boolean);
+}
+
 export function getTotalMinutes(recipe: Recipe) {
   return recipe.prep_minutes + recipe.cook_minutes;
 }
@@ -53,13 +63,13 @@ export function applyRecipeFilters(recipes: Recipe[], filters: RecipeFilters): R
 }
 
 export function parseRecipeFilters(params: URLSearchParams): RecipeFilters {
-  const maxTime = Number(params.get("maxTime"));
-  const heat = Number(params.get("heat"));
+  const maxTime = Number(cleanParam(params.get("maxTime")));
+  const heat = Number(cleanParam(params.get("heat")));
 
   return {
-    region: params.get("region") ?? undefined,
-    dietary: params.getAll("dietary"),
-    technique: params.getAll("technique"),
+    region: cleanParam(params.get("region")),
+    dietary: cleanParamList(params.getAll("dietary")),
+    technique: cleanParamList(params.getAll("technique")),
     maxTotalMinutes: Number.isFinite(maxTime) && maxTime > 0 ? maxTime : undefined,
     heatLevel: Number.isFinite(heat) && heat > 0 ? heat : undefined
   };
