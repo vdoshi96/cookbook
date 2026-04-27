@@ -34,7 +34,8 @@ function toSearchParams(searchParams: Record<string, string | string[] | undefin
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const resolvedSearchParams = await searchParams;
-  const filters = parseSearchFilters(toSearchParams(resolvedSearchParams));
+  const serializedSearchParams = toSearchParams(resolvedSearchParams).toString();
+  const filters = parseSearchFilters(new URLSearchParams(serializedSearchParams));
 
   return (
     <div className="page-shell search-page">
@@ -47,6 +48,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         </p>
       </header>
       <SearchPageClient
+        key={serializedSearchParams}
         filterOptions={getSearchFilterOptions()}
         initialFilters={filters}
         initialQuery={normalizeQueryParam(resolvedSearchParams.q)}

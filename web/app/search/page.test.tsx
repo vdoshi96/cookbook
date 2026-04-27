@@ -77,4 +77,25 @@ describe("SearchPage", () => {
     expect(screen.queryByText("Khumb Shabnam")).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /^Region\s+Awadh/i })).not.toBeInTheDocument();
   });
+
+  it("keys the client search experience by query params so soft navigation restores filters", async () => {
+    const { default: SearchPage } = await import("./page");
+
+    const filteredPage = await SearchPage({
+      searchParams: Promise.resolve({
+        q: "awadh",
+        kind: ["recipe", "region"],
+        region: "awadh"
+      })
+    });
+    const clearedPage = await SearchPage({
+      searchParams: Promise.resolve({
+        q: "awadh"
+      })
+    });
+
+    expect(filteredPage.props.children[1].key).toContain("kind=recipe");
+    expect(filteredPage.props.children[1].key).toContain("region=awadh");
+    expect(clearedPage.props.children[1].key).toBe("q=awadh");
+  });
 });
