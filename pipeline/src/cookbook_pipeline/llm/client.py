@@ -16,12 +16,15 @@ import time
 from typing import Any
 
 from anthropic import Anthropic
+from dotenv import load_dotenv
 
 DEFAULT_MODEL = "claude-haiku-4-5-20251001"
 
 
 def get_client() -> Anthropic:
-    """Return an Anthropic client. Reads ANTHROPIC_API_KEY from env."""
+    """Return an Anthropic client. Reads ANTHROPIC_API_KEY from env or pipeline/.env."""
+    # Idempotent — repeated calls don't reread or override existing env vars.
+    load_dotenv()
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         raise RuntimeError(
@@ -62,7 +65,7 @@ def parse_json_response(text: str) -> Any:
 def call_with_retry(
     client: Anthropic,
     *,
-    model: str,
+    model: str = DEFAULT_MODEL,
     system: str,
     messages: list[dict],
     max_attempts: int = 3,
