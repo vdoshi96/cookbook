@@ -29,18 +29,18 @@ def extract_section_intros(
     client = client or get_client()
     intros: dict[str, str] = {}
     for sec in sections:
-        lo, hi = sec["page_range"]
-        # Walk from `lo - 1` (the page just before this section) downward to
-        # find the chapter-opener: a page whose section-detection MATCHED but
-        # which has no recipe blocks. In practice, the opener is `lo - 1` or `lo`.
+        lo = sec["page_range"][0]
+        # Check the single candidate page `lo - 1` (or `lo` when the section
+        # starts on page 1). A chapter opener is a page whose section
+        # detection matched but which has no recipe blocks.
         candidate = lo - 1 if lo > 1 else lo
         text_path = pages_dir / f"page-{candidate:04d}.txt"
-        if not text_path.exists():
+        img_path = page_images_dir / f"page-{candidate:04d}.png"
+        if not text_path.exists() or not img_path.exists():
             continue
         text = text_path.read_text()
         if segment_page(text, candidate):
             continue  # not an opener
-        img_path = page_images_dir / f"page-{candidate:04d}.png"
         img_b64 = base64.b64encode(img_path.read_bytes()).decode("ascii")
         parsed = call_with_retry(
             client,
