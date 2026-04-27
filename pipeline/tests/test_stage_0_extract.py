@@ -63,3 +63,32 @@ def test_extract_pages_idempotent(tiny_pdf: Path, tmp_path: Path):
     files_after = sorted((pages_dir / f).stat().st_mtime for f in pages_dir.iterdir())
     # Idempotent: re-running doesn't rewrite files unnecessarily
     assert files_before == files_after
+
+
+def test_extract_pages_rewrites_zero_byte_text(tmp_path: Path):
+    """A zero-byte text file from a crashed prior run must be re-extracted.
+
+    Without the fix, `text_path.exists()` returns True for the empty file, so
+    extract_pages skips it and Stage 1 silently consumes truncated text.
+    """
+    import fitz
+
+    pdf_path = tmp_path / "tiny.pdf"
+    doc = fitz.open()
+    page = doc.new_page()
+    page.insert_text((72, 72), "REGRESSION_MARKER recipe content")
+    doc.save(str(pdf_path))
+    doc.close()
+
+    pages_dir = tmp_path / "pages"
+    images_dir = tmp_path / "page-images"
+    pages_dir.mkdir()
+    images_dir.mkdir()
+
+    (pages_dir / "page-0001.txt").write_text("")
+
+    extract_pages(pdf_path, pages_dir, images_dir)
+
+    text = (pages_dir / "page-0001.txt").read_text()
+    assert text != ""
+    assert "REGRESSION_MARKER" in text

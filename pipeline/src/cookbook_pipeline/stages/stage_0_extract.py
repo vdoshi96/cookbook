@@ -24,12 +24,17 @@ def extract_pages(pdf_path: Path, pages_dir: Path, images_dir: Path) -> int:
             page_num = i + 1  # 1-indexed
             text_path = pages_dir / f"page-{page_num:04d}.txt"
             image_path = images_dir / f"page-{page_num:04d}.png"
-            if not text_path.exists():
-                text_path.write_text(_pdftotext_layout(pdf_path, page_num))
-            if not image_path.exists():
+            if not text_path.exists() or text_path.stat().st_size == 0:
+                text = _pdftotext_layout(pdf_path, page_num)
+                tmp = text_path.with_suffix(text_path.suffix + ".tmp")
+                tmp.write_text(text)
+                tmp.rename(text_path)
+            if not image_path.exists() or image_path.stat().st_size == 0:
                 page = doc.load_page(i)
                 pix = page.get_pixmap(dpi=200)
-                pix.save(str(image_path))
+                tmp = image_path.with_suffix(image_path.suffix + ".tmp")
+                pix.save(str(tmp), output="png")
+                tmp.rename(image_path)
     return n
 
 
