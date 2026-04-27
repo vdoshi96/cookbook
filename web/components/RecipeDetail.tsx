@@ -1,8 +1,14 @@
 import Link from "next/link";
-import { getRecipeById, getRecipesByRegion, getRecipesBySection, getUsedInRecipes } from "@/lib/data";
+import {
+  getIngredientBySlug,
+  getRecipeById,
+  getRecipesByRegion,
+  getRecipesBySection,
+  getUsedInRecipes
+} from "@/lib/data";
 import { formatIngredientLine } from "@/lib/format";
 import { ingredientPath, recipePath } from "@/lib/routes";
-import type { Recipe } from "@/lib/types";
+import type { CrossReference, Recipe } from "@/lib/types";
 import { RecipeCard } from "./RecipeCard";
 
 function relatedRecipes(recipes: Recipe[], currentId: string) {
@@ -10,7 +16,23 @@ function relatedRecipes(recipes: Recipe[], currentId: string) {
 }
 
 function crossReferenceHref(id: string) {
-  return getRecipeById(id) ? recipePath(id) : ingredientPath(id);
+  if (getRecipeById(id)) {
+    return recipePath(id);
+  }
+
+  return getIngredientBySlug(id) ? ingredientPath(id) : null;
+}
+
+function CrossReferenceItem({ reference }: { reference: CrossReference }) {
+  const href = crossReferenceHref(reference.id);
+  const content = (
+    <>
+      <span>{reference.name}</span>
+      <small>p. {reference.page}</small>
+    </>
+  );
+
+  return <li>{href ? <Link href={href}>{content}</Link> : <span className="reference-text">{content}</span>}</li>;
 }
 
 export function RecipeDetail({ recipe }: { recipe: Recipe }) {
@@ -51,12 +73,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
         {recipe.cross_refs.length > 0 ? (
           <ul className="reference-list">
             {recipe.cross_refs.map((reference) => (
-              <li key={`${reference.id}-${reference.page}`}>
-                <Link href={crossReferenceHref(reference.id)}>
-                  <span>{reference.name}</span>
-                  <small>p. {reference.page}</small>
-                </Link>
-              </li>
+              <CrossReferenceItem reference={reference} key={`${reference.id}-${reference.page}`} />
             ))}
           </ul>
         ) : (

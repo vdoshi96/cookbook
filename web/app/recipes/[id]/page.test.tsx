@@ -30,6 +30,9 @@ describe("RecipePage", () => {
 
     const references = screen.getByRole("region", { name: "References" });
     expect(within(references).getByRole("link", { name: /Paneer/ })).toHaveAttribute("href", "/ingredients/paneer");
+    expect(within(references).queryByRole("link", { name: /Garlic Paste/ })).not.toBeInTheDocument();
+    expect(within(references).getByText("Garlic Paste")).toBeInTheDocument();
+    expect(within(references).getByText("p. 57")).toBeInTheDocument();
 
     const regionRail = screen.getByRole("region", { name: "More from Awadh" });
     expect(within(regionRail).getByRole("link", { name: "Khumb Shabnam" })).toHaveAttribute(
