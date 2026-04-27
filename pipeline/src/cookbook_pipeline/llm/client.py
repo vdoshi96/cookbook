@@ -28,9 +28,11 @@ DEFAULT_MODEL = "claude-haiku-4-5-20251001"
 
 def get_client() -> Anthropic:
     """Return an Anthropic client. Reads ANTHROPIC_API_KEY from env or pipeline/.env."""
-    # Idempotent — repeated calls don't reread or override existing env vars.
-    load_dotenv()
+    # Load .env but only override if the existing env var is empty/unset.
     key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        load_dotenv(override=True)
+        key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         raise RuntimeError(
             "ANTHROPIC_API_KEY not set. Put it in pipeline/.env or export it."

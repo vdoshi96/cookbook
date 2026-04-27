@@ -14,7 +14,6 @@ import json
 import sys
 
 from dotenv import load_dotenv
-from tqdm import tqdm
 
 from cookbook_pipeline import paths
 from cookbook_pipeline.stages.stage_0_extract import extract_pages
@@ -162,7 +161,9 @@ def run_all(*, limit: int | None = None) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    load_dotenv(paths.PIPELINE_DIR / ".env")
+    # Use override=True so a blank ANTHROPIC_API_KEY in the shell environment
+    # doesn't block the value from pipeline/.env from loading.
+    load_dotenv(paths.PIPELINE_DIR / ".env", override=True)
     parser = argparse.ArgumentParser(prog="cookbook_pipeline")
     parser.add_argument("command", choices=["run", "pilot"])
     parser.add_argument("--stage", type=int, default=None,

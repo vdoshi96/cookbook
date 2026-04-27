@@ -49,7 +49,11 @@ Rules:
 """
 
 
-def cleanup_user_message(raw_text: str, page_image_b64: str) -> list[dict]:
+def cleanup_user_message(
+    raw_text: str,
+    page_image_b64: str,
+    media_type: str = "image/png",
+) -> list[dict]:
     return [
         {
             "role": "user",
@@ -58,7 +62,7 @@ def cleanup_user_message(raw_text: str, page_image_b64: str) -> list[dict]:
                     "type": "image",
                     "source": {
                         "type": "base64",
-                        "media_type": "image/png",
+                        "media_type": media_type,
                         "data": page_image_b64,
                     },
                 },
@@ -90,7 +94,11 @@ Rules:
 """
 
 
-def intro_user_message(raw_text: str, page_image_b64: str) -> list[dict]:
+def intro_user_message(
+    raw_text: str,
+    page_image_b64: str,
+    media_type: str = "image/png",
+) -> list[dict]:
     return [
         {
             "role": "user",
@@ -99,7 +107,7 @@ def intro_user_message(raw_text: str, page_image_b64: str) -> list[dict]:
                     "type": "image",
                     "source": {
                         "type": "base64",
-                        "media_type": "image/png",
+                        "media_type": media_type,
                         "data": page_image_b64,
                     },
                 },

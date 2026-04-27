@@ -7,13 +7,13 @@ update the ranges.
 
 from __future__ import annotations
 
-import base64
 import json
 from pathlib import Path
 
 from anthropic import Anthropic
 
 from cookbook_pipeline.llm.client import DEFAULT_MODEL, call_with_retry, get_client
+from cookbook_pipeline.llm.images import encode_image_for_api
 from cookbook_pipeline.llm.prompts import INTRO_EXTRACTION_SYSTEM, intro_user_message
 
 # (start_page, end_page, key)
@@ -42,12 +42,12 @@ def extract_front_matter(
         )
         # Use the first page's image as the visual reference
         img_path = page_images_dir / f"page-{start:04d}.png"
-        img_b64 = base64.b64encode(img_path.read_bytes()).decode("ascii")
+        media_type, img_b64 = encode_image_for_api(img_path)
         parsed = call_with_retry(
             client,
             model=model,
             system=INTRO_EXTRACTION_SYSTEM,
-            messages=intro_user_message(text, img_b64),
+            messages=intro_user_message(text, img_b64, media_type=media_type),
             max_tokens=4096,
         )
         section = {"title": parsed["title"], "markdown": parsed["markdown"]}

@@ -5,7 +5,6 @@ This is the core of the pipeline. ~1000 calls; concurrency = 8 by default.
 
 from __future__ import annotations
 
-import base64
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -15,6 +14,7 @@ from pydantic import ValidationError
 from tqdm import tqdm
 
 from cookbook_pipeline.llm.client import DEFAULT_MODEL, call_with_retry, get_client
+from cookbook_pipeline.llm.images import encode_image_for_api
 from cookbook_pipeline.llm.prompts import CLEANUP_SYSTEM, cleanup_user_message
 from cookbook_pipeline.schema import Recipe
 from cookbook_pipeline.utils.text import slugify
@@ -39,12 +39,12 @@ def clean_recipe_block(
     seen_ids: set[str] | None = None,
 ) -> Recipe:
     """Run Haiku on one recipe block and return a validated Recipe."""
-    img_b64 = base64.b64encode(page_image_path.read_bytes()).decode("ascii")
+    media_type, img_b64 = encode_image_for_api(page_image_path)
     parsed = call_with_retry(
         client,
         model=model,
         system=CLEANUP_SYSTEM,
-        messages=cleanup_user_message(block["raw_text"], img_b64),
+        messages=cleanup_user_message(block["raw_text"], img_b64, media_type=media_type),
         max_tokens=4096,
     )
     name = parsed["name"]
@@ -103,12 +103,12 @@ def clean_all(
         idx, block = idx_block
         img_path = page_images_dir / f"page-{block['page_num']:04d}.png"
         try:
-            img_b64 = base64.b64encode(img_path.read_bytes()).decode("ascii")
+            media_type, img_b64 = encode_image_for_api(img_path)
             parsed = call_with_retry(
                 client,
                 model=model,
                 system=CLEANUP_SYSTEM,
-                messages=cleanup_user_message(block["raw_text"], img_b64),
+                messages=cleanup_user_message(block["raw_text"], img_b64, media_type=media_type),
                 max_tokens=4096,
             )
             return (idx, block, parsed, None)
@@ -140,6 +140,13 @@ def clean_all(
         if err is not None or parsed is None:
             failures.append({"page_num": block["page_num"], "title_hint": block.get("title_hint", ""), "error": err})
             continue
+        # Guard: the model occasionally wraps the object in an array.
+        if isinstance(parsed, list):
+            if parsed and isinstance(parsed[0], dict):
+                parsed = parsed[0]
+            else:
+                failures.append({"page_num": block["page_num"], "title_hint": block.get("title_hint", ""), "error": f"unexpected list response: {str(parsed)[:200]}"})
+                continue
         try:
             name = parsed["name"]
             rid = build_id(name, seen_ids)

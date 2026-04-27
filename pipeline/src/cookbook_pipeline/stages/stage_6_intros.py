@@ -7,12 +7,12 @@ same intro_user_message prompt as Stage 2.
 
 from __future__ import annotations
 
-import base64
 from pathlib import Path
 
 from anthropic import Anthropic
 
 from cookbook_pipeline.llm.client import DEFAULT_MODEL, call_with_retry, get_client
+from cookbook_pipeline.llm.images import encode_image_for_api
 from cookbook_pipeline.llm.prompts import INTRO_EXTRACTION_SYSTEM, intro_user_message
 from cookbook_pipeline.stages.stage_3_segment import segment_page
 
@@ -41,12 +41,12 @@ def extract_section_intros(
         text = text_path.read_text()
         if segment_page(text, candidate):
             continue  # not an opener
-        img_b64 = base64.b64encode(img_path.read_bytes()).decode("ascii")
+        media_type, img_b64 = encode_image_for_api(img_path)
         parsed = call_with_retry(
             client,
             model=model,
             system=INTRO_EXTRACTION_SYSTEM,
-            messages=intro_user_message(text, img_b64),
+            messages=intro_user_message(text, img_b64, media_type=media_type),
             max_tokens=4096,
         )
         intros[sec["id"]] = parsed["markdown"]
