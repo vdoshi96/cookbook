@@ -17,10 +17,20 @@ The source PDF must be placed at `../source/india-cookbook.pdf`. It is gitignore
 
 ## Run
 
+The pipeline can be invoked two ways. Prefer `python run.py` — it works regardless of `pip install -e .` state, which is unreliable when the project lives under iCloud Drive (Python 3.13 silently skips hidden `__editable__.*.pth` files):
+
 ```bash
-python -m cookbook_pipeline run            # all stages
-python -m cookbook_pipeline run --stage 4  # one stage only
-python -m cookbook_pipeline pilot          # 50-recipe sample for spot-checking
+cd pipeline
+source .venv/bin/activate
+python run.py pilot          # ~50 recipes for spot-checking
+python run.py run            # full pipeline (~1000 recipes, ~$2-5)
+python run.py run --stage 4  # one stage only
+```
+
+Alternative invocation (works only if the editable install is loading correctly):
+
+```bash
+PYTHONPATH=src python -m cookbook_pipeline pilot
 ```
 
 ## Tests
