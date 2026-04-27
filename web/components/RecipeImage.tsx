@@ -7,9 +7,10 @@ interface RecipeImageProps {
   id: string;
   label: string;
   className?: string;
+  showAttributionLink?: boolean;
 }
 
-export function RecipeImage({ kind, id, label, className }: RecipeImageProps) {
+export function RecipeImage({ kind, id, label, className, showAttributionLink = true }: RecipeImageProps) {
   const image = getCuratedImage(kind, id, label);
   const classNames = ["recipe-image", className].filter(Boolean).join(" ");
 
@@ -26,7 +27,7 @@ export function RecipeImage({ kind, id, label, className }: RecipeImageProps) {
       <img src={image.src} alt={image.alt} loading="lazy" />
       {image.sourceHref && image.sourceLabel ? (
         <figcaption>
-          <a href={image.sourceHref}>{image.sourceLabel}</a>
+          {showAttributionLink ? <a href={image.sourceHref}>{image.sourceLabel}</a> : <span>{image.sourceLabel}</span>}
         </figcaption>
       ) : null}
     </figure>

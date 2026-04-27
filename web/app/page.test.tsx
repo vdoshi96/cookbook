@@ -29,6 +29,10 @@ describe("Home", () => {
       );
     }
 
+    const chapterTile = chapters.getByRole("link", { name: /Snacks and Appetizers/i });
+
+    expect(within(chapterTile).queryByRole("link")).not.toBeInTheDocument();
+
     expect(screen.getByRole("link", { name: "Read the front matter" })).toHaveAttribute("href", "/about");
     expect(screen.getByRole("heading", { level: 2, name: "Browse by Region" })).toBeInTheDocument();
 

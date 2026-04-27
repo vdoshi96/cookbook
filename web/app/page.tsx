@@ -31,7 +31,7 @@ export default function HomePage() {
         <div className="chapter-grid">
           {sections.map((section) => (
             <Link className="chapter-tile surface" href={sectionPath(section.id)} key={section.id}>
-              <RecipeImage kind="section" id={section.id} label={section.name} className="chapter-image" />
+              <RecipeImage kind="section" id={section.id} label={section.name} className="chapter-image" showAttributionLink={false} />
               <h3>{section.name}</h3>
               <p>{section.intro_markdown}</p>
               <span>{section.recipe_ids.length} recipes</span>
