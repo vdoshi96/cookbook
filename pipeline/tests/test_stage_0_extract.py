@@ -4,7 +4,6 @@ We build a tiny fixture PDF the first time we run, by extracting 2 pages
 from the real source. The fixture is regenerated if missing.
 """
 
-import shutil
 import subprocess
 from pathlib import Path
 
@@ -26,7 +25,7 @@ def tiny_pdf(fixtures_dir: Path) -> Path:
         if src is None:
             pytest.skip("No source PDF available for tiny.pdf fixture")
         subprocess.run(
-            ["qpdf", "--pages", str(src), "96-97", "--", str(src), str(out)],
+            ["qpdf", str(src), "--pages", ".", "96-97", "--", str(out)],
             check=False,
         )
         if not out.exists():

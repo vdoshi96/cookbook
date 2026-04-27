@@ -14,39 +14,44 @@ import fitz  # PyMuPDF
 def extract_pages(pdf_path: Path, pages_dir: Path, images_dir: Path) -> int:
     """Extract per-page text and 200dpi PNG images from `pdf_path`.
 
-    Returns the number of pages processed.
+    Returns the total page count of the PDF (not the number of newly-written pages).
     """
     pages_dir.mkdir(parents=True, exist_ok=True)
     images_dir.mkdir(parents=True, exist_ok=True)
-    doc = fitz.open(str(pdf_path))
-    n = doc.page_count
-    for i in range(n):
-        page_num = i + 1  # 1-indexed
-        text_path = pages_dir / f"page-{page_num:04d}.txt"
-        image_path = images_dir / f"page-{page_num:04d}.png"
-        if not text_path.exists():
-            text_path.write_text(_pdftotext_layout(pdf_path, page_num))
-        if not image_path.exists():
-            page = doc.load_page(i)
-            pix = page.get_pixmap(dpi=200)
-            pix.save(str(image_path))
-    doc.close()
+    with fitz.open(str(pdf_path)) as doc:
+        n = doc.page_count
+        for i in range(n):
+            page_num = i + 1  # 1-indexed
+            text_path = pages_dir / f"page-{page_num:04d}.txt"
+            image_path = images_dir / f"page-{page_num:04d}.png"
+            if not text_path.exists():
+                text_path.write_text(_pdftotext_layout(pdf_path, page_num))
+            if not image_path.exists():
+                page = doc.load_page(i)
+                pix = page.get_pixmap(dpi=200)
+                pix.save(str(image_path))
     return n
 
 
 def _pdftotext_layout(pdf_path: Path, page_num: int) -> str:
     """Run `pdftotext -layout` on a single page and return its text."""
-    result = subprocess.run(
-        [
-            "pdftotext",
-            "-layout",
-            "-f", str(page_num),
-            "-l", str(page_num),
-            str(pdf_path),
-            "-",
-        ],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
+    try:
+        result = subprocess.run(
+            [
+                "pdftotext",
+                "-layout",
+                "-f", str(page_num),
+                "-l", str(page_num),
+                str(pdf_path),
+                "-",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except FileNotFoundError as e:
+        raise RuntimeError(
+            "pdftotext not found in PATH. Install poppler-utils "
+            "(macOS: `brew install poppler`; Debian/Ubuntu: `apt install poppler-utils`)."
+        ) from e
     return result.stdout
