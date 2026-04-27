@@ -31,4 +31,13 @@ describe("SearchPage", () => {
     expect(screen.getByText(/No results yet/i)).toBeInTheDocument();
     expect(screen.getByRole("combobox", { name: "Search recipes, ingredients, regions" })).toBeInTheDocument();
   });
+
+  it("uses the first repeated query parameter as the initial search value", async () => {
+    const { default: SearchPage } = await import("./page");
+
+    render(<>{await SearchPage({ searchParams: Promise.resolve({ q: ["paneer", "rice"] }) })}</>);
+
+    expect(screen.getByRole("textbox", { name: "Search recipes, ingredients, regions" })).toHaveValue("paneer");
+    expect(screen.getByRole("list", { name: "Search results" })).toBeInTheDocument();
+  });
 });

@@ -2,12 +2,20 @@ import type { Metadata } from "next";
 import { SearchPageClient } from "@/components/SearchPageClient";
 
 interface SearchPageProps {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string | string[] }>;
 }
 
 export const metadata: Metadata = {
   title: "Search"
 };
+
+function normalizeQueryParam(query: string | string[] | undefined) {
+  if (Array.isArray(query)) {
+    return query[0] ?? "";
+  }
+
+  return query ?? "";
+}
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const { q } = await searchParams;
@@ -22,7 +30,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           collection.
         </p>
       </header>
-      <SearchPageClient initialQuery={q ?? ""} />
+      <SearchPageClient initialQuery={normalizeQueryParam(q)} />
     </div>
   );
 }
