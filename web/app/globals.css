@@ -434,3 +434,86 @@ main {
     display: block;
   }
 }
+
+.home-page,
+.reading-page,
+.empty-state {
+  padding-top: 52px;
+}
+
+.home-hero {
+  display: grid;
+  gap: 18px;
+  max-width: 860px;
+  padding: 44px 0 28px;
+}
+
+.page-section {
+  margin-top: 72px;
+}
+
+.section-heading {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.chapter-grid,
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.chapter-tile,
+.region-tile,
+.front-matter-rail,
+.reading-section {
+  padding: 16px;
+}
+
+.chapter-image {
+  min-height: 190px;
+  margin-bottom: 14px;
+}
+
+.chapter-tile h3,
+.region-tile h3,
+.front-matter-rail h2,
+.reading-section h2 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+  line-height: 1.12;
+}
+
+.chapter-tile p,
+.region-tile p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.chapter-tile span,
+.region-tile span,
+.text-link {
+  color: var(--accent);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+
+.reading-page {
+  display: grid;
+  gap: 24px;
+  max-width: 880px;
+}
+
+.empty-state {
+  display: grid;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .chapter-grid,
+  .region-grid {
+    grid-template-columns: 1fr;
+  }
+}

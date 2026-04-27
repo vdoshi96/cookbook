@@ -1,66 +1,73 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { MarkdownBlock } from "@/components/MarkdownBlock";
+import { RecipeImage } from "@/components/RecipeImage";
+import { SearchBox } from "@/components/SearchBox";
+import { getAllRegions, getAllSections, getFrontMatter } from "@/lib/data";
+import { regionPath, sectionPath } from "@/lib/routes";
 
-export default function Home() {
+export default function HomePage() {
+  const sections = getAllSections();
+  const regions = getAllRegions();
+  const frontMatter = getFrontMatter();
+
   return (
-    <div className={styles.page}>
-      <div className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="page-shell home-page">
+      <section className="home-hero">
+        <p className="eyebrow">A digital companion</p>
+        <h1 className="display-title">India Cookbook</h1>
+        <p className="lede">
+          Browse the cookbook by chapter, region, ingredient, and the cross-references that connect one dish to another.
+        </p>
+        <SearchBox />
+      </section>
+
+      <section className="page-section" id="chapters" aria-labelledby="chapters-heading">
+        <div className="section-heading">
+          <p className="eyebrow">Chapters</p>
+          <h2 className="section-title" id="chapters-heading">
+            The Chapters
+          </h2>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="chapter-grid">
+          {sections.map((section) => (
+            <Link className="chapter-tile surface" href={sectionPath(section.id)} key={section.id}>
+              <RecipeImage kind="section" id={section.id} label={section.name} className="chapter-image" />
+              <h3>{section.name}</h3>
+              <p>{section.intro_markdown}</p>
+              <span>{section.recipe_ids.length} recipes</span>
+            </Link>
+          ))}
         </div>
-      </div>
+      </section>
+
+      <section className="page-section front-matter-rail surface" aria-labelledby="intro-heading">
+        <p className="eyebrow">From the introduction</p>
+        <h2 id="intro-heading">{frontMatter.introduction.title}</h2>
+        <MarkdownBlock markdown={frontMatter.introduction.markdown} />
+        <Link className="text-link" href="/about">
+          Read the front matter
+        </Link>
+      </section>
+
+      <section className="page-section" id="regions" aria-labelledby="regions-heading">
+        <div className="section-heading">
+          <p className="eyebrow">Regions</p>
+          <h2 className="section-title" id="regions-heading">
+            Browse by Region
+          </h2>
+        </div>
+        <div className="region-grid">
+          {regions.map((region) => (
+            <Link className="region-tile surface" href={regionPath(region.id)} key={region.id}>
+              <h3>{region.name}</h3>
+              <p>{region.intro_markdown}</p>
+              <span>
+                {region.recipe_ids.length} {region.recipe_ids.length === 1 ? "recipe" : "recipes"}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
