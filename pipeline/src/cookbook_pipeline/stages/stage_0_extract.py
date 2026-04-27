@@ -1,0 +1,52 @@
+"""Stage 0 — dump per-page text (via pdftotext -layout) and PNG images.
+
+Idempotent: skips pages that are already extracted.
+"""
+
+from __future__ import annotations
+
+import subprocess
+from pathlib import Path
+
+import fitz  # PyMuPDF
+
+
+def extract_pages(pdf_path: Path, pages_dir: Path, images_dir: Path) -> int:
+    """Extract per-page text and 200dpi PNG images from `pdf_path`.
+
+    Returns the number of pages processed.
+    """
+    pages_dir.mkdir(parents=True, exist_ok=True)
+    images_dir.mkdir(parents=True, exist_ok=True)
+    doc = fitz.open(str(pdf_path))
+    n = doc.page_count
+    for i in range(n):
+        page_num = i + 1  # 1-indexed
+        text_path = pages_dir / f"page-{page_num:04d}.txt"
+        image_path = images_dir / f"page-{page_num:04d}.png"
+        if not text_path.exists():
+            text_path.write_text(_pdftotext_layout(pdf_path, page_num))
+        if not image_path.exists():
+            page = doc.load_page(i)
+            pix = page.get_pixmap(dpi=200)
+            pix.save(str(image_path))
+    doc.close()
+    return n
+
+
+def _pdftotext_layout(pdf_path: Path, page_num: int) -> str:
+    """Run `pdftotext -layout` on a single page and return its text."""
+    result = subprocess.run(
+        [
+            "pdftotext",
+            "-layout",
+            "-f", str(page_num),
+            "-l", str(page_num),
+            str(pdf_path),
+            "-",
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return result.stdout
