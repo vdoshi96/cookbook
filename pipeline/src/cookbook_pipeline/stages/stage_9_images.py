@@ -3,8 +3,12 @@
 Strategy: walk every page that holds at least one recipe. For each embedded
 image larger than a threshold (filters out icons / decorations), save as WebP
 and JPEG to /data/images/, and attach the path to the recipe(s) on that page.
-If a page has multiple recipes and one image, attach to the recipe whose
-title appears closest (by y-coordinate) to the image.
+
+Multi-recipe pages: images and recipes are zipped by document order — image 0
+to recipe 0, image 1 to recipe 1, etc. This is approximately right for most
+two-recipe pages but is not a true positional match. TODO: sort by image y0
+(available via page.get_image_info(xrefs=True)) once recipe block positions
+are also tracked, for a precise y-coordinate match.
 """
 
 from __future__ import annotations
@@ -47,13 +51,20 @@ def extract_recipe_images(
                     break
                 target = sorted_recipes[i]
                 xref = im["xref"]
-                base = doc.extract_image(xref)
-                pil = Image.open(io.BytesIO(base["image"])).convert("RGB")
-                slug = target["id"]
-                webp_path = images_out / f"p{page_num:04d}-{slug}.webp"
-                jpg_path = images_out / f"p{page_num:04d}-{slug}.jpg"
-                pil.save(webp_path, "WEBP", quality=82)
-                pil.save(jpg_path, "JPEG", quality=85)
-                associations[target["id"]] = f"images/{webp_path.name}"
+                try:
+                    base = doc.extract_image(xref)
+                    pil = Image.open(io.BytesIO(base["image"])).convert("RGB")
+                    slug = target["id"]
+                    webp_path = images_out / f"p{page_num:04d}-{slug}.webp"
+                    jpg_path = images_out / f"p{page_num:04d}-{slug}.jpg"
+                    pil.save(webp_path, "WEBP", quality=82)
+                    pil.save(jpg_path, "JPEG", quality=85)
+                    associations[target["id"]] = f"images/{webp_path.name}"
+                except Exception as e:
+                    # A corrupt or unsupported image shouldn't abort the whole stage.
+                    # Print rather than logging — Stage 9 has no logger configured;
+                    # the CLI captures stdout into the run log.
+                    print(f"WARN: stage 9 — failed to extract image {xref} on page {page_num} for {target['id']}: {e}")
+                    continue
 
     return associations
