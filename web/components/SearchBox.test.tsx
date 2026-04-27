@@ -10,6 +10,9 @@ describe("SearchBox", () => {
     render(<SearchBox />);
     await user.type(screen.getByRole("combobox", { name: "Search recipes, ingredients, regions" }), "paneer");
 
-    expect(await screen.findByRole("link", { name: /Nargisi Seekh Kebab/ })).toBeInTheDocument();
+    expect(await screen.findByRole("option", { name: /Nargisi Seekh Kebab/ })).toHaveAttribute(
+      "href",
+      "/recipes/nargisi-seekh-kebab"
+    );
   });
 });

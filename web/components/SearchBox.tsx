@@ -34,7 +34,7 @@ export function SearchBox() {
       {results.length > 0 ? (
         <div className="search-suggestions surface" id="global-search-results" role="listbox">
           {results.map((result) => (
-            <Link key={`${result.kind}:${result.id}`} href={result.href}>
+            <Link key={`${result.kind}:${result.id}`} href={result.href} role="option">
               <span>{result.title}</span>
               <small>{result.subtitle}</small>
             </Link>
