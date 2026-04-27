@@ -3,6 +3,7 @@ import {
   getAllIngredients,
   getAllRecipes,
   getAllSections,
+  getFrontMatter,
   getIngredientBySlug,
   getRecipeById,
   getRecipesByIds,
@@ -10,7 +11,8 @@ import {
   getRecipesBySection,
   getSectionById,
   getStartHereRecipes,
-  getUsedInRecipes
+  getUsedInRecipes,
+  validateCookbookDataForTest
 } from "./data";
 
 describe("cookbook data helpers", () => {
@@ -73,5 +75,75 @@ describe("cookbook data helpers", () => {
   it("loads sections by id", () => {
     expect(getAllSections()).toHaveLength(3);
     expect(getSectionById("rice")?.name).toBe("Rice");
+  });
+
+  it("protects recipe helper state from caller mutations", () => {
+    const recipes = getAllRecipes();
+    recipes.pop();
+    recipes[0].name = "Mutated";
+
+    expect(getAllRecipes().map((recipe) => recipe.id)).toEqual([
+      "nargisi-seekh-kebab",
+      "pakoras",
+      "khumb-shabnam"
+    ]);
+    expect(getRecipeById("nargisi-seekh-kebab")?.name).toBe("Nargisi Seekh Kebab");
+
+    const recipe = getRecipeById("pakoras");
+    expect(recipe).not.toBeNull();
+    const originalIngredient = recipe!.ingredients[0].item;
+    recipe!.ingredients[0].item = "Mutated";
+
+    expect(getRecipeById("pakoras")?.ingredients[0].item).toBe(originalIngredient);
+  });
+
+  it("protects front matter helper state from caller mutations", () => {
+    const frontMatter = getFrontMatter();
+    frontMatter.introduction.title = "Mutated";
+    frontMatter.regions_overview.map_image = "mutated.png";
+
+    const freshFrontMatter = getFrontMatter();
+    expect(freshFrontMatter.introduction.title).toBe("Introduction");
+    expect(freshFrontMatter.regions_overview.map_image).toBeNull();
+  });
+
+  it("validates schema versions and core container shapes", () => {
+    expect(() =>
+      validateCookbookDataForTest({
+        recipesFile: { schema_version: 2, recipes: [] },
+        sectionsFile: { schema_version: 1, sections: [] },
+        regionsFile: { schema_version: 1, regions: [] },
+        ingredientsFile: { schema_version: 1, ingredients: {} },
+        tagsFile: { schema_version: 1, tags: {} },
+        graphFile: { schema_version: 1, edges: [], used_in: {} },
+        frontMatterFile: {
+          schema_version: 1,
+          introduction: { title: "Introduction", markdown: "" },
+          history: { title: "History", markdown: "" },
+          ayurveda: { title: "Ayurveda", markdown: "" },
+          regions_overview: { title: "Regions", markdown: "", map_image: null },
+          notes_on_recipes: { title: "Notes", markdown: "" }
+        }
+      })
+    ).toThrow("recipes schema_version must be 1");
+
+    expect(() =>
+      validateCookbookDataForTest({
+        recipesFile: { schema_version: 1, recipes: [] },
+        sectionsFile: { schema_version: 1, sections: [] },
+        regionsFile: { schema_version: 1, regions: [] },
+        ingredientsFile: { schema_version: 1, ingredients: [] },
+        tagsFile: { schema_version: 1, tags: {} },
+        graphFile: { schema_version: 1, edges: [], used_in: {} },
+        frontMatterFile: {
+          schema_version: 1,
+          introduction: { title: "Introduction", markdown: "" },
+          history: { title: "History", markdown: "" },
+          ayurveda: { title: "Ayurveda", markdown: "" },
+          regions_overview: { title: "Regions", markdown: "", map_image: null },
+          notes_on_recipes: { title: "Notes", markdown: "" }
+        }
+      })
+    ).toThrow("ingredients must be a record");
   });
 });
