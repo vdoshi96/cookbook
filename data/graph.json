@@ -1,16 +1,113 @@
 {
   "schema_version": 1,
-  "_note": "Stub data. Replaced by the pipeline output on the backend branch.",
   "edges": [
-    { "from": "nargisi-seekh-kebab", "to": "paneer", "kind": "uses" },
-    { "from": "nargisi-seekh-kebab", "to": "garlic-paste", "kind": "uses" },
-    { "from": "nargisi-seekh-kebab", "to": "chaat-masala", "kind": "uses" },
-    { "from": "khumb-shabnam", "to": "garam-masala", "kind": "uses" }
+    {
+      "from": "bharwan-pasande",
+      "to": "kathi-kebab",
+      "kind": "uses"
+    },
+    {
+      "from": "chincheche-talwan",
+      "to": "aloo-dum",
+      "kind": "uses"
+    },
+    {
+      "from": "dhyatle-sukha",
+      "to": "machhali-ke-kofte",
+      "kind": "uses"
+    },
+    {
+      "from": "gosht-ki-khurchan",
+      "to": "kathi-kebab",
+      "kind": "uses"
+    },
+    {
+      "from": "gushtaba",
+      "to": "kobbaraiannam",
+      "kind": "uses"
+    },
+    {
+      "from": "kala-saranga",
+      "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "karimeen-polichattu",
+      "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "masapatia",
+      "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "mochar-paturi",
+      "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "mochar-paturi-2",
+      "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "nalli-aur-paye",
+      "to": "kairi-ki-karhi",
+      "kind": "uses"
+    },
+    {
+      "from": "pani-poori",
+      "to": "pappu-charu",
+      "kind": "uses"
+    },
+    {
+      "from": "patrani-machli",
+      "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "qorma-pulao",
+      "to": "chaamp-chops",
+      "kind": "uses"
+    },
+    {
+      "from": "yakhni-pulao",
+      "to": "kobbaraiannam",
+      "kind": "uses"
+    }
   ],
   "used_in": {
-    "paneer": ["nargisi-seekh-kebab"],
-    "garlic-paste": ["nargisi-seekh-kebab"],
-    "chaat-masala": ["nargisi-seekh-kebab"],
-    "garam-masala": ["khumb-shabnam"]
+    "pappu-charu": [
+      "pani-poori"
+    ],
+    "mahi-tikka-ajwaini": [
+      "kala-saranga",
+      "karimeen-polichattu",
+      "masapatia",
+      "mochar-paturi",
+      "mochar-paturi-2",
+      "patrani-machli"
+    ],
+    "aloo-dum": [
+      "chincheche-talwan"
+    ],
+    "machhali-ke-kofte": [
+      "dhyatle-sukha"
+    ],
+    "kobbaraiannam": [
+      "gushtaba",
+      "yakhni-pulao"
+    ],
+    "kathi-kebab": [
+      "bharwan-pasande",
+      "gosht-ki-khurchan"
+    ],
+    "kairi-ki-karhi": [
+      "nalli-aur-paye"
+    ],
+    "chaamp-chops": [
+      "qorma-pulao"
+    ]
   }
 }
