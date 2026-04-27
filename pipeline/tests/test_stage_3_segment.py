@@ -12,7 +12,7 @@ def test_segment_page_two_recipes(fixtures_dir: Path):
     assert len(blocks) == 2
     # pdftotext -layout produces a two-column page; recipe names may appear in
     # the right column of a line whose left column has ingredient text, so we
-    # check raw_text rather than title_line for the recipe names.
+    # check raw_text rather than title_hint for the recipe names.
     raw_texts = [b["raw_text"] for b in blocks]
     assert any("Kakori" in r or "Subz ke" in r for r in raw_texts)
     assert any("Jaipuri" in r for r in raw_texts)

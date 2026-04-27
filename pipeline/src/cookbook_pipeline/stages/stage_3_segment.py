@@ -4,6 +4,18 @@ Anchor heuristic: each recipe contains the literal substring "Origin " somewhere
 near its top, followed by "Preparation time", "Cooking time", "Serves". A page
 typically has two recipes side-by-side. We split at "Origin" markers and
 attach the preceding 1–2 lines as the title/subtitle.
+
+Known limitation — two-column contamination:
+    `pdftotext -layout` produces interleaved column text. The simple "walk back
+    to the nearest blank line" heuristic in `_block_start` will sometimes return
+    a position that is several lines INSIDE the previous (left-column) recipe.
+    The right-column block ends up with a few leading lines of left-column
+    content, and `title_hint` may be a left-column ingredient instead of the
+    recipe title. This is acceptable: Stage 4 (LLM cleanup) reads `raw_text`
+    and is robust to leading junk; it identifies the recipe by its "Origin"
+    marker and structured header, not by `title_hint`. If pilot extraction
+    quality is poor, revisit with column-aware segmentation (split lines on
+    a column-position threshold, or use PyMuPDF's text-with-coordinates API).
 """
 
 from __future__ import annotations
@@ -19,7 +31,7 @@ _RECIPE_REQUIRED = ("Preparation time", "Cooking time", "Serves")
 def segment_page(page_text: str, page_num: int) -> list[dict]:
     """Return a list of recipe blocks found on the page.
 
-    Each block: {"page_num": int, "title_line": str, "raw_text": str}
+    Each block: {"page_num": int, "title_hint": str, "raw_text": str}
     """
     matches = list(_ORIGIN_MARKER.finditer(page_text))
     if not matches:
@@ -35,25 +47,20 @@ def segment_page(page_text: str, page_num: int) -> list[dict]:
         raw = page_text[start:end].strip()
         if not all(req in raw for req in _RECIPE_REQUIRED):
             continue
-        title_line = _extract_title(raw)
-        blocks.append({"page_num": page_num, "title_line": title_line, "raw_text": raw})
+        blocks.append({"page_num": page_num, "title_hint": _extract_title(raw), "raw_text": raw})
     return blocks
 
 
 def _block_start(text: str, origin_pos: int) -> int:
-    """Walk backwards from an Origin match to the start of the block.
+    """Return the position of the first character of the block containing `origin_pos`.
 
-    A block starts at the previous blank line OR the page top. We look back
-    past 1–2 non-blank lines (title, subtitle) for a blank.
+    Walks backward from `origin_pos` to the nearest blank line (`\\n\\n`).
     """
     pos = origin_pos
-    blanks_seen = 0
     while pos > 0:
         pos -= 1
         if text[pos] == "\n" and pos > 0 and text[pos - 1] == "\n":
-            blanks_seen += 1
-            if blanks_seen >= 1:
-                return pos + 1
+            return pos + 1
     return 0
 
 
