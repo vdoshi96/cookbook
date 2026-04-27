@@ -770,18 +770,6 @@
       "hero_image": null
     },
     {
-      "id": "guest-chefs",
-      "name": "Guest Chefs",
-      "intro_markdown": "This section includes signature dishes from some of the most highly regarded Indian chefs working around the world. Each has contributed to today's high standard of excellence within Indian cuisine.\n\n**Anirudh Arora**, Moti Mahal, London\n\n**Anil Ashokan**, Qmin, Sydney\n\n**Ajoy Joshi**, Nilgiri's, Sydney\n\n**Ashish Joshi**, Paatra, New Delhi\n\n**Vikrant Kapoor**, Zaafran, Sydney\n\n**Joy Kapur**, Maharani, San Francisco\n\n**Alfred Prasad**, Taramind, London\n\n**Suvir Saran**, Devi, New York\n\n**Vivek Singh**, Cinnamon Club, London\n\n**Miraj-ul-Haque**, Radisson's, New Delhi\n\n**Vikram Vij & Meeru Dhalwala**, Vij's, Vancouver",
-      "page_range": [
-        735,
-        777
-      ],
-      "recipe_ids": [],
-      "start_here": [],
-      "hero_image": null
-    },
-    {
       "id": "glossary",
       "name": "Glossary",
       "intro_markdown": "",

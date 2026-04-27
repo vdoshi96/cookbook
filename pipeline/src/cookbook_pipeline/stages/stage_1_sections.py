@@ -32,7 +32,6 @@ CANONICAL_CHAPTERS: list[str] = [
     "Rice",
     "Desserts",
     "Drinks",
-    "Guest Chefs",
     "Glossary",
     "Directory",
     "Index",
