@@ -33,6 +33,10 @@ dist/
 .DS_Store
 Thumbs.db
 
+# Skill / harness session state
+.superpowers/
+.claude/
+
 # Logs
 *.log
 npm-debug.log*
