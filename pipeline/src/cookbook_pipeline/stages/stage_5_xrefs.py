@@ -7,14 +7,23 @@ kept with `id=null` so the frontend can either show them or hide them.
 
 from __future__ import annotations
 
+import warnings
+
 
 def resolve_xrefs(recipes: list[dict]) -> tuple[list[dict], list[dict], dict[str, list[str]]]:
     page_to_id: dict[int, str] = {}
     for r in recipes:
         # If multiple recipes share a page, the FIRST one wins for cross-ref
-        # resolution. Most cross-refs point to staple paste/masala recipes
-        # which are alone on their page anyway.
-        page_to_id.setdefault(r["source_page"], r["id"])
+        # resolution. Cross-refs to a multi-recipe page can resolve incorrectly,
+        # so we warn so the pilot run reveals how often this assumption breaks.
+        page = r["source_page"]
+        existing = page_to_id.setdefault(page, r["id"])
+        if existing != r["id"]:
+            warnings.warn(
+                f"Page {page} has multiple recipes ({existing!r}, {r['id']!r}); "
+                f"cross-refs to this page will resolve to {existing!r}.",
+                stacklevel=2,
+            )
 
     edges: list[dict] = []
     used_in: dict[str, list[str]] = {}
@@ -35,4 +44,5 @@ def resolve_xrefs(recipes: list[dict]) -> tuple[list[dict], list[dict], dict[str
     # Sort reverse lists for stable output
     for k in used_in:
         used_in[k] = sorted(set(used_in[k]))
+    edges.sort(key=lambda e: (e["from"], e["to"]))
     return updated, edges, used_in
