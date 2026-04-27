@@ -18,7 +18,7 @@ from cookbook_pipeline.utils.text import slugify
 
 # A section-name footer: ALL CAPS line of letters and ampersands, length 4..40
 # Leading whitespace is allowed because pdftotext -layout may indent the footer.
-_FOOTER_LINE = re.compile(r"^\s*([A-Z][A-Z &,]{2,40}[A-Z])\s*$", re.MULTILINE)
+_FOOTER_LINE = re.compile(r"^\s*([A-Z][A-Z &,]{2,40}[A-Z])[.,:;!?]?\s*$", re.MULTILINE)
 
 
 def extract_section_name(page_text: str) -> str | None:
@@ -75,7 +75,25 @@ def detect_sections(pages_dir: Path) -> list[dict]:
             )
         else:
             merged.append(entry)
-    return merged
+
+    # Second-pass merge: also collapse consecutive entries whose case-folded
+    # name matches (handles OCR variants like "SNACKS AND APPETIZERS" vs
+    # "SNACKS AND. APPETIZERS"). Slug-based dedup misses these because the
+    # punctuation produces a different slug.
+    def _normalize_for_dedup(name: str) -> str:
+        return name.lower().strip().rstrip(".,:;!?")
+
+    deduped: list[dict] = []
+    for entry in merged:
+        if deduped and _normalize_for_dedup(deduped[-1]["name"]) == _normalize_for_dedup(entry["name"]):
+            # Merge into prior entry
+            deduped[-1]["page_range"] = (
+                deduped[-1]["page_range"][0],
+                entry["page_range"][1],
+            )
+        else:
+            deduped.append(entry)
+    return deduped
 
 
 def write_sections_raw(pages_dir: Path, output_path: Path) -> None:

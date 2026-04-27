@@ -52,3 +52,18 @@ def test_extract_section_name_handles_comma():
     """Chapter names with commas (e.g. 'PICKLES, CHUTNEYS & RAITAS') must match."""
     text = "body text\n\n               PICKLES, CHUTNEYS & RAITAS\n42\n"
     assert extract_section_name(text) == "Pickles, Chutneys & Raitas"
+
+
+def test_detect_sections_collapses_ocr_punctuation_variants(tmp_path: Path):
+    """OCR sometimes adds trailing punctuation to footers; same chapter must merge."""
+    pages = tmp_path
+    (pages / "page-0010.txt").write_text("body\n\n  SNACKS AND APPETIZERS\n10\n")
+    (pages / "page-0011.txt").write_text("body\n\n  SNACKS AND APPETIZERS.\n11\n")  # OCR variant
+    (pages / "page-0012.txt").write_text("body\n\n  SNACKS AND APPETIZERS,\n12\n")  # OCR variant
+    (pages / "page-0013.txt").write_text("body\n\n  VEGETABLES\n13\n")
+    result = detect_sections(pages)
+    # All three Snacks pages should merge into ONE entry
+    assert len(result) == 2
+    assert result[0]["name"].lower().startswith("snacks")
+    assert result[0]["page_range"] == (10, 12)
+    assert result[1]["name"] == "Vegetables"

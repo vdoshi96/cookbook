@@ -46,6 +46,7 @@ Rules:
 - Ingredients are in source order. Quantities go in the qty_* fields, not in `item`.
 - Cross-refs come from "(see page N)" markers in the ingredients or instructions.
 - If unsure about a field, prefer null over guessing. Never invent ingredients.
+- For `origin_region_name`, return the FULL Indian region name (e.g. "Awadh", "Punjab", "Tamil Nadu"). Never use abbreviations or partial names like "New" or "S.". If the page says "Origin Mumbai", return "Maharashtra". If unclear, prefer "Pan-Indian".
 """
 
 
