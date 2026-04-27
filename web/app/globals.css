@@ -517,3 +517,63 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+.listing-page {
+  display: grid;
+  gap: 22px;
+  padding-top: 52px;
+}
+
+.listing-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.recipe-list {
+  display: grid;
+  gap: 14px;
+}
+
+.start-here {
+  padding: 16px;
+}
+
+.start-here h2 {
+  margin: 0 0 14px;
+}
+
+.start-here div {
+  display: grid;
+  gap: 10px;
+}
+
+.start-here a {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.start-here span {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.region-map {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: fit-content;
+  padding: 12px;
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (max-width: 860px) {
+  .listing-layout {
+    grid-template-columns: 1fr;
+  }
+}
