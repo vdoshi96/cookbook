@@ -13,13 +13,15 @@ A digital companion to Pushpesh Pant's *India Cookbook* (Phaidon, 2010): a searc
 BRIEF.md     Project brief for the frontend
 ```
 
-## Branches
+## Branches and workflow
 
-- `main` — scaffolding, brief, spec, stub data
-- `backend` — Python extraction pipeline (in `/pipeline`, output to `/data`)
-- `frontend` — Next.js app (in `/web`)
+Two AI engineers work on this repo in parallel — Codex on the frontend, Claude on the backend pipeline.
 
-The two work-streams stay in non-overlapping directories. They meet at `/data`.
+- `main` — production. Vercel deploys from here.
+- `backend` — Claude's branch. Owns `/pipeline/` and `/data/`.
+- `frontend` — Codex's branch. Owns `/web/`.
+
+The two work-streams stay in non-overlapping directories, so they don't conflict. Each branch lands work on `main` via PRs, and rebases off `main` to pick up the other side's merged changes. Vercel posts preview URLs on every PR; production updates when the PR merges. Full workflow rules and Codex-facing instructions are in [BRIEF.md](BRIEF.md).
 
 ## Setup
 

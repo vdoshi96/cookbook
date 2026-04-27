@@ -95,11 +95,65 @@ These are the topics where the user must drive the decisions, not you:
 - **Copy voice** — does the site speak in the author's voice or a more neutral one?
 - **The "exploration" feel** — does it feel like a book? A museum? A magazine? An app? Make this concrete.
 
-## Coordination
+## How we work together
 
-- The frontend lives in `/web/`. Don't touch `/pipeline/` or `/data/` (except to read).
-- When the data shape needs to change, raise it as an issue or a comment to the user — don't reach into `/pipeline/`.
-- The backend may push new versions of `/data/*.json` to `main` over time. Pull from `main` to refresh.
+Two AI engineers are working on this repo in parallel: **you (Codex)** on the frontend, and **Claude** on the backend pipeline. The repo on GitHub is the single source of truth — we coordinate through branches and pull requests, not through chat.
+
+### Your branch
+
+**Work on the `frontend` branch.** It is already created and pushed to `origin/frontend`. Your first action is:
+
+```bash
+git fetch origin
+git checkout frontend
+git pull origin frontend
+```
+
+All your work — `/web/` scaffolding, components, styles, data wiring — happens on this branch. **Commit and push regularly to `origin/frontend`** (at minimum at the end of each working session, more often if you finish a meaningful unit). The user reviews progress on GitHub.
+
+### What you must not touch
+
+- `/pipeline/` — Claude's territory. Don't read, don't edit, don't reason about it.
+- `/data/` — read-only for you. Build against it, but never modify it. If you need the data shape to change, write a comment or open an issue tagged `data-contract` and tell the user. Claude will adjust the pipeline.
+- `/source/` — copyrighted PDFs, gitignored, none of your business.
+- `/docs/superpowers/specs/` — design specs, treat as read-only reference.
+
+### What you own
+
+- Everything under `/web/`.
+- `BRIEF.md` updates that pertain to frontend decisions (with a clear commit message — Claude should not edit your sections).
+
+### Integrating to production (Vercel)
+
+Vercel deploys the production website **from `main`**. Preview deploys are generated for every open PR.
+
+The merge flow:
+
+1. You finish a milestone on `frontend` and open a PR: `frontend → main`. Vercel posts a preview URL on the PR.
+2. The user reviews the preview, gives feedback, asks for changes.
+3. When approved, the user merges the PR. Production updates.
+4. Meanwhile, Claude is doing the same on `backend → main` PRs to land real `/data/*.json` and recipe images.
+5. Whenever `main` advances, **rebase your `frontend` branch on top of `main`** to pick up new data and stay current:
+
+   ```bash
+   git checkout frontend
+   git fetch origin
+   git rebase origin/main
+   git push --force-with-lease origin frontend
+   ```
+
+   This is safe because `frontend` and `backend` work in non-overlapping directories — there should be no merge conflicts.
+
+### First task
+
+Before any code, **interview the user about look-and-feel, layout, typography, and the overall browsing experience.** This brief gives you the goal and the data contract — not the design. The design is the user's call. Sample questions are in the "Things the user cares about" section above.
+
+After the design discussion, scaffold a Next.js (App Router, TypeScript) app under `/web/`, wire it to read from `/data/*.json`, and start with the home page.
+
+### Communication
+
+- The user is the bridge between you and Claude. If you need anything from the backend (data shape changes, new fields, missing intros), tell the user — don't try to talk to Claude directly through the repo.
+- Commit messages are how the user tracks what you did. Write meaningful ones.
 
 ## Definition of done for v1
 
