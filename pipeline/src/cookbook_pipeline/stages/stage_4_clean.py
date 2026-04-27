@@ -122,6 +122,19 @@ def clean_all(
 
     raw_results.sort(key=lambda x: x[0])
 
+    # Abort on systemic failure (wrong API key, network down, hard rate-limit).
+    # Skip the check for tiny runs where one or two errors trip the threshold
+    # spuriously; the per-recipe failures path handles those.
+    total = len(raw_results)
+    if total >= 20:
+        failure_count = sum(1 for _, _, _, err in raw_results if err is not None)
+        if failure_count / total > 0.5:
+            first_errors = [err for _, _, _, err in raw_results if err is not None][:3]
+            raise RuntimeError(
+                f"Aborting Stage 4: {failure_count}/{total} calls failed. "
+                f"First errors: {first_errors}"
+            )
+
     # Second pass: assign IDs and validate, serially.
     for idx, block, parsed, err in raw_results:
         if err is not None or parsed is None:
