@@ -9,6 +9,7 @@ describe("format helpers", () => {
   });
 
   it("formats heat levels", () => {
+    expect(formatHeatLevel(0)).toBe("No heat");
     expect(formatHeatLevel(1)).toBe("Mild");
     expect(formatHeatLevel(2)).toBe("Medium");
     expect(formatHeatLevel(3)).toBe("Hot");

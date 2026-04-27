@@ -48,7 +48,7 @@ export function getCuratedImage(kind: CuratedImageKind, id: string, label: strin
   const image = curatedImages[`${kind}:${id}`];
 
   if (image) {
-    return image;
+    return { ...image };
   }
 
   return {

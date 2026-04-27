@@ -19,4 +19,16 @@ describe("curated image lookup", () => {
       sourceLabel: null
     });
   });
+
+  it("returns a fresh curated image object for each lookup", () => {
+    const image = getCuratedImage("recipe", "pakoras", "Pakoras");
+
+    image.alt = "Changed alt text";
+
+    expect(getCuratedImage("recipe", "pakoras", "Pakoras")).toMatchObject({
+      alt: "A plate of pakoras.",
+      sourceLabel: "Wikimedia Commons"
+    });
+    expect(getCuratedImage("recipe", "pakoras", "Pakoras")).not.toBe(image);
+  });
 });

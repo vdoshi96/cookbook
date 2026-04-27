@@ -18,7 +18,11 @@ export function formatTotalTime(prepMinutes: number, cookMinutes: number) {
 }
 
 export function formatHeatLevel(level: number) {
-  if (level <= 1) {
+  if (level <= 0) {
+    return "No heat";
+  }
+
+  if (level === 1) {
     return "Mild";
   }
 
