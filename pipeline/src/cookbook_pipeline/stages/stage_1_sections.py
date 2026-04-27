@@ -12,9 +12,46 @@ from __future__ import annotations
 
 import json
 import re
+from difflib import SequenceMatcher
 from pathlib import Path
 
 from cookbook_pipeline.utils.text import slugify
+
+# Canonical chapter names for *India Cookbook* (Pushpesh Pant, Phaidon 2010).
+# OCR-detected names are fuzzy-matched against this list; non-matches are
+# dropped as OCR noise (publisher imprints, author names, recipe titles
+# the regex caught, etc.).
+CANONICAL_CHAPTERS: list[str] = [
+    "Introduction",
+    "Spice Mixtures and Pastes",
+    "Pickles, Chutneys and Raitas",
+    "Snacks and Appetizers",
+    "Main Dishes",
+    "Pulses",
+    "Breads",
+    "Rice",
+    "Desserts",
+    "Drinks",
+    "Guest Chefs",
+    "Glossary",
+    "Directory",
+    "Index",
+]
+
+_CANONICAL_THRESHOLD = 0.7
+
+
+def _canonicalize(detected: str) -> str | None:
+    """Map a detected section name to its canonical form, or None on no match."""
+    detected_low = detected.lower()
+    best_ratio = 0.0
+    best_match: str | None = None
+    for canonical in CANONICAL_CHAPTERS:
+        r = SequenceMatcher(None, detected_low, canonical.lower()).ratio()
+        if r > best_ratio:
+            best_ratio = r
+            best_match = canonical
+    return best_match if best_ratio >= _CANONICAL_THRESHOLD else None
 
 # A section-name footer: ALL CAPS line of letters and ampersands, length 4..40
 # Leading whitespace is allowed because pdftotext -layout may indent the footer.
@@ -93,7 +130,32 @@ def detect_sections(pages_dir: Path) -> list[dict]:
             )
         else:
             deduped.append(entry)
-    return deduped
+
+    # Canonicalize: map each detected name to a known chapter, drop non-matches
+    # (OCR garbage like publisher names, author names, recipe titles in caps).
+    canonicalized: list[dict] = []
+    for entry in deduped:
+        canonical_name = _canonicalize(entry["name"])
+        if canonical_name is None:
+            continue  # garbage / non-chapter detection
+        canonicalized.append({
+            "id": slugify(canonical_name),
+            "name": canonical_name,
+            "page_range": entry["page_range"],
+        })
+
+    # Re-merge consecutive same-id runs (now that canonicalization may have
+    # made non-adjacent same-chapter runs adjacent).
+    final: list[dict] = []
+    for entry in canonicalized:
+        if final and final[-1]["id"] == entry["id"]:
+            final[-1]["page_range"] = (
+                final[-1]["page_range"][0],
+                entry["page_range"][1],
+            )
+        else:
+            final.append(entry)
+    return final
 
 
 def write_sections_raw(pages_dir: Path, output_path: Path) -> None:
