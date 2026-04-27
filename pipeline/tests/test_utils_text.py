@@ -32,3 +32,22 @@ def test_normalize_ingredient_synonyms():
 def test_normalize_ingredient_lowercase_and_singular():
     assert normalize_ingredient("Onions") == "onion"
     assert normalize_ingredient("Potatoes") == "potato"
+
+
+def test_normalize_ingredient_synonym_after_noise_word():
+    # "fresh" is a noise word; bare "cilantro" must still resolve via synonyms.
+    assert normalize_ingredient("fresh cilantro") == "coriander-leaves"
+
+
+def test_normalize_ingredient_multi_token_synonym_after_noise_word():
+    # Noise prefix in front of a multi-token synonym phrase.
+    assert normalize_ingredient("fresh cilantro leaves") == "coriander-leaves"
+
+
+def test_normalize_ingredient_curd_synonym_after_fresh():
+    assert normalize_ingredient("fresh curd") == "yoghurt"
+
+
+def test_normalize_ingredient_curd_synonym_after_plain():
+    # "plain" is a noise word; "curd" should still map to the canonical name.
+    assert normalize_ingredient("plain curd") == "yoghurt"

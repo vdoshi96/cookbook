@@ -12,7 +12,6 @@ import unicodedata
 
 # Phrases that mean the same thing across the book.
 INGREDIENT_SYNONYMS: dict[str, str] = {
-    "coriander cilantro leaves": "coriander leaves",
     "cilantro leaves": "coriander leaves",
     "cilantro": "coriander leaves",
     "curd": "yoghurt",
@@ -76,6 +75,11 @@ def normalize_ingredient(raw: str) -> str:
         return slugify(INGREDIENT_SYNONYMS[collapsed])
     # Strip noise words
     tokens = [t for t in collapsed.split() if t not in INGREDIENT_NOISE]
+    # Re-check synonyms after noise stripping so that prefixes like
+    # "fresh" or "plain" don't hide a known synonym phrase.
+    stripped = " ".join(tokens)
+    if stripped in INGREDIENT_SYNONYMS:
+        return slugify(INGREDIENT_SYNONYMS[stripped])
     # Singularize each token
     tokens = [SINGULARIZE.get(t, t) for t in tokens]
     return slugify(" ".join(tokens))
