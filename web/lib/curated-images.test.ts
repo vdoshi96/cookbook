@@ -9,6 +9,13 @@ describe("curated image lookup", () => {
     });
   });
 
+  it("uses direct image asset URLs instead of redirect pages", () => {
+    const image = getCuratedImage("recipe", "pakoras", "Pakoras");
+
+    expect(image.src).toMatch(/^https:\/\/upload\.wikimedia\.org\//);
+    expect(image.src).not.toContain("/wiki/Special:Redirect/");
+  });
+
   it("returns fallback art metadata when no curated image exists", () => {
     expect(getCuratedImage("section", "rice", "Rice")).toEqual({
       id: "rice",
