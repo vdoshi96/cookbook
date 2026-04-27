@@ -14,7 +14,7 @@ from anthropic import Anthropic
 from pydantic import ValidationError
 from tqdm import tqdm
 
-from cookbook_pipeline.llm.client import DEFAULT_MODEL, call_with_retry
+from cookbook_pipeline.llm.client import DEFAULT_MODEL, call_with_retry, get_client
 from cookbook_pipeline.llm.prompts import CLEANUP_SYSTEM, cleanup_user_message
 from cookbook_pipeline.schema import Recipe
 from cookbook_pipeline.utils.text import slugify
@@ -91,7 +91,6 @@ def clean_all(
 
     Returns a summary dict {extracted, failed}.
     """
-    from cookbook_pipeline.llm.client import get_client
     client = client or get_client()
     seen_ids: set[str] = set()
     results: list[Recipe] = []

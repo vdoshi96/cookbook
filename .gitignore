@@ -19,6 +19,9 @@ venv/
 # Pipeline build artifacts (intermediate files; final output lives in /data and IS committed)
 /pipeline/build/
 
+# Test-generated image fixtures (not real page images; mocked tests create stand-ins)
+/pipeline/tests/fixtures/*.png
+
 # Node / Next.js
 node_modules/
 .next/
