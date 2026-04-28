@@ -51,7 +51,7 @@
           "rationale": "Essential dairy foundation used in countless Indian dishes; teaches basic culinary technique."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/spice-mixtures-and-pastes.webp"
     },
     {
       "id": "pickles-chutneys-and-raitas",
@@ -110,7 +110,7 @@
           "rationale": "Classic mango pickle teaches preservation method; no-cook approach suits beginners well."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/pickles-chutneys-and-raitas.webp"
     },
     {
       "id": "snacks-and-appetizers",
@@ -258,7 +258,7 @@
           "rationale": "Fermented crepe-like staple; spans soaked-grain tradition and pan-frying technique."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/snacks-and-appetizers.webp"
     },
     {
       "id": "main-dishes",
@@ -593,7 +593,7 @@
           "rationale": "Essential chicken dish teaching whole-spice seasoning and braising, spans poultry diversity."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/main-dishes.webp"
     },
     {
       "id": "pulses",
@@ -666,7 +666,7 @@
           "rationale": "Foundational karhi demonstrating pulse flour use and yogurt-based sauce technique."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/pulses.webp"
     },
     {
       "id": "breads",
@@ -721,7 +721,7 @@
           "rationale": "Leavened bread variation teaching tandoor baking for flavor and texture diversity."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/breads.webp"
     },
     {
       "id": "rice",
@@ -791,7 +791,7 @@
           "rationale": "Foundational spiced rice-and-lentil dish combining lentils with rice for nutritional variety."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/rice.webp"
     },
     {
       "id": "desserts",
@@ -859,7 +859,7 @@
           "rationale": "No-cook yogurt dessert; shows sweetened yogurt tradition without any cooking equipment needed."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/desserts.webp"
     },
     {
       "id": "drinks",
@@ -912,7 +912,7 @@
           "rationale": "Introduces chai preparation, the most popular Indian drink mentioned in the intro."
         }
       ],
-      "hero_image": null
+      "hero_image": "images/sections/drinks.webp"
     }
   ]
 }
