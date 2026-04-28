@@ -78,7 +78,28 @@ def stage_5_through_10() -> None:
 
     # Stage 5: cross-refs
     recipes_with_ids, edges, used_in = resolve_xrefs(cleaned)
-    print(f"Stage 5: resolved {len(edges)} cross-ref edges.")
+    # Diagnostics: total LLM-extracted cross-refs vs. how many resolved to a
+    # recipe in the corpus. A high "unresolved" count typically means the
+    # target recipes (often pastes/spice mixes) weren't extracted by Stage 3.
+    total_xrefs = sum(len(r.get("cross_refs") or []) for r in recipes_with_ids)
+    unresolved = sum(
+        1 for r in recipes_with_ids for x in (r.get("cross_refs") or []) if x.get("id") is None
+    )
+    resolved = total_xrefs - unresolved
+    print(
+        f"Stage 5: {total_xrefs} cross-refs in cleaned recipes "
+        f"({resolved} resolved, {unresolved} unresolved); {len(edges)} unique graph edges."
+    )
+    if unresolved:
+        from collections import Counter
+        unresolved_targets: Counter = Counter()
+        for r in recipes_with_ids:
+            for x in r.get("cross_refs") or []:
+                if x.get("id") is None:
+                    unresolved_targets[(x.get("name"), x.get("page"))] += 1
+        print("  Top unresolved cross-ref targets (extract these next):")
+        for (name, page), count in unresolved_targets.most_common(5):
+            print(f"    - {name!r} (page {page}): {count} references")
 
     # Re-assign recipe section_id/section_name from canonical sections.
     # Stage 4 baked in section_ids from the pre-canonicalization sections.raw.json.

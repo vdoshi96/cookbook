@@ -24,12 +24,16 @@ def tiny_pdf(fixtures_dir: Path) -> Path:
         src = next((p for p in candidates if p.exists()), None)
         if src is None:
             pytest.skip("No source PDF available for tiny.pdf fixture")
-        subprocess.run(
-            ["qpdf", str(src), "--pages", ".", "96-97", "--", str(out)],
-            check=False,
-        )
+        try:
+            subprocess.run(
+                ["qpdf", str(src), "--pages", ".", "96-97", "--", str(out)],
+                check=False,
+            )
+        except FileNotFoundError:
+            # qpdf binary not on PATH — skip and let PyMuPDF fallback handle it
+            pass
         if not out.exists():
-            # qpdf not installed — fall back to PyMuPDF
+            # qpdf failed or isn't installed — fall back to PyMuPDF
             import fitz  # type: ignore
             doc = fitz.open(str(src))
             new = fitz.open()
@@ -47,9 +51,12 @@ def test_extract_pages_writes_text_and_images(tiny_pdf: Path, tmp_path: Path):
     assert n == 2
     page_files = sorted(pages_dir.glob("page-*.txt"))
     assert len(page_files) == 2
-    # OCR text should mention a recipe title from page 96/97
+    # OCR text should mention a recipe title from page 96/97. The plan's
+    # original assertion (Nargisi Seekh Kebab / Pakoras) was wrong for this
+    # edition — the actual recipes on those pages are Subz ke Kakori,
+    # Jaipuri Subz Seekh, and Lauki ki Seekh.
     combined = "\n".join(p.read_text() for p in page_files)
-    assert "Nargisi Seekh Kebab" in combined or "Pakoras" in combined
+    assert any(name in combined for name in ("Subz ke Kakori", "Jaipuri", "Lauki ki Seekh"))
     image_files = sorted(images_dir.glob("page-*.png"))
     assert len(image_files) == 2
 

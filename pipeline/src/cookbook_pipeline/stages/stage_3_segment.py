@@ -1,9 +1,29 @@
 """Stage 3 — split a page into recipe blocks.
 
-Anchor heuristic: each recipe contains the literal substring "Origin " somewhere
-near its top, followed by "Preparation time", "Cooking time", "Serves". A page
-typically has two recipes side-by-side. We split at "Origin" markers and
-attach the preceding 1–2 lines as the title/subtitle.
+Anchor heuristic: each recipe contains the literal substring "Origin "
+somewhere near its top, followed by a "Preparation time" line and a yield
+line ("Serves N" or "Makes <quantity>"). A page typically has two recipes
+side-by-side. We split at "Origin" markers and attach the preceding 1–2
+lines as the title/subtitle.
+
+Recipe header formats encountered in the source:
+
+    Standard (mains, snacks, breads with portions):
+        Origin <region>
+        Preparation time <duration>
+        Cooking time <duration>
+        Serves <count>
+
+    Yield-based (pastes, masalas, pickles, chutneys, breads sold by count):
+        Origin <region>
+        Preparation time <duration>
+        [Cooking time <duration>]   ← optional; many cold preparations omit it
+        Makes <quantity>            ← used instead of "Serves"
+
+We require: an "Origin" anchor, a "Preparation time" line, and EITHER
+"Serves" OR "Makes". "Cooking time" is treated as optional. This catches
+both formats without admitting non-recipe pages (the Origin + Preparation
+time + yield combination doesn't appear in chapter intros, glossary, etc.).
 
 Known limitation — two-column contamination:
     `pdftotext -layout` produces interleaved column text. The simple "walk back
@@ -25,13 +45,18 @@ import re
 from pathlib import Path
 
 _ORIGIN_MARKER = re.compile(r"^.*\bOrigin\b\s+\S", re.MULTILINE)
-_RECIPE_REQUIRED = ("Preparation time", "Cooking time", "Serves")
+_RECIPE_REQUIRED = ("Preparation time",)
+_YIELD_MARKERS = ("Serves", "Makes")
 
 
 def segment_page(page_text: str, page_num: int) -> list[dict]:
     """Return a list of recipe blocks found on the page.
 
     Each block: {"page_num": int, "title_hint": str, "raw_text": str}
+
+    A block is accepted as a recipe iff it contains an "Origin" line, a
+    "Preparation time" line, and at least one yield marker ("Serves" or
+    "Makes"). "Cooking time" is optional.
     """
     matches = list(_ORIGIN_MARKER.finditer(page_text))
     if not matches:
@@ -46,6 +71,8 @@ def segment_page(page_text: str, page_num: int) -> list[dict]:
         end = starts[i + 1]
         raw = page_text[start:end].strip()
         if not all(req in raw for req in _RECIPE_REQUIRED):
+            continue
+        if not any(yield_marker in raw for yield_marker in _YIELD_MARKERS):
             continue
         blocks.append({"page_num": page_num, "title_hint": _extract_title(raw), "raw_text": raw})
     return blocks
