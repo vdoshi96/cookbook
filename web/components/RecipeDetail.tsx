@@ -15,16 +15,30 @@ function relatedRecipes(recipes: Recipe[], currentId: string) {
   return recipes.filter((recipe) => recipe.id !== currentId).slice(0, 3);
 }
 
-function crossReferenceHref(id: string) {
-  if (getRecipeById(id)) {
-    return recipePath(id);
+function normalizeReferenceLabel(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function crossReferenceHref(reference: CrossReference) {
+  if (!reference.id) {
+    return null;
   }
 
-  return getIngredientBySlug(id) ? ingredientPath(id) : null;
+  const recipe = getRecipeById(reference.id);
+
+  if (recipe && normalizeReferenceLabel(recipe.name) === normalizeReferenceLabel(reference.name)) {
+    return recipePath(reference.id);
+  }
+
+  const ingredient = getIngredientBySlug(reference.id);
+
+  return ingredient && normalizeReferenceLabel(ingredient.display_name) === normalizeReferenceLabel(reference.name)
+    ? ingredientPath(reference.id)
+    : null;
 }
 
 function CrossReferenceItem({ reference }: { reference: CrossReference }) {
-  const href = crossReferenceHref(reference.id);
+  const href = crossReferenceHref(reference);
   const content = <span>{reference.name}</span>;
 
   return <li>{href ? <Link href={href}>{content}</Link> : <span className="reference-text">{content}</span>}</li>;

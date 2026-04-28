@@ -28,6 +28,27 @@ describe("curated image lookup", () => {
     }
   });
 
+  it("prefers backend-provided internet image URLs and ignores old local image paths", () => {
+    const recipe = getRecipeById("nargisi-seekh-kebab");
+
+    expect(recipe).not.toBeNull();
+    expect(
+      resolveRecipeImage({
+        ...recipe!,
+        image: "https://example.com/nargisi.jpg"
+      })
+    ).toMatchObject({
+      src: "https://example.com/nargisi.jpg",
+      resolvedFrom: "data"
+    });
+    expect(
+      resolveRecipeImage({
+        ...recipe!,
+        image: "images/p096-nargisi-seekh-kebab.webp"
+      }).resolvedFrom
+    ).toBe("recipe");
+  });
+
   it("resolves every real region to a non-empty web image", () => {
     for (const region of getAllRegions()) {
       const image = resolveRegionImage(region);
