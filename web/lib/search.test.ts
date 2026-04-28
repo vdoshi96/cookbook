@@ -5,7 +5,7 @@ describe("cookbook search", () => {
   it("builds documents for recipes, ingredients, regions, sections, and tags", () => {
     const documents = buildSearchDocuments();
 
-    expect(documents.some((document) => document.kind === "recipe" && document.id === "pakoras")).toBe(true);
+    expect(documents.some((document) => document.kind === "recipe" && document.id === "subz-seekh")).toBe(true);
     expect(documents.some((document) => document.kind === "ingredient" && document.id === "paneer")).toBe(true);
     expect(documents.some((document) => document.kind === "region" && document.id === "awadh")).toBe(true);
     expect(documents.some((document) => document.kind === "section" && document.id === "snacks-and-appetizers")).toBe(true);
@@ -13,13 +13,9 @@ describe("cookbook search", () => {
   });
 
   it("finds recipes by ingredient text", () => {
-    const results = searchCookbook("paneer");
+    const results = searchCookbook("paneer", 50);
 
-    expect(results[0]).toMatchObject({
-      kind: "recipe",
-      id: "nargisi-seekh-kebab",
-      title: "Nargisi Seekh Kebab"
-    });
+    expect(results.some((result) => result.kind === "recipe" && result.id === "subz-seekh")).toBe(true);
   });
 
   it("finds regions and techniques", () => {

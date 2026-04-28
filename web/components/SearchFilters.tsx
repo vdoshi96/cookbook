@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { SlidersHorizontal, X } from "lucide-react";
 import { type KeyboardEvent, useEffect, useMemo, useRef, useState } from "react";
 import { formatHeatLevel, formatTagLabel } from "@/lib/format";
@@ -107,15 +106,23 @@ export function SearchFiltersPanel({ filters, onFiltersChange, options, query }:
     });
   }
 
+  function clearFilters() {
+    update({});
+
+    if (typeof window !== "undefined") {
+      window.history.replaceState(null, "", clearUrl(query));
+    }
+  }
+
   return (
     <aside className="filter-sidebar search-filter-panel surface" aria-label="Search filters">
       <input type="hidden" name="q" value={query} />
       <div className="search-filter-heading">
         <h2>Filter</h2>
         {filtersActive ? (
-          <Link className="text-button" href={clearUrl(query)}>
+          <button className="text-button" type="button" aria-label="Clear filters" onClick={clearFilters}>
             Clear
-          </Link>
+          </button>
         ) : null}
       </div>
 

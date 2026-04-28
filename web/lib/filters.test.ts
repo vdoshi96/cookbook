@@ -4,27 +4,35 @@ import { applyRecipeFilters, getRecipeFilterOptions, parseRecipeFilters } from "
 
 describe("recipe filters", () => {
   it("filters by region", () => {
-    expect(applyRecipeFilters(getAllRecipes(), { region: "awadh" }).map((recipe) => recipe.id)).toEqual([
-      "nargisi-seekh-kebab",
-      "khumb-shabnam"
-    ]);
+    const recipes = applyRecipeFilters(getAllRecipes(), { region: "awadh" });
+
+    expect(recipes).toHaveLength(124);
+    expect(recipes.every((recipe) => recipe.origin_region_id === "awadh")).toBe(true);
+    expect(recipes.map((recipe) => recipe.id)).toContain("nargisi-seekh-kebab");
   });
 
   it("filters by max total time", () => {
-    expect(applyRecipeFilters(getAllRecipes(), { maxTotalMinutes: 30 }).map((recipe) => recipe.id)).toEqual([
-      "pakoras",
-      "khumb-shabnam"
-    ]);
+    const recipes = applyRecipeFilters(getAllRecipes(), { maxTotalMinutes: 30 });
+
+    expect(recipes.length).toBeGreaterThan(0);
+    expect(recipes.every((recipe) => recipe.prep_minutes + recipe.cook_minutes <= 30)).toBe(true);
+    expect(recipes.map((recipe) => recipe.id)).toContain("mangupullu");
   });
 
   it("filters by dietary, technique, and heat", () => {
+    const recipes = applyRecipeFilters(getAllRecipes(), {
+      dietary: ["vegetarian"],
+      technique: ["grill"],
+      heatLevel: 1
+    });
+
+    expect(recipes.length).toBeGreaterThan(0);
     expect(
-      applyRecipeFilters(getAllRecipes(), {
-        dietary: ["vegetarian"],
-        technique: ["grill"],
-        heatLevel: 1
-      }).map((recipe) => recipe.id)
-    ).toEqual(["nargisi-seekh-kebab"]);
+      recipes.every(
+        (recipe) =>
+          recipe.dietary_tags.includes("vegetarian") && recipe.technique_tags.includes("grill") && recipe.heat_level === 1
+      )
+    ).toBe(true);
   });
 
   it("parses URL search params", () => {
@@ -66,8 +74,10 @@ describe("recipe filters", () => {
   it("builds unique filter options", () => {
     const options = getRecipeFilterOptions(getAllRecipes());
 
-    expect(options.regions).toEqual([{ id: "awadh", name: "Awadh" }, { id: "tamil-nadu", name: "Tamil Nadu" }]);
-    expect(options.dietary).toEqual(["contains-egg", "vegan-possible", "vegetarian"]);
-    expect(options.techniques).toEqual(["deep-fry", "grill", "no-cook", "stir-fry", "tandoor"]);
+    expect(options.regions).toContainEqual({ id: "awadh", name: "Awadh" });
+    expect(options.regions).toContainEqual({ id: "tamil-nadu", name: "Tamil Nadu" });
+    expect(options.dietary).toEqual(["contains-dairy", "contains-egg", "non-veg", "vegan-possible", "vegetarian"]);
+    expect(options.techniques).toEqual([...options.techniques].sort());
+    expect(options.techniques).toEqual(expect.arrayContaining(["deep-fry", "grill", "stir-fry", "tandoor"]));
   });
 });

@@ -1,18 +1,22 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
-import SectionPage from "./page";
+import { getAllSections } from "@/lib/data";
+import SectionPage, { generateMetadata, generateStaticParams } from "./page";
 
 describe("SectionPage", () => {
   it("keeps desktop and mobile filter submissions independent", async () => {
     const user = userEvent.setup();
 
+    window.history.pushState({}, "", "/sections/snacks-and-appetizers?dietary=vegetarian&maxTime=45&heat=1");
+
     render(
       await SectionPage({
-        params: Promise.resolve({ id: "snacks-and-appetizers" }),
-        searchParams: Promise.resolve({ dietary: "vegetarian", maxTime: "45", heat: "1" })
+        params: Promise.resolve({ id: "snacks-and-appetizers" })
       })
     );
+
+    await waitFor(() => expect(screen.getByRole("spinbutton", { name: "Maximum total minutes" })).toHaveValue(45));
 
     const desktopForm = screen.getByRole("form", { name: "Desktop recipe filters" });
 
@@ -32,5 +36,30 @@ describe("SectionPage", () => {
     expect(mobileData.get("maxTime")).toBe("45");
     expect(mobileData.get("heat")).toBe("1");
     expect(desktopData.getAll("dietary")).toEqual(["vegetarian"]);
+
+    window.history.pushState({}, "", "/");
+  });
+
+  it("renders a section hero image and never exposes page ranges", async () => {
+    render(
+      await SectionPage({
+        params: Promise.resolve({ id: "snacks-and-appetizers" })
+      })
+    );
+
+    expect(screen.getByRole("img", { name: /Snacks and Appetizers/i }).tagName).toBe("IMG");
+    expect(screen.queryByText("95")).not.toBeInTheDocument();
+    expect(screen.queryByText("227")).not.toBeInTheDocument();
+  });
+
+  it("statically generates real section pages without Guest Chefs", async () => {
+    const staticParams = generateStaticParams();
+
+    expect(staticParams).toHaveLength(getAllSections().length);
+    expect(staticParams).toContainEqual({ id: "snacks-and-appetizers" });
+    expect(staticParams).not.toContainEqual({ id: "guest-chefs" });
+    await expect(generateMetadata({ params: Promise.resolve({ id: "snacks-and-appetizers" }) })).resolves.toEqual({
+      title: "Snacks and Appetizers"
+    });
   });
 });

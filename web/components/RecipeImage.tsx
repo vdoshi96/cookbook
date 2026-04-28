@@ -1,4 +1,4 @@
-import { getCuratedImage, type CuratedImageKind } from "@/lib/curated-images";
+import { getCuratedImage, type CuratedImage, type CuratedImageKind } from "@/lib/curated-images";
 
 /* eslint-disable @next/next/no-img-element -- Curated source URLs are external references with attribution. */
 
@@ -7,20 +7,13 @@ interface RecipeImageProps {
   id: string;
   label: string;
   className?: string;
+  image?: CuratedImage;
   showAttributionLink?: boolean;
 }
 
-export function RecipeImage({ kind, id, label, className, showAttributionLink = true }: RecipeImageProps) {
-  const image = getCuratedImage(kind, id, label);
+export function RecipeImage({ kind, id, label, className, image: resolvedImage, showAttributionLink = true }: RecipeImageProps) {
+  const image = resolvedImage ?? getCuratedImage(kind, id, label);
   const classNames = ["recipe-image", className].filter(Boolean).join(" ");
-
-  if (!image.src) {
-    return (
-      <div className={classNames} role="img" aria-label={image.alt}>
-        <span>{label}</span>
-      </div>
-    );
-  }
 
   return (
     <figure className={classNames}>

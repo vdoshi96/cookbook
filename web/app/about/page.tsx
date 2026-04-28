@@ -8,13 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const frontMatter = getFrontMatter();
-  const sections = [
-    frontMatter.introduction,
-    frontMatter.history,
-    frontMatter.ayurveda,
-    frontMatter.regions_overview,
-    frontMatter.notes_on_recipes
-  ];
+  const sections = [frontMatter.introduction, frontMatter.history, frontMatter.ayurveda, frontMatter.notes_on_recipes];
 
   return (
     <div className="page-shell reading-page">
