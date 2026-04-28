@@ -12,6 +12,7 @@ describe("RegionPage", () => {
     );
 
     expect(screen.getByRole("heading", { level: 1, name: "Awadh" })).toBeInTheDocument();
+    expect(document.querySelector(".fullscreen-hero.listing-fullscreen-hero")).not.toBeNull();
     expect(screen.getByRole("img", { name: "Awadh cuisine represented by galwati kebab." }).tagName).toBe("IMG");
     expect(screen.getByRole("link", { name: /Subz Seekh/i })).toHaveAttribute("href", "/recipes/subz-seekh");
     expect(screen.queryByText(/^p\.\s*\d+/i)).not.toBeInTheDocument();

@@ -9,8 +9,8 @@ export function Header() {
       </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
         <Link href="/">Home</Link>
-        <Link href="/#chapters">Chapters</Link>
-        <Link href="/#regions">Regions</Link>
+        <Link href="/chapters">Chapters</Link>
+        <Link href="/regions">Regions</Link>
         <Link href="/search">Search</Link>
         <Link href="/about">About</Link>
       </nav>

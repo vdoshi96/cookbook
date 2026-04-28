@@ -190,6 +190,10 @@ export function getAllSections(): Section[] {
   return clone(sections);
 }
 
+export function getAllRecipeSections(): Section[] {
+  return clone(sections.filter((section) => section.recipe_ids.length > 0));
+}
+
 export function getSectionById(id: string): Section | null {
   const section = sectionById.get(id);
   return section ? clone(section) : null;

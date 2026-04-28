@@ -6,7 +6,7 @@ describe("recipe filters", () => {
   it("filters by region", () => {
     const recipes = applyRecipeFilters(getAllRecipes(), { region: "awadh" });
 
-    expect(recipes).toHaveLength(124);
+    expect(recipes).toHaveLength(142);
     expect(recipes.every((recipe) => recipe.origin_region_id === "awadh")).toBe(true);
     expect(recipes.map((recipe) => recipe.id)).toContain("nargisi-seekh-kebab");
   });
@@ -76,7 +76,7 @@ describe("recipe filters", () => {
 
     expect(options.regions).toContainEqual({ id: "awadh", name: "Awadh" });
     expect(options.regions).toContainEqual({ id: "tamil-nadu", name: "Tamil Nadu" });
-    expect(options.dietary).toEqual(["contains-dairy", "contains-egg", "non-veg", "vegan-possible", "vegetarian"]);
+    expect(options.dietary).toEqual(["contains-egg", "non-veg", "vegan-possible", "vegetarian"]);
     expect(options.techniques).toEqual([...options.techniques].sort());
     expect(options.techniques).toEqual(expect.arrayContaining(["deep-fry", "grill", "stir-fry", "tandoor"]));
   });

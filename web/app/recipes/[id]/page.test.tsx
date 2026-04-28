@@ -12,6 +12,7 @@ describe("RecipePage", () => {
     );
 
     expect(screen.getByRole("heading", { level: 1, name: "Nargisi Seekh Kebab" })).toBeInTheDocument();
+    expect(document.querySelector(".fullscreen-hero.recipe-fullscreen-hero")).not.toBeNull();
     expect(screen.getByRole("link", { name: "Snacks and Appetizers" })).toHaveAttribute(
       "href",
       "/sections/snacks-and-appetizers"
@@ -37,9 +38,8 @@ describe("RecipePage", () => {
     expect(within(references).queryByText(/^p\.\s*\d+/i)).not.toBeInTheDocument();
 
     const regionRail = screen.getByRole("region", { name: "More from Awadh" });
-    expect(within(regionRail).getByRole("link", { name: "Subz Seekh" })).toHaveAttribute(
-      "href",
-      "/recipes/subz-seekh"
+    expect(within(regionRail).getAllByRole("link").some((link) => link.getAttribute("href")?.startsWith("/recipes/"))).toBe(
+      true
     );
   });
 

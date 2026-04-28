@@ -1,14 +1,9 @@
 import Link from "next/link";
 import { MarkdownBlock } from "@/components/MarkdownBlock";
-import { RecipeImage } from "@/components/RecipeImage";
 import { SearchBox } from "@/components/SearchBox";
-import { resolveRegionImage, resolveSectionImage } from "@/lib/curated-images";
-import { getAllRegions, getAllSections, getFrontMatter } from "@/lib/data";
-import { regionPath, sectionPath } from "@/lib/routes";
+import { getFrontMatter } from "@/lib/data";
 
 export default function HomePage() {
-  const sections = getAllSections();
-  const regions = getAllRegions();
   const frontMatter = getFrontMatter();
 
   return (
@@ -22,34 +17,17 @@ export default function HomePage() {
         <SearchBox />
       </section>
 
-      <section className="page-section" id="chapters" aria-labelledby="chapters-heading">
-        <div className="section-heading">
+      <section className="page-section browse-entry-grid" aria-label="Browse the cookbook">
+        <Link aria-label="Browse chapters" className="browse-entry surface" href="/chapters">
           <p className="eyebrow">Chapters</p>
-          <h2 className="section-title" id="chapters-heading">
-            The Chapters
-          </h2>
-        </div>
-        <div className="chapter-grid">
-          {sections.map((section) => {
-            const image = resolveSectionImage(section);
-
-            return (
-              <Link className="chapter-tile surface" href={sectionPath(section.id)} key={section.id}>
-                <RecipeImage
-                  kind="section"
-                  id={section.id}
-                  label={section.name}
-                  image={image}
-                  className="chapter-image"
-                  showAttributionLink={false}
-                />
-                <h3>{section.name}</h3>
-                <p>{section.intro_markdown}</p>
-                <span>{section.recipe_ids.length} recipes</span>
-              </Link>
-            );
-          })}
-        </div>
+          <h2>Browse chapters</h2>
+          <p>Move through the cookbook by course and chapter, from chutneys and snacks to breads and desserts.</p>
+        </Link>
+        <Link aria-label="Browse regions" className="browse-entry surface" href="/regions">
+          <p className="eyebrow">Regions</p>
+          <h2>Browse regions</h2>
+          <p>Follow dishes across Awadh, Tamil Nadu, Punjab, Kashmir, Bengal, and the wider regional map.</p>
+        </Link>
       </section>
 
       <section className="page-section front-matter-rail surface" aria-labelledby="intro-heading">
@@ -59,38 +37,6 @@ export default function HomePage() {
         <Link className="text-link" href="/about">
           Read the front matter
         </Link>
-      </section>
-
-      <section className="page-section" id="regions" aria-labelledby="regions-heading">
-        <div className="section-heading">
-          <p className="eyebrow">Regions</p>
-          <h2 className="section-title" id="regions-heading">
-            Browse by Region
-          </h2>
-        </div>
-        <div className="region-grid">
-          {regions.map((region) => {
-            const image = resolveRegionImage(region);
-
-            return (
-              <Link className="region-tile surface" href={regionPath(region.id)} key={region.id}>
-                <RecipeImage
-                  kind="region"
-                  id={region.id}
-                  label={region.name}
-                  image={image}
-                  className="region-tile-image"
-                  showAttributionLink={false}
-                />
-                <h3>{region.name}</h3>
-                <p>{region.intro_markdown}</p>
-                <span>
-                  {region.recipe_ids.length} {region.recipe_ids.length === 1 ? "recipe" : "recipes"}
-                </span>
-              </Link>
-            );
-          })}
-        </div>
       </section>
     </div>
   );

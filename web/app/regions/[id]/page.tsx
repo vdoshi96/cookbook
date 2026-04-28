@@ -36,11 +36,23 @@ export default async function RegionPage({ params }: RegionPageProps) {
 
   return (
     <div className="page-shell listing-page">
-      <p className="eyebrow">Region</p>
-      <h1 className="section-title">{region.name}</h1>
-      <RecipeImage kind="region" id={region.id} label={region.name} image={image} className="listing-hero-image" />
-      <MarkdownBlock markdown={region.intro_markdown} />
-      <RecipeListingClient recipes={recipes} />
+      <header className="fullscreen-hero listing-fullscreen-hero">
+        <RecipeImage
+          kind="region"
+          id={region.id}
+          label={region.name}
+          image={image}
+          className="fullscreen-hero-image listing-hero-image"
+        />
+        <div className="fullscreen-hero-overlay">
+          <p className="eyebrow">Region</p>
+          <h1>{region.name}</h1>
+          <MarkdownBlock markdown={region.intro_markdown} />
+        </div>
+      </header>
+      <div className="listing-content">
+        <RecipeListingClient recipes={recipes} />
+      </div>
     </div>
   );
 }

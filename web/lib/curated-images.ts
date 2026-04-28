@@ -1,7 +1,7 @@
 import type { Recipe, Region, Section } from "./types";
 
 export type CuratedImageKind = "recipe" | "section" | "region";
-export type ImageResolutionSource = CuratedImageKind | "generic";
+export type ImageResolutionSource = CuratedImageKind | "data" | "generic";
 
 export interface CuratedImage {
   id: string;
@@ -19,7 +19,7 @@ type ImageManifest = Record<string, ImageManifestEntry>;
 type RecipeImageInput = Pick<
   Recipe,
   "id" | "name" | "section_id" | "section_name" | "origin_region_id" | "origin_region_name"
->;
+> & { image?: string | null };
 
 const SOURCE_LABEL = "Wikimedia Commons";
 
@@ -459,6 +459,24 @@ function fallbackAlt(label: string, entry: ImageManifestEntry) {
   return `${label}, represented by ${entry.alt.charAt(0).toLowerCase()}${entry.alt.slice(1)}`;
 }
 
+function internetImageFromData(kind: CuratedImageKind, id: string, label: string, src: string | null | undefined) {
+  if (!src || !/^https?:\/\//.test(src)) {
+    return null;
+  }
+
+  return makeImage(
+    kind,
+    id,
+    {
+      src,
+      alt: label,
+      sourceHref: src,
+      sourceLabel: "Image source"
+    },
+    "data"
+  );
+}
+
 export function getCuratedImage(kind: CuratedImageKind, id: string, label: string): CuratedImage {
   const entry = manifestForKind(kind)[id];
 
@@ -469,7 +487,13 @@ export function getCuratedImage(kind: CuratedImageKind, id: string, label: strin
   return makeImage(kind, id, { ...genericImage, alt: fallbackAlt(label, genericImage) }, "generic");
 }
 
-export function resolveSectionImage(section: Pick<Section, "id" | "name">): CuratedImage {
+export function resolveSectionImage(section: Pick<Section, "id" | "name" | "hero_image">): CuratedImage {
+  const dataImage = internetImageFromData("section", section.id, section.name, section.hero_image);
+
+  if (dataImage) {
+    return dataImage;
+  }
+
   return getCuratedImage("section", section.id, section.name);
 }
 
@@ -478,6 +502,12 @@ export function resolveRegionImage(region: Pick<Region, "id" | "name">): Curated
 }
 
 export function resolveRecipeImage(recipe: RecipeImageInput): CuratedImage {
+  const dataImage = internetImageFromData("recipe", recipe.id, recipe.name, recipe.image);
+
+  if (dataImage) {
+    return dataImage;
+  }
+
   const recipeEntry = recipeImages[recipe.id];
 
   if (recipeEntry) {

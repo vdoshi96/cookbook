@@ -19,7 +19,7 @@ describe("cookbook data helpers", () => {
   it("loads the real main-branch recipe corpus", () => {
     const recipes = getAllRecipes();
 
-    expect(recipes).toHaveLength(506);
+    expect(recipes).toHaveLength(619);
     expect(recipes.map((recipe) => recipe.id)).toContain("subz-seekh");
     expect(recipes.map((recipe) => recipe.id)).toContain("nargisi-seekh-kebab");
   });
@@ -41,25 +41,25 @@ describe("cookbook data helpers", () => {
   it("returns region recipes in region order", () => {
     const awadhRecipes = getRecipesByRegion("awadh");
 
-    expect(awadhRecipes).toHaveLength(124);
+    expect(awadhRecipes).toHaveLength(142);
     expect(awadhRecipes.slice(0, 3).map((recipe) => recipe.id)).toEqual([
-      "subz-seekh",
-      "subz-ke-kakori",
-      "lauki-ki-seekh"
+      "garam-masala-ii",
+      "dum-ka-masala",
+      "dahi-ki-chutney"
     ]);
   });
 
   it("resolves start-here recipe records with rationale", () => {
     expect(getStartHereRecipes("snacks-and-appetizers").slice(0, 2)).toEqual([
       {
-        id: "paneer-tikka-kali-mirch",
-        rationale: "Foundational tandoor technique with simple paneer, teaches marinating and grilling essentials.",
-        recipeName: "Paneer Tikka Kali Mirch"
+        id: "samosa",
+        rationale: "Iconic crispy pastry-filled snack; foundational technique for fried appetizers.",
+        recipeName: "Samosa"
       },
       {
-        id: "methi-pakora",
-        rationale: "Core deep-fry fritter method; minimal ingredients, teaches batter and crispy texture fundamentals.",
-        recipeName: "Methi Pakora"
+        id: "paneer-tikka-kali-mirch",
+        rationale: "Approachable grilled skewer; teaches tandoor/grill method with common paneer ingredient.",
+        recipeName: "Paneer Tikka Kali Mirch"
       }
     ]);
   });

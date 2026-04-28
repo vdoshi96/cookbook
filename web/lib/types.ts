@@ -9,7 +9,7 @@ export interface IngredientLine {
 export interface CrossReference {
   name: string;
   page: number;
-  id: string;
+  id: string | null;
 }
 
 export interface Recipe {
