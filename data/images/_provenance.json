@@ -1,0 +1,5078 @@
+{
+  "aab-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aab-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aam-ka-achar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aam-ka-achar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aam-ka-achar-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aam-ka-achar-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "acha-kozhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "acha-kozhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "achar-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "achar-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "achari-gobi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "achari-gobi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "achari-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "achari-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "achari-paneer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "achari-paneer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "achras": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "achras",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "adraki-chaamp": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "adraki-chaamp",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "akha-peenda": {
+    "fetched_at": "2026-04-28T04:04:52+00:00",
+    "height": 1800,
+    "id": "akha-peenda",
+    "query": "Akha Peenda Rajasthan indian recipe",
+    "result_source": "Dassana's Veg Recipes",
+    "result_title": "Poha Recipe (Savory Flattened Rice) \u2013 Dassana's Veg Recipes",
+    "source": "serpapi",
+    "url": "https://www.vegrecipesofindia.com/wp-content/uploads/2022/09/poha-recipe-1.jpg",
+    "width": 1200
+  },
+  "akki-roti": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "akki-roti",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "ale-bele": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ale-bele",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-chaat": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-chaat",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-chop": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-chop",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-chutneywale": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-chutneywale",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-dum": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-dum",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-gobi-methi-ka-tuk": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-gobi-methi-ka-tuk",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-ka-qorma": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-ka-qorma",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-ka-salan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-ka-salan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-ke-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-ke-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-kele-ki-bhujiya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-kele-ki-bhujiya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-ki-kheer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-ki-kheer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-matar-ka-achar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-matar-ka-achar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-matar-rasedar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-matar-rasedar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-matar-rasedar-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-matar-rasedar-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-tamatar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-tamatar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-tikki": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-tikki",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloo-vadiyan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloo-vadiyan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloogadda-vepudu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloogadda-vepudu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "aloogadda-vepudu-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "aloogadda-vepudu-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "alubhokhara-qorma": {
+    "fetched_at": "2026-04-28T04:04:52+00:00",
+    "height": 630,
+    "id": "alubhokhara-qorma",
+    "query": "Alubhokhara Qorma Jammu and Kashmir indian recipe",
+    "result_source": "Scroll.in",
+    "result_title": "Alubukhar Korma: A traditional Kashmiri recipe to cook tangy lamb with  dried plums",
+    "source": "serpapi",
+    "url": "https://sc0.blr1.cdn.digitaloceanspaces.com/article/131718-xyovbeffwo-1574770821.jpg",
+    "width": 1200
+  },
+  "alubokhara-kofta": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "alubokhara-kofta",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "ambat-dahyatil-machhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ambat-dahyatil-machhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "amras-ki-boti": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "amras-ki-boti",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "amritsari-kulcha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "amritsari-kulcha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "amritsari-machhali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "amritsari-machhali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "amritsari-machhali-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "amritsari-machhali-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "ande-ka-achar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ande-ka-achar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "andhra-pradesh": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "andhra-pradesh",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "anglo-indian": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "anglo-indian",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "ankur-ka-raita": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ankur-ka-raita",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "annanas-ka-sherbet": {
+    "fetched_at": "2026-04-28T04:04:59+00:00",
+    "height": 720,
+    "id": "annanas-ka-sherbet",
+    "query": "Annanas ka Sherbet indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Pineapple milk sharbat / pineapple milk shake / milk sharbat recipe /  muharram ka sharbat recipe",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/G-pQUuQkkBs/maxresdefault.jpg",
+    "width": 1280
+  },
+  "appam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "appam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "arabi-ka-raita": {
+    "fetched_at": "2026-04-28T04:04:42+00:00",
+    "height": 1728,
+    "id": "arabi-ka-raita",
+    "query": "Arabi ka Raita Awadh indian recipe",
+    "result_source": "Elavegan",
+    "result_title": "Indian Yogurt Dip (Raita)",
+    "source": "serpapi",
+    "url": "https://elavegan.com/wp-content/uploads/2023/02/cucumber-raita-in-bowl-with-wooden-spoon.jpg",
+    "width": 1200
+  },
+  "arabi-ke-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "arabi-ke-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "arbai-ke-patte": {
+    "fetched_at": "2026-04-28T04:04:47+00:00",
+    "height": 900,
+    "id": "arbai-ke-patte",
+    "query": "Arbai ke Patte Awadh indian recipe",
+    "result_source": "News18",
+    "result_title": "Benami Kheer Recipe: Try This Mouth-watering Awadhi Dessert At Home |  Lifestyle News - News18",
+    "source": "serpapi",
+    "url": "https://images.news18.com/ibnlive/uploads/2023/10/untitled-design-2023-10-28t182117.870-2023-10-1352e0253a966843f469e76b4c5c1e78.jpg",
+    "width": 1200
+  },
+  "arbai-ke-patte-2": {
+    "fetched_at": "2026-04-28T04:04:47+00:00",
+    "height": 900,
+    "id": "arbai-ke-patte-2",
+    "query": "Arbai ke Patte Awadh indian recipe",
+    "result_source": "News18",
+    "result_title": "Benami Kheer Recipe: Try This Mouth-watering Awadhi Dessert At Home |  Lifestyle News - News18",
+    "source": "serpapi",
+    "url": "https://images.news18.com/ibnlive/uploads/2023/10/untitled-design-2023-10-28t182117.870-2023-10-1352e0253a966843f469e76b4c5c1e78.jpg",
+    "width": 1200
+  },
+  "arhar-ki-dal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "arhar-ki-dal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "arisi-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "arisi-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "artikai-podi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "artikai-podi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "avasara-adai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "avasara-adai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "avial": {
+    "fetched_at": "2026-04-28T04:18:26+00:00",
+    "height": 1200,
+    "id": "avial",
+    "query": "Avial recipe",
+    "result_source": "Raks Kitchen",
+    "result_title": "Avial recipe | Aviyal Recipe | 2 Ways",
+    "source": "serpapi-fallback",
+    "url": "https://rakskitchen.net/wp-content/uploads/2010/04/avial-recipe.jpg",
+    "width": 1199
+  },
+  "awadh": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "awadh",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "awadhi-gosht-biryani": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "awadhi-gosht-biryani",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "awushi-kulho": {
+    "fetched_at": "2026-04-28T04:04:54+00:00",
+    "height": 1200,
+    "id": "awushi-kulho",
+    "query": "Awushi Kulho North East India indian recipe",
+    "result_source": "Cooking Carnival",
+    "result_title": "Amritsari Kulcha",
+    "source": "serpapi",
+    "url": "https://www.cookingcarnival.com/wp-content/uploads/2016/02/Amritsari-Kulcha-2.jpg",
+    "width": 800
+  },
+  "baadam-ka-doodh": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "baadam-ka-doodh",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "baadam-ki-jaali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "baadam-ki-jaali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "baadam-pasanda": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "baadam-pasanda",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "baadami-chawal-bariyan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "baadami-chawal-bariyan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "baant": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "baant",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "badaam-ki-kheer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "badaam-ki-kheer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "baghare-baigan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "baghare-baigan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "baghare-gajar": {
+    "fetched_at": "2026-04-28T04:18:28+00:00",
+    "height": 1807,
+    "id": "baghare-gajar",
+    "query": "Baghare Gajar recipe",
+    "result_source": "Cook's Hideout",
+    "result_title": "Yemen Carrot Rice Recipe | Cook's Hideout",
+    "source": "serpapi-fallback",
+    "url": "https://www.cookshideout.com/wp-content/uploads/2014/09/Yemeni-Carrot-Rice2S.jpg",
+    "width": 1200
+  },
+  "baida-paratha": {
+    "fetched_at": "2026-04-28T04:04:58+00:00",
+    "height": 1600,
+    "id": "baida-paratha",
+    "query": "Baida Paratha Hyderabad indian recipe",
+    "result_source": "Palate's Desire",
+    "result_title": "Chicken Baida Roti Recipe | Mumbai Street Food - @Palate's Desire",
+    "source": "serpapi",
+    "url": "https://www.palatesdesire.com/wp-content/uploads/2022/09/Chicken-baida-roti-recipe@palates-desire-5.jpg",
+    "width": 1200
+  },
+  "baigan-ka-bharta": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "baigan-ka-bharta",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bajare-ki-roti": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bajare-ki-roti",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bajire-ki-kheer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bajire-ki-kheer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "balchao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "balchao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bataer-masaledar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bataer-masaledar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "batata-vada": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "batata-vada",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "beej": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "beej",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bengal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bengal",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bervin-poori": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bervin-poori",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bervin-poori-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bervin-poori-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "besani-poori": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "besani-poori",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhaang-ki-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhaang-ki-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhajela-saranga": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhajela-saranga",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhaji-ani-kolambicha-stew": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhaji-ani-kolambicha-stew",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhare-baghare-tamate": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhare-baghare-tamate",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-baigan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-baigan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-bhindi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-bhindi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-ghiy": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-ghiy",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-guchhi": {
+    "fetched_at": "2026-04-28T04:04:47+00:00",
+    "height": 1800,
+    "id": "bharwan-guchhi",
+    "query": "Bharwan Guchhi Punjab indian recipe",
+    "result_source": "Dassana's Veg Recipes",
+    "result_title": "Bharwa Bhindi Recipe - Dassana's Veg Recipes",
+    "source": "serpapi",
+    "url": "https://www.vegrecipesofindia.com/wp-content/uploads/2024/12/bharwa-bhindi-recipe.jpg",
+    "width": 1200
+  },
+  "bharwan-karele": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-karele",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-khumb": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-khumb",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-parwal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-parwal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-parwal-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-parwal-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-pasande": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-pasande",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bharwan-phoolgobi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bharwan-phoolgobi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhatura": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhatura",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bheja": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bheja",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhindi-ka-patala-salan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhindi-ka-patala-salan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhuja-haaz": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhuja-haaz",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhune-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhune-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhunee-machhali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhunee-machhali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhunee-machhali-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhunee-machhali-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhuni-mungphali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bhuni-mungphali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bhutta-seekh-kebab": {
+    "fetched_at": "2026-04-28T04:04:42+00:00",
+    "height": 1706,
+    "id": "bhutta-seekh-kebab",
+    "query": "Bhutta Seekh Kebab Punjab indian recipe",
+    "result_source": "Yummy For Adam",
+    "result_title": "Low Carb Indian Seekh Kebab with Simple Yogurt Raita",
+    "source": "serpapi",
+    "url": "https://yummyforadam.ca/wp-content/uploads/2021/01/DSC_6292-scaled.jpg",
+    "width": 2560
+  },
+  "biryani-i": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "biryani-i",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "biryani-ii": {
+    "fetched_at": "2026-04-28T04:04:58+00:00",
+    "height": 900,
+    "id": "biryani-ii",
+    "query": "Biryani (II) Awadh indian recipe",
+    "result_source": "The Yummy Delights",
+    "result_title": "Awadhi Chicken Biryani recipe (Lucknowi Chicken Biryani)",
+    "source": "serpapi",
+    "url": "https://theyummydelights.com/wp-content/uploads/2025/07/awadhi-chicken-biryani-1.jpg",
+    "width": 1200
+  },
+  "bisi-bele-huli-anna": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bisi-bele-huli-anna",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "bohri-chicken": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "bohri-chicken",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "boksa-pok": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "boksa-pok",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "boorelu-appalu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "boorelu-appalu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "borar-jhaal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "borar-jhaal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "breads": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "breads",
+    "kind_dir": "sections",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "carrot-bonda": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "carrot-bonda",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chaaman": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chaaman",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chaamp-baadami": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chaamp-baadami",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chaamp-chops": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chaamp-chops",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chaar-magaz-ka-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chaar-magaz-ka-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chaar-magaz-ka-murg-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chaar-magaz-ka-murg-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chandi-qorma": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chandi-qorma",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chane-ki-dal-ki-tehari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chane-ki-dal-ki-tehari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chapa-pulussu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chapa-pulussu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "charchari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "charchari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chatpati-gobi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chatpati-gobi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "cheela": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "cheela",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "cheera-thoran": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "cheera-thoran",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "cheese-ke-bhajiya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "cheese-ke-bhajiya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chettinad-sambhar-podi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chettinad-sambhar-podi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chharra-aloo": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chharra-aloo",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chhena": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chhena",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chicken-chettinad": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chicken-chettinad",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chicken-chettinad-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chicken-chettinad-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chicken-ishtoo": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chicken-ishtoo",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chicken-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chicken-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chicken-pakora": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chicken-pakora",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chicken-xacuti": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chicken-xacuti",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chikkudu-vepudu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chikkudu-vepudu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chimbori-shengdanya-kalwan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chimbori-shengdanya-kalwan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chincheche-talwan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chincheche-talwan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chintakaya-pulihora": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chintakaya-pulihora",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chintapandu-koythamira-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chintapandu-koythamira-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chintapandu-thokku": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chintapandu-thokku",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chooza-makhani": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chooza-makhani",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chukandar-ki-subzi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chukandar-ki-subzi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "chunke-matar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "chunke-matar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "coastal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "coastal",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahi-ka-keema": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahi-ka-keema",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahi-ke-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahi-ke-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahi-ki-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahi-ki-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahi-ki-gujiya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahi-ki-gujiya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahi-ki-karhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahi-ki-karhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahi-ki-karhi-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahi-ki-karhi-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahi-ki-machhali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahi-ki-machhali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahi-ma-bheeda": {
+    "fetched_at": "2026-04-28T04:04:45+00:00",
+    "height": 667,
+    "id": "dahi-ma-bheeda",
+    "query": "Dahi ma Bheeda Parsi indian recipe",
+    "result_source": "Archana's Kitchen",
+    "result_title": "Dahi Ma Bheeda Recipe (Dahi Bhindi - Parsi Style Okras Cooked In Yogurt  Recipe)",
+    "source": "serpapi",
+    "url": "https://images.archanaskitchen.com/images/recipes/indian/main-course/north-indian-vegetarian-recipes/sabzi-recipes/large_Chana_Dal_Methi_Ki_Sabzi_3e24c9a89e.jpg",
+    "width": 1000
+  },
+  "dahi-papri-ki-chaat": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahi-papri-ki-chaat",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahiwala-meat": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahiwala-meat",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dahiwale-aloo": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dahiwale-aloo",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dakhani-paneer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dakhani-paneer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dakhani-paneer-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dakhani-paneer-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dakshini-hari-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dakshini-hari-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dal-ka-kima": {
+    "fetched_at": "2026-04-28T04:04:56+00:00",
+    "height": 675,
+    "id": "dal-ka-kima",
+    "query": "Dal ka Kima Awadh indian recipe",
+    "result_source": "My Ginger Garlic Kitchen",
+    "result_title": "Maa ki Dal | Kali Dal | Black Gram Dal",
+    "source": "serpapi",
+    "url": "https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/16x9/16x9-maa-ki-dal.jpg",
+    "width": 1200
+  },
+  "dal-ki-kachori": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dal-ki-kachori",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dal-ki-kaleji": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dal-ki-kaleji",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dal-ki-kaleji-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dal-ki-kaleji-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dal-nizami": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dal-nizami",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dalcha-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dalcha-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "deewani-handi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "deewani-handi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "delhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "delhi",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "delhi-agra": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "delhi-agra",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "delhi-bhopal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "delhi-bhopal",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "delhi-punjab-awadh": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "delhi-punjab-awadh",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "desserts": {
+    "fetched_at": "2026-04-28T04:18:30+00:00",
+    "height": 1200,
+    "id": "desserts",
+    "query": "indian Desserts",
+    "result_source": "Cook with Kushi",
+    "result_title": "Easy Indian Desserts | Best Indian Sweets",
+    "source": "serpapi-fallback",
+    "url": "https://www.cookwithkushi.com/wp-content/uploads/2018/08/indian_desserts_sweets_recipes.jpg",
+    "width": 1200
+  },
+  "dhan-dal-patio": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 720,
+    "id": "dhan-dal-patio",
+    "query": "Dhan-Dal Patio Parsi indian recipe",
+    "result_source": "Celebration In My Kitchen",
+    "result_title": "Dhan Dar Patio | Parsi Dhan Dar Patio - Celebration In My Kitchen | Goan  Food Recipes, Goan Recipes",
+    "source": "serpapi",
+    "url": "http://www.celebrationinmykitchen.com/uploads/4/8/6/2/48622077/patio1_orig.jpg",
+    "width": 960
+  },
+  "dhaniya-aloo-mangodi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dhaniya-aloo-mangodi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dhansak": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dhansak",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dhingri-dulma": {
+    "fetched_at": "2026-04-28T04:04:47+00:00",
+    "height": 2586,
+    "id": "dhingri-dulma",
+    "query": "Dhingri Dulma Awadh indian recipe",
+    "result_source": "My Gourmet Saga - WordPress.com",
+    "result_title": "D3-Delectable Dingri Dolma- Nawabi Cuisine from Awadh | My Gourmet Saga",
+    "source": "serpapi",
+    "url": "https://mygourmetsaga.wordpress.com/wp-content/uploads/2015/02/dsc07115_fotor.jpg",
+    "width": 4383
+  },
+  "dhokla": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dhokla",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dhokla-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dhokla-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dhoop-chhaun-keema": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dhoop-chhaun-keema",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dhyatle-sukha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dhyatle-sukha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dohneiiong": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dohneiiong",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "doi-jhingri": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "doi-jhingri",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dosa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dosa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "drinks": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "drinks",
+    "kind_dir": "sections",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-aloo": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-aloo",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-ka-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-ka-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-ka-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-ka-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-kathal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-kathal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-ke-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-ke-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-ki-arabi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-ki-arabi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-ki-arabi-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-ki-arabi-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-ki-bharwan-mirch": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-ki-bharwan-mirch",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-ki-bhindi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-ki-bhindi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-ki-machhali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-ki-machhali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "dum-nadru": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "dum-nadru",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "elayachi-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "elayachi-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "erachi-verthathu-rachathu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "erachi-verthathu-rachathu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "erha-meen-mulkitathu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "erha-meen-mulkitathu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "filter-kaapi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "filter-kaapi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "filter-kaapi-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "filter-kaapi-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "filter-kaapi-3": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "filter-kaapi-3",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "fish-qorma-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "fish-qorma-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "flower-batata-bhaji": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "flower-batata-bhaji",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gaderi-ki-dahidali-subzi": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 720,
+    "id": "gaderi-ki-dahidali-subzi",
+    "query": "Gaderi ki Dahidali Subzi Uttarakhand indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Gaderi ki sabji (\u0917\u0921\u0947\u0930\u0940 \u0915\u0940 \u0938\u092c\u094d\u091c\u0940) #pahadistyle | cook#withme",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/GWkiDR8PTdg/maxresdefault.jpg",
+    "width": 1280
+  },
+  "gajar-ka-halwa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gajar-ka-halwa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "galouti": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "galouti",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "garam-masala-i": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "garam-masala-i",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "garam-masala-ii": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "garam-masala-ii",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gatte-ka-pulao": {
+    "fetched_at": "2026-04-28T04:04:58+00:00",
+    "height": 1800,
+    "id": "gatte-ka-pulao",
+    "query": "Gatte ka Pulao Rajasthan indian recipe",
+    "result_source": "My Ginger Garlic Kitchen",
+    "result_title": "Royal Rajasthani Gatta Pulav Recipe - Gatta Pulao",
+    "source": "serpapi",
+    "url": "https://www.mygingergarlickitchen.com/wp-content/uploads/2015/04/recipe-rajasthani-gatta-pulav-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg",
+    "width": 1200
+  },
+  "ghashhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ghashhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gil-e-behisht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gil-e-behisht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "goa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "goa",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "goan-fish-curry-i": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "goan-fish-curry-i",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "goan-fish-curry-i-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "goan-fish-curry-i-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "goji": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 1500,
+    "id": "goji",
+    "query": "Goji Jammu and Kashmir indian recipe",
+    "result_source": "Global Kitchen Travels",
+    "result_title": "Indian Cauliflower Side Dish",
+    "source": "serpapi",
+    "url": "https://globalkitchentravels.com/wp-content/uploads/2014/11/Kashmiri-Cauliflower-LR-HERO.jpg",
+    "width": 1500
+  },
+  "gol-maas-kaachar": {
+    "fetched_at": "2026-04-28T04:04:50+00:00",
+    "height": 1200,
+    "id": "gol-maas-kaachar",
+    "query": "Gol Maas Kaachar Rajasthan indian recipe",
+    "result_source": "Sinfully Spicy",
+    "result_title": "Gajar Gobhi Shalgam Ka Achar",
+    "source": "serpapi",
+    "url": "https://sinfullyspicy.com/wp-content/uploads/2012/12/1200-by-1200-images.jpg",
+    "width": 1200
+  },
+  "gosht-ka-achar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gosht-ka-achar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gosht-ka-achar-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gosht-ka-achar-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gosht-ki-khurchan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gosht-ki-khurchan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gota-siddho": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gota-siddho",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gujarat": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gujarat",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gulab-jamun": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gulab-jamun",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gushtaba": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gushtaba",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "gutti-vengkayya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "gutti-vengkayya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "halim": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "halim",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "handiwala-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "handiwala-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "hara-mahi-tikka": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "hara-mahi-tikka",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "hare-jhinga": {
+    "fetched_at": "2026-04-28T04:04:46+00:00",
+    "height": 5220,
+    "id": "hare-jhinga",
+    "query": "Hare Jhinga Punjab indian recipe",
+    "result_source": "hungryoungwoman",
+    "result_title": "How to Make Jhinga Masala: Recipe - hungryoungwoman",
+    "source": "serpapi",
+    "url": "https://i0.wp.com/hungryoungwoman.com/wp-content/uploads/2018/09/IMG_4912-e1537738521539.jpg?ssl=1",
+    "width": 4005
+  },
+  "heeng-jeere-ke-aloo": {
+    "fetched_at": "2026-04-28T04:04:46+00:00",
+    "height": 1800,
+    "id": "heeng-jeere-ke-aloo",
+    "query": "Heeng Jeere ke Aloo Rajasthan indian recipe",
+    "result_source": "Swasthi's Recipes",
+    "result_title": "Jeera Aloo Recipe (Cumin Potatoes) - Swasthi's Recipes",
+    "source": "serpapi",
+    "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/jeera-aloo.jpg",
+    "width": 1200
+  },
+  "hingwali-chukandar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "hingwali-chukandar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "hyderabad": {
+    "fetched_at": "2026-04-28T04:01:48+00:00",
+    "height": 4176,
+    "id": "hyderabad",
+    "query": "Hyderabad India culture",
+    "result_source": "Wikipedia",
+    "result_title": "Culture of Hyderabad - Wikipedia",
+    "source": "serpapi",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Charminar-Pride_of_Hyderabad.jpg",
+    "width": 3344
+  },
+  "hyderabad-andhra-pradesh": {
+    "fetched_at": "2026-04-28T04:01:48+00:00",
+    "height": 4176,
+    "id": "hyderabad-andhra-pradesh",
+    "query": "Hyderabad/Andhra Pradesh India culture",
+    "result_source": "Wikipedia",
+    "result_title": "Culture of Hyderabad - Wikipedia",
+    "source": "serpapi",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Charminar-Pride_of_Hyderabad.jpg",
+    "width": 3344
+  },
+  "hyderabadi-dum-ki-biryani": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "hyderabadi-dum-ki-biryani",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "idli": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "idli",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "ilish-maachher-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ilish-maachher-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "illich-maach-annanas": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "illich-maach-annanas",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "illigada-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "illigada-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "injipuli": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "injipuli",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "ishtoo-ii": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ishtoo-ii",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "ishtoo-ii-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ishtoo-ii-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "jaipuri-subz-seekh": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "jaipuri-subz-seekh",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "jammu-and-kashmir": {
+    "fetched_at": "2026-04-28T04:05:05+00:00",
+    "height": 800,
+    "id": "jammu-and-kashmir",
+    "query": "Dal Lake Kashmir",
+    "result_source": "Beautiful World Travel Guide",
+    "result_title": "Dal Lake Facts & Information - Beautiful World Travel Guide",
+    "source": "serpapi",
+    "url": "https://www.beautifulworld.com/wp-content/uploads/2017/07/lake-dal-shikava-boat.jpg",
+    "width": 1227
+  },
+  "jangir": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "jangir",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "jardalu-boti": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "jardalu-boti",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "jhinga-dopyaza": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "jhinga-dopyaza",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "jhingri-machher-malikari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "jhingri-machher-malikari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kabuli-chaneda-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kabuli-chaneda-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kacchi-biryani": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kacchi-biryani",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kachche-kele-ke-kofte": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kachche-kele-ke-kofte",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kachche-kele-ke-kofte-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kachche-kele-ke-kofte-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kachhe-keeme-ki-tikya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kachhe-keeme-ki-tikya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kachhe-keeme-ki-tikya-2": {
+    "fetched_at": "2026-04-28T04:04:43+00:00",
+    "height": 720,
+    "id": "kachhe-keeme-ki-tikya-2",
+    "query": "Kachhe Keeme ki Tikya Hyderabad indian recipe",
+    "result_source": "Asaan Recipes -",
+    "result_title": "Kachche Keema Ke Kabab (Tikki)",
+    "source": "serpapi",
+    "url": "https://asaanrecipes.com/wp-content/uploads/2020/09/kachche-keema-ke-kabab-tikki-ffVSFb2bnoA-1.jpg",
+    "width": 1280
+  },
+  "kachnar-ki-kali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kachnar-ki-kali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kadalaparippu-payasam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kadalaparippu-payasam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kadalaparippu-payasam-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kadalaparippu-payasam-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kairas": {
+    "fetched_at": "2026-04-28T04:04:48+00:00",
+    "height": 1200,
+    "id": "kairas",
+    "query": "Kairas Coastal indian recipe",
+    "result_source": "\u0930\u0941\u091a\u0915\u0930 \u091c\u0947\u0935\u0923",
+    "result_title": "\u0930\u0941\u091a\u0915\u0930 \u091c\u0947\u0935\u0923: Kairas / Methamba",
+    "source": "serpapi",
+    "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1fZrVR0gndwci7pk42DevqemN4dGoDMuJDGLbZ5kiFyrfZBvjpe7sm9c70OvGwZ7ImeSp3wSk_pfzVC4iiW9S3hIdUmJY0VKE3TFNNQkP5zkTisWfHqVxaLxndPPN7mh-P9ICQG1goQ/s1600/kayras.jpg",
+    "width": 1600
+  },
+  "kairas-bell-pepper-peanut-curry": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kairas-bell-pepper-peanut-curry",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kairi-ka-do-pyaza": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kairi-ka-do-pyaza",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kairi-ka-sherbet": {
+    "fetched_at": "2026-04-28T04:04:59+00:00",
+    "height": 720,
+    "id": "kairi-ka-sherbet",
+    "query": "Kairi ka Sherbet Telangana indian recipe",
+    "result_source": "YouTube",
+    "result_title": "kachi kaira ka masala sharbat|tadgola sharbat |refreshing summer  sharbat|instant summer drink recipe",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/rlR51pQtMKE/maxresdefault.jpg",
+    "width": 1280
+  },
+  "kairi-ki-karhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kairi-ki-karhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kairi-ki-mhithi-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kairi-ki-mhithi-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kairi-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kairi-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kakori-kebab": {
+    "fetched_at": "2026-04-28T04:04:43+00:00",
+    "height": 720,
+    "id": "kakori-kebab",
+    "query": "Kakori Kebab Awadh indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Kakori Kebab Recipe By SooperChef | Eid Special Recipes",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/Lv3yFkBunI4/maxresdefault.jpg",
+    "width": 1280
+  },
+  "kala-saranga": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kala-saranga",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kaleji-ka-salan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kaleji-ka-salan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kaleji-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kaleji-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kaleji-pulao": {
+    "fetched_at": "2026-04-28T04:04:58+00:00",
+    "height": 720,
+    "id": "kaleji-pulao",
+    "query": "Kaleji Pulao Hyderabad indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Kaleji Pulao Biryani Recipe | How To Make Mutton Liver Rice",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/awtGt4UMtn4/maxresdefault.jpg",
+    "width": 1280
+  },
+  "kali-mirch-ka-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kali-mirch-ka-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kaliya": {
+    "fetched_at": "2026-04-28T04:04:52+00:00",
+    "height": 1333,
+    "id": "kaliya",
+    "query": "Kaliya Jammu and Kashmir indian recipe",
+    "result_source": "Saveur",
+    "result_title": "Chaman Kaliya (Kashmiri Paneer Curry with Cardamom and Turmeric)",
+    "source": "serpapi",
+    "url": "https://www.saveur.com/uploads/2022/10/04/06-DAK-Romy-Chaman-Kaliya-scaled.jpg?auto=webp&width=2000&height=1333",
+    "width": 2000
+  },
+  "kamala-phoolkopi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kamala-phoolkopi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kamala-phoolkopi-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kamala-phoolkopi-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kamrakh-ka-achar": {
+    "fetched_at": "2026-04-28T04:18:26+00:00",
+    "height": 1798,
+    "id": "kamrakh-ka-achar",
+    "query": "Kamrakh ka Achar recipe",
+    "result_source": "Whisk Affair",
+    "result_title": "Starfruit Pickle Recipe (Kamrak Ka Achar) - Whisk Affair",
+    "source": "serpapi-fallback",
+    "url": "https://www.whiskaffair.com/wp-content/uploads/2021/05/Starfruit-Pickle-2-1.jpg",
+    "width": 1200
+  },
+  "kan-guchhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kan-guchhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kandahari-murg-tikka": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kandahari-murg-tikka",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kande-batatyatli-machhi": {
+    "fetched_at": "2026-04-28T04:04:50+00:00",
+    "height": 720,
+    "id": "kande-batatyatli-machhi",
+    "query": "Kande Batatyatli Machhi Coastal indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Machi Bhaat (Fish with Rice) Recipe by Food Fusion",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/iGGoDTeK234/maxresdefault.jpg",
+    "width": 1280
+  },
+  "kande-ki-subzi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kande-ki-subzi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "karam-kalle-ka-raita": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "karam-kalle-ka-raita",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "karamkalla": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "karamkalla",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "karepaku-karam": {
+    "fetched_at": "2026-04-28T04:04:41+00:00",
+    "height": 720,
+    "id": "karepaku-karam",
+    "query": "Karepaku Karam Tamil Nadu indian recipe",
+    "result_source": "YouTube",
+    "result_title": "SPICY CURRY LEAVES POWDER ANDHRA STYLE | KARIVEPAKU KARAM PODI | SIDE DISH  FOR RICE & IDLI DOSA PODI",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/2CFE-b6GaFA/maxresdefault.jpg",
+    "width": 1280
+  },
+  "karhai-machhali": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 1200,
+    "id": "karhai-machhali",
+    "query": "Karhai Machhali Punjab indian recipe",
+    "result_source": "Untold Recipes By Nosheen",
+    "result_title": "Fish Curry Recipe (Pakistani)",
+    "source": "serpapi",
+    "url": "https://untoldrecipesbynosheen.com/wp-content/uploads/2023/07/fish-curry-featured.jpg",
+    "width": 1200
+  },
+  "karhi-pakori": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "karhi-pakori",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "karhi-pakori-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "karhi-pakori-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "karimeen-polichattu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "karimeen-polichattu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "karipatta-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "karipatta-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "karnataka": {
+    "fetched_at": "2026-04-28T04:05:05+00:00",
+    "height": 1070,
+    "id": "karnataka",
+    "query": "Mysore Palace Karnataka",
+    "result_source": "Britannica",
+    "result_title": "Mysore Palace | Description, History, & Facts | Britannica",
+    "source": "serpapi",
+    "url": "https://cdn.britannica.com/27/242227-050-48358A10/Mysore-Palace-Mysuru-Karnataka-India.jpg",
+    "width": 1600
+  },
+  "karnataka-tamil-nadu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "karnataka-tamil-nadu",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kashmiri-kofte": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kashmiri-kofte",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kashmiri-kofte-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kashmiri-kofte-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kashmiri-murg-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kashmiri-murg-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kashmiri-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kashmiri-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kashmiri-seekh-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kashmiri-seekh-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kath-kaha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kath-kaha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kathhal-dopyaza": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kathhal-dopyaza",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kathi-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kathi-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kathirakkai-poriyal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kathirakkai-poriyal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kathirakkai-poriyal-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kathirakkai-poriyal-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kathirikkai-rasam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kathirikkai-rasam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kathirikkai-rasam-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kathirikkai-rasam-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "keema-khichari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "keema-khichari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "keema-matar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "keema-matar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "keeme-ke-samose": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "keeme-ke-samose",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kele-ka-doodh": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kele-ka-doodh",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "keoti-dal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "keoti-dal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "keoti-dal-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "keoti-dal-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kerala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kerala",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kerala-paratha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kerala-paratha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kesar-elaychi-sherbet": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kesar-elaychi-sherbet",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khad-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khad-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khandavi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khandavi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kharbuje-ka-panna": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kharbuje-ka-panna",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kharbuje-ka-panna-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kharbuje-ka-panna-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kharbuje-ka-panna-3": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kharbuje-ka-panna-3",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khare-masale-ka-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khare-masale-ka-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khare-masale-ka-gosht-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khare-masale-ka-gosht-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khare-masale-ka-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khare-masale-ka-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khasta-roti": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khasta-roti",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khatta-meetha-do-pyaza": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khatta-meetha-do-pyaza",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khatta-meetha-kaddu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khatta-meetha-kaddu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khatta-murg": {
+    "fetched_at": "2026-04-28T04:04:53+00:00",
+    "height": 720,
+    "id": "khatta-murg",
+    "query": "Khatta Murg Hyderabad indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Murg Khatta Pyaz | How To Make Murg Khatta Pyaz | Chicken Gravy Recipe by  Smita Deo",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/H14sdZMX-Zo/maxresdefault.jpg",
+    "width": 1280
+  },
+  "khatte-chole": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khatte-chole",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khatte-meethe-baigan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khatte-meethe-baigan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khatti-meethi-machhali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khatti-meethi-machhali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khawamdum": {
+    "fetched_at": "2026-04-28T04:04:52+00:00",
+    "height": 720,
+    "id": "khawamdum",
+    "query": "Khawamdum Hyderabad indian recipe",
+    "result_source": "YouTube",
+    "result_title": "World Famous HYDERABADI KEEMA RECIPE - Masala Aloo Kheema | Super Tasty  Keema Of Hyderabad",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/RKTPr5usHVY/maxresdefault.jpg",
+    "width": 1280
+  },
+  "khawamdum-2": {
+    "fetched_at": "2026-04-28T04:04:52+00:00",
+    "height": 720,
+    "id": "khawamdum-2",
+    "query": "Khawamdum Hyderabad indian recipe",
+    "result_source": "YouTube",
+    "result_title": "World Famous HYDERABADI KEEMA RECIPE - Masala Aloo Kheema | Super Tasty  Keema Of Hyderabad",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/RKTPr5usHVY/maxresdefault.jpg",
+    "width": 1280
+  },
+  "kheer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kheer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khilwan-khichari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khilwan-khichari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kholamba": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kholamba",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khoobani-ka-meetha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khoobani-ka-meetha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khoya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khoya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khumb-ki-tikki": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khumb-ki-tikki",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "khumb-shabnam": {
+    "fetched_at": "2026-04-28T04:04:48+00:00",
+    "height": 1800,
+    "id": "khumb-shabnam",
+    "query": "Khumb Shabnam Awadh indian recipe",
+    "result_source": "Swasthi's Recipes",
+    "result_title": "Matar Mushroom | Mutter Mushroom - Swasthi's Recipes",
+    "source": "serpapi",
+    "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/02/matar-mushroom.jpg",
+    "width": 1200
+  },
+  "khuzhi-paniyaram": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "khuzhi-paniyaram",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kobari-kori-pulussu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kobari-kori-pulussu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kobari-pachadi": {
+    "fetched_at": "2026-04-28T04:04:41+00:00",
+    "height": 1200,
+    "id": "kobari-pachadi",
+    "query": "Kobari Pachadi Tamil Nadu indian recipe",
+    "result_source": "Whisk Affair",
+    "result_title": "Kobbari Pachadi Recipe (Andhra Coconut Chutney)",
+    "source": "serpapi",
+    "url": "https://www.whiskaffair.com/wp-content/uploads/2025/12/Kobbari-Pachadi-2-3.jpg",
+    "width": 1200
+  },
+  "kobbaraiannam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kobbaraiannam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kofta-curry": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kofta-curry",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kolambini-bharaleli-bhaji": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kolambini-bharaleli-bhaji",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "koli-milagu-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "koli-milagu-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "koli-milagu-masala-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "koli-milagu-masala-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kondapur-koli-thalna": {
+    "fetched_at": "2026-04-28T04:04:53+00:00",
+    "height": 720,
+    "id": "kondapur-koli-thalna",
+    "query": "Kondapur Koli Thalna Coastal indian recipe",
+    "result_source": "Vahrehvah.com",
+    "result_title": "KUNDAPUR CHICKEN",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/O-0Lxyyrstc/maxresdefault.jpg",
+    "width": 1280
+  },
+  "koorina-kakarkaya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "koorina-kakarkaya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "korioora-munakkai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "korioora-munakkai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kothmiraitil-machhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kothmiraitil-machhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kozhi-appakari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kozhi-appakari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kulfi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kulfi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kumhare-ki-subzi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kumhare-ki-subzi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kundan-kaliya": {
+    "fetched_at": "2026-04-28T04:04:51+00:00",
+    "height": 900,
+    "id": "kundan-kaliya",
+    "query": "Kundan Kaliya Awadh indian recipe",
+    "result_source": "Times Food",
+    "result_title": "Kundan Kaliya Recipe: How to make Kundan Kaliya Recipe at Home | Homemade  Kundan Kaliya Recipe - ...",
+    "source": "serpapi",
+    "url": "https://static.toiimg.com/thumb/60727911.cms?width=1200&height=900",
+    "width": 1200
+  },
+  "kurmu-pulao": {
+    "fetched_at": "2026-04-28T04:04:57+00:00",
+    "height": 1200,
+    "id": "kurmu-pulao",
+    "query": "Kurmu Pulao Telangana indian recipe",
+    "result_source": "Swasthi's Recipes",
+    "result_title": "Chicken Pulao Recipe (Instant Pot and Stovetop)",
+    "source": "serpapi",
+    "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/05/chicken-pulao-recipe.jpg",
+    "width": 1200
+  },
+  "kurmu-pulao-2": {
+    "fetched_at": "2026-04-28T04:04:58+00:00",
+    "height": 1200,
+    "id": "kurmu-pulao-2",
+    "query": "Kurmu Pulao Telangana indian recipe",
+    "result_source": "Swasthi's Recipes",
+    "result_title": "Chicken Pulao Recipe (Instant Pot and Stovetop)",
+    "source": "serpapi",
+    "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/05/chicken-pulao-recipe.jpg",
+    "width": 1200
+  },
+  "kurugayulu-upama": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kurugayulu-upama",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kurumulagail-verthatu-chemeen": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kurumulagail-verthatu-chemeen",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "kurumulagail-verthatu-chemeen-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "kurumulagail-verthatu-chemeen-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "laal-kalwan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "laal-kalwan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lachha-paratha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lachha-paratha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lagan-ka-keema": {
+    "fetched_at": "2026-04-28T04:04:53+00:00",
+    "height": 720,
+    "id": "lagan-ka-keema",
+    "query": "Lagan ka Keema Awadh indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Lagan Ka Keema | Keema Recipes | \u0932\u0917\u0928 \u0915\u093e \u0915\u0940\u092e\u093e | Eid Mubarak | Sanjeev Kapoor  Khazana",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/W5-GvGgeJC4/maxresdefault.jpg",
+    "width": 1280
+  },
+  "lal-imli-ka-achar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lal-imli-ka-achar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lal-machhali": {
+    "fetched_at": "2026-04-28T04:04:50+00:00",
+    "height": 1456,
+    "id": "lal-machhali",
+    "query": "Lal Machhali Coastal indian recipe",
+    "result_source": "Tea for Turmeric",
+    "result_title": "Fish Curry (Fish Masala)",
+    "source": "serpapi",
+    "url": "https://www.teaforturmeric.com/wp-content/uploads/2023/06/Fish-Curry-Recipe.jpg",
+    "width": 1456
+  },
+  "lassi-masalewali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lassi-masalewali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lauki-ke-kofte": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lauki-ke-kofte",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lauki-ke-kofte-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lauki-ke-kofte-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lauki-ki-seekh": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lauki-ki-seekh",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lauki-musallam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lauki-musallam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lehm-e-murgan": {
+    "fetched_at": "2026-04-28T04:04:50+00:00",
+    "height": 773,
+    "id": "lehm-e-murgan",
+    "query": "Lehm e Murgan Awadh indian recipe",
+    "result_source": "yummraj.com",
+    "result_title": "yummraj",
+    "source": "serpapi",
+    "url": "https://i0.wp.com/yummraj.com/wp-content/uploads/2026/01/img_0664.jpg?resize=870%2C773&ssl=1",
+    "width": 870
+  },
+  "lehsuni-paneer-tikka": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lehsuni-paneer-tikka",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lukhmi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lukhmi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lukhmi-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lukhmi-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "lukhmi-3": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "lukhmi-3",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "maachher-roast": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "maachher-roast",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "maans-ke-soole": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "maans-ke-soole",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "maas-banjara": {
+    "fetched_at": "2026-04-28T04:04:53+00:00",
+    "height": 800,
+    "id": "maas-banjara",
+    "query": "Maas Banjara Rajasthan indian recipe",
+    "result_source": "Virtual Banjara",
+    "result_title": "Khade Masale Ka Maas: The Authentic Rajasthani Mutton Recipe from Shivgarh  Dundlod Fort - Virtual Banjara\u2122",
+    "source": "serpapi",
+    "url": "https://virtualbanjara.com/wp-content/uploads/2024/10/unnamed-_1_.jpg",
+    "width": 800
+  },
+  "machhali-ka-qorma": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "machhali-ka-qorma",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "machhali-ka-salan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "machhali-ka-salan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "machhali-ke-kofte": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "machhali-ke-kofte",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "machhali-musallam": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 720,
+    "id": "machhali-musallam",
+    "query": "Machhali Musallam Awadh indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Fish Musallam Recipe|How To Make Whole Fish|By Arifa Khursheed",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/XGmmLozZA6M/maxresdefault.jpg",
+    "width": 1280
+  },
+  "machhi-kebab": {
+    "fetched_at": "2026-04-28T04:04:43+00:00",
+    "height": 1200,
+    "id": "machhi-kebab",
+    "query": "Machhi Kebab Hyderabad indian recipe",
+    "result_source": "Priyanka's Kitchen - WordPress.com",
+    "result_title": "Machli Kabab Tikka (Fish Kebabs) | Priyanka's Kitchen",
+    "source": "serpapi",
+    "url": "https://priyankaskitchen.wordpress.com/wp-content/uploads/2012/07/img_5927.jpg",
+    "width": 1600
+  },
+  "madras-fish-curry": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "madras-fish-curry",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "magaj-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "magaj-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "maharashtra": {
+    "fetched_at": "2026-04-28T04:05:05+00:00",
+    "height": 720,
+    "id": "maharashtra",
+    "query": "Gateway of India Mumbai Maharashtra",
+    "result_source": "www.afar.com",
+    "result_title": "Review of Gateway of India | Mumbai, India, Asia - AFAR",
+    "source": "serpapi",
+    "url": "https://afar.brightspotcdn.com/dims4/default/3bcbf73/2147483647/strip/true/crop/1600x800+0+0/resize/1440x720!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F16%2F85%2F5c8949c60685339973fd53c817b8%2Foriginal-a54d684d8b0a182dd8ca390be1e6d627.jpg",
+    "width": 1440
+  },
+  "mahi-kaliya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mahi-kaliya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mahi-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mahi-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mahi-tikka-ajwaini": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mahi-tikka-ajwaini",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "main-dishes": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "main-dishes",
+    "kind_dir": "sections",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "majida-karhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "majida-karhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "makki-ka-halwa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "makki-ka-halwa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "makki-ka-soweta": {
+    "fetched_at": "2026-04-28T04:04:50+00:00",
+    "height": 1200,
+    "id": "makki-ka-soweta",
+    "query": "Makki ka Soweta Rajasthan indian recipe",
+    "result_source": "Whisk Affair",
+    "result_title": "Makki ka Dhokla Recipe",
+    "source": "serpapi",
+    "url": "https://www.whiskaffair.com/wp-content/uploads/2020/01/Makki-ka-Dhokla-2-3.jpg",
+    "width": 1200
+  },
+  "makki-ki-roti": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "makki-ki-roti",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "malabar-adai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "malabar-adai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "malabari-paratha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "malabari-paratha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "malai-kofta": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "malai-kofta",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "malgoba": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "malgoba",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mamri-kaya-pulihora": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mamri-kaya-pulihora",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mangalore-saar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mangalore-saar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mangupullu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mangupullu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masala-chaamp": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "masala-chaamp",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masala-chaamp-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "masala-chaamp-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masala-dosa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "masala-dosa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masala-idli": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "masala-idli",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masala-siyam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "masala-siyam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masapotia": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "masapotia",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masoor-dal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "masoor-dal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masoor-ki-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "masoor-ki-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "masoor-pappu-charu": {
+    "fetched_at": "2026-04-28T04:04:55+00:00",
+    "height": 883,
+    "id": "masoor-pappu-charu",
+    "query": "Masoor Pappu Charu Andhra Pradesh indian recipe",
+    "result_source": "Cooking 4 all Seasons",
+    "result_title": "Pappu Charu Recipe 2 ~ Andhra Style | Lunch Box Series : LBS#75",
+    "source": "serpapi",
+    "url": "https://www.cooking4allseasons.com/wp-content/uploads/2014/05/Pappu-Charu-Cabbage-Pakoda-Mango-Chutney-1024x883.jpg",
+    "width": 1024
+  },
+  "matar-ki-tarkari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "matar-ki-tarkari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "matar-paneer-ka-paratha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "matar-paneer-ka-paratha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "matar-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "matar-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mathi-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mathi-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mathok-brenga": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mathok-brenga",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "matthi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "matthi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mawe-ki-kachori": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mawe-ki-kachori",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "meen-biryani": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "meen-biryani",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "meen-biryani-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "meen-biryani-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "meen-godavari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "meen-godavari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "meethi-lassi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "meethi-lassi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "methi-ke-chawal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "methi-ke-chawal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "methi-kishmish": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "methi-kishmish",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "methi-makhani-palak": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "methi-makhani-palak",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "methi-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "methi-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "methi-pakora": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "methi-pakora",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "meve-ki-gujiya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "meve-ki-gujiya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "milgai-bhajiya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "milgai-bhajiya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mirchi-ka-salan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mirchi-ka-salan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mirchi-vada": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mirchi-vada",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mirchiwala-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mirchiwala-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mochar-paturi": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 720,
+    "id": "mochar-paturi",
+    "query": "Mochar Paturi West Bengal indian recipe",
+    "result_source": "Bong Eats",
+    "result_title": "Mocha'r Paturi",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/YsL-JjrV0bw/maxresdefault.jpg",
+    "width": 1280
+  },
+  "mochar-paturi-2": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 720,
+    "id": "mochar-paturi-2",
+    "query": "Mochar Paturi West Bengal indian recipe",
+    "result_source": "Bong Eats",
+    "result_title": "Mocha'r Paturi",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/YsL-JjrV0bw/maxresdefault.jpg",
+    "width": 1280
+  },
+  "molaggai-podi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "molaggai-podi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "molaggai-podi-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "molaggai-podi-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "molagu-saadam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "molagu-saadam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "moog-aur-palak-ki-dal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "moog-aur-palak-ki-dal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "moong-dal": {
+    "fetched_at": "2026-04-28T04:18:27+00:00",
+    "height": 2560,
+    "id": "moong-dal",
+    "query": "Moong Dal recipe",
+    "result_source": "Cookilicious",
+    "result_title": "Green Moong Dal Fry (Green Gram Curry) \u2013 Sabut Moong Dal",
+    "source": "serpapi-fallback",
+    "url": "https://cookilicious.com/wp-content/uploads/2025/06/green-moong-dal-fry00019-scaled.jpg",
+    "width": 1707
+  },
+  "moong-dal-khilwan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "moong-dal-khilwan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "moong-dal-ki-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "moong-dal-ki-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "moonghali-ki-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "moonghali-ki-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "moonphali-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "moonphali-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "moru-kalli": {
+    "fetched_at": "2026-04-28T04:04:43+00:00",
+    "height": 1080,
+    "id": "moru-kalli",
+    "query": "Moru Kalli Tamil Nadu indian recipe",
+    "result_source": "Subbus Kitchen",
+    "result_title": "Mor Kali Recipe | Mor Koozh",
+    "source": "serpapi",
+    "url": "https://www.subbuskitchen.com/wp-content/uploads/2011/02/Mor-Kali-Final2.jpg",
+    "width": 1920
+  },
+  "moti-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "moti-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "moticoor-laddu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "moticoor-laddu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "munakkaigguru": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "munakkaigguru",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mung-dal-ka-halwa": {
+    "fetched_at": "2026-04-28T04:04:58+00:00",
+    "height": 1323,
+    "id": "mung-dal-ka-halwa",
+    "query": "Mung Dal ka Halwa Punjab indian recipe",
+    "result_source": "SecondRecipe",
+    "result_title": "Instant Moong dal halwa recipe",
+    "source": "serpapi",
+    "url": "https://www.secondrecipe.com/wp-content/uploads/2020/01/moong-dal-halwa-easy-recipe.jpg",
+    "width": 1000
+  },
+  "murg-biryani": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-biryani",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-dalcha-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-dalcha-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-ishtoo": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-ishtoo",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-ke-mokul": {
+    "fetched_at": "2026-04-28T04:04:54+00:00",
+    "height": 1000,
+    "id": "murg-ke-mokul",
+    "query": "Murg ke Mokul Rajasthan indian recipe",
+    "result_source": "Licious",
+    "result_title": "How To Make Murgh Ka Mokul Recipe l Royal Rajasthan: Murgh Ka Mokul",
+    "source": "serpapi",
+    "url": "https://www.licious.in/blog/wp-content/uploads/2022/11/Shutterstock_695932900.jpg",
+    "width": 1000
+  },
+  "murg-ke-mokul-2": {
+    "fetched_at": "2026-04-28T04:04:55+00:00",
+    "height": 1000,
+    "id": "murg-ke-mokul-2",
+    "query": "Murg ke Mokul Rajasthan indian recipe",
+    "result_source": "Licious",
+    "result_title": "How To Make Murgh Ka Mokul Recipe l Royal Rajasthan: Murgh Ka Mokul",
+    "source": "serpapi",
+    "url": "https://www.licious.in/blog/wp-content/uploads/2022/11/Shutterstock_695932900.jpg",
+    "width": 1000
+  },
+  "murg-ke-parche": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-ke-parche",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-ke-soole": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-ke-soole",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-ke-soole-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-ke-soole-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-lazawab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-lazawab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-manpasand": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-manpasand",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-methi-tikka": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-methi-tikka",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-mumtaz": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-mumtaz",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-musallam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-musallam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-qorma-i": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-qorma-i",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murg-qorma-ii": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murg-qorma-ii",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "murga-ka-safed-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "murga-ka-safed-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "musallam-raan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "musallam-raan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mutanian-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mutanian-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "muttakose-kilangu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "muttakose-kilangu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "muttokos-thoran": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "muttokos-thoran",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mutton-barra-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mutton-barra-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mutton-coconut-fry": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mutton-coconut-fry",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mutton-kolhapuri": {
+    "fetched_at": "2026-04-28T04:04:51+00:00",
+    "height": 1200,
+    "id": "mutton-kolhapuri",
+    "query": "Mutton Kolhapuri Maharashtra indian recipe",
+    "result_source": "Easy Indian Cookbook",
+    "result_title": "Kolhapuri Lamb Curry (Mutton Kolhapuri)",
+    "source": "serpapi",
+    "url": "https://easyindiancookbook.com/wp-content/uploads/2023/04/kolhapuri-lamb-3.jpg",
+    "width": 1200
+  },
+  "mutton-kolhapuri-2": {
+    "fetched_at": "2026-04-28T04:04:52+00:00",
+    "height": 1200,
+    "id": "mutton-kolhapuri-2",
+    "query": "Mutton Kolhapuri Maharashtra indian recipe",
+    "result_source": "Easy Indian Cookbook",
+    "result_title": "Kolhapuri Lamb Curry (Mutton Kolhapuri)",
+    "source": "serpapi",
+    "url": "https://easyindiancookbook.com/wp-content/uploads/2023/04/kolhapuri-lamb-3.jpg",
+    "width": 1200
+  },
+  "mutton-qorma": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mutton-qorma",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mysore-masala-dosa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mysore-masala-dosa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "mysore-pak": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "mysore-pak",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "nalli-aur-paye": {
+    "fetched_at": "2026-04-28T04:04:53+00:00",
+    "height": 1067,
+    "id": "nalli-aur-paye",
+    "query": "Nalli aur Paye Awadh indian recipe",
+    "result_source": "Ruchik Randhap",
+    "result_title": "Nalli Nihari - When Hubby Cooks! - Ruchik Randhap",
+    "source": "serpapi",
+    "url": "http://1.bp.blogspot.com/-IZ1o8pcjWr4/UIk7Mu4lAyI/AAAAAAAAO7Q/87mvpVK1GiY/s1600/Nalli+Nihari+(2)+-+1.jpg",
+    "width": 1600
+  },
+  "nargisi-kofte": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "nargisi-kofte",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "nargisi-seekh-kebab": {
+    "fetched_at": "2026-04-28T04:04:43+00:00",
+    "height": 1450,
+    "id": "nargisi-seekh-kebab",
+    "query": "Nargisi Seekh Kebab Awadh indian recipe",
+    "result_source": "Allrecipes",
+    "result_title": "Indian-Style Seekh Kebab",
+    "source": "serpapi",
+    "url": "https://www.allrecipes.com/thmb/nqBDLi0NrrYCm464cTH7jhxv9_I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8145753-5f66429f57af4a62aade3adf71dc28d3.jpg",
+    "width": 1500
+  },
+  "nargisi-seekh-kebab-2": {
+    "fetched_at": "2026-04-28T04:04:43+00:00",
+    "height": 1450,
+    "id": "nargisi-seekh-kebab-2",
+    "query": "Nargisi Seekh Kebab Awadh indian recipe",
+    "result_source": "Allrecipes",
+    "result_title": "Indian-Style Seekh Kebab",
+    "source": "serpapi",
+    "url": "https://www.allrecipes.com/thmb/nqBDLi0NrrYCm464cTH7jhxv9_I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8145753-5f66429f57af4a62aade3adf71dc28d3.jpg",
+    "width": 1500
+  },
+  "nariyal-tamatar-ki-chutney": {
+    "fetched_at": "2026-04-28T04:04:41+00:00",
+    "height": 1800,
+    "id": "nariyal-tamatar-ki-chutney",
+    "query": "Nariyal Tamatar ki Chutney Tamil Nadu Karnataka indian recipe",
+    "result_source": "Whisk Affair",
+    "result_title": "Tomato Coconut Chutney Recipe - Whisk Affair",
+    "source": "serpapi",
+    "url": "https://www.whiskaffair.com/wp-content/uploads/2024/06/Tomato-Coconut-Chutney-2-1.jpg",
+    "width": 1200
+  },
+  "nejandu-kari": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "nejandu-kari",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "neyappam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "neyappam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "nimboo-ka-achar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "nimboo-ka-achar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "nimboo-ka-sherbet": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "nimboo-ka-sherbet",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "nimbuwali-chai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "nimbuwali-chai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "nimish": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "nimish",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "nishashte-ka-halwa": {
+    "fetched_at": "2026-04-28T04:04:59+00:00",
+    "height": 720,
+    "id": "nishashte-ka-halwa",
+    "query": "Nishashte ka Halwa Sindh indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Nishasta Halwa Banane ka Tareeqa|Authentic Nishashta Recipe| \u0646\u0634\u0627\u0633\u062a\u06c1 \u0628\u0646\u0627\u0646\u06d2  \u06a9\u0627 \u0637\u0631\u06cc\u0642\u06c1 | Nishasta Halwa",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/CrgtV07kGQo/maxresdefault.jpg",
+    "width": 1280
+  },
+  "north-east-india": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "north-east-india",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "north-india": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "north-india",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "odi-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "odi-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "oma-bedoi-saonai": {
+    "fetched_at": "2026-04-28T04:04:55+00:00",
+    "height": 1280,
+    "id": "oma-bedoi-saonai",
+    "query": "Oma Bedoi Saonai Tribal North East India indian recipe",
+    "result_source": "Subbus Kitchen",
+    "result_title": "Omapodi Recipe | Sev Recipe | Diwali Snacks",
+    "source": "serpapi",
+    "url": "https://www.subbuskitchen.com/wp-content/uploads/2017/10/ommapodi-final2.jpg",
+    "width": 1920
+  },
+  "oma-eoni": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "oma-eoni",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "ondhiya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "ondhiya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "paappu-podi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "paappu-podi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "palak-paneer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "palak-paneer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "palak-paratha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "palak-paratha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "palang-ka-kapha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "palang-ka-kapha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "palpayasam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "palpayasam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pan-indian": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pan-indian",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "paneer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "paneer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "paneer-jaipuri": {
+    "fetched_at": "2026-04-28T04:04:48+00:00",
+    "height": 720,
+    "id": "paneer-jaipuri",
+    "query": "Paneer Jaipuri Rajasthan indian recipe",
+    "result_source": "YouTube",
+    "result_title": "paneer jaipuri restaurant style in Hindi \u090f\u0915 \u092c\u093e\u0930 \u092a\u0928\u0940\u0930 \u0915\u093e \u0930\u0947\u0938\u093f\u092a\u0940 \u0918\u0930 \u092a\u0930 \u091c\u0930\u0942\u0930  \u092c\u0928\u093e\u090f\u0902",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/eBNo7ldOpPw/maxresdefault.jpg",
+    "width": 1280
+  },
+  "paneer-makhani": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "paneer-makhani",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "paneer-pasanda": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "paneer-pasanda",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "paneer-tikka-kali-mirch": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "paneer-tikka-kali-mirch",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pani-poori": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pani-poori",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "panther-jhol": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "panther-jhol",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "panther-jhol-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "panther-jhol-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pao-bhaji": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pao-bhaji",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pao-bhaji-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pao-bhaji-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "papad-methi-ki-subzi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "papad-methi-ki-subzi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "paper-dosa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "paper-dosa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "papite-ka-achar": {
+    "fetched_at": "2026-04-28T04:04:42+00:00",
+    "height": 1200,
+    "id": "papite-ka-achar",
+    "query": "Papite ka Achar Punjab indian recipe",
+    "result_source": "East Indian Recipes",
+    "result_title": "Papaya Carrot Pickle - East Indian Wedding Pickle- East Indian Recipes",
+    "source": "serpapi",
+    "url": "https://eastindianrecipes.net/wp-content/uploads/2023/01/East-Indian-Wedding-Pickle2.jpg",
+    "width": 1200
+  },
+  "pappu-charu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pappu-charu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pappuchakkalu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pappuchakkalu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "paratha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "paratha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "parsi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "parsi",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pasanda-kebab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pasanda-kebab",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pata-bhaja": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pata-bhaja",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pata-bhaja-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pata-bhaja-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pata-bhaja-3": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pata-bhaja-3",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "patrani-machli": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "patrani-machli",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pavakka-theeyal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pavakka-theeyal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pesaru-punukulu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pesaru-punukulu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "phulka": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "phulka",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pickles-chutneys-and-raitas": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pickles-chutneys-and-raitas",
+    "kind_dir": "sections",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pindi-chana": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pindi-chana",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pisa-kaju": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pisa-kaju",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pisi-adrak": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pisi-adrak",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pisi-lehsun": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pisi-lehsun",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "podi-sambhar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "podi-sambhar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "podi-sambhar-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "podi-sambhar-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "poha-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "poha-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "poongobi-pakora": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "poongobi-pakora",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "poriyal-podi": {
+    "fetched_at": "2026-04-28T04:04:43+00:00",
+    "height": 1800,
+    "id": "poriyal-podi",
+    "query": "Poriyal Podi Tamil Nadu indian recipe",
+    "result_source": "Swasthi's Recipes",
+    "result_title": "Beans Poriyal | Green Beans Fry Recipe - Swasthi's Recipes",
+    "source": "serpapi",
+    "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/beans-poriyal.jpg",
+    "width": 1200
+  },
+  "potoler-dolma": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "potoler-dolma",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pudina-rasam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pudina-rasam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "puliyadorai-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "puliyadorai-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "puliyadorai-masala-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "puliyadorai-masala-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "pulses": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "pulses",
+    "kind_dir": "sections",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "punjab": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "punjab",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "punjab-awadh": {
+    "fetched_at": "2026-04-28T04:05:05+00:00",
+    "height": 600,
+    "id": "punjab-awadh",
+    "query": "Punjab/Awadh India culture",
+    "result_source": "Shikhar Travels",
+    "result_title": "Punjab Cultural Tour \u2013 7 Days to Explore the most Fanatical State in India  - Shikhar Blog",
+    "source": "serpapi",
+    "url": "https://www.shikhar.com/blog/wp-content/uploads/2017/08/893_11.jpg",
+    "width": 900
+  },
+  "punjab-awadh-delhi": {
+    "fetched_at": "2026-04-28T04:05:11+00:00",
+    "height": 1067,
+    "id": "punjab-awadh-delhi",
+    "query": "Punjab/Awadh/Delhi India culture",
+    "result_source": "Britannica",
+    "result_title": "Punjab, India | History, Map, Culture, Religion, & Facts | Britannica",
+    "source": "serpapi",
+    "url": "https://cdn.britannica.com/53/176353-050-5B854179/Harmandir-Sahib-Amritsar-Punjab-India.jpg",
+    "width": 1600
+  },
+  "punjab-delhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "punjab-delhi",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "punjab-delhi-awadh": {
+    "fetched_at": "2026-04-28T04:05:10+00:00",
+    "height": 919,
+    "id": "punjab-delhi-awadh",
+    "query": "Punjab/Delhi/Awadh India culture",
+    "result_source": "Reddit",
+    "result_title": "just like there's cultural regions of Bengal, Punjab, Sindh and Tamils,  should we view Hindi heartlands as a region on par with these other  regions, or should we divide it further into",
+    "source": "serpapi",
+    "url": "https://preview.redd.it/just-like-theres-cultural-regions-of-bengal-punjab-sindh-v0-t2zvmfn937de1.png?width=877&format=png&auto=webp&s=a164a7c1a9340c1f0059329cd84cba48a03e1bb9",
+    "width": 877
+  },
+  "puragayalu-pulussu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "puragayalu-pulussu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "puran-poli": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "puran-poli",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "qorma-dum-pukht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "qorma-dum-pukht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "qorma-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "qorma-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "raan-patialashai": {
+    "fetched_at": "2026-04-28T04:04:44+00:00",
+    "height": 720,
+    "id": "raan-patialashai",
+    "query": "Raan Patialashai Punjab indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Patiala Sahi Meat | How to make Patiala Shahi Meat | Meat Recipe",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/aarUxyoW3xI/maxresdefault.jpg",
+    "width": 1280
+  },
+  "raan-patialashai-2": {
+    "fetched_at": "2026-04-28T04:04:44+00:00",
+    "height": 720,
+    "id": "raan-patialashai-2",
+    "query": "Raan Patialashai Punjab indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Patiala Sahi Meat | How to make Patiala Shahi Meat | Meat Recipe",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/aarUxyoW3xI/maxresdefault.jpg",
+    "width": 1280
+  },
+  "ragi-halwa": {
+    "fetched_at": "2026-04-28T04:04:59+00:00",
+    "height": 600,
+    "id": "ragi-halwa",
+    "query": "Ragi Halwa Tamil Nadu indian recipe",
+    "result_source": "Pots and Pans",
+    "result_title": "Sugar Free Ragi Halwa",
+    "source": "serpapi",
+    "url": "https://www.potsandpans.in/cdn/shop/articles/Sugar_Free_Ragi_Halwa.jpg?v=1674816051",
+    "width": 1600
+  },
+  "raj-kachori": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "raj-kachori",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rajasthan": {
+    "fetched_at": "2026-04-28T04:05:11+00:00",
+    "height": 1078,
+    "id": "rajasthan",
+    "query": "Hawa Mahal Jaipur Rajasthan",
+    "result_source": "Britannica",
+    "result_title": "Hawa Mahal | Map, Description, & Facts | Britannica",
+    "source": "serpapi",
+    "url": "https://cdn.britannica.com/25/242225-050-72142DF7/Front-facade-of-Palace-of-the-Winds-Hawa-Mahal-Jaipur-Rajasthan-India.jpg",
+    "width": 1600
+  },
+  "rajasthani-arabi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rajasthani-arabi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rajasthani-karhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rajasthani-karhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rasakalan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rasakalan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rasse-misse-rajma": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rasse-misse-rajma",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rasse-misse-rajma-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rasse-misse-rajma-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rava-bonda": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rava-bonda",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rava-dosa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rava-dosa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rava-pongal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rava-pongal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rava-sevai-idli": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rava-sevai-idli",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rawa-payasam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rawa-payasam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "reshmai-gosht": {
+    "fetched_at": "2026-04-28T04:04:51+00:00",
+    "height": 720,
+    "id": "reshmai-gosht",
+    "query": "Reshmai Gosht Telangana indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Hyderabadi Reshmi Dum ka Gosht | Hyderabadi Dum Mutton Masala",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/0UG-d5OeKL8/maxresdefault.jpg",
+    "width": 1280
+  },
+  "rezhala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rezhala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "rice": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rice",
+    "kind_dir": "sections",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "roast-mutton": {
+    "fetched_at": "2026-04-28T04:04:51+00:00",
+    "height": 619,
+    "id": "roast-mutton",
+    "query": "Roast Mutton Kerala indian recipe",
+    "result_source": "The Indus Valley",
+    "result_title": "Kerala Style Mutton Roast Recipe | Mutton Recipe | Mutton Fry | Easy R \u2013  The Indus Valley",
+    "source": "serpapi",
+    "url": "https://www.theindusvalley.in/cdn/shop/articles/8_1.jpg?v=1704707617&width=1100",
+    "width": 1100
+  },
+  "rogani-kulcha": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "rogani-kulcha",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "roghanjosh": {
+    "fetched_at": "2026-04-28T04:18:26+00:00",
+    "height": 1260,
+    "id": "roghanjosh",
+    "query": "Roghanjosh recipe",
+    "result_source": "RecipeTin Eats",
+    "result_title": "Rogan Josh - RecipeTin Eats",
+    "source": "serpapi-fallback",
+    "url": "https://www.recipetineats.com/uploads/2020/02/Rogan-Josh_4.jpg",
+    "width": 900
+  },
+  "roya-vepaddu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "roya-vepaddu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "royya-alu-pulussu": {
+    "fetched_at": "2026-04-28T04:04:50+00:00",
+    "height": 630,
+    "id": "royya-alu-pulussu",
+    "query": "Royya Alu Pulussu Andhra Pradesh indian recipe",
+    "result_source": "My Cooking Wonders",
+    "result_title": "Andhra royyala vepudu/Andhra style Prawns(Shrimp) fry",
+    "source": "serpapi",
+    "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfrpLoMuaVYYp-sq7LYdejOMD-4jg3Aayar2q5g_Qrk1EJZYl2q4UDyeI9VQwHxkFJPcvcrMPdYEZ7CL3NQJSidPpkSEk5wHK9WpHOdkIdoSOZX8srti0tjCRUUqjuqSK9adLsnSpkS2s/w1200-h630-p-k-no-nu/IMG_1386.HEIC",
+    "width": 1200
+  },
+  "saanth-bajrae-ka-soweta": {
+    "fetched_at": "2026-04-28T04:04:55+00:00",
+    "height": 720,
+    "id": "saanth-bajrae-ka-soweta",
+    "query": "Saanth-Bajrae ka Soweta Rajasthan indian recipe",
+    "result_source": "YouTube",
+    "result_title": "One Pot Rajasthani Mutton | Winter Special Bajre Ka Soyta | Mutton Recipe  By Smita | Get Curried",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/TUoHsQXvEtQ/maxresdefault.jpg",
+    "width": 1280
+  },
+  "saanth-bajrae-ka-soweta-2": {
+    "fetched_at": "2026-04-28T04:04:55+00:00",
+    "height": 720,
+    "id": "saanth-bajrae-ka-soweta-2",
+    "query": "Saanth-Bajrae ka Soweta Rajasthan indian recipe",
+    "result_source": "YouTube",
+    "result_title": "One Pot Rajasthani Mutton | Winter Special Bajre Ka Soyta | Mutton Recipe  By Smita | Get Curried",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/TUoHsQXvEtQ/maxresdefault.jpg",
+    "width": 1280
+  },
+  "sambhar-masala-i": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sambhar-masala-i",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "samosa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "samosa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sandali-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sandali-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sarangyacha-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sarangyacha-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sasranga": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sasranga",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "seb-ka-ras": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "seb-ka-ras",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "seb-ki-chutney": {
+    "fetched_at": "2026-04-28T04:18:26+00:00",
+    "height": 720,
+    "id": "seb-ki-chutney",
+    "query": "Seb ki Chutney recipe",
+    "result_source": "YouTube",
+    "result_title": "Seb ki Chutney Recipe | How to make Perfect seb Ki Chutney | \u0686\u0679\u0646\u06cc | Apple  Chutney",
+    "source": "serpapi-fallback",
+    "url": "https://i.ytimg.com/vi/93ptFYPfhvQ/maxresdefault.jpg",
+    "width": 1280
+  },
+  "shahalyat-kalve": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shahalyat-kalve",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shahi-qorma": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shahi-qorma",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shahi-qorma-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shahi-qorma-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shahi-qorma-3": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shahi-qorma-3",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shai-dum-ki-machhali": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shai-dum-ki-machhali",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shalgam-gosht": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shalgam-gosht",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shalgam-ki-subzi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shalgam-ki-subzi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sheer-birinj": {
+    "fetched_at": "2026-04-28T04:04:58+00:00",
+    "height": 685,
+    "id": "sheer-birinj",
+    "query": "Sheer Birinj Awadh indian recipe",
+    "result_source": "International Cuisine",
+    "result_title": "Sheer Birinj \u2013 Afghan Rice Pudding - International Cuisine",
+    "source": "serpapi",
+    "url": "https://www.internationalcuisine.com/wp-content/uploads/2014/04/Rice-Pudding-1024x685.jpg",
+    "width": 1024
+  },
+  "sheer-chai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sheer-chai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shevandi-kada": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shevandi-kada",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shola-e-dil": {
+    "fetched_at": "2026-04-28T04:04:54+00:00",
+    "height": 720,
+    "id": "shola-e-dil",
+    "query": "Shola e Dil Awadh indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Shola recipe (Old Traditional famous shola recipe)by Hamida Dehlvi",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/uBbpmqnQzzI/maxresdefault.jpg",
+    "width": 1280
+  },
+  "shrikhand": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shrikhand",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "shyaem": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "shyaem",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sika-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sika-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sikampoor-kebab-i": {
+    "fetched_at": "2026-04-28T04:18:26+00:00",
+    "height": 1450,
+    "id": "sikampoor-kebab-i",
+    "query": "Sikampoor Kebab (I) recipe",
+    "result_source": "Allrecipes",
+    "result_title": "Indian-Style Seekh Kebab",
+    "source": "serpapi-fallback",
+    "url": "https://www.allrecipes.com/thmb/nqBDLi0NrrYCm464cTH7jhxv9_I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8145753-5f66429f57af4a62aade3adf71dc28d3.jpg",
+    "width": 1500
+  },
+  "sikampoor-kebab-i-2": {
+    "fetched_at": "2026-04-28T04:18:26+00:00",
+    "height": 1450,
+    "id": "sikampoor-kebab-i-2",
+    "query": "Sikampoor Kebab (I) recipe",
+    "result_source": "Allrecipes",
+    "result_title": "Indian-Style Seekh Kebab",
+    "source": "serpapi-fallback",
+    "url": "https://www.allrecipes.com/thmb/nqBDLi0NrrYCm464cTH7jhxv9_I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8145753-5f66429f57af4a62aade3adf71dc28d3.jpg",
+    "width": 1500
+  },
+  "sikampoor-kebab-ii": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sikampoor-kebab-ii",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sindh": {
+    "fetched_at": "2026-04-28T04:05:11+00:00",
+    "height": 600,
+    "id": "sindh",
+    "query": "Sindh India culture",
+    "result_source": "Brill Reference Works",
+    "result_title": "Indigenous People of Sindh",
+    "source": "serpapi",
+    "url": "https://referenceworks.brill.com/view/entries/BERO/BER082_Indigenous_Sindh_Fig_2_resized.jpg",
+    "width": 800
+  },
+  "sindhi-karhi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sindhi-karhi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "singhara": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "singhara",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "snacks-and-appetizers": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "snacks-and-appetizers",
+    "kind_dir": "sections",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sofiyani-pulao": {
+    "fetched_at": "2026-04-28T04:04:58+00:00",
+    "height": 1200,
+    "id": "sofiyani-pulao",
+    "query": "Sofiyani Pulao Gujarat indian recipe",
+    "result_source": "Hinz Cooking",
+    "result_title": "White Chicken Biryani (Sofiyani Biryani)",
+    "source": "serpapi",
+    "url": "https://hinzcooking.com/wp-content/uploads/2020/06/white-biryani-recipe.jpg",
+    "width": 1200
+  },
+  "sookhi-mangori": {
+    "fetched_at": "2026-04-28T04:04:57+00:00",
+    "height": 960,
+    "id": "sookhi-mangori",
+    "query": "Sookhi Mangori Rajasthan indian recipe",
+    "result_source": "Foodie Trail",
+    "result_title": "Papad Mangodi Recipe | Rajasthani Papad Mangodi ki Sabzi",
+    "source": "serpapi",
+    "url": "https://www.foodie-trail.com/wp-content/uploads/2023/10/PHOTO-2023-10-05-14-22-36_1.jpg",
+    "width": 1280
+  },
+  "sorpatel": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sorpatel",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "spice-mixtures-and-pastes": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "spice-mixtures-and-pastes",
+    "kind_dir": "sections",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "subz-ke-kakori": {
+    "fetched_at": "2026-04-28T04:04:42+00:00",
+    "height": 2048,
+    "id": "subz-ke-kakori",
+    "query": "Subz ke Kakori Awadh indian recipe",
+    "result_source": "Awesome Cuisine",
+    "result_title": "Savour the Best of Awadhi Cuisine: Top 10 Dishes - Awesome Cuisine",
+    "source": "serpapi",
+    "url": "https://www.awesomecuisine.com/wp-content/uploads/2025/02/Kakori-Kebab.jpeg",
+    "width": 2048
+  },
+  "subz-ke-shami": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "subz-ke-shami",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "subz-khara-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "subz-khara-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "subz-seekh": {
+    "fetched_at": "2026-04-28T04:04:42+00:00",
+    "height": 3264,
+    "id": "subz-seekh",
+    "query": "Subz Seekh Awadh indian recipe",
+    "result_source": "Hebbar's Kitchen",
+    "result_title": "seekh kabab recipe | veg seekh kabab recipe | vegetable seekh kabab",
+    "source": "serpapi",
+    "url": "https://hebbarskitchen.com/wp-content/uploads/2017/03/seekh-kabab-recipe-veg-seekh-kabab-recipe-vegetable-seekh-kabab-1.jpeg",
+    "width": 2450
+  },
+  "subzi-panchmel": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "subzi-panchmel",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "suji-halwa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "suji-halwa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "sukhi-urad-ki-dal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "sukhi-urad-ki-dal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tabathyu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tabathyu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tadka-dal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tadka-dal",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "taftan": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "taftan",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tamatar-bhatkalikura": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 1800,
+    "id": "tamatar-bhatkalikura",
+    "query": "Tamatar Bhatkalikura Tamil Nadu indian recipe",
+    "result_source": "Swasthi's Recipes",
+    "result_title": "Tomato Curry Recipe (Andhra Tomato Kura) - Swasthi's Recipes",
+    "source": "serpapi",
+    "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/02/tomato-curry-tomato-kura.jpg",
+    "width": 1200
+  },
+  "tamatar-ka-achar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tamatar-ka-achar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tamatar-mooli": {
+    "fetched_at": "2026-04-28T04:04:48+00:00",
+    "height": 720,
+    "id": "tamatar-mooli",
+    "query": "Tamatar Mooli Jammu and Kashmir indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Mooli Tamatar Ki Chutney || Radish Tomato Chutney || Mooli Ki Chutney ||  Krishna's Cuisine #chutney",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/o30cCi4eFvE/maxresdefault.jpg",
+    "width": 1280
+  },
+  "tamatar-rasam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tamatar-rasam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tamatarwale-jhinge": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tamatarwale-jhinge",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tamil-nadu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tamil-nadu",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tamil-nadu-karnataka": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tamil-nadu-karnataka",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tamil-nadu-karnataka-kerala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tamil-nadu-karnataka-kerala",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tandoori-achari-khumb": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tandoori-achari-khumb",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tandoori-bharwan-paneer": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tandoori-bharwan-paneer",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tandoori-bharwan-tamatar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tandoori-bharwan-tamatar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tandoori-bharwan-tamatar-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tandoori-bharwan-tamatar-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tandoori-chaat-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tandoori-chaat-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tandoori-murg": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tandoori-murg",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tatti-gosht": {
+    "fetched_at": "2026-04-28T04:04:44+00:00",
+    "height": 720,
+    "id": "tatti-gosht",
+    "query": "Tatti Gosht Telangana indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Hyderabadi TALA HUA MASALA GOSHT | Chatkara Mutton Fry - Bakrid Recipes",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/scI4bFBTbYI/maxresdefault.jpg",
+    "width": 1280
+  },
+  "tawe-de-tikke": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tawe-de-tikke",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "telangana": {
+    "fetched_at": "2026-04-28T04:05:25+00:00",
+    "height": 4193,
+    "id": "telangana",
+    "query": "Charminar Hyderabad Telangana",
+    "result_source": "Telangana Tourism",
+    "result_title": "Telangana Tourism",
+    "source": "serpapi",
+    "url": "https://tourism.telangana.gov.in/storage/app/media/charminar-landscape.jpg",
+    "width": 7087
+  },
+  "tengaipal-pitha-kotu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tengaipal-pitha-kotu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "thali-peeth": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "thali-peeth",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "thali-peeth-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "thali-peeth-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "thandai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "thandai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "thenga-chertha-ulli-sambhar": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "thenga-chertha-ulli-sambhar",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "thengakkai-kori": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "thengakkai-kori",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "thor-muri-ghonto": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "thor-muri-ghonto",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "til-ki-chutney": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "til-ki-chutney",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tilgul": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tilgul",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "to-khan": {
+    "fetched_at": "2026-04-28T04:04:54+00:00",
+    "height": 2245,
+    "id": "to-khan",
+    "query": "To Khan Tribal North East India indian recipe",
+    "result_source": "Issuu",
+    "result_title": "THE TRIBAL CUISINE OF INDIA - Issuu",
+    "source": "serpapi",
+    "url": "https://assets.isu.pub/document-structure/230401191057-504238d277dd82179264ca50cead094b/v1/229a889f2b1bb8a20d5c3325c0cea25c.jpeg?width=720&quality=85%2C50",
+    "width": 2245
+  },
+  "torai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "torai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tribal-north-east-india": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tribal-north-east-india",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "tsuk-wangun": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "tsuk-wangun",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "uralaikizhan-sagu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "uralaikizhan-sagu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "uralaikizhan-sagu-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "uralaikizhan-sagu-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "uttarakhand": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "uttarakhand",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "valsadi-hara-masala": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "valsadi-hara-masala",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "valsadi-masala": {
+    "fetched_at": "2026-04-28T04:04:41+00:00",
+    "height": 720,
+    "id": "valsadi-masala",
+    "query": "Valsadi Masala Gujarat indian recipe",
+    "result_source": "YouTube",
+    "result_title": "\u0935\u0932\u0938\u093e\u0921 \u0915\u093e \u092b\u0947\u092e\u0938 \u0909\u092c\u093e\u0921\u093c\u0940\u092f\u0942 \u0905\u092c \u0918\u0930 \u092a\u0930 \u0906\u0938\u093e\u0928\u0940 \u0938\u0947 \u092c\u0928\u093e\u092f\u0947, Valsad Babubhai's Famous  Ubaadiyu Recipe",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/IahTKZLq2lc/maxresdefault.jpg",
+    "width": 1280
+  },
+  "vangi-bhaath": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vangi-bhaath",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vatticha-mathi-kari": {
+    "fetched_at": "2026-04-28T04:04:49+00:00",
+    "height": 720,
+    "id": "vatticha-mathi-kari",
+    "query": "Vatticha Mathi Kari Tamil Nadu indian recipe",
+    "result_source": "YouTube",
+    "result_title": "Mathi Vattichathu Kerala Style | Mathi Curry Kerala Style | mathi  Mulakittathu |SHASS WORLD 344",
+    "source": "serpapi",
+    "url": "https://i.ytimg.com/vi/yOd3BlGEbcM/maxresdefault.jpg",
+    "width": 1280
+  },
+  "vazhaiappoo-vada": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vazhaiappoo-vada",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vazhaiappoo-vada-2": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vazhaiappoo-vada-2",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vazhaippazham-chips": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vazhaippazham-chips",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "veerakkaikura": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "veerakkaikura",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "veinchana-royyaalu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "veinchana-royyaalu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vendakkai-igguru": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vendakkai-igguru",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vendakkai-masala-pachadi": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vendakkai-masala-pachadi",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vendakkai-pulussu": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vendakkai-pulussu",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vendaya-keerai-adai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vendaya-keerai-adai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vendaya-rasam": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vendaya-rasam",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "vengayya": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "vengayya",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "voksa": {
+    "fetched_at": "2026-04-28T04:04:55+00:00",
+    "height": 1468,
+    "id": "voksa",
+    "query": "Voksa Tribal North East India indian recipe",
+    "result_source": "Hi DMC",
+    "result_title": "Tribal Cuisine of India's North-East: A Culinary Exploration of Indigenous  Flavors",
+    "source": "serpapi",
+    "url": "https://cdn.prod.website-files.com/6364d88dd010ce5c6f8aa8fc/6853fba3d5dc195a8af2eccf_high-angle-view-food-bowl%20(1).webp",
+    "width": 2200
+  },
+  "voksa-2": {
+    "fetched_at": "2026-04-28T04:04:55+00:00",
+    "height": 1468,
+    "id": "voksa-2",
+    "query": "Voksa Tribal North East India indian recipe",
+    "result_source": "Hi DMC",
+    "result_title": "Tribal Cuisine of India's North-East: A Culinary Exploration of Indigenous  Flavors",
+    "source": "serpapi",
+    "url": "https://cdn.prod.website-files.com/6364d88dd010ce5c6f8aa8fc/6853fba3d5dc195a8af2eccf_high-angle-view-food-bowl%20(1).webp",
+    "width": 2200
+  },
+  "wak-al-galda": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "wak-al-galda",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "wak-serjak": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "wak-serjak",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "west-bengal": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "west-bengal",
+    "kind_dir": "regions",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "wookhan": {
+    "fetched_at": "2026-04-28T04:04:55+00:00",
+    "height": 1200,
+    "id": "wookhan",
+    "query": "Wookhan Tribal North East India indian recipe",
+    "result_source": "Raks Kitchen",
+    "result_title": "Idichakka Thoran Recipe | Quick video",
+    "source": "serpapi",
+    "url": "https://rakskitchen.net/wp-content/uploads/2026/03/idichakka-thoran-recipe.jpg",
+    "width": 1200
+  },
+  "yakhni": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "yakhni",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "yakhni-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "yakhni-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "year-chapa": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "year-chapa",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "yel-adai": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "yel-adai",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "zafrani-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "zafrani-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "zarda": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "zarda",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  },
+  "zarda-pulao": {
+    "fetched_at": "2026-04-28T04:01:29+00:00",
+    "id": "zarda-pulao",
+    "kind_dir": "recipes",
+    "source": "bootstrap-pre-crash",
+    "url": null
+  }
+}

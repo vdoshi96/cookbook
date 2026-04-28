@@ -35,6 +35,11 @@ GRAPH_JSON = DATA_DIR / "graph.json"
 FRONT_MATTER_JSON = DATA_DIR / "front-matter.json"
 GLOSSARY_JSON = DATA_DIR / "glossary.json"
 
+# Image sourcing (Stage 9 — internet fetcher)
+IMAGE_OVERRIDES = PIPELINE_DIR / "data" / "image-overrides.yml"
+IMAGE_PROVENANCE = DATA_IMAGES / "_provenance.json"
+IMAGE_FETCH_FAILURES = BUILD_DIR / "image-fetch-failures.json"
+
 
 def ensure_build_dirs() -> None:
     for d in (BUILD_DIR, BUILD_PAGES, BUILD_PAGE_IMAGES, DATA_DIR, DATA_IMAGES):

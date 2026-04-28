@@ -34,9 +34,23 @@ Everything you need lives in `/data/`. Treat these as static assets imported at 
 | `tags.json` | Tag → recipes. Tags include dietary (vegetarian, vegan, contains-egg, non-veg), technique (tandoor, deep-fry, grill, slow-cook…), and occasion (festival, everyday, wedding). |
 | `graph.json` | Cross-reference edges + reverse edges ("used in"). |
 | `front-matter.json` | The book's introduction, history, Ayurveda primer, regions overview, and notes on the recipes — as structured Markdown. |
-| `images/*.{webp,jpg}` | Recipe and section/region hero photos. |
+| `images/recipes/{id}.webp` | Recipe hero photos. |
+| `images/sections/{id}.webp` | Section hero photos. |
+| `images/regions/{id}.webp` | Region hero photos. |
 
 **Stub data is checked in to `main` so you can build immediately**, with 2–3 representative records per file. Real data lands incrementally on `backend` and gets merged forward to `main` as it's produced.
+
+### Where images come from
+
+Images are sourced from the internet (SerpAPI Google Images search), not from the PDF. The PDF photos turned out too low-quality to use, and this is a personal/non-commercial project so the backend doesn't filter by license — it picks the highest-quality match available. See [the design spec §8.5](docs/superpowers/specs/2026-04-26-india-cookbook-website-design.md) for full policy.
+
+Practical notes for the frontend:
+
+- Each recipe has an `image` field (string path under `/data/`, or `null`).
+- Each section and each region has a `hero_image` field (same shape).
+- Paths are organized by kind: `images/recipes/{id}.webp`, `images/sections/{id}.webp`, `images/regions/{id}.webp`. **No top-level `images/*.webp` files anymore** — the old flat layout (e.g. `images/p096-nargisi-seekh-kebab.webp`) is gone.
+- A null value means the fetch didn't find a usable image. Render your existing placeholder.
+- Image coverage is comprehensive: every recipe, every section, and every region gets a fetch attempt. The backend reports any per-asset failures so they can be hand-curated via an override file; once those are resolved, expect ~100% coverage.
 
 ### Recipe shape (abbreviated)
 
@@ -59,7 +73,7 @@ Everything you need lives in `/data/`. Treat these as static assets imported at 
   ],
   "instructions": ["Cook the potatoes...", "..."],
   "cross_refs": [{ "name": "Paneer", "id": "paneer" }],
-  "image": "images/p096-nargisi-seekh-kebab.webp"
+  "image": "images/recipes/nargisi-seekh-kebab.webp"
 }
 ```
 

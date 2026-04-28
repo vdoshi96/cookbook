@@ -27,7 +27,8 @@
         "boorelu-appalu",
         "pappu-charu"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/andhra-pradesh.webp"
     },
     {
       "id": "anglo-indian",
@@ -37,7 +38,8 @@
         "chaamp-chops",
         "murg-ishtoo"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/anglo-indian.webp"
     },
     {
       "id": "awadh",
@@ -187,7 +189,8 @@
         "thandai",
         "kesar-elaychi-sherbet"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/awadh.webp"
     },
     {
       "id": "bengal",
@@ -199,7 +202,8 @@
         "panther-jhol",
         "panther-jhol-2"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/bengal.webp"
     },
     {
       "id": "coastal",
@@ -233,7 +237,8 @@
         "sarangyacha-pulao",
         "ale-bele"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/coastal.webp"
     },
     {
       "id": "delhi",
@@ -255,7 +260,8 @@
         "murg-mumtaz",
         "biryani-i"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/delhi.webp"
     },
     {
       "id": "delhi-agra",
@@ -264,7 +270,8 @@
       "recipe_ids": [
         "meve-ki-gujiya"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/delhi-agra.webp"
     },
     {
       "id": "delhi-bhopal",
@@ -273,7 +280,8 @@
       "recipe_ids": [
         "ishtoo-ii-2"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/delhi-bhopal.webp"
     },
     {
       "id": "delhi-punjab-awadh",
@@ -283,7 +291,8 @@
         "garam-masala-i",
         "cheela"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/delhi-punjab-awadh.webp"
     },
     {
       "id": "goa",
@@ -295,7 +304,8 @@
         "chicken-xacuti",
         "sorpatel"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/goa.webp"
     },
     {
       "id": "gujarat",
@@ -311,7 +321,8 @@
         "bohri-chicken",
         "sofiyani-pulao"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/gujarat.webp"
     },
     {
       "id": "hyderabad",
@@ -341,7 +352,8 @@
         "khoobani-ka-meetha",
         "gil-e-behisht"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/hyderabad.webp"
     },
     {
       "id": "hyderabad-andhra-pradesh",
@@ -350,7 +362,8 @@
       "recipe_ids": [
         "aloogadda-vepudu-2"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/hyderabad-andhra-pradesh.webp"
     },
     {
       "id": "jammu-and-kashmir",
@@ -383,7 +396,8 @@
         "kashmiri-pulao",
         "sheer-chai"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/jammu-and-kashmir.webp"
     },
     {
       "id": "karnataka",
@@ -396,7 +410,8 @@
         "vangi-bhaath",
         "bisi-bele-huli-anna"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/karnataka.webp"
     },
     {
       "id": "karnataka-tamil-nadu",
@@ -405,7 +420,8 @@
       "recipe_ids": [
         "mysore-pak"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/karnataka-tamil-nadu.webp"
     },
     {
       "id": "kerala",
@@ -441,7 +457,8 @@
         "kadalaparippu-payasam-2",
         "neyappam"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/kerala.webp"
     },
     {
       "id": "maharashtra",
@@ -459,7 +476,8 @@
         "shrikhand",
         "puran-poli"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/maharashtra.webp"
     },
     {
       "id": "north-east-india",
@@ -472,7 +490,8 @@
         "wak-al-galda",
         "dohneiiong"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/north-east-india.webp"
     },
     {
       "id": "north-india",
@@ -481,7 +500,8 @@
       "recipe_ids": [
         "khoya"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/north-india.webp"
     },
     {
       "id": "pan-indian",
@@ -507,7 +527,8 @@
         "nimboo-ka-sherbet",
         "nimbuwali-chai"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/pan-indian.webp"
     },
     {
       "id": "parsi",
@@ -521,7 +542,8 @@
         "jardalu-boti",
         "dhansak"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/parsi.webp"
     },
     {
       "id": "punjab",
@@ -615,7 +637,8 @@
         "kharbuje-ka-panna-2",
         "kharbuje-ka-panna-3"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/punjab.webp"
     },
     {
       "id": "punjab-awadh",
@@ -624,7 +647,8 @@
       "recipe_ids": [
         "aloo-tamatar"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/punjab-awadh.webp"
     },
     {
       "id": "punjab-awadh-delhi",
@@ -633,7 +657,8 @@
       "recipe_ids": [
         "samosa"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/punjab-awadh-delhi.webp"
     },
     {
       "id": "punjab-delhi",
@@ -642,7 +667,8 @@
       "recipe_ids": [
         "gajar-ka-halwa"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/punjab-delhi.webp"
     },
     {
       "id": "punjab-delhi-awadh",
@@ -654,7 +680,8 @@
         "moticoor-laddu",
         "suji-halwa"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/punjab-delhi-awadh.webp"
     },
     {
       "id": "rajasthan",
@@ -696,7 +723,8 @@
         "makki-ka-halwa",
         "mawe-ki-kachori"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/rajasthan.webp"
     },
     {
       "id": "sindh",
@@ -706,7 +734,8 @@
         "sindhi-karhi",
         "nishashte-ka-halwa"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/sindh.webp"
     },
     {
       "id": "tamil-nadu",
@@ -783,7 +812,8 @@
         "filter-kaapi-2",
         "filter-kaapi-3"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/tamil-nadu.webp"
     },
     {
       "id": "tamil-nadu-karnataka",
@@ -792,7 +822,8 @@
       "recipe_ids": [
         "nariyal-tamatar-ki-chutney"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/tamil-nadu-karnataka.webp"
     },
     {
       "id": "tamil-nadu-karnataka-kerala",
@@ -801,7 +832,8 @@
       "recipe_ids": [
         "dosa"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/tamil-nadu-karnataka-kerala.webp"
     },
     {
       "id": "telangana",
@@ -845,7 +877,8 @@
         "baadam-ki-jaali",
         "kairi-ka-sherbet"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/telangana.webp"
     },
     {
       "id": "tribal-north-east-india",
@@ -863,7 +896,8 @@
         "wookhan",
         "wak-serjak"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/tribal-north-east-india.webp"
     },
     {
       "id": "uttarakhand",
@@ -878,7 +912,8 @@
         "gaderi-ki-dahidali-subzi",
         "baant"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/uttarakhand.webp"
     },
     {
       "id": "west-bengal",
@@ -906,7 +941,8 @@
         "borar-jhaal",
         "ilish-maachher-pulao"
       ],
-      "map_coords": null
+      "map_coords": null,
+      "hero_image": "images/regions/west-bengal.webp"
     }
   ]
 }
