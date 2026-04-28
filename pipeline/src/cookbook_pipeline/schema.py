@@ -143,3 +143,23 @@ class FrontMatterFile(BaseModel):
 class RecipesFile(BaseModel):
     schema_version: int = 1
     recipes: list[Recipe]
+
+
+class GlossaryEntry(BaseModel):
+    """One Glossary entry from the back of the book.
+
+    Most entries are an English term mapped to a Hindi/regional name plus a
+    one-line definition. Some entries point at a specific recipe (e.g. "Garam
+    Masala" → the Garam Masala recipe page) — when that mapping is detectable,
+    `recipe_id` is populated so the frontend can deep-link.
+    """
+
+    english_name: str
+    regional_name: str | None = None
+    definition: str | None = None
+    recipe_id: str | None = None
+
+
+class GlossaryFile(BaseModel):
+    schema_version: int = 1
+    entries: list[GlossaryEntry]

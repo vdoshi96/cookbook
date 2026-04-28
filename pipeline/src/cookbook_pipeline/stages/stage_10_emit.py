@@ -7,6 +7,7 @@ from pathlib import Path
 
 from cookbook_pipeline.schema import (
     FrontMatterFile,
+    GlossaryFile,
     GraphFile,
     IngredientsFile,
     RecipesFile,
@@ -26,6 +27,7 @@ def emit(
     edges: list[dict],
     used_in: dict[str, list[str]],
     front_matter: dict,
+    glossary_entries: list[dict],
     out_dir: Path,
 ) -> None:
     """Validate every payload and write to /data/."""
@@ -56,3 +58,8 @@ def emit(
     fm_payload = {"schema_version": 1, **front_matter}
     fm = FrontMatterFile.model_validate(fm_payload)
     (out_dir / "front-matter.json").write_text(fm.model_dump_json(indent=2))
+
+    gl = GlossaryFile.model_validate(
+        {"schema_version": 1, "entries": glossary_entries}
+    )
+    (out_dir / "glossary.json").write_text(gl.model_dump_json(indent=2))

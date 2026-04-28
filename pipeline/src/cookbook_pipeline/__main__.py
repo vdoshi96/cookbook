@@ -33,6 +33,8 @@ from cookbook_pipeline.stages.stage_8_indexes import (
 )
 from cookbook_pipeline.stages.stage_9_images import extract_recipe_images
 from cookbook_pipeline.stages.stage_10_emit import emit
+from cookbook_pipeline.stages.stage_11_glossary import extract_glossary
+from cookbook_pipeline.stages.stage_1_sections import detect_paratext_ranges
 
 
 def stage_0() -> None:
@@ -175,6 +177,24 @@ def stage_5_through_10() -> None:
         r["image"] = associations.get(r["id"])
     print(f"Stage 9: associated {len(associations)} images.")
 
+    # Stage 11: glossary (paratext page range detected from Stage 1's footer scan)
+    paratext = detect_paratext_ranges(paths.BUILD_PAGES)
+    glossary_entries: list[dict] = []
+    if "glossary" in paratext:
+        glossary_entries = extract_glossary(
+            paths.BUILD_PAGES,
+            paths.BUILD_PAGE_IMAGES,
+            paratext["glossary"],
+            recipes_with_ids,
+        )
+        print(
+            f"Stage 11: extracted {len(glossary_entries)} glossary entries "
+            f"({sum(1 for e in glossary_entries if e['recipe_id'])} linked to recipes) "
+            f"from pages {paratext['glossary'][0]}-{paratext['glossary'][1]}."
+        )
+    else:
+        print("Stage 11: no Glossary page range detected; emitting empty glossary.")
+
     # Page-range tuples need to be tuples for SectionsFile to validate
     for s in sections:
         s["page_range"] = tuple(s["page_range"])
@@ -189,6 +209,7 @@ def stage_5_through_10() -> None:
         edges=edges,
         used_in=used_in,
         front_matter=front_matter,
+        glossary_entries=glossary_entries,
         out_dir=paths.DATA_DIR,
     )
     print(f"Stage 10: emitted final files to {paths.DATA_DIR}.")
@@ -210,7 +231,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="cookbook_pipeline")
     parser.add_argument("command", choices=["run", "pilot"])
     parser.add_argument("--stage", type=int, default=None,
-                        help="Run only one stage (0-10).")
+                        help="Run only one stage (0-11). Stages 5-11 share a "
+                             "single tail (re-running any of them re-runs "
+                             "all from cached Stage 4 output).")
     args = parser.parse_args(argv)
 
     if args.command == "pilot":
@@ -226,6 +249,7 @@ def main(argv: list[str] | None = None) -> int:
         5: stage_5_through_10, 6: stage_5_through_10,
         7: stage_5_through_10, 8: stage_5_through_10,
         9: stage_5_through_10, 10: stage_5_through_10,
+        11: stage_5_through_10,  # glossary runs as part of the tail
     }[args.stage]()
     return 0
 
