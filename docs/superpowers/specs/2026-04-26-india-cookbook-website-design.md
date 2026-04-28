@@ -128,8 +128,19 @@ For each section, give Haiku the section intro + the list of recipe titles + the
 **Stage 8 — Ingredient and tag indexing.**
 Walk all cleaned recipes. Normalize ingredient strings (lowercase, strip qty/notes, lemmatize where helpful — `paneers` → `paneer`). Build `ingredients.json` (ingredient → recipe IDs) and `tags.json` (tag → recipe IDs). Hand-curate a small synonyms/blocklist file in `pipeline/data/ingredient-synonyms.yml` for common conflations (`coriander leaves` = `cilantro`).
 
-**Stage 9 — Image extraction and association.**
-Pull recipe photos from the PDF using `PyMuPDF`. Match each image to a recipe by page proximity (image on page N usually belongs to the recipe on page N or N±1). Compress to WebP + JPEG fallback, write to `data/images/`. Update `recipes.json` with `image` paths. Edge case: some recipes have no photo; leave `image: null`.
+**Stage 9 — Internet image fetching.**
+Per the image-sourcing policy in §8.5, all images come from the internet rather than the PDF. For each recipe, section, and region, build a query, run a SerpAPI Google Images search, pick the first usable result (≥800×600, not a known stock-photo gallery domain), download, and re-encode to WebP at quality 85. Outputs are organized as:
+
+```
+/data/images/recipes/{recipe_id}.webp
+/data/images/sections/{section_id}.webp
+/data/images/regions/{region_id}.webp
+/data/images/_provenance.json   # {asset_id: {url, source, query, fetched_at, width, height, ...}}
+```
+
+The provenance cache makes re-runs free for already-fetched assets — the SerpAPI free/Starter quota only burns on first fetch and on intentional cache busts (delete one entry, re-run that asset). A manual override file at `pipeline/data/image-overrides.yml` lets us hard-pin a URL or a local file when the auto-fetch picks something bad. Per-asset failures are non-fatal: the asset gets `image: null` (or `hero_image: null`) and is logged to `pipeline/build/image-fetch-failures.json` for human review.
+
+Recipes without a successful fetch render with the frontend's existing placeholder. Region IDs without a curated query (see `REGION_QUERY_OVERRIDES` in `stage_9_fetch_images.py`) fall back to "{name} India culture", which is generic; the curated map covers all 31 expected regions in this corpus.
 
 **Stage 10 — Validation and emit.**
 Run pydantic validation against the canonical schema. Fail loudly on any record missing required fields. Emit final files to `/data/`:
@@ -399,6 +410,46 @@ The frontend is Codex's work. The full brief lives in `BRIEF.md`. Highlights:
 - Preview deploys for every PR.
 - The frontend has zero runtime backend in v1.
 - Image assets ship from `/public/images/` (the build copies `/data/images/` there).
+
+### 8.5 Image sourcing policy
+
+**Images are sourced from the internet, not from the PDF.** The PDF photos
+were downsampled too far for a hero-image experience; the website fetches
+high-quality replacements via SerpAPI's Google Images search. This is a
+personal, non-commercial project, so license is not filtered — Stage 9 picks
+the highest-quality match available for each query.
+
+Practical implications:
+
+- Every recipe / section / region has its image fetched once and cached in
+  `/data/images/_provenance.json`. Re-runs don't re-fetch.
+- A curated override file (`pipeline/data/image-overrides.yml`) lets the
+  pipeline operator hard-pin a URL or a local file for any asset whose
+  auto-fetched picture is poor.
+- Recipe queries are `"{recipe.name} {origin_region_name} indian recipe"`.
+  Region queries use a curated map of well-known landmarks and cultural
+  scenes (Awadh → Bara Imambara, Kashmir → Dal Lake, Punjab → Golden Temple,
+  …) for visual coherence; sections fall back to a generic
+  `"indian {section.name} food"` query.
+- The image directory layout is:
+
+  ```
+  /data/images/recipes/{recipe_id}.webp
+  /data/images/sections/{section_id}.webp
+  /data/images/regions/{region_id}.webp
+  /data/images/_provenance.json
+  ```
+
+  The frontend resolves an asset's URL from the `image` (recipe) or
+  `hero_image` (section/region) field on the data record, which is the
+  relative path under `/data/`. A null value means the fetch failed and the
+  frontend should render its placeholder.
+
+If the project ever ships commercially, this policy needs revisiting:
+SerpAPI returns links to third-party sources whose copyright is not
+warranted, and a redistribution-safe pipeline would need to switch to
+public-domain / Creative Commons sources (or replace the photos with
+generated imagery).
 
 ---
 

@@ -1,0 +1,21 @@
+# Manual image overrides for Stage 9.
+#
+# When the SerpAPI auto-fetch picks a bad image, override here. Stage 9
+# consults this file BEFORE hitting the API, so an entry here is authoritative
+# and costs zero API calls. Removing an entry causes the next run to re-fetch
+# from the cached SerpAPI provenance (still no API call), or from SerpAPI
+# afresh if no cache entry exists.
+#
+# Format:
+#     <asset_id>: <url-or-relative-path>
+#
+# `asset_id` is the recipe / section / region id (kebab-case), e.g.
+# "nargisi-seekh-kebab", "snacks-and-appetizers", "awadh".
+#
+# Value can be either:
+#   - An https URL to download from
+#   - A path relative to the repo root (e.g. "pipeline/data/manual-images/foo.jpg")
+#
+# Example:
+#     awadh: https://upload.wikimedia.org/wikipedia/commons/.../bara-imambara.jpg
+#     nargisi-seekh-kebab: pipeline/data/manual-images/nargisi.jpg

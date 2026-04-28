@@ -31,7 +31,7 @@ from cookbook_pipeline.stages.stage_8_indexes import (
     build_ingredient_index,
     build_tag_index,
 )
-from cookbook_pipeline.stages.stage_9_images import extract_recipe_images
+from cookbook_pipeline.stages.stage_9_fetch_images import fetch_all
 from cookbook_pipeline.stages.stage_10_emit import emit
 from cookbook_pipeline.stages.stage_11_glossary import extract_glossary
 from cookbook_pipeline.stages.stage_1_sections import detect_paratext_ranges
@@ -171,11 +171,25 @@ def stage_5_through_10() -> None:
     tags_idx = build_tag_index(recipes_with_ids)
     print(f"Stage 8: {len(ingredients_idx)} ingredients, {len(tags_idx)} tags.")
 
-    # Stage 9: images (must happen before emit so we can attach paths)
-    associations = extract_recipe_images(paths.SOURCE_PDF, recipes_with_ids, paths.DATA_IMAGES)
-    for r in recipes_with_ids:
-        r["image"] = associations.get(r["id"])
-    print(f"Stage 9: associated {len(associations)} images.")
+    # Stage 9: fetch images from the internet (PDF images are no longer used).
+    # Mutates each asset dict in place to set its `image` / `hero_image` field.
+    summary = fetch_all(
+        recipes=recipes_with_ids,
+        sections=sections,
+        regions=regions,
+        images_root=paths.DATA_IMAGES,
+        overrides_path=paths.IMAGE_OVERRIDES,
+        provenance_path=paths.IMAGE_PROVENANCE,
+    )
+    paths.IMAGE_FETCH_FAILURES.parent.mkdir(parents=True, exist_ok=True)
+    paths.IMAGE_FETCH_FAILURES.write_text(json.dumps(summary["failed"], indent=2))
+    print(
+        f"Stage 9: {summary['fetched']} fetched, "
+        f"{summary['skipped_cached']} cached, "
+        f"{len(summary['failed'])} failed "
+        f"({summary['total_assets']} total assets). "
+        f"Failures logged to {paths.IMAGE_FETCH_FAILURES}."
+    )
 
     # Stage 11: glossary (paratext page range detected from Stage 1's footer scan)
     paratext = detect_paratext_ranges(paths.BUILD_PAGES)
