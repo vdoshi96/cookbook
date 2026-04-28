@@ -25,6 +25,7 @@ from cookbook_pipeline.stages.stage_9_fetch_images import (
     _domain_of,
     _is_blocked,
     _pick_best_result,
+    _pick_candidates,
     fetch_all,
     load_overrides,
     load_provenance,
@@ -67,6 +68,90 @@ def test_pick_best_result_returns_none_when_no_usable():
     assert _pick_best_result([
         {"original": "https://shutterstock.com/a.jpg"},
     ]) is None
+
+
+def test_blocked_domains_includes_social_lookaside():
+    """Regression: Facebook/Instagram lookaside CDN URLs return HTML, not images,
+    so the picker must reject them before they reach the downloader.
+    """
+    assert _is_blocked("https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=x")
+    assert _is_blocked("https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=x")
+    assert _is_blocked("https://www.tiktok.com/api/img/?itemId=x")
+
+
+def test_pick_candidates_returns_multiple():
+    """The fetcher needs multiple candidates so a single bad URL doesn't fail the asset."""
+    results = [
+        {"original": "https://shutterstock.com/blocked.jpg",
+         "original_width": 4000, "original_height": 3000},
+        {"original": "https://example.com/a.jpg",
+         "original_width": 1600, "original_height": 1200},
+        {"original": "https://example.com/b.jpg",
+         "original_width": 1600, "original_height": 1200},
+        {"original": "https://example.com/c.jpg"},  # no dims, accepted
+        {"thumbnail": "https://t.example.com/x.jpg"},  # no original, rejected
+    ]
+    cands = _pick_candidates(results, limit=10)
+    urls = [c["original"] for c in cands]
+    assert urls == ["https://example.com/a.jpg", "https://example.com/b.jpg",
+                    "https://example.com/c.jpg"]
+
+
+def test_pick_candidates_respects_limit():
+    results = [{"original": f"https://example.com/{i}.jpg",
+                "original_width": 1600, "original_height": 1200} for i in range(20)]
+    assert len(_pick_candidates(results, limit=3)) == 3
+
+
+def test_pick_best_result_rejects_thumbnail_only_results():
+    """Regression: a result with only `thumbnail` was being accepted by the
+    picker, but the downloader only reads `original` / `image`, so it would
+    crash with MissingSchema(None). Thumbnails are also too small for hero use.
+    """
+    pick = _pick_best_result([
+        {"thumbnail": "https://t.example.com/tiny.jpg",
+         "original_width": 4000, "original_height": 3000},
+    ])
+    assert pick is None
+
+
+def test_fetch_all_does_not_abort_run_on_unexpected_exception(tmp_path: Path, mocker):
+    """Regression: a non-FetcherError exception in a worker (e.g. requests
+    MissingSchema, PIL UnidentifiedImageError) used to propagate from
+    fut.result() and abort the entire fetcher, losing all provenance.
+    Now every worker exception is demoted to a per-asset failure.
+    """
+    images_root = tmp_path / "images"
+    overrides = tmp_path / "overrides.yml"
+    prov = tmp_path / "prov.json"
+
+    # Return something the picker accepts, but where `original` is missing
+    # and the URL becomes None — exercises the same code path that crashed.
+    mocker.patch(
+        "cookbook_pipeline.stages.stage_9_fetch_images.serpapi_search",
+        return_value=[{"original": "https://example.com/good.jpg",
+                       "original_width": 1600, "original_height": 1200}],
+    )
+
+    # Make download raise a non-FetcherError exception.
+    def boom(url, dest):
+        raise RuntimeError("simulated unexpected failure")
+    mocker.patch(
+        "cookbook_pipeline.stages.stage_9_fetch_images.download_and_encode",
+        side_effect=boom,
+    )
+
+    recipes = [{"id": f"r{i}", "name": f"R{i}", "origin_region_name": "Awadh"}
+               for i in range(3)]
+    summary = fetch_all(
+        recipes=recipes, sections=[], regions=[],
+        images_root=images_root, overrides_path=overrides,
+        provenance_path=prov, api_key="fake",
+    )
+    # All three assets should report as failures, not crash the run.
+    assert summary["fetched"] == 0
+    assert len(summary["failed"]) == 3
+    assert all(r["image"] is None for r in recipes)
 
 
 def test_query_builders():
@@ -167,8 +252,9 @@ def test_fetch_all_skips_paratext_sections(tmp_path: Path, mocker):
     # Only the real cooking section is in the work list — that one will fail
     # because serpapi_search returned no results; that's fine for this test.
     assert summary["total_assets"] == 1
-    # SerpAPI should have been called exactly once (for snacks)
-    assert serp.call_count == 1
+    # SerpAPI is called for the primary query and the fallback query for snacks.
+    # The two paratext sections must NOT have triggered any calls.
+    assert serp.call_count == 2
 
 
 def test_fetch_all_uses_override_url(tmp_path: Path, mocker):
@@ -201,6 +287,52 @@ def test_fetch_all_uses_override_url(tmp_path: Path, mocker):
     # Provenance should record this as an override
     saved = json.loads(prov.read_text())
     assert saved["nargisi-seekh-kebab"]["source"] == "override"
+
+
+def test_fetch_all_falls_through_to_next_candidate_on_download_failure(tmp_path: Path, mocker):
+    """When the top SerpAPI result fails to download (HTTP 403, decode error, etc.),
+    the fetcher must try the next candidate before giving up on the asset.
+    """
+    images_root = tmp_path / "images"
+    overrides = tmp_path / "overrides.yml"
+    prov = tmp_path / "prov.json"
+
+    mocker.patch(
+        "cookbook_pipeline.stages.stage_9_fetch_images.serpapi_search",
+        return_value=[
+            {"original": "https://bad.example.com/a.jpg",
+             "original_width": 1600, "original_height": 1200},
+            {"original": "https://bad.example.com/b.jpg",
+             "original_width": 1600, "original_height": 1200},
+            {"original": "https://good.example.com/c.jpg",
+             "original_width": 1600, "original_height": 1200},
+        ],
+    )
+
+    call_count = {"n": 0}
+    def fake_download(url, dest):
+        call_count["n"] += 1
+        if "bad.example.com" in url:
+            raise FetcherError(f"download {url}: HTTP 403")
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        Image.new("RGB", (1024, 768)).save(dest, "WEBP")
+        return (1024, 768)
+    mocker.patch(
+        "cookbook_pipeline.stages.stage_9_fetch_images.download_and_encode",
+        side_effect=fake_download,
+    )
+
+    recipes = [{"id": "r1", "name": "R1", "origin_region_name": "Awadh"}]
+    summary = fetch_all(
+        recipes=recipes, sections=[], regions=[],
+        images_root=images_root, overrides_path=overrides,
+        provenance_path=prov, api_key="fake",
+    )
+    assert summary["fetched"] == 1
+    assert summary["failed"] == []
+    assert recipes[0]["image"] == "images/recipes/r1.webp"
+    # Should have tried all three URLs (two bad, one good)
+    assert call_count["n"] == 3
 
 
 def test_fetch_all_records_failures_without_aborting(tmp_path: Path, mocker):

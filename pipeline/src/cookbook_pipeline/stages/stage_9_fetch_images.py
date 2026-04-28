@@ -59,10 +59,12 @@ PARATEXT_IDS = frozenset({"introduction", "glossary", "directory", "index"})
 MIN_WIDTH = 800
 MIN_HEIGHT = 600
 
-# Stock-photo and gallery domains that often serve watermarked or
-# license-restricted previews. Personal use is unrestricted, but the
-# previews are visibly bad (giant watermarks). Skip them for image quality,
-# not for licensing reasons.
+# Domains that don't serve usable images:
+# - Stock-photo galleries serve watermarked previews (visible artifact, not a
+#   licensing concern — this project is personal-use).
+# - Facebook / Instagram "lookaside" CDN URLs return an HTML wrapper page
+#   when fetched outside the social context, which PIL can't decode.
+# - TikTok image API similarly bot-blocks.
 BLOCKED_DOMAINS = frozenset({
     "shutterstock.com",
     "alamy.com",
@@ -72,6 +74,9 @@ BLOCKED_DOMAINS = frozenset({
     "depositphotos.com",
     "123rf.com",
     "stock.adobe.com",
+    "lookaside.fbsbx.com",
+    "lookaside.instagram.com",
+    "tiktok.com",
 })
 
 WEBP_QUALITY = 85
@@ -148,41 +153,87 @@ def serpapi_search(query: str, api_key: str) -> list[dict]:
 
 
 def _pick_best_result(results: list[dict]) -> dict | None:
-    """Return the first usable result, or None."""
+    """Return the first usable result, or None. See `_pick_candidates`."""
+    candidates = _pick_candidates(results, limit=1)
+    return candidates[0] if candidates else None
+
+
+def _pick_candidates(results: list[dict], limit: int = 6) -> list[dict]:
+    """Return up to `limit` usable results in preference order.
+
+    Multiple candidates let the fetcher fall through to the next pick if a
+    download fails (HTTP 403/404/429, decode errors, etc.) instead of
+    bailing on the asset entirely. Filtering rules:
+
+    - Requires `original` or `image` (a downloadable hero-sized URL).
+      Thumbnails (typically 120-250px) are deliberately rejected.
+    - Skips domains in BLOCKED_DOMAINS.
+    - Skips results where SerpAPI reports dimensions below
+      MIN_WIDTH x MIN_HEIGHT.
+    """
+    out: list[dict] = []
     for r in results:
-        url = r.get("original") or r.get("image") or r.get("thumbnail")
+        url = r.get("original") or r.get("image")
         if not url:
             continue
         if _is_blocked(url):
             continue
-        # SerpAPI returns original_width / original_height when known.
         w = r.get("original_width") or 0
         h = r.get("original_height") or 0
         if w and h and (w < MIN_WIDTH or h < MIN_HEIGHT):
             continue
-        return r
-    return None
+        out.append(r)
+        if len(out) >= limit:
+            break
+    return out
+
+
+# Browser-shaped User-Agent. Wikimedia Commons specifically rate-limits
+# (HTTP 429) UAs that look like bots; a plausible browser string lifts
+# our pull rate substantially. We keep an identifying suffix per
+# Wikimedia's policy so they can contact us if we misbehave.
+DOWNLOAD_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 "
+        "(KHTML, like Gecko) Version/17.0 Safari/605.1.15 "
+        "cookbook-pipeline/1.0 (+personal use, contact via repo)"
+    ),
+    "Accept": "image/webp,image/jpeg,image/png,image/*,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
 
 
 def download_and_encode(url: str, dest: Path) -> tuple[int, int]:
-    """Download `url`, decode, re-encode to WebP at `dest`. Returns (w, h)."""
-    headers = {"User-Agent": "Mozilla/5.0 (cookbook-pipeline)"}
-    resp = requests.get(url, headers=headers, timeout=DOWNLOAD_TIMEOUT_S, stream=True)
-    if resp.status_code != 200:
-        raise FetcherError(f"download {url}: HTTP {resp.status_code}")
-    raw = resp.content
-    try:
-        pil = Image.open(io.BytesIO(raw)).convert("RGB")
-    except Exception as e:
-        raise FetcherError(f"decode {url}: {e}") from e
-    if pil.width < MIN_WIDTH or pil.height < MIN_HEIGHT:
-        raise FetcherError(
-            f"{url}: actual dimensions {pil.width}x{pil.height} below "
-            f"min {MIN_WIDTH}x{MIN_HEIGHT}"
-        )
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    pil.save(dest, "WEBP", quality=WEBP_QUALITY)
-    return pil.width, pil.height
+    """Download `url`, decode, re-encode to WebP at `dest`. Returns (w, h).
+
+    Retries once on HTTP 429 / 5xx with a short backoff. Persistent failures
+    raise FetcherError so the caller can fall through to the next candidate.
+    """
+    backoff = 1.5
+    last_err = None
+    for attempt in range(3):
+        resp = requests.get(url, headers=DOWNLOAD_HEADERS, timeout=DOWNLOAD_TIMEOUT_S)
+        if resp.status_code == 200:
+            raw = resp.content
+            try:
+                pil = Image.open(io.BytesIO(raw)).convert("RGB")
+            except Exception as e:
+                raise FetcherError(f"decode {url}: {e}") from e
+            if pil.width < MIN_WIDTH or pil.height < MIN_HEIGHT:
+                raise FetcherError(
+                    f"{url}: actual dimensions {pil.width}x{pil.height} below "
+                    f"min {MIN_WIDTH}x{MIN_HEIGHT}"
+                )
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            pil.save(dest, "WEBP", quality=WEBP_QUALITY)
+            return pil.width, pil.height
+        last_err = f"HTTP {resp.status_code}"
+        if resp.status_code in (429, 500, 502, 503, 504) and attempt < 2:
+            time.sleep(backoff)
+            backoff *= 2
+            continue
+        break
+    raise FetcherError(f"download {url}: {last_err}")
 
 
 def _slugify_for_query(s: str) -> str:
@@ -198,8 +249,18 @@ def _build_recipe_query(recipe: dict) -> str:
     return " ".join(_slugify_for_query(p) for p in parts if p)
 
 
+def _build_recipe_fallback_query(recipe: dict) -> str:
+    """Shorter query for recipes whose primary query returned thumbnail-only
+    results (a SerpAPI quirk on long, specific queries)."""
+    return f"{_slugify_for_query(recipe['name'])} recipe"
+
+
 def _build_section_query(section: dict) -> str:
     return f"indian {_slugify_for_query(section['name'])} food"
+
+
+def _build_section_fallback_query(section: dict) -> str:
+    return f"indian {_slugify_for_query(section['name'])}"
 
 
 # Curated per-region queries — region names alone return generic stock imagery
@@ -252,10 +313,34 @@ def _build_region_query(region: dict) -> str:
     return f"{region['name']} India culture"
 
 
+def _try_serpapi_query(
+    query: str, api_key: str, dest: Path,
+) -> tuple[str, dict] | None:
+    """Run a single SerpAPI query and try to download from its candidates.
+
+    Returns (downloaded_url, picked_result) on success, None if no candidate
+    works (caller can try a fallback query). Raises FetcherError only on
+    SerpAPI itself failing (so that's not retried with the fallback).
+    """
+    results = serpapi_search(query, api_key)
+    candidates = _pick_candidates(results)
+    if not candidates:
+        return None
+    for pick in candidates:
+        url = pick.get("original") or pick.get("image")
+        try:
+            w, h = download_and_encode(url, dest)
+            return url, {"pick": pick, "width": w, "height": h}
+        except FetcherError:
+            continue
+    return None
+
+
 def _fetch_one(
     *,
     asset_id: str,
     query: str,
+    fallback_query: str | None,
     dest: Path,
     overrides: dict[str, str],
     provenance: dict[str, dict],
@@ -288,18 +373,30 @@ def _fetch_one(
     if cached and dest.exists():
         return cached
 
-    # 3. SerpAPI
-    results = serpapi_search(query, api_key)
-    pick = _pick_best_result(results)
-    if pick is None:
-        raise FetcherError(f"no usable results for query {query!r}")
-    url = pick.get("original") or pick.get("image")
-    w, h = download_and_encode(url, dest)
-    return {"id": asset_id, "url": url, "source": "serpapi",
-            "query": query, "fetched_at": _utc_now_iso(),
-            "width": w, "height": h,
-            "result_title": pick.get("title"),
-            "result_source": pick.get("source")}
+    # 3. SerpAPI — try the primary query first, then a shorter fallback if it
+    # produces no usable results. Long, specific queries occasionally trigger
+    # SerpAPI's thumbnail-only mode (no `original` field on any result), and a
+    # shorter query usually gets full URLs.
+    queries_tried: list[str] = []
+    for q in [query] + ([fallback_query] if fallback_query else []):
+        if q in queries_tried:
+            continue
+        queries_tried.append(q)
+        result = _try_serpapi_query(q, api_key, dest)
+        if result is None:
+            continue
+        url, meta = result
+        pick = meta["pick"]
+        return {"id": asset_id, "url": url,
+                "source": "serpapi" if q == query else "serpapi-fallback",
+                "query": q, "fetched_at": _utc_now_iso(),
+                "width": meta["width"], "height": meta["height"],
+                "result_title": pick.get("title"),
+                "result_source": pick.get("source")}
+    raise FetcherError(
+        f"no usable results across {len(queries_tried)} queries: "
+        + " | ".join(repr(q) for q in queries_tried)
+    )
 
 
 def fetch_all(
@@ -333,34 +430,52 @@ def fetch_all(
     fetched = 0
     skipped_cached = 0
 
-    # Build the work list. Each tuple: (kind, asset, dest_path, query, set_field, parent_dict)
-    work: list[tuple[str, dict, Path, str, str]] = []
+    # Build the work list. Each tuple:
+    # (kind, asset, dest_path, query, fallback_query, set_field)
+    work: list[tuple[str, dict, Path, str, str | None, str]] = []
     for r in recipes:
         dest = images_root / "recipes" / f"{r['id']}.webp"
-        work.append(("recipe", r, dest, _build_recipe_query(r), "image"))
+        work.append(("recipe", r, dest,
+                     _build_recipe_query(r),
+                     _build_recipe_fallback_query(r), "image"))
     for s in sections:
         if s["id"] in PARATEXT_IDS:
             continue
         dest = images_root / "sections" / f"{s['id']}.webp"
-        work.append(("section", s, dest, _build_section_query(s), "hero_image"))
+        work.append(("section", s, dest,
+                     _build_section_query(s),
+                     _build_section_fallback_query(s), "hero_image"))
     for rg in regions:
         dest = images_root / "regions" / f"{rg['id']}.webp"
-        work.append(("region", rg, dest, _build_region_query(rg), "hero_image"))
+        # Region queries are already curated landmark searches; fallback is
+        # the bare region name.
+        work.append(("region", rg, dest,
+                     _build_region_query(rg),
+                     rg["name"], "hero_image"))
 
     # Execute in parallel. SerpAPI Developer is 1000/hr → concurrency 4-6
     # is well within budget; Starter is 200/hr → concurrency 4 will get
     # rate-limited and back off via _serpapi retries, which is fine.
-    def _run_one(item: tuple[str, dict, Path, str, str]):
-        kind, asset, dest, query, set_field = item
+    def _run_one(item: tuple[str, dict, Path, str, str | None, str]):
+        kind, asset, dest, query, fallback_query, set_field = item
         try:
             row = _fetch_one(
-                asset_id=asset["id"], query=query, dest=dest,
+                asset_id=asset["id"], query=query,
+                fallback_query=fallback_query, dest=dest,
                 overrides=overrides, provenance=provenance, api_key=api_key,
             )
             return ("ok", kind, asset, set_field, dest, row)
-        except FetcherError as e:
-            return ("err", kind, asset, set_field, dest, str(e), query)
+        except Exception as e:
+            # Catch-all on purpose. Anything from the fetch path — bad URL,
+            # network timeout, image decode error, OS error — must be
+            # demoted to a per-asset failure, never propagated up. If a
+            # single asset's exception escapes, ThreadPoolExecutor lets it
+            # bubble out of fut.result() and aborts the whole run, which
+            # would lose ALL provenance for the run (it's saved at the end).
+            return ("err", kind, asset, set_field, dest,
+                    f"{type(e).__name__}: {e}", query)
 
+    completed = 0
     with ThreadPoolExecutor(max_workers=concurrency) as ex:
         futures = [ex.submit(_run_one, w) for w in work]
         for fut in tqdm(as_completed(futures), total=len(futures), desc="images"):
@@ -380,6 +495,13 @@ def fetch_all(
                 asset[set_field] = None
                 failures.append({"id": asset["id"], "kind": kind,
                                  "query": query, "error": err})
+            completed += 1
+            # Checkpoint provenance periodically so a crash mid-run doesn't
+            # forfeit the metadata for everything fetched up to that point.
+            # Re-runs use this to skip already-fetched assets without burning
+            # SerpAPI calls.
+            if completed % 25 == 0:
+                save_provenance(provenance_path, provenance)
 
     save_provenance(provenance_path, provenance)
 
