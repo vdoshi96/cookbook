@@ -81,8 +81,8 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
         <h2 id="references">References</h2>
         {recipe.cross_refs.length > 0 ? (
           <ul className="reference-list">
-            {recipe.cross_refs.map((reference) => (
-              <CrossReferenceItem reference={reference} key={`${reference.id}-${reference.page}`} />
+            {recipe.cross_refs.map((reference, index) => (
+              <CrossReferenceItem reference={reference} key={`${reference.id ?? reference.name}-${reference.page}-${index}`} />
             ))}
           </ul>
         ) : (

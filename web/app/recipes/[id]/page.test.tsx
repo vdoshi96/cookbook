@@ -1,5 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 describe("RecipePage", () => {
   it("renders recipe content, navigation, references, and related recipes", async () => {
@@ -53,5 +53,22 @@ describe("RecipePage", () => {
     await expect(pageModule.generateMetadata({ params: Promise.resolve({ id: "missing" }) })).resolves.toEqual({
       title: "Recipe"
     });
+  });
+
+  it("renders repeated cross-reference targets without duplicate key warnings", async () => {
+    const pageModule = await import("./page");
+    const consoleError = vi.spyOn(console, "error").mockImplementation(() => undefined);
+
+    try {
+      render(
+        await pageModule.default({
+          params: Promise.resolve({ id: "year-chapa" })
+        })
+      );
+
+      expect(consoleError.mock.calls.some((call) => call.join(" ").includes("same key"))).toBe(false);
+    } finally {
+      consoleError.mockRestore();
+    }
   });
 });
