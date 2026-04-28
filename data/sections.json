@@ -21,8 +21,48 @@
         35,
         63
       ],
-      "recipe_ids": [],
-      "start_here": [],
+      "recipe_ids": [
+        "garam-masala-i",
+        "garam-masala-ii",
+        "sambhar-masala-i",
+        "chettinad-sambhar-podi",
+        "poriyal-podi",
+        "dum-ka-masala",
+        "tandoori-chaat-masala",
+        "karepaku-karam",
+        "moonphali-masala",
+        "puliyadorai-masala",
+        "puliyadorai-masala-2",
+        "valsadi-masala",
+        "paappu-podi",
+        "valsadi-hara-masala",
+        "molaggai-podi",
+        "molaggai-podi-2",
+        "pisi-adrak",
+        "pisi-lehsun",
+        "pisa-kaju",
+        "khoya",
+        "paneer",
+        "chhena"
+      ],
+      "start_here": [
+        {
+          "id": "garam-masala-i",
+          "rationale": "The most foundational spice blend; no-cook method requires no specialized equipment."
+        },
+        {
+          "id": "sambhar-masala-i",
+          "rationale": "Introduces dry-roasting technique essential for deepening spice flavors across recipes."
+        },
+        {
+          "id": "pisi-adrak",
+          "rationale": "Simple no-cook paste demonstrates ginger preparation, a core Indian cooking ingredient."
+        },
+        {
+          "id": "paneer",
+          "rationale": "Essential dairy foundation used in countless Indian dishes; teaches basic culinary technique."
+        }
+      ],
       "hero_image": null
     },
     {
@@ -33,8 +73,55 @@
         67,
         91
       ],
-      "recipe_ids": [],
-      "start_here": [],
+      "recipe_ids": [
+        "masoor-ki-chutney",
+        "illigada-chutney",
+        "chintapandu-koythamira-chutney",
+        "chintapandu-thokku",
+        "nariyal-tamatar-ki-chutney",
+        "kobari-pachadi",
+        "dahi-ki-chutney",
+        "karipatta-chutney",
+        "til-ki-chutney",
+        "moonghali-ki-chutney",
+        "moong-dal-ki-chutney",
+        "dakshini-hari-chutney",
+        "kairi-ki-mhithi-chutney",
+        "seb-ki-chutney",
+        "bhaang-ki-chutney",
+        "aam-ka-achar",
+        "aam-ka-achar-2",
+        "nimboo-ka-achar",
+        "papite-ka-achar",
+        "kamrakh-ka-achar",
+        "tamatar-ka-achar",
+        "aloo-matar-ka-achar",
+        "lal-imli-ka-achar",
+        "ande-ka-achar",
+        "gosht-ka-achar",
+        "gosht-ka-achar-2",
+        "karam-kalle-ka-raita",
+        "ankur-ka-raita",
+        "arabi-ka-raita"
+      ],
+      "start_here": [
+        {
+          "id": "nariyal-tamatar-ki-chutney",
+          "rationale": "Essential fruit-based chutney combining coconut and tomato; teaches fundamental wet-blending technique."
+        },
+        {
+          "id": "til-ki-chutney",
+          "rationale": "Introduces dry-roasting foundational skill; sesame chutney is versatile and pairs with many dishes."
+        },
+        {
+          "id": "karam-kalle-ka-raita",
+          "rationale": "Simple no-cook yogurt raita showing cooling contrast to heat; requires minimal technique."
+        },
+        {
+          "id": "aam-ka-achar",
+          "rationale": "Classic mango pickle teaches preservation method; no-cook approach suits beginners well."
+        }
+      ],
       "hero_image": null
     },
     {
@@ -58,13 +145,29 @@
         "mangupullu",
         "vengayya",
         "milgai-bhajiya",
-        "kathirakkai",
+        "pesaru-punukulu",
         "mirchi-vada",
         "pata-bhaja",
         "poongobi-pakora",
         "methi-pakora",
         "cheese-ke-bhajiya",
         "poha-pulao",
+        "subz-ke-shami",
+        "aloo-tikki",
+        "aloo-ke-kebab",
+        "khumb-ki-tikki",
+        "dahi-ke-kebab",
+        "arabi-ke-kebab",
+        "vazhaiappoo-vada",
+        "vazhaiappoo-vada-2",
+        "lukhmi",
+        "samosa",
+        "singhara",
+        "rava-bonda",
+        "khuzhi-paniyaram",
+        "masala-siyam",
+        "batata-vada",
+        "raj-kachori",
         "rava-sevai-idli",
         "masala-idli",
         "pao-bhaji",
@@ -75,11 +178,14 @@
         "paper-dosa",
         "mysore-masala-dosa",
         "vendaya-keerai-adai",
+        "malabar-adai",
         "avasara-adai",
         "idli",
         "dhokla",
         "dhokla-2",
         "rava-pongal",
+        "matthi",
+        "dahi-ki-gujiya",
         "dahi-papri-ki-chaat",
         "pani-poori",
         "pappuchakkalu",
@@ -89,7 +195,7 @@
         "bharwan-phoolgobi",
         "tandoori-bharwan-tamatar",
         "tandoori-bharwan-tamatar-2",
-        "paneer-jhaal-frazie",
+        "lehsuni-paneer-tikka",
         "tandoori-bharwan-paneer",
         "kurugayulu-upama",
         "pao-bhaji-2",
@@ -106,7 +212,7 @@
         "bhajela-saranga",
         "kala-saranga",
         "machhi-kebab",
-        "jhinga-adraki",
+        "shevandi-kada",
         "hare-jhinga",
         "shahalyat-kalve",
         "kakori-kebab",
@@ -115,14 +221,17 @@
         "kathi-kebab",
         "kashmiri-seekh-kebab",
         "kachhe-keeme-ki-tikya",
-        "seekh-gilafi",
+        "kachhe-keeme-ki-tikya-2",
+        "galouti",
         "pasanda-kebab",
         "sikampoor-kebab-i",
         "sikampoor-kebab-i-2",
         "sikampoor-kebab-ii",
         "dum-ke-kebab",
         "tatti-gosht",
-        "lukhmi",
+        "lukhmi-2",
+        "lukhmi-3",
+        "keeme-ke-samose",
         "tawe-de-tikke",
         "raan-patialashai",
         "raan-patialashai-2",
@@ -133,7 +242,7 @@
         "murg-dalcha-kebab",
         "kashmiri-murg-kebab",
         "tandoori-murg",
-        "lehsuni-murg-tikka",
+        "kandahari-murg-tikka",
         "murg-methi-tikka",
         "murg-ke-parche",
         "murg-manpasand",
@@ -141,24 +250,24 @@
       ],
       "start_here": [
         {
+          "id": "samosa",
+          "rationale": "Iconic crispy pastry-filled snack; foundational technique for fried appetizers."
+        },
+        {
           "id": "paneer-tikka-kali-mirch",
-          "rationale": "Foundational tandoor technique with simple paneer, teaches marinating and grilling essentials."
+          "rationale": "Approachable grilled skewer; teaches tandoor/grill method with common paneer ingredient."
+        },
+        {
+          "id": "aloo-tikki",
+          "rationale": "Simple potato patty; foundational shallow-fry technique used in many Indian snacks."
         },
         {
           "id": "methi-pakora",
-          "rationale": "Core deep-fry fritter method; minimal ingredients, teaches batter and crispy texture fundamentals."
+          "rationale": "Classic deep-fried fritter; teaches batter technique central to bhajis and pakoras."
         },
         {
           "id": "dosa",
-          "rationale": "Essential South Indian technique spanning fermentation and pan-frying; versatile base for many snacks."
-        },
-        {
-          "id": "pao-bhaji",
-          "rationale": "Iconic street snack teaching spice layering and vegetable mashing; accessible and widely loved."
-        },
-        {
-          "id": "tandoori-murg",
-          "rationale": "Classic protein-based tandoor appetizer; demonstrates marinating and smoke-free grilling technique."
+          "rationale": "Fermented crepe-like staple; spans soaked-grain tradition and pan-frying technique."
         }
       ],
       "hero_image": null
@@ -192,7 +301,7 @@
         "aloo-tamatar",
         "dum-ki-arabi",
         "dum-ki-arabi-2",
-        "ajwaini-arabi",
+        "rajasthani-arabi",
         "dum-ki-bhindi",
         "bharwan-bhindi",
         "vendakkai-masala-pachadi",
@@ -212,7 +321,7 @@
         "chatpati-gobi",
         "achari-gobi",
         "muttakose-kilangu",
-        "kosu-podi",
+        "muttokos-thoran",
         "karamkalla",
         "pata-bhaja-2",
         "pata-bhaja-3",
@@ -234,11 +343,14 @@
         "koorina-kakarkaya",
         "bhuni-mungphali",
         "veerakkaikura",
+        "lauki-musallam",
         "alubokhara-kofta",
         "bharwan-parwal",
         "bharwan-parwal-2",
         "potoler-dolma",
         "bharwan-ghiy",
+        "lauki-ke-kofte",
+        "lauki-ke-kofte-2",
         "torai",
         "chunke-matar",
         "matar-ki-tarkari",
@@ -271,16 +383,16 @@
         "avial",
         "puragayalu-pulussu",
         "tengaipal-pitha-kotu",
-        "kaliya-baans-singhara",
+        "subzi-panchmel",
         "methi-makhani-palak",
         "kande-ki-subzi",
         "dhaniya-aloo-mangodi",
-        "meth-kishmish",
+        "methi-kishmish",
         "mochar-paturi",
         "mochar-paturi-2",
         "dum-nadru",
         "goji",
-        "vazhai-thandu-kari",
+        "munakkaigguru",
         "kachche-kele-ke-kofte",
         "kachche-kele-ke-kofte-2",
         "gaderi-ki-dahidali-subzi",
@@ -320,8 +432,8 @@
         "laal-kalwan",
         "lal-machhali",
         "dhyatle-sukha",
-        "mugatti-machhi",
-        "masapatia",
+        "kothmiraitil-machhi",
+        "masapotia",
         "mathok-brenga",
         "karhai-machhali",
         "doi-jhingri",
@@ -338,8 +450,8 @@
         "balchao",
         "roya-vepaddu",
         "kande-batatyatli-machhi",
-        "kande-batatyatli-machhi-2",
-        "bhuna-kekra",
+        "nejandu-kari",
+        "chimbori-shengdanya-kalwan",
         "aloo-gosht",
         "lehm-e-murgan",
         "qorma-dum-pukht",
@@ -350,9 +462,9 @@
         "shahi-qorma-2",
         "dalcha-gosht",
         "baadam-pasanda",
-        "qorma-asafjahi",
+        "halim",
         "achari-gosht",
-        "achari-gosht-2",
+        "achar-gosht",
         "gol-maas-kaachar",
         "amras-ki-boti",
         "khare-masale-ka-gosht",
@@ -372,7 +484,7 @@
         "malgoba",
         "roghanjosh",
         "aab-gosht",
-        "darashahi-kaliya",
+        "kaliya",
         "mutton-coconut-fry",
         "roast-mutton",
         "maas-banjara",
@@ -382,6 +494,7 @@
         "masala-chaamp",
         "masala-chaamp-2",
         "khawamdum",
+        "khawamdum-2",
         "mutton-qorma",
         "khare-masale-ka-gosht-2",
         "aloo-ka-salan",
@@ -398,7 +511,7 @@
         "akha-peenda",
         "nargisi-kofte",
         "kairi-ka-do-pyaza",
-        "bhuna-keema",
+        "keema-matar",
         "shyaem",
         "kashmiri-kofte",
         "kashmiri-kofte-2",
@@ -438,29 +551,29 @@
         "koli-milagu-masala-2",
         "kozhi-appakari",
         "acha-kozhi",
-        "acha-kozhi-2",
+        "methi-murg",
         "murg-ishtoo",
         "thengakkai-kori",
-        "murg-roganjosh",
+        "chooza-makhani",
         "korioora-munakkai",
         "sika-murg",
-        "msthi-murg",
+        "mathi-murg",
         "kobari-kori-pulussu",
         "dum-ka-murg",
         "sandali-murg",
         "chaar-magaz-ka-murg",
-        "sookhe-masale-ka-murg",
-        "murg-rezhala",
+        "chaar-magaz-ka-murg-2",
+        "to-khan",
         "murg-lazawab",
         "awushi-kulho",
         "shola-e-dil",
         "bataer-masaledar",
-        "doodhiya-bataer",
+        "bhuja-haaz",
         "sorpatel",
         "saanth-bajrae-ka-soweta",
         "saanth-bajrae-ka-soweta-2",
         "oma-eoni",
-        "oma-eoni-2",
+        "tabathyu",
         "oma-bedoi-saonai",
         "boksa-pok",
         "wak-al-galda",
@@ -473,23 +586,23 @@
       "start_here": [
         {
           "id": "heeng-jeere-ke-aloo",
-          "rationale": "Simple potato stir-fry teaches foundational dry curry technique with minimal ingredients."
+          "rationale": "Foundational dry potato dish teaching essential tempering and stir-fry technique."
         },
         {
           "id": "aloo-matar-rasedar",
-          "rationale": "Classic potato-pea curry demonstrates the wet sauce method essential to Indian cooking."
+          "rationale": "Introduces the dry-and-sauce tradition with a classic, approachable sauced vegetable curry."
         },
         {
-          "id": "palak-paneer",
-          "rationale": "Beloved paneer spinach dish shows how to combine vegetables and dairy for creamy sauces."
+          "id": "paneer-makhani",
+          "rationale": "Teaches creamy sauce-making and paneer handling, a core vegetarian technique."
         },
         {
-          "id": "chicken-masala",
-          "rationale": "Foundational chicken preparation with basic spices introduces meat cooking principles."
+          "id": "aloo-gosht",
+          "rationale": "Foundational meat curry combining potatoes and meat, demonstrates slow-cooking mastery."
         },
         {
-          "id": "avial",
-          "rationale": "Mixed vegetable stir-fry demonstrates how to cook multiple vegetables together harmoniously."
+          "id": "khare-masale-ka-murg",
+          "rationale": "Essential chicken dish teaching whole-spice seasoning and braising, spans poultry diversity."
         }
       ],
       "hero_image": null
@@ -507,16 +620,16 @@
         "arhar-ki-dal",
         "tadka-dal",
         "thenga-chertha-ulli-sambhar",
-        "jeera-rasam",
+        "vendaya-rasam",
         "keoti-dal",
         "keoti-dal-2",
         "moog-aur-palak-ki-dal",
         "kathirikkai-rasam",
         "kathirikkai-rasam-2",
         "podi-sambhar",
-        "lachko-dal",
+        "podi-sambhar-2",
         "pudina-rasam",
-        "chana-dal-lauki-waali",
+        "mangalore-saar",
         "pindi-chana",
         "ghashhi",
         "khatte-chole",
@@ -545,24 +658,24 @@
       ],
       "start_here": [
         {
+          "id": "arhar-ki-dal",
+          "rationale": "Foundational split dal recipe teaching basic boiling and tempering technique."
+        },
+        {
           "id": "masoor-dal",
-          "rationale": "Essential foundational red lentil recipe; simple boil-and-simmer teaches core technique."
+          "rationale": "Essential red lentil dal, quick-cooking and demonstrates core pulse preparation."
         },
         {
-          "id": "tadka-dal",
-          "rationale": "Classic dal with tempering; demonstrates flavor-building through the tadka method."
+          "id": "pindi-chana",
+          "rationale": "Whole pulse stew showing how legumes transform with vegetables and spices."
         },
         {
-          "id": "jeera-rasam",
-          "rationale": "Introduces rasam (pulse-based soup); lighter, tangy alternative to creamy dals."
-        },
-        {
-          "id": "chana-dal-lauki-waali",
-          "rationale": "Shows pulses cooked with vegetables; demonstrates versatility and straightforward boiling."
+          "id": "tamatar-rasam",
+          "rationale": "Teaches rasam style, a light soup variant introducing different pulse applications."
         },
         {
           "id": "dahi-ki-karhi",
-          "rationale": "Foundational yogurt-based karhi; teaches combining pulses with dairy for richness."
+          "rationale": "Foundational karhi demonstrating pulse flour use and yogurt-based sauce technique."
         }
       ],
       "hero_image": null
@@ -577,28 +690,47 @@
       ],
       "recipe_ids": [
         "bervin-poori-2",
-        "ulte-tawe-ka-paratha",
+        "paratha",
+        "lachha-paratha",
         "baida-paratha",
+        "matar-paneer-ka-paratha",
+        "palak-paratha",
+        "malabari-paratha",
+        "kerala-paratha",
+        "besani-poori",
+        "khasta-roti",
+        "akki-roti",
+        "makki-ki-roti",
+        "bajare-ki-roti",
+        "thali-peeth",
+        "thali-peeth-2",
+        "phulka",
+        "amritsari-kulcha",
         "rogani-kulcha",
-        "girda",
-        "bhatura"
+        "taftan",
+        "bhatura",
+        "appam"
       ],
       "start_here": [
         {
-          "id": "ulte-tawe-ka-paratha",
-          "rationale": "Foundational griddle flatbread teaching core hand-stretching and layering technique."
+          "id": "paratha",
+          "rationale": "Foundational flatbread teaching core technique for rolling and frying."
+        },
+        {
+          "id": "phulka",
+          "rationale": "Essential daily bread demonstrating griddle method and puffing technique."
         },
         {
           "id": "bervin-poori-2",
-          "rationale": "Introduces deep-frying method for puffed bread; simple dough, dramatic results."
+          "rationale": "Introduces deep-frying method with simple ingredients and satisfying results."
         },
         {
-          "id": "rogani-kulcha",
-          "rationale": "Teaches leavened bread-making with accessible oven baking versus specialized tandoor."
+          "id": "palak-paratha",
+          "rationale": "Accessible filled paratha showing how to incorporate vegetables into dough."
         },
         {
-          "id": "baida-paratha",
-          "rationale": "Expands paratha skills with egg filling; practical shallow-fry variation."
+          "id": "amritsari-kulcha",
+          "rationale": "Leavened bread variation teaching tandoor baking for flavor and texture diversity."
         }
       ],
       "hero_image": null
@@ -613,7 +745,7 @@
       ],
       "recipe_ids": [
         "kobbaraiannam",
-        "bhagara-bhaath",
+        "zafrani-pulao",
         "methi-ke-chawal",
         "molagu-saadam",
         "kurmu-pulao",
@@ -626,7 +758,7 @@
         "zarda-pulao",
         "mamri-kaya-pulihora",
         "chintakaya-pulihora",
-        "paneer-ke-chawal",
+        "vangi-bhaath",
         "baadami-chawal-bariyan",
         "meen-biryani",
         "meen-biryani-2",
@@ -656,19 +788,19 @@
       "start_here": [
         {
           "id": "matar-pulao",
-          "rationale": "Foundational pulao with simple boil-and-fry technique and common ingredients."
-        },
-        {
-          "id": "methi-ke-chawal",
-          "rationale": "Quick stir-fried rice dish teaching basic flavor-building with greens and spices."
+          "rationale": "Simple vegetable pulao teaching foundational boil-and-stir technique with common ingredients."
         },
         {
           "id": "murg-pulao",
-          "rationale": "Classic chicken pulao demonstrating protein incorporation with gentle simmering method."
+          "rationale": "Introduces protein (chicken) to pulao method, building on basic technique with accessible ingredients."
         },
         {
           "id": "biryani-i",
-          "rationale": "Comprehensive biryani introducing layered slow-cooking and dum-pukht foundation technique."
+          "rationale": "Classic biryani showcasing layering and slow-cooking, a signature technique across the chapter."
+        },
+        {
+          "id": "bisi-bele-huli-anna",
+          "rationale": "Foundational spiced rice-and-lentil dish combining lentils with rice for nutritional variety."
         }
       ],
       "hero_image": null
@@ -683,8 +815,10 @@
       ],
       "recipe_ids": [
         "khoobani-ka-meetha",
+        "palpayasam",
         "yel-adai",
         "ale-bele",
+        "kulfi",
         "gil-e-behisht",
         "nimish",
         "shrikhand",
@@ -694,8 +828,12 @@
         "rawa-payasam",
         "sheer-birinj",
         "zarda",
-        "shahi-tukra",
+        "makki-ka-halwa",
+        "tilgul",
+        "mawe-ki-kachori",
         "mung-dal-ka-halwa",
+        "puran-poli",
+        "moticoor-laddu",
         "gulab-jamun",
         "mysore-pak",
         "kadalaparippu-payasam",
@@ -704,31 +842,33 @@
         "jangir",
         "aloo-ki-kheer",
         "ragi-halwa",
-        "gajar-burfi",
+        "suji-halwa",
         "nishashte-ka-halwa",
         "baadam-ki-jaali",
+        "meve-ki-gujiya",
+        "boorelu-appalu",
         "gajar-ka-halwa"
       ],
       "start_here": [
         {
           "id": "kheer",
-          "rationale": "Foundational milk-based pudding; teaches core simmering technique for this cuisine."
+          "rationale": "Foundational milk-based rice pudding; teaches core simmering technique for creamy desserts."
         },
         {
           "id": "gulab-jamun",
-          "rationale": "Essential deep-fried syrup-soaked sweet; iconic Indian dessert with straightforward method."
+          "rationale": "Classic deep-fried milk solids in syrup; iconic and approachable introduction to fried sweets."
         },
         {
           "id": "gajar-ka-halwa",
-          "rationale": "Classic vegetable-based halwa; demonstrates stir-frying technique with accessible everyday ingredient."
+          "rationale": "Vegetable-based halwa; demonstrates vegetable desserts with simple boiling and frying methods."
+        },
+        {
+          "id": "tilgul",
+          "rationale": "Sesame cake; teaches sesame sweets with minimal ingredients and straightforward stir-frying."
         },
         {
           "id": "shrikhand",
-          "rationale": "No-cook yogurt dessert; shows milk-based variation without requiring cooking skill."
-        },
-        {
-          "id": "mysore-pak",
-          "rationale": "Traditional gram flour brittle; introduces dry-ingredient-based sweets distinct from puddings."
+          "rationale": "No-cook yogurt dessert; shows sweetened yogurt tradition without any cooking equipment needed."
         }
       ],
       "hero_image": null
@@ -742,29 +882,46 @@
         731
       ],
       "recipe_ids": [
+        "meethi-lassi",
+        "lassi-masalewali",
         "baadam-ka-doodh",
         "kele-ka-doodh",
         "thandai",
         "kairi-ka-sherbet",
+        "annanas-ka-sherbet",
         "pappu-charu",
-        "seb-ka-ras"
+        "seb-ka-ras",
+        "nimboo-ka-sherbet",
+        "kesar-elaychi-sherbet",
+        "kharbuje-ka-panna",
+        "kharbuje-ka-panna-2",
+        "kharbuje-ka-panna-3",
+        "filter-kaapi",
+        "filter-kaapi-2",
+        "filter-kaapi-3",
+        "nimbuwali-chai",
+        "sheer-chai"
       ],
       "start_here": [
         {
+          "id": "meethi-lassi",
+          "rationale": "Foundational yogurt-based drink; no-cook, minimal ingredients, teaches core lassi technique."
+        },
+        {
+          "id": "nimboo-ka-sherbet",
+          "rationale": "Classic sherbet exemplifying the refreshing juice-based category mentioned in intro."
+        },
+        {
           "id": "baadam-ka-doodh",
-          "rationale": "Foundational milk-based drink teaching basic blending technique for almond beverages."
+          "rationale": "Milk-based nut drink representing the almond beverage tradition; simple blending technique."
         },
         {
           "id": "thandai",
-          "rationale": "Classic no-cook sherbet showcasing spice and nut infusions central to Indian drinks."
+          "rationale": "Festive spiced milk drink showcasing the spice-blended beverages central to Indian beverages."
         },
         {
-          "id": "kairi-ka-sherbet",
-          "rationale": "Demonstrates fruit-based sherbet method, covering both boiling and no-cook approaches."
-        },
-        {
-          "id": "pappu-charu",
-          "rationale": "Unique savory lentil drink offering variety and introducing cooked beverage technique."
+          "id": "nimbuwali-chai",
+          "rationale": "Introduces chai preparation, the most popular Indian drink mentioned in the intro."
         }
       ],
       "hero_image": null

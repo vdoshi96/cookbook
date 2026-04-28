@@ -2,13 +2,853 @@
   "schema_version": 1,
   "edges": [
     {
+      "from": "aab-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aam-ka-achar-2",
+      "to": "kairi-ki-mhithi-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "achar-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "achar-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "achari-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "achari-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "achari-paneer",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "achari-paneer",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "achari-paneer",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "achras",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "achras",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "adraki-chaamp",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "adraki-chaamp",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "akha-peenda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "akha-peenda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-chutneywale",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-chutneywale",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-chutneywale",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-chutneywale",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-chutneywale",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-dum",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-dum",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-gobi-methi-ka-tuk",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-gobi-methi-ka-tuk",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-matar-ka-achar",
+      "to": "kairi-ki-mhithi-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-matar-ka-achar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-matar-ka-achar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-matar-rasedar",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-matar-rasedar-2",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-vadiyan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "aloo-vadiyan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "alubokhara-kofta",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "alubokhara-kofta",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ambat-dahyatil-machhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ambat-dahyatil-machhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "amras-ki-boti",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "amras-ki-boti",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "amritsari-kulcha",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "amritsari-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "amritsari-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "amritsari-machhali-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "amritsari-machhali-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ande-ka-achar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ande-ka-achar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "awadhi-gosht-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "awadhi-gosht-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "awadhi-gosht-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "awadhi-gosht-biryani",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "awushi-kulho",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "baadam-ki-jaali",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "baadam-pasanda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "baadam-pasanda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "baadam-pasanda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "baadam-pasanda",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "baadami-chawal-bariyan",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "baghare-baigan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "baghare-baigan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "baghare-baigan",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bataer-masaledar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bataer-masaledar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "batata-vada",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "batata-vada",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bervin-poori",
+      "to": "dum-ka-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhare-baghare-tamate",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhare-baghare-tamate",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhare-baghare-tamate",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhare-baghare-tamate",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhare-baghare-tamate",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-baigan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-baigan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-guchhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-guchhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-guchhi",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-guchhi",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-karele",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-karele",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-karele",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-karele",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-khumb",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-parwal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-parwal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-parwal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-parwal-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-parwal-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-parwal-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
       "from": "bharwan-pasande",
       "to": "kathi-kebab",
       "kind": "uses"
     },
     {
+      "from": "bharwan-phoolgobi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-phoolgobi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-phoolgobi",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bharwan-phoolgobi",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bheja",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bheja",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhindi-ka-patala-salan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhindi-ka-patala-salan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhune-kebab",
+      "to": "til-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "bhunee-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhunee-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhunee-machhali-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhunee-machhali-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhuni-mungphali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhuni-mungphali",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhutta-seekh-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bhutta-seekh-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "bisi-bele-huli-anna",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "borar-jhaal",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "borar-jhaal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chaaman",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chaamp-baadami",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chaamp-baadami",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chaamp-baadami",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chandi-qorma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chandi-qorma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chapa-pulussu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "charchari",
+      "to": "dum-ka-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-chettinad",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-chettinad",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-chettinad",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-chettinad-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-chettinad-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-chettinad-2",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-ishtoo",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-ishtoo",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-pakora",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-pakora",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-xacuti",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chicken-xacuti",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chimbori-shengdanya-kalwan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chimbori-shengdanya-kalwan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
       "from": "chincheche-talwan",
-      "to": "aloo-dum",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chintakaya-pulihora",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chintapandu-koythamira-chutney",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chintapandu-thokku",
+      "to": "kairi-ki-mhithi-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "chooza-makhani",
+      "to": "aloo-chop",
+      "kind": "uses"
+    },
+    {
+      "from": "chooza-makhani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chooza-makhani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "chooza-makhani",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ka-keema",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ka-keema",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-gujiya",
+      "to": "til-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-karhi",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-karhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-karhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-karhi-2",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-karhi-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-karhi-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ki-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ma-bheeda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-ma-bheeda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahi-papri-ki-chaat",
+      "to": "til-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "dahiwala-meat",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dahiwala-meat",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dakhani-paneer",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dakhani-paneer",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dakhani-paneer-2",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dakhani-paneer-2",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dal-nizami",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dal-nizami",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dal-nizami",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dalcha-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dalcha-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dhan-dal-patio",
+      "to": "poriyal-podi",
+      "kind": "uses"
+    },
+    {
+      "from": "dhan-dal-patio",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dhansak",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dhansak",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dhansak",
+      "to": "poriyal-podi",
+      "kind": "uses"
+    },
+    {
+      "from": "dhansak",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dhingri-dulma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dhingri-dulma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dhingri-dulma",
+      "to": "valsadi-masala",
       "kind": "uses"
     },
     {
@@ -17,8 +857,218 @@
       "kind": "uses"
     },
     {
+      "from": "dhyatle-sukha",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dhyatle-sukha",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "doi-jhingri",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dosa",
+      "to": "masoor-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ka-masala",
+      "to": "kairi-ki-mhithi-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ke-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ke-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-arabi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-arabi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-arabi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-arabi-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-arabi-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-arabi-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-bharwan-mirch",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-bharwan-mirch",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-bharwan-mirch",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-bhindi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-bhindi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-ki-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "dum-nadru",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "erha-meen-mulkitathu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "erha-meen-mulkitathu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "erha-meen-mulkitathu",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "fish-qorma-pulao",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "fish-qorma-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "fish-qorma-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "flower-batata-bhaji",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "flower-batata-bhaji",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gajar-ka-halwa",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ghashhi",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gil-e-behisht",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "goan-fish-curry-i",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "goan-fish-curry-i-2",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "goji",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gol-maas-kaachar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gol-maas-kaachar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
       "from": "gosht-ki-khurchan",
       "to": "kathi-kebab",
+      "kind": "uses"
+    },
+    {
+      "from": "gosht-ki-khurchan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gosht-ki-khurchan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gulab-jamun",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gulab-jamun",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gulab-jamun",
+      "to": "valsadi-masala",
       "kind": "uses"
     },
     {
@@ -27,8 +1077,248 @@
       "kind": "uses"
     },
     {
+      "from": "gushtaba",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "gutti-vengkayya",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "halim",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "halim",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "handiwala-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "handiwala-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "hara-mahi-tikka",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "hare-jhinga",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "hare-jhinga",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "hyderabadi-dum-ki-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "hyderabadi-dum-ki-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "injipuli",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ishtoo-ii",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ishtoo-ii",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ishtoo-ii-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ishtoo-ii-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "jaipuri-subz-seekh",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "jaipuri-subz-seekh",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "jangir",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "jhinga-dopyaza",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "jhinga-dopyaza",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "jhingri-machher-malikari",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "kabuli-chaneda-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kabuli-chaneda-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kacchi-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kacchi-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kachche-kele-ke-kofte",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "kachche-kele-ke-kofte-2",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "kadalaparippu-payasam-2",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kairas",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kairas-bell-pepper-peanut-curry",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kairi-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kairi-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kakori-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kakori-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kakori-kebab",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kakori-kebab",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
       "from": "kala-saranga",
       "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "kali-mirch-ka-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kali-mirch-ka-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kaliya",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "kamrakh-ka-achar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kan-guchhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kan-guchhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kandahari-murg-tikka",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kandahari-murg-tikka",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kande-ki-subzi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kande-ki-subzi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "karhai-machhali",
+      "to": "moonphali-masala",
       "kind": "uses"
     },
     {
@@ -37,8 +1327,653 @@
       "kind": "uses"
     },
     {
-      "from": "masapatia",
+      "from": "karimeen-polichattu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "karimeen-polichattu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kashmiri-kofte",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "kashmiri-kofte-2",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "kashmiri-murg-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kashmiri-murg-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kashmiri-murg-kebab",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kashmiri-seekh-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kashmiri-seekh-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kathirakkai-poriyal",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kathirakkai-poriyal-2",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kathirikkai-rasam",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kathirikkai-rasam-2",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "keema-khichari",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "keema-khichari",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "keoti-dal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "keoti-dal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "keoti-dal-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "keoti-dal-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khad-murg",
+      "to": "matar-paneer-ka-paratha",
+      "kind": "uses"
+    },
+    {
+      "from": "khad-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khad-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khandavi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khatta-meetha-do-pyaza",
+      "to": "kobbaraiannam",
+      "kind": "uses"
+    },
+    {
+      "from": "khatta-meetha-do-pyaza",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khatta-meetha-do-pyaza",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khatta-meetha-do-pyaza",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khatta-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khatta-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khatte-meethe-baigan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khatte-meethe-baigan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khatte-meethe-baigan",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khawamdum",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "khawamdum",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khawamdum",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khawamdum-2",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "khawamdum-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khawamdum-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kholamba",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "khumb-shabnam",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "khuzhi-paniyaram",
+      "to": "masoor-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "kobari-kori-pulussu",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "kobari-kori-pulussu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kobari-kori-pulussu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kofta-curry",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "kolambini-bharaleli-bhaji",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kolambini-bharaleli-bhaji",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "koorina-kakarkaya",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "koorina-kakarkaya",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "koorina-kakarkaya",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "korioora-munakkai",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "korioora-munakkai",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "korioora-munakkai",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kundan-kaliya",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kundan-kaliya",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kurugayulu-upama",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kurugayulu-upama",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kurumulagail-verthatu-chemeen",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kurumulagail-verthatu-chemeen",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kurumulagail-verthatu-chemeen-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "kurumulagail-verthatu-chemeen-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lal-imli-ka-achar",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lauki-ki-seekh",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lauki-musallam",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lehm-e-murgan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lehm-e-murgan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lehm-e-murgan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lehsuni-paneer-tikka",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lehsuni-paneer-tikka",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lukhmi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lukhmi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lukhmi",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lukhmi-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lukhmi-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lukhmi-3",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "lukhmi-3",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "maans-ke-soole",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "maans-ke-soole",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "maans-ke-soole",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "maas-banjara",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "maas-banjara",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "machhali-ka-qorma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "machhali-ka-qorma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "machhali-ka-salan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "machhali-ka-salan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "machhali-ka-salan",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "machhali-musallam",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "machhali-musallam",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "machhali-musallam",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "madras-fish-curry",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "madras-fish-curry",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "magaj-masala",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "magaj-masala",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "magaj-masala",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mahi-kaliya",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mahi-tikka-ajwaini",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mahi-tikka-ajwaini",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mahi-tikka-ajwaini",
+      "to": "til-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "makki-ka-halwa",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "makki-ka-soweta",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "makki-ka-soweta",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "makki-ki-roti",
+      "to": "chatpati-gobi",
+      "kind": "uses"
+    },
+    {
+      "from": "malai-kofta",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "malai-kofta",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "malai-kofta",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "malai-kofta",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "malgoba",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mangalore-saar",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "mangalore-saar",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "masala-dosa",
+      "to": "masoor-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "masapotia",
       "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "masoor-ki-chutney",
+      "to": "mangupullu",
+      "kind": "uses"
+    },
+    {
+      "from": "masoor-ki-chutney",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "masoor-ki-chutney",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "masoor-ki-chutney",
+      "to": "rava-sevai-idli",
+      "kind": "uses"
+    },
+    {
+      "from": "masoor-pappu-charu",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "matar-paneer-ka-paratha",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "matar-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "matar-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mathi-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mathi-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mawe-ki-kachori",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mawe-ki-kachori",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "meen-godavari",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "methi-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "methi-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "milgai-bhajiya",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mirchi-ka-salan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mirchi-ka-salan",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mirchiwala-gosht",
+      "to": "moonphali-masala",
       "kind": "uses"
     },
     {
@@ -52,8 +1987,473 @@
       "kind": "uses"
     },
     {
+      "from": "molagu-saadam",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "moog-aur-palak-ki-dal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "moog-aur-palak-ki-dal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "moong-dal",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "moong-dal-ki-chutney",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "moong-dal-ki-chutney",
+      "to": "rava-sevai-idli",
+      "kind": "uses"
+    },
+    {
+      "from": "moonphali-masala",
+      "to": "khuzhi-paniyaram",
+      "kind": "uses"
+    },
+    {
+      "from": "moticoor-laddu",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "munakkaigguru",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "munakkaigguru",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-biryani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-biryani",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-dalcha-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-dalcha-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ishtoo",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-mokul",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-mokul",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-mokul",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-mokul",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-mokul-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-mokul-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-mokul-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-mokul-2",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-parche",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-parche",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-soole",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-soole",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-soole",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-soole-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-soole-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-ke-soole-2",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-manpasand",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-manpasand",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-methi-tikka",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-methi-tikka",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-musallam",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-qorma-ii",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-qorma-ii",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-qorma-ii",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murg-qorma-ii",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murga-ka-safed-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "murga-ka-safed-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "musallam-raan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "musallam-raan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "musallam-raan",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-barra-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-barra-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-coconut-fry",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-coconut-fry",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-coconut-fry",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-kolhapuri",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-kolhapuri",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-kolhapuri-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mutton-kolhapuri-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "mysore-masala-dosa",
+      "to": "masoor-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "mysore-pak",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
       "from": "nalli-aur-paye",
       "to": "kairi-ki-karhi",
+      "kind": "uses"
+    },
+    {
+      "from": "nargisi-kofte",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "nargisi-kofte",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "nargisi-kofte",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "nargisi-seekh-kebab",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "nargisi-seekh-kebab",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "nargisi-seekh-kebab-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "nargisi-seekh-kebab-2",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "nejandu-kari",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "nishashte-ka-halwa",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "oma-eoni",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "oma-eoni",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "oma-eoni",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "ondhiya",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "palak-paneer",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "palak-paratha",
+      "to": "moong-dal-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "palang-ka-kapha",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "palang-ka-kapha",
+      "to": "matar-paneer-ka-paratha",
+      "kind": "uses"
+    },
+    {
+      "from": "palang-ka-kapha",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-jaipuri",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-jaipuri",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-jaipuri",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-jaipuri",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-jaipuri",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-makhani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-makhani",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-makhani",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-pasanda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-pasanda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-pasanda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-pasanda",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-pasanda",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-tikka-kali-mirch",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-tikka-kali-mirch",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-tikka-kali-mirch",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paneer-tikka-kali-mirch",
+      "to": "valsadi-masala",
       "kind": "uses"
     },
     {
@@ -62,8 +2462,88 @@
       "kind": "uses"
     },
     {
+      "from": "panther-jhol",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "panther-jhol-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "pao-bhaji",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "papad-methi-ki-subzi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "paper-dosa",
+      "to": "masoor-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "pappu-charu",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
       "from": "patrani-machli",
       "to": "mahi-tikka-ajwaini",
+      "kind": "uses"
+    },
+    {
+      "from": "pavakka-theeyal",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "podi-sambhar",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "podi-sambhar-2",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "poha-pulao",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "potoler-dolma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "potoler-dolma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "potoler-dolma",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "puliyadorai-masala",
+      "to": "matar-pulao",
+      "kind": "uses"
+    },
+    {
+      "from": "puliyadorai-masala-2",
+      "to": "matar-pulao",
+      "kind": "uses"
+    },
+    {
+      "from": "puragayalu-pulussu",
+      "to": "puliyadorai-masala",
       "kind": "uses"
     },
     {
@@ -72,31 +2552,950 @@
       "kind": "uses"
     },
     {
+      "from": "raan-patialashai",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "raan-patialashai-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "raj-kachori",
+      "to": "injipuli",
+      "kind": "uses"
+    },
+    {
+      "from": "rajasthani-arabi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "rajasthani-arabi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "rajasthani-karhi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "rasse-misse-rajma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "rasse-misse-rajma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "rasse-misse-rajma-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "rasse-misse-rajma-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "rava-dosa",
+      "to": "masoor-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "rava-sevai-idli",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "reshmai-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "reshmai-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "roast-mutton",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "roast-mutton",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "roast-mutton",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "royya-alu-pulussu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "royya-alu-pulussu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "royya-alu-pulussu",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "sarangyacha-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shahi-qorma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shahi-qorma",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shahi-qorma-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shahi-qorma-2",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shahi-qorma-3",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shahi-qorma-3",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shai-dum-ki-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shai-dum-ki-machhali",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shalgam-ki-subzi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shalgam-ki-subzi",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "sheer-birinj",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "sheer-birinj",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shola-e-dil",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shola-e-dil",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shola-e-dil",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "shyaem",
+      "to": "karepaku-karam",
+      "kind": "uses"
+    },
+    {
+      "from": "sindhi-karhi",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "singhara",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "singhara",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "sofiyani-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "sofiyani-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "sofiyani-pulao",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "subz-ke-kakori",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "subz-ke-kakori",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "subz-ke-shami",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "subz-ke-shami",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "subz-ke-shami",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "subz-khara-masala",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "subz-khara-masala",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "subz-seekh",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tabathyu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tabathyu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tamatar-bhatkalikura",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tamatar-ka-achar",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tamatarwale-jhinge",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tamatarwale-jhinge",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-achari-khumb",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-achari-khumb",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-bharwan-paneer",
+      "to": "chintapandu-thokku",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-bharwan-paneer",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-bharwan-paneer",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-bharwan-paneer",
+      "to": "til-ki-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-bharwan-paneer",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-bharwan-tamatar",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-bharwan-tamatar-2",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-chaat-masala",
+      "to": "kairi-ki-mhithi-chutney",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tandoori-murg",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tatti-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tatti-gosht",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tawe-de-tikke",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tawe-de-tikke",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "thenga-chertha-ulli-sambhar",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "thengakkai-kori",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "thengakkai-kori",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "til-ki-chutney",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tsuk-wangun",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tsuk-wangun",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "tsuk-wangun",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "veinchana-royyaalu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "veinchana-royyaalu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "vendakkai-pulussu",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "vendakkai-pulussu",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "vendaya-rasam",
+      "to": "appam",
+      "kind": "uses"
+    },
+    {
+      "from": "vendaya-rasam",
+      "to": "chettinad-sambhar-podi",
+      "kind": "uses"
+    },
+    {
+      "from": "vendaya-rasam",
+      "to": "puliyadorai-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "wak-al-galda",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "wak-serjak",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "wookhan",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "yakhni",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "yakhni",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
       "from": "yakhni-pulao",
       "to": "kobbaraiannam",
+      "kind": "uses"
+    },
+    {
+      "from": "yakhni-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "yakhni-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "year-chapa",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "year-chapa",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "yel-adai",
+      "to": "valsadi-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "zafrani-pulao",
+      "to": "moonphali-masala",
+      "kind": "uses"
+    },
+    {
+      "from": "zarda",
+      "to": "puliyadorai-masala",
       "kind": "uses"
     }
   ],
   "used_in": {
+    "kairi-ki-mhithi-chutney": [
+      "aam-ka-achar-2",
+      "aloo-matar-ka-achar",
+      "chintapandu-thokku",
+      "dum-ka-masala",
+      "tandoori-chaat-masala"
+    ],
+    "khuzhi-paniyaram": [
+      "moonphali-masala"
+    ],
+    "matar-pulao": [
+      "puliyadorai-masala",
+      "puliyadorai-masala-2"
+    ],
+    "puliyadorai-masala": [
+      "aloo-chutneywale",
+      "aloo-dum",
+      "awadhi-gosht-biryani",
+      "baadam-pasanda",
+      "baghare-baigan",
+      "bhare-baghare-tamate",
+      "bharwan-guchhi",
+      "bharwan-karele",
+      "bharwan-khumb",
+      "bharwan-phoolgobi",
+      "bhuni-mungphali",
+      "bisi-bele-huli-anna",
+      "chicken-chettinad",
+      "chicken-chettinad-2",
+      "chincheche-talwan",
+      "chintakaya-pulihora",
+      "chintapandu-koythamira-chutney",
+      "chooza-makhani",
+      "dakhani-paneer",
+      "dakhani-paneer-2",
+      "dal-nizami",
+      "dhan-dal-patio",
+      "dhansak",
+      "dum-ki-bharwan-mirch",
+      "erha-meen-mulkitathu",
+      "gajar-ka-halwa",
+      "ghashhi",
+      "gil-e-behisht",
+      "goan-fish-curry-i",
+      "goan-fish-curry-i-2",
+      "gulab-jamun",
+      "gutti-vengkayya",
+      "injipuli",
+      "jaipuri-subz-seekh",
+      "kairas",
+      "kairas-bell-pepper-peanut-curry",
+      "kakori-kebab",
+      "kashmiri-murg-kebab",
+      "kathirakkai-poriyal",
+      "kathirakkai-poriyal-2",
+      "kathirikkai-rasam",
+      "kathirikkai-rasam-2",
+      "khatte-meethe-baigan",
+      "kholamba",
+      "koorina-kakarkaya",
+      "korioora-munakkai",
+      "lauki-musallam",
+      "machhali-ka-salan",
+      "madras-fish-curry",
+      "magaj-masala",
+      "mahi-kaliya",
+      "makki-ka-halwa",
+      "malai-kofta",
+      "mangalore-saar",
+      "masoor-ki-chutney",
+      "masoor-pappu-charu",
+      "mawe-ki-kachori",
+      "meen-godavari",
+      "milgai-bhajiya",
+      "mirchi-ka-salan",
+      "moong-dal-ki-chutney",
+      "murg-biryani",
+      "murg-ke-mokul",
+      "murg-ke-mokul-2",
+      "murg-ke-soole",
+      "murg-ke-soole-2",
+      "murg-musallam",
+      "musallam-raan",
+      "mutton-coconut-fry",
+      "nargisi-kofte",
+      "nejandu-kari",
+      "ondhiya",
+      "paneer-jaipuri",
+      "paneer-pasanda",
+      "pappu-charu",
+      "pavakka-theeyal",
+      "podi-sambhar",
+      "podi-sambhar-2",
+      "puragayalu-pulussu",
+      "royya-alu-pulussu",
+      "sheer-birinj",
+      "sindhi-karhi",
+      "sofiyani-pulao",
+      "subz-ke-kakori",
+      "subz-ke-shami",
+      "tamatar-ka-achar",
+      "thenga-chertha-ulli-sambhar",
+      "til-ki-chutney",
+      "vendakkai-pulussu",
+      "vendaya-rasam",
+      "zarda"
+    ],
+    "moonphali-masala": [
+      "aab-gosht",
+      "achar-gosht",
+      "achari-gosht",
+      "achari-paneer",
+      "achras",
+      "adraki-chaamp",
+      "akha-peenda",
+      "aloo-chutneywale",
+      "aloo-dum",
+      "aloo-gobi-methi-ka-tuk",
+      "aloo-matar-ka-achar",
+      "aloo-vadiyan",
+      "alubokhara-kofta",
+      "ambat-dahyatil-machhi",
+      "amras-ki-boti",
+      "amritsari-machhali",
+      "amritsari-machhali-2",
+      "ande-ka-achar",
+      "awadhi-gosht-biryani",
+      "awushi-kulho",
+      "baadam-pasanda",
+      "baghare-baigan",
+      "bataer-masaledar",
+      "batata-vada",
+      "bhare-baghare-tamate",
+      "bharwan-baigan",
+      "bharwan-guchhi",
+      "bharwan-karele",
+      "bharwan-parwal",
+      "bharwan-parwal-2",
+      "bharwan-phoolgobi",
+      "bheja",
+      "bhindi-ka-patala-salan",
+      "bhunee-machhali",
+      "bhunee-machhali-2",
+      "bhuni-mungphali",
+      "bhutta-seekh-kebab",
+      "borar-jhaal",
+      "chaamp-baadami",
+      "chandi-qorma",
+      "chapa-pulussu",
+      "chicken-chettinad",
+      "chicken-chettinad-2",
+      "chicken-ishtoo",
+      "chicken-pakora",
+      "chicken-xacuti",
+      "chimbori-shengdanya-kalwan",
+      "chooza-makhani",
+      "dahi-ka-keema",
+      "dahi-ki-karhi",
+      "dahi-ki-karhi-2",
+      "dahi-ki-machhali",
+      "dahi-ma-bheeda",
+      "dahiwala-meat",
+      "dal-nizami",
+      "dalcha-gosht",
+      "dhansak",
+      "dhingri-dulma",
+      "dhyatle-sukha",
+      "doi-jhingri",
+      "dum-ke-kebab",
+      "dum-ki-arabi",
+      "dum-ki-arabi-2",
+      "dum-ki-bharwan-mirch",
+      "dum-ki-bhindi",
+      "dum-ki-machhali",
+      "erha-meen-mulkitathu",
+      "fish-qorma-pulao",
+      "flower-batata-bhaji",
+      "goji",
+      "gol-maas-kaachar",
+      "gosht-ki-khurchan",
+      "gushtaba",
+      "halim",
+      "handiwala-murg",
+      "hara-mahi-tikka",
+      "hare-jhinga",
+      "hyderabadi-dum-ki-biryani",
+      "ishtoo-ii",
+      "ishtoo-ii-2",
+      "jhinga-dopyaza",
+      "kabuli-chaneda-pulao",
+      "kacchi-biryani",
+      "kairi-murg",
+      "kakori-kebab",
+      "kali-mirch-ka-murg",
+      "kamrakh-ka-achar",
+      "kan-guchhi",
+      "kandahari-murg-tikka",
+      "kande-ki-subzi",
+      "karhai-machhali",
+      "karimeen-polichattu",
+      "kashmiri-murg-kebab",
+      "kashmiri-seekh-kebab",
+      "keema-khichari",
+      "keoti-dal",
+      "keoti-dal-2",
+      "khad-murg",
+      "khandavi",
+      "khatta-meetha-do-pyaza",
+      "khatta-murg",
+      "khatte-meethe-baigan",
+      "khawamdum",
+      "khawamdum-2",
+      "kobari-kori-pulussu",
+      "kolambini-bharaleli-bhaji",
+      "koorina-kakarkaya",
+      "korioora-munakkai",
+      "kundan-kaliya",
+      "kurugayulu-upama",
+      "kurumulagail-verthatu-chemeen",
+      "kurumulagail-verthatu-chemeen-2",
+      "lal-imli-ka-achar",
+      "lehm-e-murgan",
+      "lehsuni-paneer-tikka",
+      "lukhmi",
+      "lukhmi-2",
+      "lukhmi-3",
+      "maans-ke-soole",
+      "maas-banjara",
+      "machhali-ka-qorma",
+      "machhali-ka-salan",
+      "machhali-musallam",
+      "magaj-masala",
+      "mahi-tikka-ajwaini",
+      "makki-ka-soweta",
+      "malai-kofta",
+      "malgoba",
+      "masoor-ki-chutney",
+      "matar-pulao",
+      "mathi-murg",
+      "methi-murg",
+      "mirchi-ka-salan",
+      "mirchiwala-gosht",
+      "moog-aur-palak-ki-dal",
+      "moong-dal",
+      "munakkaigguru",
+      "murg-biryani",
+      "murg-dalcha-kebab",
+      "murg-ishtoo",
+      "murg-ke-mokul",
+      "murg-ke-mokul-2",
+      "murg-ke-parche",
+      "murg-ke-soole",
+      "murg-ke-soole-2",
+      "murg-manpasand",
+      "murg-methi-tikka",
+      "murg-qorma-ii",
+      "murga-ka-safed-pulao",
+      "musallam-raan",
+      "mutton-barra-kebab",
+      "mutton-coconut-fry",
+      "mutton-kolhapuri",
+      "mutton-kolhapuri-2",
+      "nargisi-kofte",
+      "nargisi-seekh-kebab",
+      "nargisi-seekh-kebab-2",
+      "oma-eoni",
+      "palang-ka-kapha",
+      "paneer-jaipuri",
+      "paneer-makhani",
+      "paneer-pasanda",
+      "paneer-tikka-kali-mirch",
+      "panther-jhol",
+      "panther-jhol-2",
+      "pao-bhaji",
+      "papad-methi-ki-subzi",
+      "potoler-dolma",
+      "raan-patialashai",
+      "raan-patialashai-2",
+      "rajasthani-arabi",
+      "rajasthani-karhi",
+      "rasse-misse-rajma",
+      "rasse-misse-rajma-2",
+      "rava-sevai-idli",
+      "reshmai-gosht",
+      "roast-mutton",
+      "royya-alu-pulussu",
+      "sarangyacha-pulao",
+      "shahi-qorma",
+      "shahi-qorma-2",
+      "shahi-qorma-3",
+      "shai-dum-ki-machhali",
+      "shalgam-ki-subzi",
+      "shola-e-dil",
+      "singhara",
+      "sofiyani-pulao",
+      "subz-ke-shami",
+      "subz-khara-masala",
+      "tabathyu",
+      "tamatar-bhatkalikura",
+      "tamatarwale-jhinge",
+      "tandoori-achari-khumb",
+      "tandoori-bharwan-paneer",
+      "tandoori-murg",
+      "tatti-gosht",
+      "tawe-de-tikke",
+      "thengakkai-kori",
+      "tsuk-wangun",
+      "veinchana-royyaalu",
+      "vendakkai-pulussu",
+      "wak-al-galda",
+      "wak-serjak",
+      "wookhan",
+      "yakhni",
+      "yakhni-pulao",
+      "year-chapa",
+      "zafrani-pulao"
+    ],
+    "rava-sevai-idli": [
+      "masoor-ki-chutney",
+      "moong-dal-ki-chutney"
+    ],
+    "mangupullu": [
+      "masoor-ki-chutney"
+    ],
+    "valsadi-masala": [
+      "achari-paneer",
+      "aloo-chutneywale",
+      "amritsari-kulcha",
+      "baadam-ki-jaali",
+      "bhare-baghare-tamate",
+      "bharwan-karele",
+      "bharwan-phoolgobi",
+      "chaaman",
+      "dakhani-paneer",
+      "dakhani-paneer-2",
+      "dhingri-dulma",
+      "gulab-jamun",
+      "jaipuri-subz-seekh",
+      "jangir",
+      "kadalaparippu-payasam-2",
+      "lauki-ki-seekh",
+      "lehsuni-paneer-tikka",
+      "lukhmi",
+      "malai-kofta",
+      "matar-paneer-ka-paratha",
+      "mawe-ki-kachori",
+      "moticoor-laddu",
+      "mysore-pak",
+      "nargisi-seekh-kebab",
+      "nargisi-seekh-kebab-2",
+      "nishashte-ka-halwa",
+      "palak-paneer",
+      "paneer-jaipuri",
+      "paneer-makhani",
+      "paneer-pasanda",
+      "paneer-tikka-kali-mirch",
+      "poha-pulao",
+      "potoler-dolma",
+      "subz-ke-kakori",
+      "subz-seekh",
+      "tandoori-bharwan-paneer",
+      "tandoori-bharwan-tamatar",
+      "tandoori-bharwan-tamatar-2",
+      "yel-adai"
+    ],
+    "masoor-ki-chutney": [
+      "dosa",
+      "khuzhi-paniyaram",
+      "masala-dosa",
+      "mysore-masala-dosa",
+      "paper-dosa",
+      "rava-dosa"
+    ],
+    "injipuli": [
+      "raj-kachori"
+    ],
+    "til-ki-chutney": [
+      "bhune-kebab",
+      "dahi-ki-gujiya",
+      "dahi-papri-ki-chaat",
+      "mahi-tikka-ajwaini",
+      "tandoori-bharwan-paneer"
+    ],
     "pappu-charu": [
       "pani-poori"
+    ],
+    "dum-ka-masala": [
+      "bervin-poori",
+      "charchari"
+    ],
+    "chintapandu-thokku": [
+      "tandoori-bharwan-paneer"
     ],
     "mahi-tikka-ajwaini": [
       "kala-saranga",
       "karimeen-polichattu",
-      "masapatia",
+      "masapotia",
       "mochar-paturi",
       "mochar-paturi-2",
       "patrani-machli"
     ],
-    "aloo-dum": [
-      "chincheche-talwan"
+    "karepaku-karam": [
+      "aloo-matar-rasedar",
+      "aloo-matar-rasedar-2",
+      "baadami-chawal-bariyan",
+      "dum-nadru",
+      "kachche-kele-ke-kofte",
+      "kachche-kele-ke-kofte-2",
+      "kaliya",
+      "kashmiri-kofte",
+      "kashmiri-kofte-2",
+      "khumb-shabnam",
+      "shyaem"
+    ],
+    "appam": [
+      "borar-jhaal",
+      "dahi-ki-karhi",
+      "dahi-ki-karhi-2",
+      "fish-qorma-pulao",
+      "jhingri-machher-malikari",
+      "khawamdum",
+      "khawamdum-2",
+      "kobari-kori-pulussu",
+      "kofta-curry",
+      "mangalore-saar",
+      "molagu-saadam",
+      "palang-ka-kapha",
+      "vendaya-rasam"
+    ],
+    "matar-paneer-ka-paratha": [
+      "khad-murg",
+      "palang-ka-kapha"
+    ],
+    "poriyal-podi": [
+      "dhan-dal-patio",
+      "dhansak"
     ],
     "machhali-ke-kofte": [
       "dhyatle-sukha"
     ],
     "kobbaraiannam": [
       "gushtaba",
+      "khatta-meetha-do-pyaza",
       "yakhni-pulao"
     ],
     "kathi-kebab": [
@@ -105,6 +3504,18 @@
     ],
     "kairi-ki-karhi": [
       "nalli-aur-paye"
+    ],
+    "aloo-chop": [
+      "chooza-makhani"
+    ],
+    "chettinad-sambhar-podi": [
+      "vendaya-rasam"
+    ],
+    "moong-dal-ki-chutney": [
+      "palak-paratha"
+    ],
+    "chatpati-gobi": [
+      "makki-ki-roti"
     ],
     "chaamp-chops": [
       "qorma-pulao"
