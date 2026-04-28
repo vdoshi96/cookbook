@@ -78,8 +78,9 @@ describe("cookbook data helpers", () => {
   });
 
   it("loads sections by id", () => {
-    expect(getAllSections()).toHaveLength(13);
+    expect(getAllSections()).toHaveLength(9);
     expect(getAllSections().map((section) => section.id)).not.toContain("guest-chefs");
+    expect(getAllSections().map((section) => section.id)).not.toContain("introduction");
     expect(getSectionById("rice")?.name).toBe("Rice");
   });
 

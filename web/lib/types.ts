@@ -59,7 +59,8 @@ export interface Region {
   map_coords: {
     lat: number;
     lng: number;
-  };
+  } | null;
+  hero_image: string | null;
 }
 
 export interface IngredientRecord {

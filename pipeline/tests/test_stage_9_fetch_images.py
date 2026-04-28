@@ -196,9 +196,32 @@ def test_fetch_all_uses_first_source_when_it_returns_a_candidate(tmp_path, patch
     assert summary["fetched"] == 1
     assert summary["failed"] == []
     assert summary["source_counts"] == {"serpapi": 1}
-    assert recipes[0]["image"] == "images/recipes/r1.webp"
+    assert recipes[0]["image"] == "https://a/1.jpg"
     assert pexels.calls == []  # never queried — first tier won
     assert wm.calls == []
+
+
+def test_fetch_all_publishes_source_url_for_frontend(tmp_path, patch_download):
+    """The frontend only renders http(s) data images, so Stage 9 must publish
+    the accepted source URL while keeping the local WebP as its cache file."""
+    serp = _StubSource("serpapi", [
+        Candidate(url="https://source.example.com/r1.jpg", width=1600, height=1200,
+                  source="serpapi", query="q"),
+    ])
+    patch_download["https://source.example.com/r1.jpg"] = _png_bytes()
+
+    recipes = [{"id": "r1", "name": "R1", "origin_region_name": "Awadh"}]
+    summary = fetch_all(
+        recipes=recipes, sections=[], regions=[],
+        images_root=tmp_path / "images",
+        overrides_path=tmp_path / "ov.yml",
+        provenance_path=tmp_path / "prov.json",
+        sources=[serp],
+    )
+
+    assert summary["fetched"] == 1
+    assert recipes[0]["image"] == "https://source.example.com/r1.jpg"
+    assert (tmp_path / "images" / "recipes" / "r1.webp").exists()
 
 
 def test_fetch_all_falls_through_to_pexels_when_serpapi_empty(tmp_path, patch_download):
@@ -440,7 +463,7 @@ def test_fetch_all_uses_cache_when_url_known_and_file_present(tmp_path, patch_do
     )
     assert summary["fetched"] == 0
     assert summary["skipped_cached"] == 1
-    assert recipes[0]["image"] == "images/recipes/cached.webp"
+    assert recipes[0]["image"] == "https://x/cached.jpg"
     assert serp.calls == []
 
 
@@ -470,7 +493,7 @@ def test_fetch_all_does_not_use_bootstrap_pre_crash_cache(tmp_path, patch_downlo
         sources=[serp, pexels, wm],
     )
     assert summary["fetched"] == 1
-    assert recipes[0]["image"] == "images/recipes/broken-cache.webp"
+    assert recipes[0]["image"] == "https://good/1.jpg"
 
 
 def test_fetch_all_uses_override_url(tmp_path, patch_download):
