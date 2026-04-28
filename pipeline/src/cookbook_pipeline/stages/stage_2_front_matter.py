@@ -37,9 +37,32 @@ FRONT_MATTER_RANGES: list[tuple[int, int, str]] = [
     (31, 31, "notes_on_recipes"),
 ]
 
-# regions_overview spans 15 pages of dense regional descriptions; the LLM
-# needs more output room than the standard 4096 to preserve the full prose.
-_LARGE_RANGE_MAX_TOKENS = 8192
+# Wide page ranges (regions_overview spans 15 pages) cannot fit in a single
+# call's output token budget — the dense regional prose easily exceeds 8192
+# tokens of output. We process each page individually and concatenate the
+# resulting markdown blocks. The first page's title becomes the section title.
+_PAGES_PER_CHUNK = 2  # process 1–2 pages per LLM call
+_PAGE_MAX_TOKENS = 4096
+
+
+def _extract_page_chunk(
+    client: Anthropic,
+    model: str,
+    pages_dir: Path,
+    page_images_dir: Path,
+    chunk: list[int],
+) -> dict:
+    """Run the intro-extraction prompt on a small page chunk and return its parsed JSON."""
+    text = "\n\n".join((pages_dir / f"page-{p:04d}.txt").read_text() for p in chunk)
+    img_path = page_images_dir / f"page-{chunk[0]:04d}.png"
+    media_type, img_b64 = encode_image_for_api(img_path)
+    return call_with_retry(
+        client,
+        model=model,
+        system=INTRO_EXTRACTION_SYSTEM,
+        messages=intro_user_message(text, img_b64, media_type=media_type),
+        max_tokens=_PAGE_MAX_TOKENS,
+    )
 
 
 def extract_front_matter(
@@ -53,26 +76,34 @@ def extract_front_matter(
     client = client or get_client()
     out: dict = {"schema_version": 1}
     for start, end, key in FRONT_MATTER_RANGES:
-        text = "\n\n".join(
-            (pages_dir / f"page-{p:04d}.txt").read_text() for p in range(start, end + 1)
-        )
-        # Use the first page's image as the visual reference
-        img_path = page_images_dir / f"page-{start:04d}.png"
-        media_type, img_b64 = encode_image_for_api(img_path)
-        # Wide page ranges (regions_overview) need more output budget.
-        page_count = end - start + 1
-        max_tokens = _LARGE_RANGE_MAX_TOKENS if page_count >= 5 else 4096
-        parsed = call_with_retry(
-            client,
-            model=model,
-            system=INTRO_EXTRACTION_SYSTEM,
-            messages=intro_user_message(text, img_b64, media_type=media_type),
-            max_tokens=max_tokens,
-        )
-        section = {"title": parsed["title"], "markdown": parsed["markdown"]}
+        # Split the range into small chunks so no single call has to emit
+        # more than ~4096 tokens of output. For typical 1-page ranges this
+        # is just one call; for the 15-page regions_overview it's 7-8 calls.
+        chunks: list[list[int]] = []
+        cursor = start
+        while cursor <= end:
+            chunk_end = min(cursor + _PAGES_PER_CHUNK - 1, end)
+            chunks.append(list(range(cursor, chunk_end + 1)))
+            cursor = chunk_end + 1
+
+        first_title: str | None = None
+        markdown_pieces: list[str] = []
+        for chunk in chunks:
+            parsed = _extract_page_chunk(client, model, pages_dir, page_images_dir, chunk)
+            piece = (parsed.get("markdown") or "").strip()
+            if piece:
+                markdown_pieces.append(piece)
+            if first_title is None:
+                first_title = parsed.get("title") or ""
+
+        section: dict = {
+            "title": first_title or "",
+            "markdown": "\n\n".join(markdown_pieces),
+        }
         if key == "regions_overview":
             section["map_image"] = None
         out[key] = section
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(out, indent=2))
     return out
