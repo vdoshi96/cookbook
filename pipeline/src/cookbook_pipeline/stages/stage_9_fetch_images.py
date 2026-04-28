@@ -293,6 +293,19 @@ def _kind_dir(kind: str) -> str:
     return {"recipe": "recipes", "section": "sections", "region": "regions"}[kind]
 
 
+def _published_image_value(row: dict, dest: Path, images_root: Path) -> str:
+    """Value written to recipe.image / section.hero_image / region.hero_image.
+
+    The local WebP remains the cache artifact, but the website consumes http(s)
+    URLs directly. Publishing the source URL keeps the generated images visible
+    without requiring a separate static-asset copy step in /web.
+    """
+    url = row.get("url")
+    if isinstance(url, str) and url.startswith(("http://", "https://")):
+        return url
+    return dest.relative_to(images_root.parent).as_posix()
+
+
 def _fetch_one(
     *,
     asset_id: str,
@@ -536,8 +549,7 @@ def fetch_all(
                         "error": "MISSING: no source returned a usable, non-duplicate image",
                     })
                 else:
-                    rel = dest.relative_to(images_root.parent).as_posix()
-                    asset[set_field] = rel
+                    asset[set_field] = _published_image_value(row, dest, images_root)
                     prev = provenance.get(asset["id"])
                     is_cached = (
                         prev is not None

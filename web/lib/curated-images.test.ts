@@ -22,8 +22,8 @@ describe("curated image lookup", () => {
     for (const recipe of getAllRecipes()) {
       const image = resolveRecipeImage(recipe);
 
-      expect(image.src, recipe.id).toMatch(/^https:\/\/upload\.wikimedia\.org\//);
-      expect(image.src, recipe.id).not.toMatch(/(^|\/)(data|images)\//);
+      expect(image.src, recipe.id).toMatch(/^https?:\/\//);
+      expect(image.src, recipe.id).not.toMatch(/^(data|\/?images)\//);
       expect(image.alt, recipe.id).not.toHaveLength(0);
     }
   });
@@ -53,7 +53,8 @@ describe("curated image lookup", () => {
     for (const region of getAllRegions()) {
       const image = resolveRegionImage(region);
 
-      expect(image.src, region.id).toMatch(/^https:\/\/upload\.wikimedia\.org\//);
+      expect(image.src, region.id).toMatch(/^https?:\/\//);
+      expect(image.src, region.id).not.toMatch(/^(data|\/?images)\//);
       expect(image.alt, region.id).not.toHaveLength(0);
     }
   });
@@ -66,7 +67,8 @@ describe("curated image lookup", () => {
     for (const section of sections) {
       const image = resolveSectionImage(section);
 
-      expect(image.src, section.id).toMatch(/^https:\/\/upload\.wikimedia\.org\//);
+      expect(image.src, section.id).toMatch(/^https?:\/\//);
+      expect(image.src, section.id).not.toMatch(/^(data|\/?images)\//);
       expect(image.alt, section.id).not.toHaveLength(0);
     }
   });
@@ -78,8 +80,8 @@ describe("curated image lookup", () => {
     expect(exactRecipe).not.toBeNull();
     expect(regionFallbackRecipe).not.toBeNull();
 
-    expect(resolveRecipeImage(exactRecipe!).resolvedFrom).toBe("recipe");
-    expect(resolveRecipeImage(regionFallbackRecipe!).resolvedFrom).toBe("region");
+    expect(resolveRecipeImage({ ...exactRecipe!, image: null }).resolvedFrom).toBe("recipe");
+    expect(resolveRecipeImage({ ...regionFallbackRecipe!, image: null }).resolvedFrom).toBe("region");
 
     const sectionFallbackRecipe: Pick<
       Recipe,

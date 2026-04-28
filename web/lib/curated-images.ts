@@ -497,7 +497,13 @@ export function resolveSectionImage(section: Pick<Section, "id" | "name" | "hero
   return getCuratedImage("section", section.id, section.name);
 }
 
-export function resolveRegionImage(region: Pick<Region, "id" | "name">): CuratedImage {
+export function resolveRegionImage(region: Pick<Region, "id" | "name" | "hero_image">): CuratedImage {
+  const dataImage = internetImageFromData("region", region.id, region.name, region.hero_image);
+
+  if (dataImage) {
+    return dataImage;
+  }
+
   return getCuratedImage("region", region.id, region.name);
 }
 

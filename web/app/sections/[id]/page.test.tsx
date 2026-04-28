@@ -1,7 +1,7 @@
 import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
-import { getAllSections, getFrontMatter } from "@/lib/data";
+import { getAllSections } from "@/lib/data";
 import SectionPage, { generateMetadata, generateStaticParams } from "./page";
 
 describe("SectionPage", () => {
@@ -55,20 +55,12 @@ describe("SectionPage", () => {
     expect(screen.queryByText("227")).not.toBeInTheDocument();
   });
 
-  it("renders Introduction as long-form prose without recipe filters or counts", async () => {
-    render(
-      await SectionPage({
+  it("does not expose paratext pages as section routes", async () => {
+    await expect(
+      SectionPage({
         params: Promise.resolve({ id: "introduction" })
       })
-    );
-
-    const frontMatter = getFrontMatter();
-
-    expect(screen.getByRole("heading", { level: 1, name: frontMatter.introduction.title })).toBeInTheDocument();
-    expect(screen.getByText(frontMatter.introduction.markdown)).toBeInTheDocument();
-    expect(screen.queryByRole("form", { name: "Desktop recipe filters" })).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "Filter" })).not.toBeInTheDocument();
-    expect(screen.queryByText(/0 recipes/i)).not.toBeInTheDocument();
+    ).rejects.toThrow("NEXT_HTTP_ERROR_FALLBACK;404");
   });
 
   it("statically generates real section pages without Guest Chefs", async () => {
@@ -76,7 +68,7 @@ describe("SectionPage", () => {
 
     expect(staticParams).toHaveLength(getAllSections().length);
     expect(staticParams).toContainEqual({ id: "snacks-and-appetizers" });
-    expect(staticParams).toContainEqual({ id: "introduction" });
+    expect(staticParams).not.toContainEqual({ id: "introduction" });
     expect(staticParams).not.toContainEqual({ id: "guest-chefs" });
     await expect(generateMetadata({ params: Promise.resolve({ id: "snacks-and-appetizers" }) })).resolves.toEqual({
       title: "Snacks and Appetizers"

@@ -51,7 +51,7 @@
           "rationale": "Essential dairy foundation used in countless Indian dishes; teaches basic culinary technique."
         }
       ],
-      "hero_image": "images/sections/spice-mixtures-and-pastes.webp"
+      "hero_image": "https://img1.wsimg.com/isteam/stock/62352/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=h:1000,cg:true"
     },
     {
       "id": "pickles-chutneys-and-raitas",
@@ -110,7 +110,7 @@
           "rationale": "Classic mango pickle teaches preservation method; no-cook approach suits beginners well."
         }
       ],
-      "hero_image": "images/sections/pickles-chutneys-and-raitas.webp"
+      "hero_image": "https://assets.bonappetit.com/photos/57d30b3c1844fc3746142e80/master/pass/indian-condiments-lead.jpg"
     },
     {
       "id": "snacks-and-appetizers",
@@ -258,7 +258,7 @@
           "rationale": "Fermented crepe-like staple; spans soaked-grain tradition and pan-frying technique."
         }
       ],
-      "hero_image": "images/sections/snacks-and-appetizers.webp"
+      "hero_image": "https://www.thespruceeats.com/thmb/R-8QZ7bWFECFrBVRlhL-g3FPxrs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/samosa-recipe-5208972-hero-03-df96a730eec248f18fbb2c6c24aa33eb.jpg"
     },
     {
       "id": "main-dishes",
@@ -593,7 +593,7 @@
           "rationale": "Essential chicken dish teaching whole-spice seasoning and braising, spans poultry diversity."
         }
       ],
-      "hero_image": "images/sections/main-dishes.webp"
+      "hero_image": "https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/w_1120,h_732,c_fill,g_auto/v1661347444/india-food-butter-chicken/india-food-butter-chicken-1120x732.jpg"
     },
     {
       "id": "pulses",
@@ -666,7 +666,7 @@
           "rationale": "Foundational karhi demonstrating pulse flour use and yogurt-based sauce technique."
         }
       ],
-      "hero_image": "images/sections/pulses.webp"
+      "hero_image": "https://ministryofcurry.com/wp-content/uploads/2017/03/lentilswithname.png"
     },
     {
       "id": "breads",
@@ -721,7 +721,7 @@
           "rationale": "Leavened bread variation teaching tandoor baking for flavor and texture diversity."
         }
       ],
-      "hero_image": "images/sections/breads.webp"
+      "hero_image": "https://www.thespruceeats.com/thmb/MReCj8olqrCsPaGvikesPJie02U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/naan-leavened-indian-flatbread-1957348-final-08-116a2e523f6e4ee693b1a9655784d9b9.jpg"
     },
     {
       "id": "rice",
@@ -791,7 +791,7 @@
           "rationale": "Foundational spiced rice-and-lentil dish combining lentils with rice for nutritional variety."
         }
       ],
-      "hero_image": "images/sections/rice.webp"
+      "hero_image": "https://everydaynourishingfoods.com/wp-content/uploads/2022/10/indian-rice-featured-image.jpg"
     },
     {
       "id": "desserts",
@@ -859,7 +859,7 @@
           "rationale": "No-cook yogurt dessert; shows sweetened yogurt tradition without any cooking equipment needed."
         }
       ],
-      "hero_image": "images/sections/desserts.webp"
+      "hero_image": "https://www.cookwithkushi.com/wp-content/uploads/2018/08/indian_desserts_sweets_recipes.jpg"
     },
     {
       "id": "drinks",
@@ -912,7 +912,7 @@
           "rationale": "Introduces chai preparation, the most popular Indian drink mentioned in the intro."
         }
       ],
-      "hero_image": "images/sections/drinks.webp"
+      "hero_image": "https://heritagefinefoods.co.uk/wp-content/uploads/2021/01/julia-zyablova-KlVIYmGVRQ8-unsplash-scaled.jpg"
     }
   ]
 }

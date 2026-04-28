@@ -28,7 +28,7 @@
         "pappu-charu"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/andhra-pradesh.webp"
+      "hero_image": "https://s7ap1.scene7.com/is/image/incredibleindia/lepakshi-anantapur-ap-2-attr-hero?qlt=82&ts=1726743907673"
     },
     {
       "id": "anglo-indian",
@@ -39,7 +39,7 @@
         "murg-ishtoo"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/anglo-indian.webp"
+      "hero_image": "https://worldfootprints.com/wp-content/uploads/2018/04/victoria-memorial.jpg"
     },
     {
       "id": "awadh",
@@ -190,7 +190,7 @@
         "kesar-elaychi-sherbet"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/awadh.webp"
+      "hero_image": "https://static.toiimg.com/photo/103890972.cms"
     },
     {
       "id": "bengal",
@@ -203,7 +203,7 @@
         "panther-jhol-2"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/bengal.webp"
+      "hero_image": "https://s7ap1.scene7.com/is/image/incredibleindia/howrah-bridge-kolkata-west-bengal-2-attr-hero?qlt=82&ts=1742153659633"
     },
     {
       "id": "coastal",
@@ -238,7 +238,7 @@
         "ale-bele"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/coastal.webp"
+      "hero_image": "https://static.toiimg.com/thumb/msid-123814668,width-1280,height-720,resizemode-4/123814668.jpg"
     },
     {
       "id": "delhi",
@@ -261,7 +261,7 @@
         "biryani-i"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/delhi.webp"
+      "hero_image": "https://cdn.britannica.com/38/189838-050-83C7395E/India-War-Memorial-arch-New-Delhi-Sir.jpg"
     },
     {
       "id": "delhi-agra",
@@ -271,7 +271,7 @@
         "meve-ki-gujiya"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/delhi-agra.webp"
+      "hero_image": "https://media.architecturaldigest.com/photos/67acb9b0339bcbaaadeb91b5/1:1/w_4000,h_4000,c_limit/GettyImages-873536102.jpg"
     },
     {
       "id": "delhi-bhopal",
@@ -281,7 +281,7 @@
         "ishtoo-ii-2"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/delhi-bhopal.webp"
+      "hero_image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/ab/92/65/on-this-occasion-of-bakridwe.jpg?w=1200&h=-1&s=1"
     },
     {
       "id": "delhi-punjab-awadh",
@@ -292,7 +292,7 @@
         "cheela"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/delhi-punjab-awadh.webp"
+      "hero_image": "http://www.sahapedia.org/sites/default/files/styles/sp_page_banner_800x800/public/Samuel%20Bourne%20%5BPublic%20domain%5D.jpg?itok=YhsZ1Ma5"
     },
     {
       "id": "goa",
@@ -305,7 +305,7 @@
         "sorpatel"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/goa.webp"
+      "hero_image": "https://cdn.britannica.com/10/252410-050-CE919B39/basilica-born-jesus-borea-jezuchi-bajilika-old-goa-india.jpg"
     },
     {
       "id": "gujarat",
@@ -322,7 +322,7 @@
         "sofiyani-pulao"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/gujarat.webp"
+      "hero_image": "https://gujarattourism.com/content/dam/gujrattourism/images/heritage-sites/rani-ki-vav/Rani-Ki-Vav-Banner.jpg"
     },
     {
       "id": "hyderabad",
@@ -353,7 +353,7 @@
         "gil-e-behisht"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/hyderabad.webp"
+      "hero_image": "https://tourism.telangana.gov.in/storage/app/media/charminar-landscape.jpg"
     },
     {
       "id": "hyderabad-andhra-pradesh",
@@ -363,7 +363,7 @@
         "aloogadda-vepudu-2"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/hyderabad-andhra-pradesh.webp"
+      "hero_image": "https://s7ap1.scene7.com/is/image/incredibleindia/charminar-hyderabad-2-attr-hero?qlt=82&ts=1742191257952"
     },
     {
       "id": "jammu-and-kashmir",
@@ -397,7 +397,7 @@
         "sheer-chai"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/jammu-and-kashmir.webp"
+      "hero_image": "https://sandeepachetan.com/wp-content/uploads/2014/04/IN_SRI201307104764-dal-lake.jpg"
     },
     {
       "id": "karnataka",
@@ -411,7 +411,7 @@
         "bisi-bele-huli-anna"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/karnataka.webp"
+      "hero_image": "https://cdn.britannica.com/27/242227-050-48358A10/Mysore-Palace-Mysuru-Karnataka-India.jpg"
     },
     {
       "id": "karnataka-tamil-nadu",
@@ -421,7 +421,7 @@
         "mysore-pak"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/karnataka-tamil-nadu.webp"
+      "hero_image": "https://cdn.britannica.com/66/250066-050-B34A9532/Brihadishvara-Temple-Thanjavur-Tamil-Nadu-India.jpg"
     },
     {
       "id": "kerala",
@@ -458,7 +458,7 @@
         "neyappam"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/kerala.webp"
+      "hero_image": "https://www.tripsavvy.com/thmb/_IW5qmzxk99F2FLSfu1uu4tIm58=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/houseboats_in_kottayam_2_438-56a3be175f9b58b7d0d39246.jpg"
     },
     {
       "id": "maharashtra",
@@ -477,7 +477,7 @@
         "puran-poli"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/maharashtra.webp"
+      "hero_image": "https://afar.brightspotcdn.com/dims4/default/3bcbf73/2147483647/strip/true/crop/1600x800+0+0/resize/1440x720!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F16%2F85%2F5c8949c60685339973fd53c817b8%2Foriginal-a54d684d8b0a182dd8ca390be1e6d627.jpg"
     },
     {
       "id": "north-east-india",
@@ -491,7 +491,7 @@
         "dohneiiong"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/north-east-india.webp"
+      "hero_image": "https://cdn.britannica.com/22/145822-050-3A09398A/Tista-River-tributary-Brahmaputra-India-Siwalik-Hills.jpg"
     },
     {
       "id": "north-india",
@@ -501,7 +501,7 @@
         "khoya"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/north-india.webp"
+      "hero_image": "http://ridingwild.org/assets/photos/foothills-of-the-himalaya/161025_NorthernIndia_DSC01858.jpg"
     },
     {
       "id": "pan-indian",
@@ -528,7 +528,7 @@
         "nimbuwali-chai"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/pan-indian.webp"
+      "hero_image": "https://www.sanskritimagazine.com/wp-content/uploads/2013/11/861106_207536879389637_638908914_o.jpg"
     },
     {
       "id": "parsi",
@@ -543,7 +543,7 @@
         "dhansak"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/parsi.webp"
+      "hero_image": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/udvada-parsi,-udvada/gallery/Udvada%20Parsi%20Udvada21.jpg"
     },
     {
       "id": "punjab",
@@ -638,7 +638,7 @@
         "kharbuje-ka-panna-3"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/punjab.webp"
+      "hero_image": "https://sacredsites.com/images/asia/india/punjab/Golden-Temple-1.webp"
     },
     {
       "id": "punjab-awadh",
@@ -648,7 +648,7 @@
         "aloo-tamatar"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/punjab-awadh.webp"
+      "hero_image": "https://static.toiimg.com/photo/38469547/.jpg"
     },
     {
       "id": "punjab-awadh-delhi",
@@ -658,7 +658,7 @@
         "samosa"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/punjab-awadh-delhi.webp"
+      "hero_image": "https://mytravellingstilettos.com/wp-content/uploads/2021/04/bara-imambara-lucknow-bhhol-bhulaiya.jpg?x79938"
     },
     {
       "id": "punjab-delhi",
@@ -668,7 +668,7 @@
         "gajar-ka-halwa"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/punjab-delhi.webp"
+      "hero_image": "https://cdn.britannica.com/09/189809-050-FAC505B0/Jama-Masjid-Delhi.jpg"
     },
     {
       "id": "punjab-delhi-awadh",
@@ -681,7 +681,7 @@
         "suji-halwa"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/punjab-delhi-awadh.webp"
+      "hero_image": "https://cdn.britannica.com/20/189820-050-D650A54D/Red-Fort-Old-Delhi-India.jpg"
     },
     {
       "id": "rajasthan",
@@ -724,7 +724,7 @@
         "mawe-ki-kachori"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/rajasthan.webp"
+      "hero_image": "https://cdn.britannica.com/25/242225-050-72142DF7/Front-facade-of-Palace-of-the-Winds-Hawa-Mahal-Jaipur-Rajasthan-India.jpg"
     },
     {
       "id": "sindh",
@@ -735,7 +735,7 @@
         "nishashte-ka-halwa"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/sindh.webp"
+      "hero_image": "https://i.natgeofe.com/n/9ad480f8-ca3a-46b2-842d-889d93afc43e/deosai-national-park-pakistan.jpg"
     },
     {
       "id": "tamil-nadu",
@@ -813,7 +813,7 @@
         "filter-kaapi-3"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/tamil-nadu.webp"
+      "hero_image": "https://i.natgeofe.com/n/b9e9b8d1-fa08-4b90-96bb-310cace03847/meenakshi-amman-temple-india.jpg"
     },
     {
       "id": "tamil-nadu-karnataka",
@@ -823,7 +823,7 @@
         "nariyal-tamatar-ki-chutney"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/tamil-nadu-karnataka.webp"
+      "hero_image": "https://i0.wp.com/archeyes.com/wp-content/uploads/2024/12/Aerial-Brihadesvara-Temple-Tanjavur-India-Thanjavur-temple.jpg?ssl=1"
     },
     {
       "id": "tamil-nadu-karnataka-kerala",
@@ -833,7 +833,7 @@
         "dosa"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/tamil-nadu-karnataka-kerala.webp"
+      "hero_image": "https://cdn.britannica.com/93/74093-050-908E4B55/Shore-Temple-Mamallapuram-Tamil-Nadu-India.jpg"
     },
     {
       "id": "telangana",
@@ -878,7 +878,7 @@
         "kairi-ka-sherbet"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/telangana.webp"
+      "hero_image": "https://s7ap1.scene7.com/is/image/incredibleindia/charminar-hyderabad-1-attr-hero?qlt=82&ts=1742179190787"
     },
     {
       "id": "tribal-north-east-india",
@@ -897,7 +897,7 @@
         "wak-serjak"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/tribal-north-east-india.webp"
+      "hero_image": "https://tourism.nagaland.gov.in/wp-content/uploads/2020/07/kisama-2.jpg"
     },
     {
       "id": "uttarakhand",
@@ -913,7 +913,7 @@
         "baant"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/uttarakhand.webp"
+      "hero_image": "https://badrinath-kedarnath.gov.in/Assets/image/k3.jpg"
     },
     {
       "id": "west-bengal",
@@ -942,7 +942,7 @@
         "ilish-maachher-pulao"
       ],
       "map_coords": null,
-      "hero_image": "images/regions/west-bengal.webp"
+      "hero_image": "https://remotetraveler.com/wp-content/uploads/2014/10/Hoogly-river-and-Howrah-Bridge-Kolkata.jpg"
     }
   ]
 }

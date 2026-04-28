@@ -79,6 +79,7 @@ class Region(BaseModel):
     intro_markdown: str
     recipe_ids: list[str]
     map_coords: MapCoords | None = None
+    hero_image: str | None = None
 
 
 class RegionsFile(BaseModel):
