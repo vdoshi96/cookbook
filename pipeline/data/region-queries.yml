@@ -1,0 +1,193 @@
+# Curated image-search queries per region (Stage 9).
+#
+# Each region in /data/regions.json gets an ordered list of queries — the
+# fetcher tries them in order, falling through to the next on no usable
+# results. Bare region names alone return generic stock imagery, so the
+# primary query is always anchored on a famous landmark / cultural scene.
+#
+# Composite regions (slash-separated, e.g. "Punjab/Awadh/Delhi") use the
+# most distinctive component's imagery — typically Awadh's Lucknow
+# architecture or Mughal Old Delhi, picked to differentiate from sibling
+# composite regions.
+#
+# Edit this file to refine a region's hero image; no code changes needed.
+
+awadh:
+  - "Bara Imambara Lucknow Awadh"
+  - "Lucknow Awadhi architecture"
+  - "Lucknow Rumi Darwaza"
+
+andhra-pradesh:
+  - "Lepakshi temple Andhra Pradesh"
+  - "Tirupati Andhra Pradesh"
+  - "Andhra Pradesh countryside paddy"
+
+anglo-indian:
+  - "Kolkata colonial architecture Victoria Memorial"
+  - "Anglo-Indian community India"
+  - "British India Calcutta heritage"
+
+bengal:
+  - "Howrah Bridge Kolkata Bengal"
+  - "Victoria Memorial Kolkata"
+  - "Bengal Sundarbans river"
+
+coastal:
+  - "Konkan coast fishing village India"
+  - "Indian coastal village fishing boats"
+  - "Malabar coast Kerala shoreline"
+
+delhi:
+  - "India Gate Delhi"
+  - "Old Delhi Jama Masjid"
+  - "Humayun's Tomb Delhi"
+
+delhi-agra:
+  - "Taj Mahal Agra"
+  - "Agra Fort Yamuna"
+  - "Mughal architecture Agra"
+
+delhi-bhopal:
+  - "Taj-ul-Masajid Bhopal"
+  - "Bhopal Upper Lake"
+  - "Bhopal old city"
+
+delhi-punjab-awadh:
+  - "Old Delhi Chandni Chowk Mughal"
+  - "Jama Masjid Old Delhi"
+  - "Old Delhi heritage street"
+
+goa:
+  - "Basilica of Bom Jesus Goa"
+  - "Goa Portuguese church Old Goa"
+  - "Goa beach Palolem"
+
+gujarat:
+  - "Rani ki Vav Patan Gujarat"
+  - "Gujarat Modhera Sun Temple"
+  - "Kutch white desert Gujarat"
+
+hyderabad:
+  - "Charminar Hyderabad"
+  - "Golconda Fort Hyderabad"
+  - "Chowmahalla Palace Hyderabad"
+
+hyderabad-andhra-pradesh:
+  - "Charminar Hyderabad Telangana"
+  - "Golconda Fort Hyderabad heritage"
+  - "Hyderabad Old City Mecca Masjid"
+
+jammu-and-kashmir:
+  - "Dal Lake Srinagar Kashmir"
+  - "Kashmir valley landscape mountains"
+  - "Shalimar Bagh Srinagar"
+
+karnataka:
+  - "Mysore Palace Karnataka"
+  - "Hampi ruins Karnataka"
+  - "Coorg coffee plantation Karnataka"
+
+karnataka-tamil-nadu:
+  - "Brihadeeswarar Temple Thanjavur"
+  - "South India Dravidian temple"
+  - "Hampi Karnataka ruins"
+
+kerala:
+  - "Kerala backwaters houseboat Alleppey"
+  - "Munnar tea plantation Kerala"
+  - "Kerala kathakali dancer"
+
+maharashtra:
+  - "Gateway of India Mumbai Maharashtra"
+  - "Ajanta Caves Maharashtra"
+  - "Pune Shaniwar Wada"
+
+north-east-india:
+  - "Brahmaputra river Assam Northeast India"
+  - "Northeast India hills landscape"
+  - "Kaziranga Assam Northeast"
+
+north-india:
+  - "Himalayas Indian foothills"
+  - "Old Delhi Mughal heritage"
+  - "Varanasi Ganges ghats"
+
+pan-indian:
+  - "India diverse landscape culture"
+  - "Indian street market crowd"
+  - "India heritage monuments collage"
+
+parsi:
+  - "Udvada Parsi fire temple Gujarat"
+  - "Parsi community Mumbai"
+  - "Mumbai Parsi colony heritage"
+
+punjab:
+  - "Golden Temple Amritsar Punjab"
+  - "Punjab mustard fields harvest"
+  - "Wagah border Punjab"
+
+punjab-awadh:
+  - "Bara Imambara Lucknow"
+  - "Lucknow Mughal heritage"
+  - "Awadhi architecture Lucknow"
+
+punjab-awadh-delhi:
+  - "Lucknow Bara Imambara"
+  - "Mughal Delhi Old City"
+  - "Awadhi heritage Lucknow"
+
+punjab-delhi:
+  - "Old Delhi Jama Masjid"
+  - "Punjab Golden Temple Amritsar"
+  - "Delhi Mughal heritage street"
+
+punjab-delhi-awadh:
+  - "Old Delhi Mughal architecture"
+  - "Jama Masjid Delhi"
+  - "Lucknow Bara Imambara"
+
+rajasthan:
+  - "Hawa Mahal Jaipur Rajasthan"
+  - "Mehrangarh Fort Jodhpur"
+  - "Udaipur City Palace lake"
+
+sindh:
+  - "Sindh Pakistan landscape"
+  - "Sindhi culture heritage Karachi"
+  - "Indus river Sindh"
+
+tamil-nadu:
+  - "Meenakshi Temple Madurai Tamil Nadu"
+  - "Mahabalipuram Shore Temple"
+  - "Brihadeeswarar Temple Thanjavur"
+
+tamil-nadu-karnataka:
+  - "Brihadeeswarar Temple Thanjavur"
+  - "Hampi Karnataka ruins"
+  - "South India Dravidian heritage"
+
+tamil-nadu-karnataka-kerala:
+  - "South India temple coast"
+  - "Mahabalipuram Shore Temple"
+  - "Kerala Karnataka coast Western Ghats"
+
+telangana:
+  - "Charminar Hyderabad Telangana"
+  - "Warangal Thousand Pillar Temple"
+  - "Ramoji Film City Telangana"
+
+tribal-north-east-india:
+  - "Naga tribal village Nagaland"
+  - "Hornbill Festival Nagaland tribal"
+  - "Northeast India tribal dance"
+
+uttarakhand:
+  - "Kedarnath temple Uttarakhand"
+  - "Rishikesh Ganges Uttarakhand"
+  - "Uttarakhand Himalayas Nainital"
+
+west-bengal:
+  - "Howrah Bridge Kolkata"
+  - "Victoria Memorial Kolkata West Bengal"
+  - "Darjeeling tea estate West Bengal"

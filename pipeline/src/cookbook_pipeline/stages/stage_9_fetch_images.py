@@ -1,36 +1,36 @@
-"""Stage 9 — fetch high-quality images from the internet.
+"""Stage 9 — fetch high-quality images from the internet (tiered).
 
 Replaces the original PDF image extraction. The PDF photos are too low
 quality for the website; per the design spec §8.5, every recipe / section /
-region image is sourced from the internet using a Google Images search
-(SerpAPI). This is a personal, non-commercial project — license is not
-filtered, we pick the highest-quality match available.
+region image is sourced from the internet.
 
-## Per-asset flow
+## Source priority (per asset)
 
-1. Build a query string ("nargisi seekh kebab awadh indian recipe").
-2. Look up an override in `pipeline/data/image-overrides.yml` (manual curated
-   override file, id → URL or absolute path); use that if present.
-3. Else look up the asset in `data/images/_provenance.json` (the durable
-   cache from prior runs). If a cached entry exists and the local file is
-   present, skip — no API call.
-4. Else hit SerpAPI's google_images engine, take the first image that's at
-   least MIN_DIMENSIONS, isn't from a domain in BLOCKED_DOMAINS, and has a
-   downloadable original. Download, re-encode to WebP @ quality 85.
-5. Write to `data/images/{kind}/{id}.webp` and append to provenance.
+Tries each tier in order until one yields a downloadable, non-duplicate image:
 
-## On failure
+1. **Manual override** (`pipeline/data/image-overrides.yml`).
+2. **Cache** — if the asset already has a file on disk AND a URL recorded
+   in `_provenance.json`, register it in the dedup ledger and skip.
+3. **SerpAPI** — Google Images, full-resolution only. Wikimedia /
+   Wikipedia URLs are dropped at this tier so they only land via
+   WikimediaSource.
+4. **Pexels** — license-clean stock with photographer attribution.
+5. **Wikimedia Commons** — last resort.
+6. **MISSING** — set image to null, log to failures, never reuse another
+   asset's photo to fill the slot.
 
-Per-asset failures are accumulated into `failures` and returned. The pipeline
-keeps going — a recipe with no image emits `image: null` and the frontend
-falls back to a placeholder. The user reviews the failures list and curates
-overrides as needed.
+## Dedup invariant
 
-## Why the provenance cache matters
+Every accepted image's URL **and** content hash is registered in the
+`DedupLedger`. No two recipes / sections / regions may share a URL or a
+byte-identical file. If a download collides, it's discarded and the
+fetcher tries the next candidate / next source.
 
-SerpAPI is rate-limited (200/hr Starter, 1000/hr Developer). The cache makes
-re-runs free for assets we already fetched, so iterating on the prompts /
-overrides / data doesn't re-burn quota.
+## Provenance
+
+Written synchronously after every successful fetch so a crash never wipes
+the audit trail. Each row records: source tier, URL, query that won,
+dimensions, content sha256, attribution (where available).
 """
 
 from __future__ import annotations
@@ -38,8 +38,7 @@ from __future__ import annotations
 import io
 import json
 import os
-import time
-import urllib.parse
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -50,71 +49,71 @@ import yaml
 from PIL import Image
 from tqdm import tqdm
 
-# IDs we never fetch images for. Stage 1's footer scan still surfaces these
-# as sections in some pipeline versions; with the paratext restructure they
-# no longer appear in sections.json, but the skip list keeps the fetcher
-# robust if it ever runs on an older sections.json.
+from cookbook_pipeline.stages.image_dedup import DedupLedger, DuplicateAsset
+from cookbook_pipeline.stages.image_sources import (
+    Candidate,
+    PexelsSource,
+    SerpApiSource,
+    Source,
+    SourceError,
+    WikimediaSource,
+)
+
+# IDs Stage 9 never fetches for. The paratext restructure removed these
+# from sections.json, but the skip list keeps the fetcher safe if it ever
+# runs against an older snapshot.
 PARATEXT_IDS = frozenset({"introduction", "glossary", "directory", "index"})
-
-MIN_WIDTH = 800
-MIN_HEIGHT = 600
-
-# Domains that don't serve usable images:
-# - Stock-photo galleries serve watermarked previews (visible artifact, not a
-#   licensing concern — this project is personal-use).
-# - Facebook / Instagram "lookaside" CDN URLs return an HTML wrapper page
-#   when fetched outside the social context, which PIL can't decode.
-# - TikTok image API similarly bot-blocks.
-BLOCKED_DOMAINS = frozenset({
-    "shutterstock.com",
-    "alamy.com",
-    "dreamstime.com",
-    "istockphoto.com",
-    "gettyimages.com",
-    "depositphotos.com",
-    "123rf.com",
-    "stock.adobe.com",
-    "lookaside.fbsbx.com",
-    "lookaside.instagram.com",
-    "tiktok.com",
-})
 
 WEBP_QUALITY = 85
 DOWNLOAD_TIMEOUT_S = 20
-SERPAPI_ENDPOINT = "https://serpapi.com/search.json"
+MIN_WIDTH = 800
+MIN_HEIGHT = 600
 
 
 class FetcherError(Exception):
-    """Per-asset fetch error. Surfaced into `failures`, not raised to caller."""
+    """Per-asset fetch error. Surfaced into `failures`, not raised."""
 
 
 def _utc_now_iso() -> str:
     return datetime.now(tz=timezone.utc).isoformat(timespec="seconds")
 
 
-def _domain_of(url: str) -> str:
-    try:
-        return urllib.parse.urlparse(url).netloc.lower().lstrip("www.")
-    except Exception:
-        return ""
-
-
-def _is_blocked(url: str) -> bool:
-    d = _domain_of(url)
-    return any(d == bad or d.endswith("." + bad) for bad in BLOCKED_DOMAINS)
+# ---------------------------------------------------------------------------
+# Config loaders
+# ---------------------------------------------------------------------------
 
 
 def load_overrides(path: Path) -> dict[str, str]:
-    """Load the manual override file — {asset_id: url_or_path}.
-
-    Missing file is OK (returns {}). Invalid YAML raises so the user notices.
-    """
+    """Load `{asset_id: url_or_path}` overrides. Missing file → empty dict."""
     if not path.exists():
         return {}
     raw = yaml.safe_load(path.read_text()) or {}
     if not isinstance(raw, dict):
         raise FetcherError(f"image-overrides.yml must be a mapping, got {type(raw).__name__}")
     return {str(k): str(v) for k, v in raw.items()}
+
+
+def load_region_queries(path: Path) -> dict[str, list[str]]:
+    """Load `{region_id: [query, ...]}` from YAML. Missing file → empty dict.
+
+    Each value must be a non-empty list of strings; the first is the primary
+    query, the rest are fallbacks tried in order.
+    """
+    if not path.exists():
+        return {}
+    raw = yaml.safe_load(path.read_text()) or {}
+    if not isinstance(raw, dict):
+        raise FetcherError(
+            f"region-queries.yml must be a mapping, got {type(raw).__name__}"
+        )
+    out: dict[str, list[str]] = {}
+    for k, v in raw.items():
+        if not isinstance(v, list) or not v or not all(isinstance(q, str) and q for q in v):
+            raise FetcherError(
+                f"region-queries.yml[{k!r}]: must be a non-empty list of strings"
+            )
+        out[str(k)] = [str(q) for q in v]
+    return out
 
 
 def load_provenance(path: Path) -> dict[str, dict]:
@@ -128,70 +127,58 @@ def save_provenance(path: Path, prov: dict[str, dict]) -> None:
     path.write_text(json.dumps(prov, indent=2, sort_keys=True))
 
 
-def serpapi_search(query: str, api_key: str) -> list[dict]:
-    """Run a Google Images search, return the raw `images_results` list.
-
-    Retries on 429 / 5xx with exponential backoff. Empty list on no results.
-    """
-    params = {
-        "engine": "google_images",
-        "q": query,
-        "api_key": api_key,
-        "ijn": "0",
-    }
-    backoff = 2.0
-    for attempt in range(4):
-        resp = requests.get(SERPAPI_ENDPOINT, params=params, timeout=DOWNLOAD_TIMEOUT_S)
-        if resp.status_code == 200:
-            return (resp.json() or {}).get("images_results", []) or []
-        if resp.status_code in (429, 500, 502, 503, 504) and attempt < 3:
-            time.sleep(backoff)
-            backoff *= 2
-            continue
-        raise FetcherError(f"SerpAPI {resp.status_code}: {resp.text[:300]}")
-    raise FetcherError("SerpAPI: exhausted retries")
+# ---------------------------------------------------------------------------
+# Query builders
+# ---------------------------------------------------------------------------
 
 
-def _pick_best_result(results: list[dict]) -> dict | None:
-    """Return the first usable result, or None. See `_pick_candidates`."""
-    candidates = _pick_candidates(results, limit=1)
-    return candidates[0] if candidates else None
+def _slugify_for_query(s: str) -> str:
+    return s.replace("/", " ").replace("&", "and").strip()
 
 
-def _pick_candidates(results: list[dict], limit: int = 6) -> list[dict]:
-    """Return up to `limit` usable results in preference order.
-
-    Multiple candidates let the fetcher fall through to the next pick if a
-    download fails (HTTP 403/404/429, decode errors, etc.) instead of
-    bailing on the asset entirely. Filtering rules:
-
-    - Requires `original` or `image` (a downloadable hero-sized URL).
-      Thumbnails (typically 120-250px) are deliberately rejected.
-    - Skips domains in BLOCKED_DOMAINS.
-    - Skips results where SerpAPI reports dimensions below
-      MIN_WIDTH x MIN_HEIGHT.
-    """
-    out: list[dict] = []
-    for r in results:
-        url = r.get("original") or r.get("image")
-        if not url:
-            continue
-        if _is_blocked(url):
-            continue
-        w = r.get("original_width") or 0
-        h = r.get("original_height") or 0
-        if w and h and (w < MIN_WIDTH or h < MIN_HEIGHT):
-            continue
-        out.append(r)
-        if len(out) >= limit:
-            break
+def _build_recipe_queries(recipe: dict) -> list[str]:
+    parts = [recipe["name"]]
+    region = recipe.get("origin_region_name")
+    if region and region.lower() != "pan-indian":
+        parts.append(region)
+    parts.append("indian recipe")
+    primary = " ".join(_slugify_for_query(p) for p in parts if p)
+    fallback = f"{_slugify_for_query(recipe['name'])} recipe"
+    out = [primary]
+    if fallback != primary:
+        out.append(fallback)
     return out
 
 
-# Browser-shaped User-Agent. Wikimedia Commons specifically rate-limits
-# (HTTP 429) UAs that look like bots; a plausible browser string lifts
-# our pull rate substantially. We keep an identifying suffix per
-# Wikimedia's policy so they can contact us if we misbehave.
+def _build_section_queries(section: dict) -> list[str]:
+    name = _slugify_for_query(section["name"])
+    return [f"indian {name} food", f"indian {name}"]
+
+
+def _build_region_queries(region: dict, region_query_config: dict[str, list[str]]) -> list[str]:
+    rid = region["id"]
+    if rid in region_query_config:
+        # Primary + curated fallbacks + bare-name last-ditch.
+        return list(region_query_config[rid]) + [region["name"]]
+    return [f"{region['name']} India culture", region["name"]]
+
+
+# Public single-query builders kept for tests/other callers.
+def _build_recipe_query(recipe: dict) -> str:
+    return _build_recipe_queries(recipe)[0]
+
+
+def _build_section_query(section: dict) -> str:
+    return _build_section_queries(section)[0]
+
+
+# ---------------------------------------------------------------------------
+# Download / encode
+# ---------------------------------------------------------------------------
+
+
+# Browser-shaped UA. Some CDNs (and notably Wikimedia, when we hit it via
+# SerpAPI URLs) rate-limit obvious bot UAs. Identifying suffix per WMF.
 DOWNLOAD_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 "
@@ -203,30 +190,28 @@ DOWNLOAD_HEADERS = {
 }
 
 
-def download_and_encode(url: str, dest: Path) -> tuple[int, int]:
-    """Download `url`, decode, re-encode to WebP at `dest`. Returns (w, h).
+def download_bytes(url: str) -> bytes:
+    """GET `url`, return raw bytes. Retries once on 429/5xx.
 
-    Retries once on HTTP 429 / 5xx with a short backoff. Persistent failures
-    raise FetcherError so the caller can fall through to the next candidate.
+    Wraps `requests.RequestException` (timeouts, DNS, conn-reset, …) in
+    FetcherError so the candidate-iteration loop can fall through to the
+    next URL instead of aborting the whole asset.
     """
+    import time
     backoff = 1.5
     last_err = None
     for attempt in range(3):
-        resp = requests.get(url, headers=DOWNLOAD_HEADERS, timeout=DOWNLOAD_TIMEOUT_S)
+        try:
+            resp = requests.get(url, headers=DOWNLOAD_HEADERS, timeout=DOWNLOAD_TIMEOUT_S)
+        except requests.RequestException as e:
+            last_err = f"{type(e).__name__}: {e}"
+            if attempt < 2:
+                time.sleep(backoff)
+                backoff *= 2
+                continue
+            break
         if resp.status_code == 200:
-            raw = resp.content
-            try:
-                pil = Image.open(io.BytesIO(raw)).convert("RGB")
-            except Exception as e:
-                raise FetcherError(f"decode {url}: {e}") from e
-            if pil.width < MIN_WIDTH or pil.height < MIN_HEIGHT:
-                raise FetcherError(
-                    f"{url}: actual dimensions {pil.width}x{pil.height} below "
-                    f"min {MIN_WIDTH}x{MIN_HEIGHT}"
-                )
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            pil.save(dest, "WEBP", quality=WEBP_QUALITY)
-            return pil.width, pil.height
+            return resp.content
         last_err = f"HTTP {resp.status_code}"
         if resp.status_code in (429, 500, 502, 503, 504) and attempt < 2:
             time.sleep(backoff)
@@ -236,167 +221,226 @@ def download_and_encode(url: str, dest: Path) -> tuple[int, int]:
     raise FetcherError(f"download {url}: {last_err}")
 
 
-def _slugify_for_query(s: str) -> str:
-    return s.replace("/", " ").replace("&", "and").strip()
+def encode_to_webp(raw: bytes, dest: Path) -> tuple[int, int]:
+    """Decode `raw`, validate dimensions, write WebP to `dest`. Returns (w, h)."""
+    try:
+        pil = Image.open(io.BytesIO(raw)).convert("RGB")
+    except Exception as e:
+        raise FetcherError(f"decode: {e}") from e
+    if pil.width < MIN_WIDTH or pil.height < MIN_HEIGHT:
+        raise FetcherError(
+            f"actual dimensions {pil.width}x{pil.height} below "
+            f"min {MIN_WIDTH}x{MIN_HEIGHT}"
+        )
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    pil.save(dest, "WEBP", quality=WEBP_QUALITY)
+    return pil.width, pil.height
 
 
-def _build_recipe_query(recipe: dict) -> str:
-    parts = [recipe["name"]]
-    region = recipe.get("origin_region_name")
-    if region and region.lower() != "pan-indian":
-        parts.append(region)
-    parts.append("indian recipe")
-    return " ".join(_slugify_for_query(p) for p in parts if p)
+# ---------------------------------------------------------------------------
+# Per-asset orchestration
+# ---------------------------------------------------------------------------
 
 
-def _build_recipe_fallback_query(recipe: dict) -> str:
-    """Shorter query for recipes whose primary query returned thumbnail-only
-    results (a SerpAPI quirk on long, specific queries)."""
-    return f"{_slugify_for_query(recipe['name'])} recipe"
-
-
-def _build_section_query(section: dict) -> str:
-    return f"indian {_slugify_for_query(section['name'])} food"
-
-
-def _build_section_fallback_query(section: dict) -> str:
-    return f"indian {_slugify_for_query(section['name'])}"
-
-
-# Curated per-region queries — region names alone return generic stock imagery
-# of "Punjab" or "Kashmir" landscapes that don't read as a hero. Anchoring on
-# a famous regional landmark or cultural scene gives much better results.
-# Fallback: f"{region.name} india culture".
-REGION_QUERY_OVERRIDES: dict[str, str] = {
-    "awadh": "Bara Imambara Lucknow Awadh",
-    "kashmir": "Dal Lake Kashmir",
-    "jammu-and-kashmir": "Dal Lake Kashmir",
-    "punjab": "Golden Temple Amritsar Punjab",
-    "tamil-nadu": "Meenakshi Temple Madurai Tamil Nadu",
-    "kerala": "Kerala backwaters houseboat",
-    "rajasthan": "Hawa Mahal Jaipur Rajasthan",
-    "gujarat": "Rani ki Vav Gujarat",
-    "maharashtra": "Gateway of India Mumbai Maharashtra",
-    "karnataka": "Mysore Palace Karnataka",
-    "andhra-pradesh": "Charminar Hyderabad Andhra Pradesh",
-    "telangana": "Charminar Hyderabad Telangana",
-    "west-bengal": "Howrah Bridge Kolkata West Bengal",
-    "bengal": "Howrah Bridge Kolkata Bengal",
-    "odisha": "Konark Sun Temple Odisha",
-    "orissa": "Konark Sun Temple Odisha",
-    "goa": "Goa beach Portuguese church",
-    "uttar-pradesh": "Taj Mahal Agra Uttar Pradesh",
-    "bihar": "Mahabodhi Temple Bodh Gaya Bihar",
-    "haryana": "Kurukshetra Haryana fields",
-    "himachal-pradesh": "Shimla mountains Himachal Pradesh",
-    "uttarakhand": "Kedarnath temple Uttarakhand Himalayas",
-    "madhya-pradesh": "Khajuraho temples Madhya Pradesh",
-    "chhattisgarh": "Chitrakote Falls Chhattisgarh",
-    "jharkhand": "Hundru Falls Jharkhand",
-    "assam": "Kamakhya Temple Guwahati Assam",
-    "manipur": "Loktak Lake Manipur",
-    "meghalaya": "Cherrapunji living root bridges Meghalaya",
-    "nagaland": "Hornbill Festival Nagaland",
-    "sikkim": "Kanchenjunga Sikkim mountains",
-    "tripura": "Ujjayanta Palace Tripura",
-    "arunachal-pradesh": "Tawang Monastery Arunachal Pradesh",
-    "mizoram": "Mizoram hills Aizawl",
-    "pan-indian": "India cultural landscape",
-    "indian": "India cultural landscape",
-}
-
-
-def _build_region_query(region: dict) -> str:
-    rid = region["id"]
-    if rid in REGION_QUERY_OVERRIDES:
-        return REGION_QUERY_OVERRIDES[rid]
-    return f"{region['name']} India culture"
-
-
-def _try_serpapi_query(
-    query: str, api_key: str, dest: Path,
-) -> tuple[str, dict] | None:
-    """Run a single SerpAPI query and try to download from its candidates.
-
-    Returns (downloaded_url, picked_result) on success, None if no candidate
-    works (caller can try a fallback query). Raises FetcherError only on
-    SerpAPI itself failing (so that's not retried with the fallback).
-    """
-    results = serpapi_search(query, api_key)
-    candidates = _pick_candidates(results)
-    if not candidates:
+def _try_candidate(
+    cand: Candidate, dest: Path, asset_id: str, kind: str, ledger: DedupLedger,
+) -> dict | None:
+    """Download `cand`, register in ledger, write to disk. Returns provenance
+    row on success, or None if this candidate is a duplicate / unusable."""
+    # Pre-check URL — don't waste a download on a URL we already accepted.
+    if ledger.has_url(cand.url):
         return None
-    for pick in candidates:
-        url = pick.get("original") or pick.get("image")
+    try:
+        raw = download_bytes(cand.url)
+    except FetcherError:
+        return None
+    # Dimension check + decode happens in encode_to_webp; if it fails the
+    # candidate is rejected without registering.
+    try:
+        # Encode to a temp path so a dedup collision doesn't leave a stale file.
+        tmp = dest.with_suffix(dest.suffix + ".tmp")
+        w, h = encode_to_webp(raw, tmp)
+    except FetcherError:
+        return None
+    try:
+        entry = ledger.register(
+            asset_id=asset_id, kind=kind, url=cand.url, content=raw,
+        )
+    except DuplicateAsset:
         try:
-            w, h = download_and_encode(url, dest)
-            return url, {"pick": pick, "width": w, "height": h}
-        except FetcherError:
-            continue
-    return None
+            tmp.unlink(missing_ok=True)
+        except OSError:
+            pass
+        return None
+    # Commit: move tmp into final location.
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    os.replace(tmp, dest)
+    return {
+        "id": asset_id,
+        "kind_dir": _kind_dir(kind),
+        "source": cand.source,
+        "url": cand.url,
+        "query": cand.query,
+        "width": w,
+        "height": h,
+        "sha256": entry.sha256,
+        "attribution": cand.attribution,
+        "fetched_at": _utc_now_iso(),
+    }
+
+
+def _kind_dir(kind: str) -> str:
+    return {"recipe": "recipes", "section": "sections", "region": "regions"}[kind]
 
 
 def _fetch_one(
     *,
     asset_id: str,
-    query: str,
-    fallback_query: str | None,
+    kind: str,
+    queries: list[str],
     dest: Path,
     overrides: dict[str, str],
     provenance: dict[str, dict],
-    api_key: str,
-) -> dict:
-    """Resolve, download, and record one asset. Returns the provenance row."""
-    # 1. Override file
+    ledger: DedupLedger,
+    sources: list[Source],
+    images_root: Path,
+) -> dict | None:
+    """Resolve, download, dedup-check, and write one asset.
+
+    Returns the provenance row on success, or None on MISSING (all tiers
+    exhausted). Raises FetcherError only for override misconfig — never for
+    network / source errors (those fall through to the next tier).
+    """
+    # 1. Override
     if asset_id in overrides:
-        url = overrides[asset_id]
-        if url.startswith(("http://", "https://")):
-            w, h = download_and_encode(url, dest)
-            return {"id": asset_id, "url": url, "source": "override",
-                    "query": query, "fetched_at": _utc_now_iso(),
-                    "width": w, "height": h}
-        # local file path
-        src = Path(url)
-        if not src.is_absolute():
-            src = (dest.parent.parent.parent.parent / src).resolve()
-        if not src.exists():
-            raise FetcherError(f"override path does not exist: {src}")
-        pil = Image.open(src).convert("RGB")
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        pil.save(dest, "WEBP", quality=WEBP_QUALITY)
-        return {"id": asset_id, "url": str(src), "source": "override-local",
-                "query": query, "fetched_at": _utc_now_iso(),
-                "width": pil.width, "height": pil.height}
+        return _fetch_via_override(
+            asset_id=asset_id, kind=kind, dest=dest,
+            url_or_path=overrides[asset_id], ledger=ledger, images_root=images_root,
+        )
 
-    # 2. Provenance cache (skip API call if file already on disk)
+    # 2. Cache (file already on disk + URL recorded in provenance + URL not
+    # already claimed by another asset). This re-registers the cached item
+    # so dedup is correct on incremental runs.
     cached = provenance.get(asset_id)
-    if cached and dest.exists():
-        return cached
+    if cached and cached.get("url") and dest.exists():
+        try:
+            raw = dest.read_bytes()
+            entry = ledger.register(
+                asset_id=asset_id, kind=kind, url=cached["url"], content=raw,
+            )
+            row = dict(cached)
+            row["sha256"] = entry.sha256
+            row.setdefault("kind_dir", _kind_dir(kind))
+            return row
+        except DuplicateAsset:
+            # Cached entry collides with another asset's existing file —
+            # drop the cache, refetch through tiers below.
+            try:
+                dest.unlink(missing_ok=True)
+            except OSError:
+                pass
 
-    # 3. SerpAPI — try the primary query first, then a shorter fallback if it
-    # produces no usable results. Long, specific queries occasionally trigger
-    # SerpAPI's thumbnail-only mode (no `original` field on any result), and a
-    # shorter query usually gets full URLs.
-    queries_tried: list[str] = []
-    for q in [query] + ([fallback_query] if fallback_query else []):
-        if q in queries_tried:
-            continue
-        queries_tried.append(q)
-        result = _try_serpapi_query(q, api_key, dest)
-        if result is None:
-            continue
-        url, meta = result
-        pick = meta["pick"]
-        return {"id": asset_id, "url": url,
-                "source": "serpapi" if q == query else "serpapi-fallback",
-                "query": q, "fetched_at": _utc_now_iso(),
-                "width": meta["width"], "height": meta["height"],
-                "result_title": pick.get("title"),
-                "result_source": pick.get("source")}
-    raise FetcherError(
-        f"no usable results across {len(queries_tried)} queries: "
-        + " | ".join(repr(q) for q in queries_tried)
-    )
+    # 3. Source chain
+    for source in sources:
+        for q in queries:
+            try:
+                cands = source.search(q)
+            except SourceError:
+                # Source-level failure: skip the rest of this source's
+                # queries and fall through to the next tier.
+                break
+            for cand in cands:
+                row = _try_candidate(cand, dest, asset_id, kind, ledger)
+                if row is not None:
+                    return row
+
+    # 4. MISSING
+    return None
+
+
+def _fetch_via_override(
+    *, asset_id: str, kind: str, dest: Path, url_or_path: str,
+    ledger: DedupLedger, images_root: Path,
+) -> dict:
+    """Resolve an override entry. URL or local path."""
+    if url_or_path.startswith(("http://", "https://")):
+        raw = download_bytes(url_or_path)
+        tmp = dest.with_suffix(dest.suffix + ".tmp")
+        w, h = encode_to_webp(raw, tmp)
+        try:
+            entry = ledger.register(
+                asset_id=asset_id, kind=kind, url=url_or_path, content=raw,
+            )
+        except DuplicateAsset as e:
+            try:
+                tmp.unlink(missing_ok=True)
+            except OSError:
+                pass
+            raise FetcherError(f"override collides with another asset: {e}") from e
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        os.replace(tmp, dest)
+        return {
+            "id": asset_id,
+            "kind_dir": _kind_dir(kind),
+            "source": "override",
+            "url": url_or_path,
+            "query": None,
+            "width": w,
+            "height": h,
+            "sha256": entry.sha256,
+            "attribution": "",
+            "fetched_at": _utc_now_iso(),
+        }
+    # Local file path
+    src = Path(url_or_path)
+    if not src.is_absolute():
+        src = (images_root.parent.parent / src).resolve()
+    if not src.exists():
+        raise FetcherError(f"override path does not exist: {src}")
+    raw = src.read_bytes()
+    tmp = dest.with_suffix(dest.suffix + ".tmp")
+    w, h = encode_to_webp(raw, tmp)
+    try:
+        entry = ledger.register(
+            asset_id=asset_id, kind=kind, url=str(src), content=raw,
+        )
+    except DuplicateAsset as e:
+        try:
+            tmp.unlink(missing_ok=True)
+        except OSError:
+            pass
+        raise FetcherError(f"override-local collides: {e}") from e
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    os.replace(tmp, dest)
+    return {
+        "id": asset_id,
+        "kind_dir": _kind_dir(kind),
+        "source": "override-local",
+        "url": str(src),
+        "query": None,
+        "width": w,
+        "height": h,
+        "sha256": entry.sha256,
+        "attribution": "",
+        "fetched_at": _utc_now_iso(),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Top-level
+# ---------------------------------------------------------------------------
+
+
+def _build_default_sources() -> list[Source]:
+    serp_key = os.environ.get("SERPAPI_API_KEY")
+    pexels_key = os.environ.get("PEXELS_API_KEY")
+    sources: list[Source] = []
+    if serp_key:
+        sources.append(SerpApiSource(serp_key))
+    if pexels_key:
+        sources.append(PexelsSource(pexels_key))
+    sources.append(WikimediaSource())
+    return sources
 
 
 def fetch_all(
@@ -407,107 +451,117 @@ def fetch_all(
     images_root: Path,
     overrides_path: Path,
     provenance_path: Path,
-    api_key: str | None = None,
+    region_queries_path: Path | None = None,
+    sources: list[Source] | None = None,
     concurrency: int = 4,
+    api_key: str | None = None,  # back-compat: SerpAPI key only
 ) -> dict[str, Any]:
     """Fetch images for every recipe / section / region asset.
 
-    Mutates each input dict in place to set its `image` (recipe) or
-    `hero_image` (section/region) field to the relative path under /data/.
-
-    Returns a summary dict:
-        {"fetched": N, "skipped_cached": N, "failed": [{id, kind, query, error}, ...]}
+    If `sources` is None, builds the default chain
+    `[SerpApiSource, PexelsSource, WikimediaSource]` from environment
+    variables (`SERPAPI_API_KEY`, `PEXELS_API_KEY`). Tests pass a custom
+    list to inject mocks.
     """
-    api_key = api_key or os.environ.get("SERPAPI_API_KEY")
-    if not api_key:
-        raise FetcherError(
-            "SERPAPI_API_KEY not set. Add it to pipeline/.env or skip Stage 9."
-        )
+    if sources is None:
+        if api_key:
+            os.environ.setdefault("SERPAPI_API_KEY", api_key)
+        sources = _build_default_sources()
+    if not sources:
+        raise FetcherError("no image sources configured (set SERPAPI_API_KEY / PEXELS_API_KEY)")
 
     overrides = load_overrides(overrides_path)
     provenance = load_provenance(provenance_path)
+    region_query_cfg = (
+        load_region_queries(region_queries_path) if region_queries_path else {}
+    )
+
+    ledger = DedupLedger()
     failures: list[dict] = []
     fetched = 0
     skipped_cached = 0
+    source_counts: dict[str, int] = {}
 
-    # Build the work list. Each tuple:
-    # (kind, asset, dest_path, query, fallback_query, set_field)
-    work: list[tuple[str, dict, Path, str, str | None, str]] = []
+    # Build the work list.
+    work: list[tuple[str, dict, Path, list[str], str]] = []
     for r in recipes:
         dest = images_root / "recipes" / f"{r['id']}.webp"
-        work.append(("recipe", r, dest,
-                     _build_recipe_query(r),
-                     _build_recipe_fallback_query(r), "image"))
+        work.append(("recipe", r, dest, _build_recipe_queries(r), "image"))
     for s in sections:
         if s["id"] in PARATEXT_IDS:
             continue
         dest = images_root / "sections" / f"{s['id']}.webp"
-        work.append(("section", s, dest,
-                     _build_section_query(s),
-                     _build_section_fallback_query(s), "hero_image"))
+        work.append(("section", s, dest, _build_section_queries(s), "hero_image"))
     for rg in regions:
         dest = images_root / "regions" / f"{rg['id']}.webp"
-        # Region queries are already curated landmark searches; fallback is
-        # the bare region name.
-        work.append(("region", rg, dest,
-                     _build_region_query(rg),
-                     rg["name"], "hero_image"))
+        work.append((
+            "region", rg, dest,
+            _build_region_queries(rg, region_query_cfg), "hero_image",
+        ))
 
-    # Execute in parallel. SerpAPI Developer is 1000/hr → concurrency 4-6
-    # is well within budget; Starter is 200/hr → concurrency 4 will get
-    # rate-limited and back off via _serpapi retries, which is fine.
-    def _run_one(item: tuple[str, dict, Path, str, str | None, str]):
-        kind, asset, dest, query, fallback_query, set_field = item
+    prov_lock = threading.Lock()
+
+    def _persist_row(asset_id: str, row: dict) -> None:
+        with prov_lock:
+            provenance[asset_id] = row
+            save_provenance(provenance_path, provenance)
+
+    def _run_one(item: tuple[str, dict, Path, list[str], str]):
+        kind, asset, dest, queries, set_field = item
         try:
             row = _fetch_one(
-                asset_id=asset["id"], query=query,
-                fallback_query=fallback_query, dest=dest,
-                overrides=overrides, provenance=provenance, api_key=api_key,
+                asset_id=asset["id"], kind=kind, queries=queries,
+                dest=dest, overrides=overrides, provenance=provenance,
+                ledger=ledger, sources=sources, images_root=images_root,
             )
-            return ("ok", kind, asset, set_field, dest, row)
+            return ("ok", kind, asset, set_field, dest, queries, row)
         except Exception as e:
-            # Catch-all on purpose. Anything from the fetch path — bad URL,
-            # network timeout, image decode error, OS error — must be
-            # demoted to a per-asset failure, never propagated up. If a
-            # single asset's exception escapes, ThreadPoolExecutor lets it
-            # bubble out of fut.result() and aborts the whole run, which
-            # would lose ALL provenance for the run (it's saved at the end).
-            return ("err", kind, asset, set_field, dest,
-                    f"{type(e).__name__}: {e}", query)
+            # Catch-all: a single asset's exception must never abort the run
+            # (would lose all in-flight provenance).
+            return ("err", kind, asset, set_field, dest, queries,
+                    f"{type(e).__name__}: {e}")
 
-    completed = 0
     with ThreadPoolExecutor(max_workers=concurrency) as ex:
         futures = [ex.submit(_run_one, w) for w in work]
         for fut in tqdm(as_completed(futures), total=len(futures), desc="images"):
             res = fut.result()
             if res[0] == "ok":
-                _, kind, asset, set_field, dest, row = res
-                # Path RELATIVE to /data/, so the frontend can prefix with /
-                rel = dest.relative_to(images_root.parent).as_posix()
-                asset[set_field] = rel
-                if asset["id"] in provenance and dest.exists() and row.get("source") != "override":
-                    skipped_cached += 1
+                _, kind, asset, set_field, dest, queries, row = res
+                if row is None:
+                    # MISSING — all tiers exhausted, no usable image.
+                    asset[set_field] = None
+                    failures.append({
+                        "id": asset["id"], "kind": kind,
+                        "queries": queries,
+                        "error": "MISSING: no source returned a usable, non-duplicate image",
+                    })
                 else:
-                    fetched += 1
-                provenance[asset["id"]] = row
+                    rel = dest.relative_to(images_root.parent).as_posix()
+                    asset[set_field] = rel
+                    prev = provenance.get(asset["id"])
+                    is_cached = (
+                        prev is not None
+                        and prev.get("url") == row.get("url")
+                        and dest.exists()
+                        and row.get("source") not in ("override", "override-local")
+                    )
+                    if is_cached:
+                        skipped_cached += 1
+                    else:
+                        fetched += 1
+                    source_counts[row["source"]] = source_counts.get(row["source"], 0) + 1
+                    _persist_row(asset["id"], row)
             else:
-                _, kind, asset, set_field, dest, err, query = res
+                _, kind, asset, set_field, dest, queries, err = res
                 asset[set_field] = None
                 failures.append({"id": asset["id"], "kind": kind,
-                                 "query": query, "error": err})
-            completed += 1
-            # Checkpoint provenance periodically so a crash mid-run doesn't
-            # forfeit the metadata for everything fetched up to that point.
-            # Re-runs use this to skip already-fetched assets without burning
-            # SerpAPI calls.
-            if completed % 25 == 0:
-                save_provenance(provenance_path, provenance)
-
-    save_provenance(provenance_path, provenance)
+                                 "queries": queries, "error": err})
 
     return {
         "fetched": fetched,
         "skipped_cached": skipped_cached,
         "failed": failures,
         "total_assets": len(work),
+        "source_counts": source_counts,
+        "ledger_stats": ledger.stats(),
     }

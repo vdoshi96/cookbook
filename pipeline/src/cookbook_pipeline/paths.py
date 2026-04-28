@@ -37,8 +37,10 @@ GLOSSARY_JSON = DATA_DIR / "glossary.json"
 
 # Image sourcing (Stage 9 — internet fetcher)
 IMAGE_OVERRIDES = PIPELINE_DIR / "data" / "image-overrides.yml"
+IMAGE_REGION_QUERIES = PIPELINE_DIR / "data" / "region-queries.yml"
 IMAGE_PROVENANCE = DATA_IMAGES / "_provenance.json"
 IMAGE_FETCH_FAILURES = BUILD_DIR / "image-fetch-failures.json"
+IMAGE_COVERAGE_REPORT = BUILD_DIR / "image-coverage-report.json"
 
 
 def ensure_build_dirs() -> None:
