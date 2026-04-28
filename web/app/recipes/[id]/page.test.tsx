@@ -21,6 +21,7 @@ describe("RecipePage", () => {
     expect(screen.getByRole("link", { name: "Ingredients" })).toHaveAttribute("href", "#ingredients");
     expect(screen.getByRole("link", { name: "Method" })).toHaveAttribute("href", "#method");
     expect(screen.getByRole("link", { name: "References" })).toHaveAttribute("href", "#references");
+    expect(screen.getByRole("img", { name: /Nargisi/i }).tagName).toBe("IMG");
 
     const ingredients = screen.getByRole("region", { name: "Ingredients" });
     expect(within(ingredients).getByText("300g / 11oz / 3 medium potatoes, unpeeled")).toBeInTheDocument();
@@ -29,24 +30,25 @@ describe("RecipePage", () => {
     expect(within(method).getByText(/Cook the potatoes in a pan of boiling water/)).toBeInTheDocument();
 
     const references = screen.getByRole("region", { name: "References" });
-    expect(within(references).getByRole("link", { name: /Paneer/ })).toHaveAttribute("href", "/ingredients/paneer");
+    expect(within(references).getByText("Paneer")).toBeInTheDocument();
+    expect(within(references).queryByRole("link", { name: /Paneer/ })).not.toBeInTheDocument();
     expect(within(references).queryByRole("link", { name: /Garlic Paste/ })).not.toBeInTheDocument();
     expect(within(references).getByText("Garlic Paste")).toBeInTheDocument();
-    expect(within(references).getByText("p. 57")).toBeInTheDocument();
+    expect(within(references).queryByText(/^p\.\s*\d+/i)).not.toBeInTheDocument();
 
     const regionRail = screen.getByRole("region", { name: "More from Awadh" });
-    expect(within(regionRail).getByRole("link", { name: "Khumb Shabnam" })).toHaveAttribute(
+    expect(within(regionRail).getByRole("link", { name: "Subz Seekh" })).toHaveAttribute(
       "href",
-      "/recipes/khumb-shabnam"
+      "/recipes/subz-seekh"
     );
   });
 
   it("exposes static params and metadata for recipes", async () => {
     const pageModule = await import("./page");
 
-    expect(pageModule.generateStaticParams()).toContainEqual({ id: "pakoras" });
-    await expect(pageModule.generateMetadata({ params: Promise.resolve({ id: "pakoras" }) })).resolves.toEqual({
-      title: "Pakoras"
+    expect(pageModule.generateStaticParams()).toContainEqual({ id: "subz-seekh" });
+    await expect(pageModule.generateMetadata({ params: Promise.resolve({ id: "subz-seekh" }) })).resolves.toEqual({
+      title: "Subz Seekh"
     });
     await expect(pageModule.generateMetadata({ params: Promise.resolve({ id: "missing" }) })).resolves.toEqual({
       title: "Recipe"

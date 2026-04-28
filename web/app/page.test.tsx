@@ -23,10 +23,13 @@ describe("Home", () => {
     const chapters = within(screen.getByRole("region", { name: "The Chapters" }));
 
     for (const section of getAllSections()) {
-      expect(chapters.getByRole("link", { name: new RegExp(section.name, "i") })).toHaveAttribute(
-        "href",
-        sectionPath(section.id)
-      );
+      const sectionTile = chapters
+        .getAllByRole("link")
+        .find((link) => link.getAttribute("href") === sectionPath(section.id));
+
+      expect(sectionTile).toBeDefined();
+      expect(sectionTile).toHaveAttribute("href", sectionPath(section.id));
+      expect(within(sectionTile!).getByRole("img", { name: new RegExp(section.name, "i") }).tagName).toBe("IMG");
     }
 
     const chapterTile = chapters.getByRole("link", { name: /Snacks and Appetizers/i });
@@ -39,10 +42,13 @@ describe("Home", () => {
     const regions = within(screen.getByRole("region", { name: "Browse by Region" }));
 
     for (const region of getAllRegions()) {
-      expect(regions.getByRole("link", { name: new RegExp(region.name, "i") })).toHaveAttribute(
-        "href",
-        regionPath(region.id)
-      );
+      const regionTile = regions
+        .getAllByRole("link")
+        .find((link) => link.getAttribute("href") === regionPath(region.id));
+
+      expect(regionTile).toBeDefined();
+      expect(regionTile).toHaveAttribute("href", regionPath(region.id));
+      expect(within(regionTile!).getByRole("img", { name: new RegExp(region.name, "i") }).tagName).toBe("IMG");
     }
   });
 });
@@ -56,15 +62,11 @@ describe("AboutPage", () => {
 
     const frontMatter = getFrontMatter();
 
-    for (const section of [
-      frontMatter.introduction,
-      frontMatter.history,
-      frontMatter.ayurveda,
-      frontMatter.regions_overview,
-      frontMatter.notes_on_recipes
-    ]) {
+    for (const section of [frontMatter.introduction, frontMatter.history, frontMatter.ayurveda, frontMatter.notes_on_recipes]) {
       expect(screen.getByRole("heading", { level: 2, name: section.title })).toBeInTheDocument();
     }
+
+    expect(screen.queryByText(frontMatter.regions_overview.markdown)).not.toBeInTheDocument();
   });
 });
 

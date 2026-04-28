@@ -1,13 +1,16 @@
 import Link from "next/link";
+import { resolveRecipeImage } from "@/lib/curated-images";
 import { formatTagLabel, formatTotalTime } from "@/lib/format";
 import { recipePath } from "@/lib/routes";
 import type { Recipe } from "@/lib/types";
 import { RecipeImage } from "./RecipeImage";
 
 export function RecipeCard({ recipe }: { recipe: Recipe }) {
+  const image = resolveRecipeImage(recipe);
+
   return (
     <article className="recipe-card surface">
-      <RecipeImage kind="recipe" id={recipe.id} label={recipe.name} className="recipe-card-image" />
+      <RecipeImage kind="recipe" id={recipe.id} label={recipe.name} image={image} className="recipe-card-image" />
       <div className="recipe-card-body">
         <p className="eyebrow">{recipe.origin_region_name}</p>
         <h3>

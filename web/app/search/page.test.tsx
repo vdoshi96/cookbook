@@ -20,9 +20,8 @@ describe("SearchPage", () => {
 
     const results = screen.getByRole("list", { name: "Search results" });
 
-    expect(within(results).getByRole("link", { name: /Nargisi Seekh Kebab/i })).toHaveAttribute(
-      "href",
-      recipePath("nargisi-seekh-kebab")
+    expect(within(results).getAllByRole("link").some((link) => link.getAttribute("href") === recipePath("subz-seekh"))).toBe(
+      true
     );
 
     await user.clear(input);
@@ -52,10 +51,9 @@ describe("SearchPage", () => {
             kind: ["recipe", "region"],
             region: "awadh",
             section: "snacks-and-appetizers",
-            dietary: ["vegetarian"],
+            dietary: ["vegetarian", "contains-egg"],
             technique: ["tandoor"],
-            maxTime: "45",
-            heat: "1"
+            maxTime: "45"
           })
         })}
       </>
@@ -67,15 +65,42 @@ describe("SearchPage", () => {
     expect(screen.getByRole("radio", { name: "Awadh" })).toBeChecked();
     expect(screen.getByRole("radio", { name: "Snacks and Appetizers" })).toBeChecked();
     expect(screen.getByRole("checkbox", { name: "Vegetarian" })).toBeChecked();
+    expect(screen.getByRole("checkbox", { name: "Contains Egg" })).toBeChecked();
     expect(screen.getByRole("checkbox", { name: "Tandoor" })).toBeChecked();
     expect(screen.getByRole("spinbutton", { name: "Maximum total minutes" })).toHaveValue(45);
-    expect(screen.getByRole("radio", { name: "Mild" })).toBeChecked();
-    expect(screen.getByRole("link", { name: /Nargisi Seekh Kebab/i })).toHaveAttribute(
-      "href",
-      recipePath("nargisi-seekh-kebab")
-    );
-    expect(screen.queryByText("Khumb Shabnam")).not.toBeInTheDocument();
+    expect(screen.getByRole("radio", { name: "Any heat" })).toBeChecked();
+    expect(screen.getAllByRole("link").some((link) => link.getAttribute("href") === recipePath("nargisi-seekh-kebab"))).toBe(true);
     expect(screen.queryByRole("link", { name: /^Region\s+Awadh/i })).not.toBeInTheDocument();
+  });
+
+  it("clears active filters in place while preserving the search query", async () => {
+    const { default: SearchPage } = await import("./page");
+    const user = userEvent.setup();
+
+    render(
+      <>
+        {await SearchPage({
+          searchParams: Promise.resolve({
+            q: "awadh",
+            kind: ["recipe"],
+            region: "awadh",
+            dietary: ["vegetarian"],
+            maxTime: "45"
+          })
+        })}
+      </>
+    );
+
+    expect(screen.getByRole("textbox", { name: "Search recipes, ingredients, regions" })).toHaveValue("awadh");
+    expect(screen.getByRole("radio", { name: "Awadh" })).toBeChecked();
+    expect(screen.getByText("Region: Awadh")).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Clear filters" }));
+
+    expect(screen.getByRole("textbox", { name: "Search recipes, ingredients, regions" })).toHaveValue("awadh");
+    expect(screen.getByRole("radio", { name: "Any region" })).toBeChecked();
+    expect(screen.queryByText("Region: Awadh")).not.toBeInTheDocument();
+    expect(screen.getAllByRole("link").some((link) => link.getAttribute("href") === "/regions/awadh")).toBe(true);
   });
 
   it("keys the client search experience by query params so soft navigation restores filters", async () => {

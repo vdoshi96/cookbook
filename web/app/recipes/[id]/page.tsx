@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { RecipeDetail } from "@/components/RecipeDetail";
 import { RecipeImage } from "@/components/RecipeImage";
 import { RecipeMeta } from "@/components/RecipeMeta";
+import { resolveRecipeImage } from "@/lib/curated-images";
 import { getAllRecipes, getRecipeById } from "@/lib/data";
 import { regionPath, sectionPath } from "@/lib/routes";
 
@@ -32,6 +33,8 @@ export default async function RecipePage({ params }: RecipePageProps) {
     notFound();
   }
 
+  const image = resolveRecipeImage(recipe);
+
   return (
     <div className="page-shell recipe-page">
       <nav className="breadcrumbs" aria-label="Recipe breadcrumbs">
@@ -47,7 +50,7 @@ export default async function RecipePage({ params }: RecipePageProps) {
           <p className="lede">{recipe.subtitle}</p>
           <RecipeMeta recipe={recipe} />
         </div>
-        <RecipeImage kind="recipe" id={recipe.id} label={recipe.name} className="recipe-hero-image" />
+        <RecipeImage kind="recipe" id={recipe.id} label={recipe.name} image={image} className="recipe-hero-image" />
       </header>
 
       <RecipeDetail recipe={recipe} />

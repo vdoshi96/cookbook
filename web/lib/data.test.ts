@@ -16,94 +16,98 @@ import {
 } from "./data";
 
 describe("cookbook data helpers", () => {
-  it("loads the stub recipe corpus", () => {
-    expect(getAllRecipes().map((recipe) => recipe.id)).toEqual([
-      "nargisi-seekh-kebab",
-      "pakoras",
-      "khumb-shabnam"
-    ]);
+  it("loads the real main-branch recipe corpus", () => {
+    const recipes = getAllRecipes();
+
+    expect(recipes).toHaveLength(506);
+    expect(recipes.map((recipe) => recipe.id)).toContain("subz-seekh");
+    expect(recipes.map((recipe) => recipe.id)).toContain("nargisi-seekh-kebab");
   });
 
   it("finds a recipe by id", () => {
-    expect(getRecipeById("pakoras")?.name).toBe("Pakoras");
+    expect(getRecipeById("subz-seekh")?.name).toBe("Subz Seekh");
     expect(getRecipeById("missing")).toBeNull();
   });
 
   it("returns section recipes in section order", () => {
-    expect(getRecipesBySection("snacks-and-appetizers").map((recipe) => recipe.id)).toEqual([
-      "nargisi-seekh-kebab",
-      "pakoras",
-      "khumb-shabnam"
+    expect(getRecipesBySection("snacks-and-appetizers").slice(0, 4).map((recipe) => recipe.id)).toEqual([
+      "subz-seekh",
+      "subz-ke-kakori",
+      "jaipuri-subz-seekh",
+      "lauki-ki-seekh"
     ]);
   });
 
   it("returns region recipes in region order", () => {
-    expect(getRecipesByRegion("awadh").map((recipe) => recipe.id)).toEqual([
-      "nargisi-seekh-kebab",
-      "khumb-shabnam"
+    const awadhRecipes = getRecipesByRegion("awadh");
+
+    expect(awadhRecipes).toHaveLength(124);
+    expect(awadhRecipes.slice(0, 3).map((recipe) => recipe.id)).toEqual([
+      "subz-seekh",
+      "subz-ke-kakori",
+      "lauki-ki-seekh"
     ]);
   });
 
   it("resolves start-here recipe records with rationale", () => {
-    expect(getStartHereRecipes("snacks-and-appetizers")).toEqual([
+    expect(getStartHereRecipes("snacks-and-appetizers").slice(0, 2)).toEqual([
       {
-        id: "pakoras",
-        rationale: "The most universal Indian snack — chickpea-flour fritters that work with almost any vegetable.",
-        recipeName: "Pakoras"
+        id: "paneer-tikka-kali-mirch",
+        rationale: "Foundational tandoor technique with simple paneer, teaches marinating and grilling essentials.",
+        recipeName: "Paneer Tikka Kali Mirch"
       },
       {
-        id: "nargisi-seekh-kebab",
-        rationale: "A showcase of Awadhi technique: a vegetarian take on a kebab, grilled on skewers.",
-        recipeName: "Nargisi Seekh Kebab"
+        id: "methi-pakora",
+        rationale: "Core deep-fry fritter method; minimal ingredients, teaches batter and crispy texture fundamentals.",
+        recipeName: "Methi Pakora"
       }
     ]);
   });
 
   it("returns ingredient records by slug", () => {
-    expect(getIngredientBySlug("paneer")?.display_name).toBe("Paneer");
+    expect(getIngredientBySlug("paneer")?.display_name).toBe("paneer");
     expect(getAllIngredients().map((ingredient) => ingredient.slug)).toContain("gram-flour");
   });
 
   it("resolves reverse graph edges to recipes", () => {
-    expect(getUsedInRecipes("garam-masala").map((recipe) => recipe.id)).toEqual(["khumb-shabnam"]);
+    expect(getUsedInRecipes("pappu-charu").map((recipe) => recipe.id)).toEqual(["pani-poori"]);
   });
 
   it("drops unknown ids when resolving id lists", () => {
-    expect(getRecipesByIds(["pakoras", "missing"]).map((recipe) => recipe.id)).toEqual(["pakoras"]);
+    expect(getRecipesByIds(["subz-seekh", "missing"]).map((recipe) => recipe.id)).toEqual(["subz-seekh"]);
   });
 
   it("loads sections by id", () => {
-    expect(getAllSections()).toHaveLength(3);
+    expect(getAllSections()).toHaveLength(13);
+    expect(getAllSections().map((section) => section.id)).not.toContain("guest-chefs");
     expect(getSectionById("rice")?.name).toBe("Rice");
   });
 
   it("protects recipe helper state from caller mutations", () => {
+    const expectedIds = getAllRecipes().map((recipe) => recipe.id);
     const recipes = getAllRecipes();
     recipes.pop();
     recipes[0].name = "Mutated";
 
-    expect(getAllRecipes().map((recipe) => recipe.id)).toEqual([
-      "nargisi-seekh-kebab",
-      "pakoras",
-      "khumb-shabnam"
-    ]);
-    expect(getRecipeById("nargisi-seekh-kebab")?.name).toBe("Nargisi Seekh Kebab");
+    expect(getAllRecipes().map((recipe) => recipe.id)).toEqual(expectedIds);
+    expect(getRecipeById("subz-seekh")?.name).toBe("Subz Seekh");
 
-    const recipe = getRecipeById("pakoras");
+    const recipe = getRecipeById("subz-seekh");
     expect(recipe).not.toBeNull();
     const originalIngredient = recipe!.ingredients[0].item;
     recipe!.ingredients[0].item = "Mutated";
 
-    expect(getRecipeById("pakoras")?.ingredients[0].item).toBe(originalIngredient);
+    expect(getRecipeById("subz-seekh")?.ingredients[0].item).toBe(originalIngredient);
   });
 
   it("protects front matter helper state from caller mutations", () => {
     const frontMatter = getFrontMatter();
+    const originalIntroductionTitle = frontMatter.introduction.title;
     frontMatter.introduction.title = "Mutated";
     frontMatter.regions_overview.map_image = "mutated.png";
 
     const freshFrontMatter = getFrontMatter();
-    expect(freshFrontMatter.introduction.title).toBe("Introduction");
+    expect(freshFrontMatter.introduction.title).toBe(originalIntroductionTitle);
     expect(freshFrontMatter.regions_overview.map_image).toBeNull();
   });
 

@@ -25,12 +25,7 @@ function crossReferenceHref(id: string) {
 
 function CrossReferenceItem({ reference }: { reference: CrossReference }) {
   const href = crossReferenceHref(reference.id);
-  const content = (
-    <>
-      <span>{reference.name}</span>
-      <small>p. {reference.page}</small>
-    </>
-  );
+  const content = <span>{reference.name}</span>;
 
   return <li>{href ? <Link href={href}>{content}</Link> : <span className="reference-text">{content}</span>}</li>;
 }

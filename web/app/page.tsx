@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MarkdownBlock } from "@/components/MarkdownBlock";
 import { RecipeImage } from "@/components/RecipeImage";
 import { SearchBox } from "@/components/SearchBox";
+import { resolveRegionImage, resolveSectionImage } from "@/lib/curated-images";
 import { getAllRegions, getAllSections, getFrontMatter } from "@/lib/data";
 import { regionPath, sectionPath } from "@/lib/routes";
 
@@ -29,14 +30,25 @@ export default function HomePage() {
           </h2>
         </div>
         <div className="chapter-grid">
-          {sections.map((section) => (
-            <Link className="chapter-tile surface" href={sectionPath(section.id)} key={section.id}>
-              <RecipeImage kind="section" id={section.id} label={section.name} className="chapter-image" showAttributionLink={false} />
-              <h3>{section.name}</h3>
-              <p>{section.intro_markdown}</p>
-              <span>{section.recipe_ids.length} recipes</span>
-            </Link>
-          ))}
+          {sections.map((section) => {
+            const image = resolveSectionImage(section);
+
+            return (
+              <Link className="chapter-tile surface" href={sectionPath(section.id)} key={section.id}>
+                <RecipeImage
+                  kind="section"
+                  id={section.id}
+                  label={section.name}
+                  image={image}
+                  className="chapter-image"
+                  showAttributionLink={false}
+                />
+                <h3>{section.name}</h3>
+                <p>{section.intro_markdown}</p>
+                <span>{section.recipe_ids.length} recipes</span>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -57,15 +69,27 @@ export default function HomePage() {
           </h2>
         </div>
         <div className="region-grid">
-          {regions.map((region) => (
-            <Link className="region-tile surface" href={regionPath(region.id)} key={region.id}>
-              <h3>{region.name}</h3>
-              <p>{region.intro_markdown}</p>
-              <span>
-                {region.recipe_ids.length} {region.recipe_ids.length === 1 ? "recipe" : "recipes"}
-              </span>
-            </Link>
-          ))}
+          {regions.map((region) => {
+            const image = resolveRegionImage(region);
+
+            return (
+              <Link className="region-tile surface" href={regionPath(region.id)} key={region.id}>
+                <RecipeImage
+                  kind="region"
+                  id={region.id}
+                  label={region.name}
+                  image={image}
+                  className="region-tile-image"
+                  showAttributionLink={false}
+                />
+                <h3>{region.name}</h3>
+                <p>{region.intro_markdown}</p>
+                <span>
+                  {region.recipe_ids.length} {region.recipe_ids.length === 1 ? "recipe" : "recipes"}
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </section>
     </div>

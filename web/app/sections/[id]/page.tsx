@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ActiveFilters } from "@/components/ActiveFilters";
-import { FilterSideSheet } from "@/components/FilterSideSheet";
-import { FilterSidebar } from "@/components/FilterSidebar";
 import { MarkdownBlock } from "@/components/MarkdownBlock";
-import { RecipeCard } from "@/components/RecipeCard";
+import { RecipeImage } from "@/components/RecipeImage";
+import { RecipeListingClient } from "@/components/RecipeListingClient";
+import { resolveSectionImage } from "@/lib/curated-images";
 import { getAllSections, getRecipesBySection, getSectionById, getStartHereRecipes } from "@/lib/data";
-import { applyRecipeFilters, getRecipeFilterOptions, parseRecipeFilters } from "@/lib/filters";
 import { recipePath } from "@/lib/routes";
 
 interface SectionPageProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 export function generateStaticParams() {
@@ -28,38 +25,23 @@ export async function generateMetadata({ params }: SectionPageProps): Promise<Me
   };
 }
 
-function toSearchParams(searchParams: Record<string, string | string[] | undefined>) {
-  const params = new URLSearchParams();
-
-  for (const [key, value] of Object.entries(searchParams)) {
-    if (Array.isArray(value)) {
-      value.forEach((entry) => params.append(key, entry));
-    } else if (value) {
-      params.set(key, value);
-    }
-  }
-
-  return params;
-}
-
-export default async function SectionPage({ params, searchParams }: SectionPageProps) {
-  const [{ id }, resolvedSearchParams] = await Promise.all([params, searchParams]);
+export default async function SectionPage({ params }: SectionPageProps) {
+  const { id } = await params;
   const section = getSectionById(id);
 
   if (!section) {
     notFound();
   }
 
-  const filters = parseRecipeFilters(toSearchParams(resolvedSearchParams));
   const recipes = getRecipesBySection(section.id);
-  const filteredRecipes = applyRecipeFilters(recipes, filters);
-  const filterOptions = getRecipeFilterOptions(recipes);
   const startHereRecipes = getStartHereRecipes(section.id);
+  const image = resolveSectionImage(section);
 
   return (
     <div className="page-shell listing-page">
       <p className="eyebrow">Chapter</p>
       <h1 className="section-title">{section.name}</h1>
+      <RecipeImage kind="section" id={section.id} label={section.name} image={image} className="listing-hero-image" />
       <MarkdownBlock markdown={section.intro_markdown} />
 
       {startHereRecipes.length > 0 ? (
@@ -76,20 +58,7 @@ export default async function SectionPage({ params, searchParams }: SectionPageP
         </section>
       ) : null}
 
-      <div className="listing-layout">
-        <form className="desktop-filters" aria-label="Desktop recipe filters" method="get">
-          <FilterSidebar options={filterOptions} filters={filters} />
-        </form>
-        <div>
-          <FilterSideSheet options={filterOptions} filters={filters} />
-          <ActiveFilters filters={filters} />
-          <div className="recipe-list">
-            {filteredRecipes.map((recipe) => (
-              <RecipeCard recipe={recipe} key={recipe.id} />
-            ))}
-          </div>
-        </div>
-      </div>
+      <RecipeListingClient recipes={recipes} />
     </div>
   );
 }
