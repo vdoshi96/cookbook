@@ -136,14 +136,25 @@ Run pydantic validation against the canonical schema. Fail loudly on any record 
 
 ```
 /data/recipes.json
-/data/sections.json
+/data/sections.json        ← cooking chapters only
 /data/regions.json
 /data/ingredients.json
 /data/tags.json
 /data/graph.json
-/data/front-matter.json
-/data/images/*.{webp,jpg}
+/data/front-matter.json    ← carries the book's Introduction prose
+/data/glossary.json        ← Glossary entries from Stage 11
+/data/images/...
 ```
+
+**Stage 11 — Glossary extraction.**
+The book's back-matter Glossary is alphabetical and lists Hindi/regional
+ingredient and technique terms with English equivalents and short
+definitions. Stage 1's footer scan now reports paratext page ranges
+(Introduction / Glossary / Directory / Index) separately from cooking
+sections; Stage 11 reads the Glossary range and runs Haiku page-by-page to
+extract entries into `data/glossary.json` with the schema in §6.8. Entries
+that name a recipe in the corpus get linked by `recipe_id` via fuzzy match
+against recipe names. Directory and Index are not extracted — see §6.9.
 
 ### 5.3 Failure handling
 
@@ -210,6 +221,11 @@ These are the shapes the frontend will consume. Versioned via a top-level `schem
 `image` is nullable — recipes without a photo emit `null`. All other fields are required; missing required fields fail validation in Stage 10.
 
 ### 6.2 Sections
+
+`sections.json` contains **only the cooking chapters** of the book — Spice
+Mixtures and Pastes, Pickles & Chutneys, Snacks, Main Dishes, Pulses, Breads,
+Rice, Desserts, Drinks. The book's Introduction, Glossary, Directory, and
+Index are paratext and live elsewhere (see §6.7, §6.8).
 
 ```json
 {
@@ -295,6 +311,9 @@ These are the shapes the frontend will consume. Versioned via a top-level `schem
 
 ### 6.7 Front matter
 
+The book's Introduction prose lives here (NOT in `sections.json` — the
+Introduction is paratext, not a cooking chapter).
+
 ```json
 {
   "schema_version": 1,
@@ -305,6 +324,51 @@ These are the shapes the frontend will consume. Versioned via a top-level `schem
   "notes_on_recipes": { "title": "Notes on the Recipes", "markdown": "..." }
 }
 ```
+
+### 6.8 Glossary
+
+`/data/glossary.json` — the alphabetical glossary from the back of the book.
+Each entry maps an English ingredient/technique/equipment term to its Hindi
+or regional name and a short definition. When the entry corresponds to a
+specific recipe in the corpus (e.g. "Garam Masala" → the Garam Masala recipe),
+`recipe_id` deep-links it; otherwise `recipe_id` is null.
+
+```json
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "english_name": "Asafoetida",
+      "regional_name": "Hing",
+      "definition": "A pungent gum resin used in tiny amounts...",
+      "recipe_id": null
+    },
+    {
+      "english_name": "Garam Masala",
+      "regional_name": null,
+      "definition": "A warm spice blend...",
+      "recipe_id": "garam-masala"
+    }
+  ]
+}
+```
+
+Produced by Stage 11 of the pipeline. Page range is auto-detected from the
+book's Glossary footer (no hard-coded page numbers).
+
+### 6.9 Paratext that the website does NOT carry
+
+Two book-back sections are intentionally not modeled as data:
+
+- **Directory** (1 page in the Phaidon edition) — lists publisher contacts /
+  acknowledgments. Not useful to website readers and not surfaced. If a future
+  editorial change makes the Directory worth carrying, fold it into
+  `front-matter.json` as a new `directory` block; do NOT add it back to
+  `sections.json`.
+- **Index** (~15 pages) — alphabetical recipe-and-ingredient index with
+  printed page numbers. Redundant on the web because the website's search and
+  `/ingredients/[name]` pages do exactly this job, with live filtering and
+  deep links instead of page numbers. Dropped.
 
 ---
 

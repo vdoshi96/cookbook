@@ -6,6 +6,7 @@ import pytest
 from cookbook_pipeline.stages.stage_1_sections import (
     extract_section_name,
     detect_sections,
+    detect_paratext_ranges,
 )
 
 
@@ -83,6 +84,39 @@ def test_detect_sections_canonicalizes_ocr_variants(tmp_path: Path):
     assert result[0]["id"] == "snacks-and-appetizers"
     assert result[0]["page_range"] == (10, 12)
     assert result[1]["name"] == "Main Dishes"
+
+
+def test_detect_sections_drops_paratext_chapters(tmp_path: Path):
+    """Introduction / Glossary / Directory / Index footers must NOT emit as sections."""
+    pages = tmp_path
+    (pages / "page-0012.txt").write_text("body\n\n  INTRODUCTION\n12\n")
+    (pages / "page-0035.txt").write_text("body\n\n  SPICE MIXTURES AND PASTES\n35\n")
+    (pages / "page-0780.txt").write_text("body\n\n  GLOSSARY\n780\n")
+    (pages / "page-0801.txt").write_text("body\n\n  DIRECTORY\n801\n")
+    (pages / "page-0804.txt").write_text("body\n\n  INDEX\n804\n")
+    result = detect_sections(pages)
+    # Only the cooking chapter survives — paratext is reported by
+    # detect_paratext_ranges, not detect_sections.
+    assert [s["name"] for s in result] == ["Spice Mixtures and Pastes"]
+
+
+def test_detect_paratext_ranges_groups_introduction_glossary_directory_index(tmp_path: Path):
+    pages = tmp_path
+    (pages / "page-0012.txt").write_text("body\n\n  INTRODUCTION\n12\n")
+    (pages / "page-0013.txt").write_text("body\n\n  INTRODUCTION\n13\n")
+    (pages / "page-0035.txt").write_text("body\n\n  SPICE MIXTURES AND PASTES\n35\n")
+    (pages / "page-0780.txt").write_text("body\n\n  GLOSSARY\n780\n")
+    (pages / "page-0797.txt").write_text("body\n\n  GLOSSARY\n797\n")
+    (pages / "page-0801.txt").write_text("body\n\n  DIRECTORY\n801\n")
+    (pages / "page-0804.txt").write_text("body\n\n  INDEX\n804\n")
+    (pages / "page-0819.txt").write_text("body\n\n  INDEX\n819\n")
+    ranges = detect_paratext_ranges(pages)
+    assert ranges == {
+        "introduction": (12, 13),
+        "glossary": (780, 797),
+        "directory": (801, 801),
+        "index": (804, 819),
+    }
 
 
 def test_detect_sections_drops_non_canonical_garbage(tmp_path: Path):

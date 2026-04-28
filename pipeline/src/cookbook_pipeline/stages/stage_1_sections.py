@@ -17,12 +17,14 @@ from pathlib import Path
 
 from cookbook_pipeline.utils.text import slugify
 
-# Canonical chapter names for *India Cookbook* (Pushpesh Pant, Phaidon 2010).
+# Canonical cooking chapters for *India Cookbook* (Pushpesh Pant, Phaidon 2010).
 # OCR-detected names are fuzzy-matched against this list; non-matches are
 # dropped as OCR noise (publisher imprints, author names, recipe titles
-# the regex caught, etc.).
+# the regex caught, etc.) OR as paratext (Introduction, Glossary, Directory,
+# Index — handled by Stage 2 for the Introduction prose and Stage 11 for the
+# Glossary; Directory and Index are dropped per the design spec, since the
+# website's search and ingredients pages replace the printed Index).
 CANONICAL_CHAPTERS: list[str] = [
-    "Introduction",
     "Spice Mixtures and Pastes",
     "Pickles, Chutneys and Raitas",
     "Snacks and Appetizers",
@@ -32,6 +34,16 @@ CANONICAL_CHAPTERS: list[str] = [
     "Rice",
     "Desserts",
     "Drinks",
+]
+
+# Paratext chapter names that the footer regex still matches but which we do
+# NOT emit as cooking sections. Stage 11 reads the Glossary range; the
+# Introduction is handled by Stage 2's FRONT_MATTER_RANGES; Directory and
+# Index are dropped entirely. Kept here so Stage 1 can still emit page-range
+# metadata for downstream stages that need to know "this page is paratext,
+# don't try to segment recipes from it".
+PARATEXT_CHAPTERS: list[str] = [
+    "Introduction",
     "Glossary",
     "Directory",
     "Index",
@@ -39,13 +51,35 @@ CANONICAL_CHAPTERS: list[str] = [
 
 _CANONICAL_THRESHOLD = 0.7
 
+_ALL_KNOWN = CANONICAL_CHAPTERS + PARATEXT_CHAPTERS
+
 
 def _canonicalize(detected: str) -> str | None:
-    """Map a detected section name to its canonical form, or None on no match."""
+    """Map a detected name to a canonical cooking chapter, or None.
+
+    Paratext names (Introduction, Glossary, Directory, Index) are intentionally
+    excluded — Stage 1 emits cooking sections only. Paratext page ranges are
+    reported separately by `detect_paratext_ranges` for the downstream stages
+    that need them (Stage 3 to skip segmentation, Stage 11 to extract the
+    Glossary).
+    """
     detected_low = detected.lower()
     best_ratio = 0.0
     best_match: str | None = None
     for canonical in CANONICAL_CHAPTERS:
+        r = SequenceMatcher(None, detected_low, canonical.lower()).ratio()
+        if r > best_ratio:
+            best_ratio = r
+            best_match = canonical
+    return best_match if best_ratio >= _CANONICAL_THRESHOLD else None
+
+
+def _canonicalize_any(detected: str) -> str | None:
+    """Map a detected name to ANY known chapter (cooking or paratext), or None."""
+    detected_low = detected.lower()
+    best_ratio = 0.0
+    best_match: str | None = None
+    for canonical in _ALL_KNOWN:
         r = SequenceMatcher(None, detected_low, canonical.lower()).ratio()
         if r > best_ratio:
             best_ratio = r
@@ -155,6 +189,52 @@ def detect_sections(pages_dir: Path) -> list[dict]:
         else:
             final.append(entry)
     return final
+
+
+def detect_paratext_ranges(pages_dir: Path) -> dict[str, tuple[int, int]]:
+    """Return a {paratext_id: (start_page, end_page)} map.
+
+    Paratext = Introduction / Glossary / Directory / Index. The footer regex
+    catches their ALL-CAPS chapter names just like real cooking chapters; we
+    fuzzy-match against PARATEXT_CHAPTERS and merge consecutive runs.
+
+    Used by Stage 11 (Glossary extraction) and Stage 3 (skip segmentation
+    of paratext pages).
+    """
+    page_files = sorted(pages_dir.glob("page-*.txt"))
+    runs: list[dict] = []
+    current: dict | None = None
+    for pf in page_files:
+        page_num = int(pf.stem.split("-")[1])
+        section = extract_section_name(pf.read_text())
+        if section is None:
+            if current is not None:
+                runs.append(current)
+                current = None
+            continue
+        canonical_any = _canonicalize_any(section)
+        if canonical_any is None or canonical_any not in PARATEXT_CHAPTERS:
+            if current is not None:
+                runs.append(current)
+                current = None
+            continue
+        if current is not None and current["name"] == canonical_any:
+            current["end"] = page_num
+        else:
+            if current is not None:
+                runs.append(current)
+            current = {"name": canonical_any, "start": page_num, "end": page_num}
+    if current is not None:
+        runs.append(current)
+
+    out: dict[str, tuple[int, int]] = {}
+    for r in runs:
+        pid = slugify(r["name"])
+        if pid in out:
+            out[pid] = (min(out[pid][0], r["start"]), max(out[pid][1], r["end"]))
+        else:
+            out[pid] = (r["start"], r["end"])
+    return out
 
 
 def write_sections_raw(pages_dir: Path, output_path: Path) -> None:

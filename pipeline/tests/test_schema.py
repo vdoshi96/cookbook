@@ -5,11 +5,13 @@ import pytest
 from pydantic import ValidationError
 
 from cookbook_pipeline.schema import (
+    GlossaryEntry,
+    GlossaryFile,
+    GraphEdge,
     Recipe,
     RecipesFile,
     Section,
     SectionsFile,
-    GraphEdge,
 )
 
 
@@ -93,3 +95,43 @@ def test_repo_stub_data_validates(tmp_path: Path):
     payload = json.loads(recipes_path.read_text())
     rf = RecipesFile.model_validate(payload)
     assert len(rf.recipes) >= 3
+
+
+def test_glossary_entry_minimal():
+    e = GlossaryEntry(english_name="Asafoetida")
+    assert e.regional_name is None
+    assert e.recipe_id is None
+    assert e.definition is None
+
+
+def test_glossary_file_round_trip():
+    gf = GlossaryFile.model_validate(
+        {
+            "schema_version": 1,
+            "entries": [
+                {
+                    "english_name": "Asafoetida",
+                    "regional_name": "Hing",
+                    "definition": "A pungent gum resin.",
+                    "recipe_id": None,
+                },
+                {
+                    "english_name": "Garam Masala",
+                    "regional_name": None,
+                    "definition": None,
+                    "recipe_id": "garam-masala",
+                },
+            ],
+        }
+    )
+    assert len(gf.entries) == 2
+    assert gf.entries[1].recipe_id == "garam-masala"
+
+
+def test_repo_glossary_data_validates():
+    """The committed glossary.json MUST validate against the schema."""
+    project_root = Path(__file__).resolve().parents[2]
+    p = project_root / "data" / "glossary.json"
+    payload = json.loads(p.read_text())
+    gf = GlossaryFile.model_validate(payload)
+    assert isinstance(gf.entries, list)

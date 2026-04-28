@@ -33,6 +33,7 @@ INGREDIENTS_JSON = DATA_DIR / "ingredients.json"
 TAGS_JSON = DATA_DIR / "tags.json"
 GRAPH_JSON = DATA_DIR / "graph.json"
 FRONT_MATTER_JSON = DATA_DIR / "front-matter.json"
+GLOSSARY_JSON = DATA_DIR / "glossary.json"
 
 
 def ensure_build_dirs() -> None:

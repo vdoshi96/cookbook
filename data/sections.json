@@ -2,18 +2,6 @@
   "schema_version": 1,
   "sections": [
     {
-      "id": "introduction",
-      "name": "Introduction",
-      "intro_markdown": "For many people Indian cuisine is synonymous with the food of the Mughal shahs, the illustrious rulers of most of India from the sixteenth to the nineteenth century. And, while it is true that a wonderful gastronomic revival took place during their reign – bringing us famous dishes such as korma and biryani – it must be remembered that there is far, far more to Indian food than curries alone.",
-      "page_range": [
-        13,
-        31
-      ],
-      "recipe_ids": [],
-      "start_here": [],
-      "hero_image": null
-    },
-    {
       "id": "spice-mixtures-and-pastes",
       "name": "Spice Mixtures and Pastes",
       "intro_markdown": "Indian spices are treasured around the world and have drawn travellers to the country for centuries. Spices are undeniably at the heart of Indian cooking and give the cuisine its unique flavour and aroma. In India, almost all spices are believed to have therapeutic properties and they are used in recipes in harmony with the changing seasons.",
@@ -68,7 +56,7 @@
     {
       "id": "pickles-chutneys-and-raitas",
       "name": "Pickles, Chutneys and Raitas",
-      "intro_markdown": "In warm climates it is essential to find ways of preserving foodstuffs and prevent spoiling. As such, Indian pickles and chutneys are more than mere accompaniments – they are an intrinsic part of India's gastronomic heritage. Vital components of any meal, a fiery pickle made with chillies can increase the heat of a dish, while mild fruit chutneys or yoghurt-based raitas provide a cooling touch.",
+      "intro_markdown": "In warm climates it is essential to find ways of preserving foodstuffs and prevent spoiling. As such, Indian pickles and chutneys are more than mere accompaniments \u2013 they are an intrinsic part of India's gastronomic heritage. Vital components of any meal, a fiery pickle made with chillies can increase the heat of a dish, while mild fruit chutneys or yoghurt-based raitas provide a cooling touch.",
       "page_range": [
         67,
         91
@@ -275,7 +263,7 @@
     {
       "id": "main-dishes",
       "name": "Main Dishes",
-      "intro_markdown": "Throughout India it is customary to offer guests two main dishes, one dry and one with a sauce. Fortunately there is a dizzying array of recipes to suit all palates and diets – some are vegetarian and others contain meat; some are lighter and lend themselves to the summer months, while others are more hearty and robust. These plates form the core of an Indian meal and it is not uncommon for an entire menu to be carefully composed to complement them.",
+      "intro_markdown": "Throughout India it is customary to offer guests two main dishes, one dry and one with a sauce. Fortunately there is a dizzying array of recipes to suit all palates and diets \u2013 some are vegetarian and others contain meat; some are lighter and lend themselves to the summer months, while others are more hearty and robust. These plates form the core of an Indian meal and it is not uncommon for an entire menu to be carefully composed to complement them.",
       "page_range": [
         231,
         541
@@ -683,7 +671,7 @@
     {
       "id": "breads",
       "name": "Breads",
-      "intro_markdown": "Most Indian breads – from the soft paratha, roti and chapati flatbreads to fluffy naan drizzled in butter and fried puri – are unleavened and made with wheat flour, although cornmeal and millet are also popular. Many Indians make fresh bread every day using traditional methods, and cities across the country are renowned for their local varieties and specialities.",
+      "intro_markdown": "Most Indian breads \u2013 from the soft paratha, roti and chapati flatbreads to fluffy naan drizzled in butter and fried puri \u2013 are unleavened and made with wheat flour, although cornmeal and millet are also popular. Many Indians make fresh bread every day using traditional methods, and cities across the country are renowned for their local varieties and specialities.",
       "page_range": [
         595,
         631
@@ -808,7 +796,7 @@
     {
       "id": "desserts",
       "name": "Desserts",
-      "intro_markdown": "Perhaps the best-known Indian desserts are milk based – such as sweetened yoghurts, rice puddings and creamy kulfi – but there is a world of other tastes to explore, from sticky, deep-fried morsels dripping in syrup, to sesame cakes and sweet dishes made from vegetables and fruit.",
+      "intro_markdown": "Perhaps the best-known Indian desserts are milk based \u2013 such as sweetened yoghurts, rice puddings and creamy kulfi \u2013 but there is a world of other tastes to explore, from sticky, deep-fried morsels dripping in syrup, to sesame cakes and sweet dishes made from vegetables and fruit.",
       "page_range": [
         675,
         719
@@ -924,42 +912,6 @@
           "rationale": "Introduces chai preparation, the most popular Indian drink mentioned in the intro."
         }
       ],
-      "hero_image": null
-    },
-    {
-      "id": "glossary",
-      "name": "Glossary",
-      "intro_markdown": "",
-      "page_range": [
-        780,
-        797
-      ],
-      "recipe_ids": [],
-      "start_here": [],
-      "hero_image": null
-    },
-    {
-      "id": "directory",
-      "name": "Directory",
-      "intro_markdown": "Many of the ingredients and equipment listed in the glossary that you will need for the recipes are widely available in markets, grocery stores and supermarkets in major cities, as well as in Indian stores. If they are not available near you, here is a list of selected online suppliers specializing in Indian ingredients, utensils and cookware.",
-      "page_range": [
-        801,
-        801
-      ],
-      "recipe_ids": [],
-      "start_here": [],
-      "hero_image": null
-    },
-    {
-      "id": "index",
-      "name": "Index",
-      "intro_markdown": "",
-      "page_range": [
-        804,
-        819
-      ],
-      "recipe_ids": [],
-      "start_here": [],
       "hero_image": null
     }
   ]
