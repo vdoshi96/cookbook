@@ -19,7 +19,7 @@ function indexEntries(): ReferenceEntry[] {
   }));
 }
 
-export default function IndexPage() {
+export default function IngredientIndexPage() {
   return (
     <div className="page-shell reference-page">
       <header className="browse-page-header">

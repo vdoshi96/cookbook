@@ -1,10 +1,10 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import IndexPage, { metadata } from "./page";
+import IngredientIndexPage, { metadata } from "./page";
 
-describe("IndexPage", () => {
+describe("IngredientIndexPage", () => {
   it("renders an ingredient index grouped alphabetically", () => {
-    render(<IndexPage />);
+    render(<IngredientIndexPage />);
 
     expect(metadata).toMatchObject({ title: "Index" });
     expect(screen.getByRole("heading", { level: 1, name: "Ingredient Index" })).toBeInTheDocument();

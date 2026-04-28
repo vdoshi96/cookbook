@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
   experimental: {
     externalDir: true
   },
+  async rewrites() {
+    return [
+      {
+        source: "/index",
+        destination: "/ingredient-index"
+      }
+    ];
+  },
   turbopack: {
     root: join(process.cwd(), "..")
   }
