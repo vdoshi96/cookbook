@@ -687,6 +687,67 @@ main {
   max-width: 880px;
 }
 
+.reference-page {
+  gap: 2rem;
+}
+
+.alphabetical-reference {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.reference-letter-section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reference-letter-section h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+}
+
+.reference-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.reference-table {
+  width: 100%;
+  min-width: 42rem;
+  border-collapse: collapse;
+}
+
+.reference-table th,
+.reference-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.reference-table th {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.reference-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.reference-table a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.reference-table a:hover {
+  text-decoration: underline;
+}
+
 .empty-state {
   display: grid;
   gap: 16px;
@@ -706,9 +767,11 @@ main {
 }
 
 .fullscreen-hero {
+  --hero-height: calc(100svh - 76px);
   position: relative;
   display: grid;
-  min-height: calc(100svh - 76px);
+  height: var(--hero-height);
+  min-height: var(--hero-height);
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
   overflow: hidden;
@@ -717,13 +780,16 @@ main {
 
 .fullscreen-hero-image {
   grid-area: 1 / 1;
-  min-height: calc(100svh - 76px);
+  height: var(--hero-height);
+  min-height: var(--hero-height);
   border: 0;
   border-radius: 0;
 }
 
 .fullscreen-hero-image img {
-  min-height: calc(100svh - 76px);
+  display: block;
+  height: var(--hero-height);
+  min-height: var(--hero-height);
   filter: brightness(0.58) saturate(0.95);
 }
 
@@ -989,12 +1055,8 @@ main {
 }
 
 @media (max-width: 700px) {
-  .fullscreen-hero,
-  .fullscreen-hero-image,
-  .fullscreen-hero-image img,
-  .listing-hero-image,
-  .recipe-hero-image {
-    min-height: calc(100svh - 116px);
+  .fullscreen-hero {
+    --hero-height: calc(100svh - 116px);
   }
 
   .fullscreen-hero-overlay {
