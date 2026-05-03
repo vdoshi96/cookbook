@@ -5,7 +5,8 @@ import { MarkdownBlock } from "@/components/MarkdownBlock";
 import { RecipeImage } from "@/components/RecipeImage";
 import { RecipeListingClient } from "@/components/RecipeListingClient";
 import { resolveSectionImage } from "@/lib/curated-images";
-import { getAllSections, getFrontMatter, getRecipesBySection, getSectionById, getStartHereRecipes } from "@/lib/data";
+import { getAllIngredients, getAllSections, getFrontMatter, getRecipesBySection, getSectionById, getStartHereRecipes } from "@/lib/data";
+import { getRecipeIngredientSlugMap } from "@/lib/filters";
 import { recipePath } from "@/lib/routes";
 
 interface SectionPageProps {
@@ -50,6 +51,15 @@ export default async function SectionPage({ params }: SectionPageProps) {
   const recipes = getRecipesBySection(section.id);
   const startHereRecipes = getStartHereRecipes(section.id);
   const image = resolveSectionImage(section);
+  const recipeIds = new Set(recipes.map((recipe) => recipe.id));
+  const ingredients = getAllIngredients()
+    .map((ingredient) => {
+      const recipeIdsInSection = ingredient.recipe_ids.filter((recipeId) => recipeIds.has(recipeId));
+
+      return { ...ingredient, recipe_ids: recipeIdsInSection, count: recipeIdsInSection.length };
+    })
+    .filter((ingredient) => ingredient.recipe_ids.length > 0);
+  const ingredientSlugsByRecipeId = getRecipeIngredientSlugMap(recipes, ingredients);
 
   if (recipes.length === 0) {
     return (
@@ -95,7 +105,11 @@ export default async function SectionPage({ params }: SectionPageProps) {
           </section>
         ) : null}
 
-        <RecipeListingClient recipes={recipes} />
+        <RecipeListingClient
+          recipes={recipes}
+          ingredients={ingredients}
+          ingredientSlugsByRecipeId={ingredientSlugsByRecipeId}
+        />
       </div>
     </div>
   );

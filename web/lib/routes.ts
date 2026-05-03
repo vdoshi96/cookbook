@@ -21,3 +21,7 @@ export function searchPath(query?: string) {
 
   return `/search?q=${encodeURIComponent(query)}`;
 }
+
+export function cookWithPath() {
+  return "/cook-with";
+}

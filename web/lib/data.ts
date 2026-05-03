@@ -1,5 +1,6 @@
 import frontMatterFile from "../../data/front-matter.json";
 import graphFile from "../../data/graph.json";
+import ingredientMatcherFile from "../../data/ingredient-matcher.json";
 import ingredientsFile from "../../data/ingredients.json";
 import recipesFile from "../../data/recipes.json";
 import regionsFile from "../../data/regions.json";
@@ -8,6 +9,9 @@ import tagsFile from "../../data/tags.json";
 import type {
   FrontMatter,
   GraphEdge,
+  IngredientMatcher,
+  IngredientMatcherChip,
+  IngredientMatcherFamily,
   IngredientRecord,
   Recipe,
   Region,
@@ -25,6 +29,7 @@ interface CookbookDataFiles {
   ingredientsFile: unknown;
   tagsFile: unknown;
   graphFile: unknown;
+  ingredientMatcherFile: unknown;
   frontMatterFile: unknown;
 }
 
@@ -38,6 +43,7 @@ interface ValidatedCookbookData {
     edges: GraphEdge[];
     used_in: Record<string, string[]>;
   };
+  ingredientMatcher: IngredientMatcher;
   frontMatter: FrontMatter;
 }
 
@@ -83,6 +89,12 @@ function assertStringArrayRecord(value: unknown, label: string): asserts value i
   }
 }
 
+function assertStringArray(value: unknown, label: string): asserts value is string[] {
+  if (!Array.isArray(value) || !value.every((entry) => typeof entry === "string")) {
+    throw new Error(`${label} must be an array of strings`);
+  }
+}
+
 function assertGraphEdges(value: unknown): asserts value is GraphEdge[] {
   assertArray(value, "graph edges");
 
@@ -96,6 +108,39 @@ function assertGraphEdges(value: unknown): asserts value is GraphEdge[] {
 function assertFrontMatterSection(value: unknown, label: string): void {
   if (!isRecord(value) || typeof value.title !== "string" || typeof value.markdown !== "string") {
     throw new Error(`${label} must include title and markdown`);
+  }
+}
+
+function assertIngredientMatcherChips(value: unknown): asserts value is IngredientMatcherChip[] {
+  assertArray(value, "ingredient matcher chips");
+
+  for (const chip of value) {
+    if (
+      !isRecord(chip) ||
+      typeof chip.id !== "string" ||
+      typeof chip.label !== "string" ||
+      (chip.kind !== "family" && chip.kind !== "ingredient") ||
+      (chip.family_id !== null && typeof chip.family_id !== "string") ||
+      typeof chip.include_in_missing !== "boolean"
+    ) {
+      throw new Error("ingredient matcher chips must include id, label, kind, family_id, and include_in_missing");
+    }
+
+    assertStringArray(chip.ingredient_slugs, `ingredient matcher chips.${chip.id}.ingredient_slugs`);
+    assertStringArray(chip.aliases, `ingredient matcher chips.${chip.id}.aliases`);
+  }
+}
+
+function assertIngredientMatcherFamilies(value: unknown): asserts value is IngredientMatcherFamily[] {
+  assertArray(value, "ingredient matcher families");
+
+  for (const family of value) {
+    if (!isRecord(family) || typeof family.id !== "string" || typeof family.label !== "string") {
+      throw new Error("ingredient matcher families must include id and label");
+    }
+
+    assertStringArray(family.chip_ids, `ingredient matcher families.${family.id}.chip_ids`);
+    assertStringArray(family.aliases, `ingredient matcher families.${family.id}.aliases`);
   }
 }
 
@@ -114,6 +159,7 @@ function validateCookbookData(files: CookbookDataFiles): ValidatedCookbookData {
   const ingredientsContainer = assertSchemaFile(files.ingredientsFile, "ingredients");
   const tagsContainer = assertSchemaFile(files.tagsFile, "tags");
   const graphContainer = assertSchemaFile(files.graphFile, "graph");
+  const ingredientMatcherContainer = assertSchemaFile(files.ingredientMatcherFile, "ingredient matcher");
   const frontMatterContainer = assertSchemaFile(files.frontMatterFile, "front matter");
 
   assertArray(recipesContainer.recipes, "recipes");
@@ -123,6 +169,9 @@ function validateCookbookData(files: CookbookDataFiles): ValidatedCookbookData {
   assertRecord(tagsContainer.tags, "tags");
   assertGraphEdges(graphContainer.edges);
   assertStringArrayRecord(graphContainer.used_in, "graph used_in");
+  assertIngredientMatcherChips(ingredientMatcherContainer.chips);
+  assertIngredientMatcherFamilies(ingredientMatcherContainer.families);
+  assertStringArray(ingredientMatcherContainer.excluded_ingredient_slugs, "ingredient matcher excluded_ingredient_slugs");
 
   assertFrontMatterSection(frontMatterContainer.introduction, "introduction");
   assertFrontMatterSection(frontMatterContainer.history, "history");
@@ -140,6 +189,12 @@ function validateCookbookData(files: CookbookDataFiles): ValidatedCookbookData {
       edges: graphContainer.edges,
       used_in: graphContainer.used_in
     },
+    ingredientMatcher: {
+      schema_version: ingredientMatcherContainer.schema_version,
+      chips: ingredientMatcherContainer.chips,
+      families: ingredientMatcherContainer.families,
+      excluded_ingredient_slugs: ingredientMatcherContainer.excluded_ingredient_slugs
+    } as IngredientMatcher,
     frontMatter: {
       introduction: frontMatterContainer.introduction,
       history: frontMatterContainer.history,
@@ -161,10 +216,11 @@ const data = validateCookbookData({
   ingredientsFile,
   tagsFile,
   graphFile,
+  ingredientMatcherFile,
   frontMatterFile
 });
 
-const { recipes, sections, regions, ingredients, tags, graph, frontMatter } = data;
+const { recipes, sections, regions, ingredients, tags, graph, ingredientMatcher, frontMatter } = data;
 
 const recipeById = new Map(recipes.map((recipe) => [recipe.id, recipe]));
 const sectionById = new Map(sections.map((section) => [section.id, section]));
@@ -254,6 +310,10 @@ export function getIngredientBySlug(slug: string): IngredientRecord | null {
   }
 
   return clone({ slug, ...ingredient });
+}
+
+export function getIngredientMatcher(): IngredientMatcher {
+  return clone(ingredientMatcher);
 }
 
 export function getAllTags(): TagRecord[] {

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   getAllIngredients,
+  getIngredientMatcher,
   getAllRecipes,
   getAllSections,
   getFrontMatter,
@@ -69,6 +70,15 @@ describe("cookbook data helpers", () => {
     expect(getAllIngredients().map((ingredient) => ingredient.slug)).toContain("gram-flour");
   });
 
+  it("loads the backend-emitted ingredient matcher contract", () => {
+    const matcher = getIngredientMatcher();
+
+    expect(matcher.schema_version).toBe(1);
+    expect(matcher.chips.map((chip) => chip.id)).toEqual(expect.arrayContaining(["seafood", "fish", "paneer", "potato"]));
+    expect(matcher.families.find((family) => family.id === "seafood")?.chip_ids).toEqual(["fish", "prawns"]);
+    expect(matcher.excluded_ingredient_slugs).toContain("garlic");
+  });
+
   it("resolves reverse graph edges to recipes", () => {
     expect(getUsedInRecipes("pappu-charu").map((recipe) => recipe.id)).toEqual(["pani-poori"]);
   });
@@ -121,6 +131,7 @@ describe("cookbook data helpers", () => {
         ingredientsFile: { schema_version: 1, ingredients: {} },
         tagsFile: { schema_version: 1, tags: {} },
         graphFile: { schema_version: 1, edges: [], used_in: {} },
+        ingredientMatcherFile: { schema_version: 1, chips: [], families: [], excluded_ingredient_slugs: [] },
         frontMatterFile: {
           schema_version: 1,
           introduction: { title: "Introduction", markdown: "" },
@@ -140,6 +151,7 @@ describe("cookbook data helpers", () => {
         ingredientsFile: { schema_version: 1, ingredients: [] },
         tagsFile: { schema_version: 1, tags: {} },
         graphFile: { schema_version: 1, edges: [], used_in: {} },
+        ingredientMatcherFile: { schema_version: 1, chips: [], families: [], excluded_ingredient_slugs: [] },
         frontMatterFile: {
           schema_version: 1,
           introduction: { title: "Introduction", markdown: "" },
