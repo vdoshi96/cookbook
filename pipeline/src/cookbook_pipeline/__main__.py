@@ -31,6 +31,7 @@ from cookbook_pipeline.stages.stage_8_indexes import (
     build_ingredient_index,
     build_tag_index,
 )
+from cookbook_pipeline.stages.ingredient_matcher import build_ingredient_matcher
 from cookbook_pipeline.stages.stage_9_fetch_images import fetch_all
 from cookbook_pipeline.stages.stage_10_emit import emit
 from cookbook_pipeline.stages.stage_11_glossary import extract_glossary
@@ -168,6 +169,10 @@ def stage_5_through_10() -> None:
 
     # Stage 8: indexes
     ingredients_idx = build_ingredient_index(recipes_with_ids)
+    ingredient_matcher = build_ingredient_matcher(
+        paths.INGREDIENT_MATCHER_CONFIG,
+        set(ingredients_idx),
+    )
     tags_idx = build_tag_index(recipes_with_ids)
     print(f"Stage 8: {len(ingredients_idx)} ingredients, {len(tags_idx)} tags.")
 
@@ -219,6 +224,7 @@ def stage_5_through_10() -> None:
         sections=sections,
         regions=regions,
         ingredients_idx=ingredients_idx,
+        ingredient_matcher=ingredient_matcher,
         tags_idx=tags_idx,
         edges=edges,
         used_in=used_in,

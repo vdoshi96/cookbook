@@ -10,6 +10,7 @@ from cookbook_pipeline.schema import (
     GlossaryFile,
     GraphFile,
     IngredientsFile,
+    IngredientMatcherFile,
     RecipesFile,
     RegionsFile,
     SectionsFile,
@@ -23,6 +24,7 @@ def emit(
     sections: list[dict],
     regions: list[dict],
     ingredients_idx: dict[str, dict],
+    ingredient_matcher: dict,
     tags_idx: dict[str, dict],
     edges: list[dict],
     used_in: dict[str, list[str]],
@@ -46,6 +48,9 @@ def emit(
         {"schema_version": 1, "ingredients": ingredients_idx}
     )
     (out_dir / "ingredients.json").write_text(ing.model_dump_json(indent=2))
+
+    matcher = IngredientMatcherFile.model_validate(ingredient_matcher)
+    (out_dir / "ingredient-matcher.json").write_text(matcher.model_dump_json(indent=2))
 
     tg = TagsFile.model_validate({"schema_version": 1, "tags": tags_idx})
     (out_dir / "tags.json").write_text(tg.model_dump_json(indent=2))

@@ -1,7 +1,6 @@
 # pipeline/tests/test_stage_1_sections.py
 from pathlib import Path
 
-import pytest
 
 from cookbook_pipeline.stages.stage_1_sections import (
     extract_section_name,

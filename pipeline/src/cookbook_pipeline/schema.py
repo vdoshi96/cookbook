@@ -6,6 +6,8 @@ types, and nullability here MUST match the design spec §6.
 
 from __future__ import annotations
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -96,6 +98,30 @@ class IngredientEntry(BaseModel):
 class IngredientsFile(BaseModel):
     schema_version: int = 1
     ingredients: dict[str, IngredientEntry]
+
+
+class IngredientMatcherChip(BaseModel):
+    id: str
+    label: str
+    kind: Literal["ingredient", "family"]
+    family_id: str | None = None
+    ingredient_slugs: list[str] = Field(default_factory=list)
+    aliases: list[str] = Field(default_factory=list)
+    include_in_missing: bool = True
+
+
+class IngredientMatcherFamily(BaseModel):
+    id: str
+    label: str
+    chip_ids: list[str]
+    aliases: list[str] = Field(default_factory=list)
+
+
+class IngredientMatcherFile(BaseModel):
+    schema_version: int = 1
+    chips: list[IngredientMatcherChip]
+    families: list[IngredientMatcherFamily]
+    excluded_ingredient_slugs: list[str] = Field(default_factory=list)
 
 
 class TagEntry(BaseModel):
