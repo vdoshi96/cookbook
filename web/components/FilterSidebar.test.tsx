@@ -5,6 +5,11 @@ import type { RecipeFilterOptions } from "@/lib/filters";
 
 const options: RecipeFilterOptions = {
   regions: [{ id: "awadh", name: "Awadh" }],
+  mainIngredients: [{ id: "paneer", name: "Paneer" }],
+  ingredients: [
+    { id: "paneer", name: "Paneer" },
+    { id: "potato", name: "potatoes" }
+  ],
   dietary: ["vegetarian"],
   techniques: ["grill"]
 };
@@ -17,6 +22,9 @@ describe("FilterSidebar", () => {
           options={options}
           filters={{
             region: "awadh",
+            mainIngredient: "paneer",
+            ingredients: ["paneer"],
+            excludedIngredients: ["potato"],
             dietary: ["vegetarian"],
             technique: ["grill"],
             maxTotalMinutes: 45,
@@ -34,6 +42,9 @@ describe("FilterSidebar", () => {
     const data = new FormData(form);
 
     expect(data.get("region")).toBe("awadh");
+    expect(data.get("mainIngredient")).toBe("paneer");
+    expect(data.getAll("ingredient")).toEqual(["paneer"]);
+    expect(data.getAll("excludeIngredient")).toEqual(["potato"]);
     expect(data.getAll("dietary")).toEqual(["vegetarian"]);
     expect(data.getAll("technique")).toEqual(["grill"]);
     expect(data.get("maxTime")).toBe("45");
