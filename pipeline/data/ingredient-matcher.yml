@@ -1,0 +1,793 @@
+schema_version: 1
+chips:
+  - id: seafood
+    label: Seafood
+    kind: family
+    family_id: null
+    ingredient_slugs: []
+    aliases: [seafood]
+    include_in_missing: false
+  - id: dal-lentils
+    label: Dal/Lentils
+    kind: family
+    family_id: null
+    ingredient_slugs: []
+    aliases: [dal, daal, dhal, lentils, pulses]
+    include_in_missing: false
+  - id: gourds
+    label: Gourds
+    kind: family
+    family_id: null
+    ingredient_slugs: []
+    aliases: [gourd, gourds, lauki, ghiy, kaddu]
+    include_in_missing: false
+  - id: greens
+    label: Greens
+    kind: family
+    family_id: null
+    ingredient_slugs: []
+    aliases: [greens, saag, palak, keerai]
+    include_in_missing: false
+  - id: nuts
+    label: Nuts
+    kind: family
+    family_id: null
+    ingredient_slugs: []
+    aliases: [nuts, dry fruits, meva]
+    include_in_missing: false
+
+  - id: chicken
+    label: Chicken
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - chicken
+      - chickens
+      - tandoori-chickens
+      - boneless-chicken
+      - boneless-chicken-breasts
+      - boneless-chicken-legs
+      - boneless-chicken-pieces
+      - boneless-chicken-thighs
+      - chicken-breast-and-leg-pieces
+      - chicken-breasts
+      - chicken-drumsticks
+      - chicken-legs
+      - chicken-pieces
+      - lean-chicken
+      - skinless
+      - skinless-boneless-chicken-breasts
+      - skinless-boneless-chicken-pieces
+      - skinless-chicken-thighs
+    aliases: [murg, murgh, murga, koli, kozhi, kori, chooza]
+    include_in_missing: true
+  - id: lamb-mutton
+    label: Lamb/Mutton
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - lamb
+      - boneless-lamb
+      - boneless-lamb-fillets
+      - boneless-lamb-shoulder
+      - cooked-lamb
+      - lamb-breast
+      - lamb-chops
+      - lamb-chops-and-breast-piece-with-2-ribs-each
+      - lamb-chops-and-hind-leg-pieces
+      - lamb-chops-and-shanks
+      - lamb-chops-with-2-ribs-each
+      - lamb-fillet
+      - lamb-leg
+      - lamb-leg-or-shoulder
+      - lamb-shanks
+      - lamb-shanks-and-chops
+      - lamb-shoulder
+      - lamb-shoulder-or-leg
+      - lamb-with-extra-fat
+      - leg-of-kid-or-lamb
+      - leg-of-lamb
+      - leg-of-spring-lamb
+      - mixed-pieces-of-lamb
+    aliases: [mutton, gosht, maas, keema, raan, boti]
+    include_in_missing: true
+  - id: fish
+    label: Fish
+    kind: ingredient
+    family_id: seafood
+    ingredient_slugs:
+      - fish
+      - fish-fillets
+      - firm-white-fish
+      - firm-white-fish-fillets
+      - any-firm-white-fish-fillets
+      - hilsa-or-other-firm-fish-fillets
+      - pearl-spot-fish-or-pomfret-fillets
+      - skinless-firm-white-fish-fillets
+    aliases: [machhli, machhali, machhi, maach, maachher, mahi, meen, chapa, ilish, hilsa, karimeen, pomfret]
+    include_in_missing: true
+  - id: prawns
+    label: Prawns/Shrimp
+    kind: ingredient
+    family_id: seafood
+    ingredient_slugs:
+      - prawns
+      - king-prawns
+      - or-dried-prawns
+      - or-medium-sized-or-dried-prawns
+    aliases: [shrimp, jhinga, jhinge, jhingri, royya, roya, royyaalu, chemeen, kolambi]
+    include_in_missing: true
+  - id: pork
+    label: Pork
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - pork
+      - pork-ribs
+      - pork-with-fat
+      - pig-skin-with-fat
+    aliases: []
+    include_in_missing: true
+  - id: eggs
+    label: Eggs
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - egg
+      - hard-boiled-egg
+      - boiled-egg-whites
+      - egg-white
+      - egg-yolk
+      - egg-yolks
+    aliases: [anda, ande]
+    include_in_missing: true
+  - id: paneer
+    label: Paneer
+    kind: ingredient
+    family_id: null
+    ingredient_slugs: [paneer]
+    aliases: [panir, indian cottage cheese]
+    include_in_missing: true
+  - id: yoghurt
+    label: Yoghurt
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - yoghurt
+      - hung-yoghurt
+      - sour-yoghurt
+      - soured-yoghurt
+      - tablespoons-yoghurt
+    aliases: [dahi, curd, yogurt]
+    include_in_missing: true
+
+  - id: potato
+    label: Potato
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - potato
+      - boiled-potato
+      - marble-sized-potato
+      - new-potato
+    aliases: [aloo, alu, batata, aloogadda, uralaikizhan]
+    include_in_missing: true
+  - id: eggplant
+    label: Eggplant
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - aubergine
+      - aubergines
+      - baby-aubergines
+    aliases: [aubergine, brinjal, baigan, baingan, vankaya, vengkayya, kathirikkai, kathirakkai, vangi]
+    include_in_missing: true
+  - id: cauliflower
+    label: Cauliflower
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - cauliflower
+      - cauliflower-florets
+      - cauliflowers
+    aliases: [gobi, phoolgobi, phoolkopi, poongobi]
+    include_in_missing: true
+  - id: peas
+    label: Peas
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - peas
+      - boiled-peas
+      - cooked-peas
+      - peas-in-their-pods
+      - shelled-peas
+    aliases: [matar]
+    include_in_missing: true
+  - id: okra
+    label: Okra
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - okra
+      - tender-okra
+    aliases: [bhindi, vendakkai, bheeda]
+    include_in_missing: true
+  - id: tomato
+    label: Tomato
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - tomato
+      - pureed-tomato
+      - ripe-tomato
+    aliases: [tamatar, thakkali]
+    include_in_missing: true
+  - id: bell-pepper
+    label: Bell Pepper
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - bell-peppers
+      - green-or-red-pepper
+      - green-pepper
+      - green-peppers
+      - red-or-green-peppers
+      - red-pepper
+      - yellow-pepper
+    aliases: [capsicum, shimla mirch, pepper]
+    include_in_missing: true
+  - id: carrot
+    label: Carrot
+    kind: ingredient
+    family_id: null
+    ingredient_slugs: [carrot]
+    aliases: [gajar]
+    include_in_missing: true
+  - id: cabbage
+    label: Cabbage
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - cabbage
+      - green-cabbage
+    aliases: [muttakose, karamkalla]
+    include_in_missing: true
+  - id: mushrooms
+    label: Mushrooms
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - mushrooms
+      - button-mushrooms
+    aliases: [khumb, dhingri]
+    include_in_missing: true
+  - id: bottle-gourd
+    label: Bottle Gourd
+    kind: ingredient
+    family_id: gourds
+    ingredient_slugs:
+      - bottle-gourd
+      - marrow-or-bottle-gourd
+    aliases: [lauki, ghiy]
+    include_in_missing: true
+  - id: pumpkin-ash-gourd
+    label: Pumpkin/Ash Gourd
+    kind: ingredient
+    family_id: gourds
+    ingredient_slugs:
+      - pumpkin
+      - and-pumpkin
+      - ash-gourd
+      - pumpkin-or-ash-gourd
+    aliases: [kaddu, kumhra, ash gourd]
+    include_in_missing: true
+  - id: bitter-gourd
+    label: Bitter Gourd
+    kind: ingredient
+    family_id: gourds
+    ingredient_slugs:
+      - bitter-gourd
+      - bitter-gourds
+    aliases: [karela, pavakka, kakarkaya]
+    include_in_missing: true
+  - id: snake-ribbed-wax-gourd
+    label: Snake/Ribbed/Wax Gourd
+    kind: ingredient
+    family_id: gourds
+    ingredient_slugs:
+      - snake-gourd
+      - snake-gourd-or-courgette
+      - ribbed-gourd
+      - ribbed-gourds
+      - wax-gourd
+      - wax-gourds
+    aliases: [snake gourd, ribbed gourd, wax gourd, turai, torai]
+    include_in_missing: true
+  - id: taro-colocasia
+    label: Taro/Colocasia
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - colocasia
+      - colocasias
+    aliases: [taro, arbi, arabi, arvi]
+    include_in_missing: true
+  - id: spinach
+    label: Spinach
+    kind: ingredient
+    family_id: greens
+    ingredient_slugs:
+      - spinach
+      - spinach-leaves
+      - spinach-leaves-with-shoots-and-roots
+      - red-spinach
+    aliases: [palak]
+    include_in_missing: true
+  - id: fenugreek-greens
+    label: Fenugreek Greens
+    kind: ingredient
+    family_id: greens
+    ingredient_slugs:
+      - fenugreek-leaves
+      - finely-fenugreek-leaves
+      - finely-fenugreek-leaves-or-dried-fenugreek-leaves
+    aliases: [methi, methi leaves]
+    include_in_missing: true
+  - id: mustard-greens
+    label: Mustard Greens
+    kind: ingredient
+    family_id: greens
+    ingredient_slugs:
+      - mustard-leaves
+      - classic-mustard-greens
+    aliases: [sarson, mustard greens]
+    include_in_missing: true
+  - id: banana-plantain
+    label: Banana/Plantain
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - bananas
+      - ripe-bananas
+      - unripe-green-bananas
+      - banana-flowers
+      - banana-stem
+      - plantain-flower
+    aliases: [plantain, kela, vazha, artikai]
+    include_in_missing: true
+  - id: jackfruit
+    label: Jackfruit
+    kind: ingredient
+    family_id: null
+    ingredient_slugs: [jackfruit]
+    aliases: [kathal]
+    include_in_missing: true
+  - id: radish-turnip
+    label: Radish/Turnip
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - radishes
+      - turnips
+    aliases: [mooli, shalgam]
+    include_in_missing: true
+
+  - id: rice
+    label: Rice
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - rice
+      - basmati-rice
+      - boiled-rice
+      - cooked-basmati-rice
+      - cooked-rice
+      - good-quality-basmati-rice
+      - long-grained-rice
+      - parboiled-rice
+      - pressed-rice
+      - short-grain-rice
+      - steamed-rice
+      - very-fine-basmati-rice
+    aliases: [chawal, bhaat, saadam, annam, poha]
+    include_in_missing: true
+  - id: urad-dal
+    label: Urad Dal
+    kind: ingredient
+    family_id: dal-lentils
+    ingredient_slugs:
+      - urad-dal
+      - skinned-urad-dal
+    aliases: [urad, black gram]
+    include_in_missing: true
+  - id: chana-dal
+    label: Chana Dal
+    kind: ingredient
+    family_id: dal-lentils
+    ingredient_slugs:
+      - chana-dal
+      - fried-chana-dal
+      - teaspoon-chana-dal
+    aliases: [chana dal, bengal gram]
+    include_in_missing: true
+  - id: moong-dal
+    label: Moong Dal
+    kind: ingredient
+    family_id: dal-lentils
+    ingredient_slugs:
+      - moong-dal
+      - split-moong-dal
+      - roasted-moong-dal
+    aliases: [moong, mung]
+    include_in_missing: true
+  - id: toor-arhar-dal
+    label: Toor/Arhar Dal
+    kind: ingredient
+    family_id: dal-lentils
+    ingredient_slugs:
+      - toor-dal
+      - arhar-dal-or-toor-dal
+      - arhar-or-toor-dal
+      - toovar-dal
+      - toover-dal
+    aliases: [toor, arhar, toovar, toover]
+    include_in_missing: true
+  - id: masoor-dal
+    label: Masoor Dal
+    kind: ingredient
+    family_id: dal-lentils
+    ingredient_slugs: [masoor-dal]
+    aliases: [masoor, red lentils]
+    include_in_missing: true
+  - id: chickpeas
+    label: Chickpeas
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - chickpeas
+      - canned-chickpeas
+      - dried-chickpeas
+    aliases: [chana, chole, garbanzo]
+    include_in_missing: true
+  - id: kidney-beans
+    label: Kidney Beans
+    kind: ingredient
+    family_id: null
+    ingredient_slugs: [dried-red-kidney-beans]
+    aliases: [rajma]
+    include_in_missing: true
+  - id: coconut
+    label: Coconut
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - coconut
+      - coconut-cream
+      - coconut-milk
+      - coconut-paste
+      - coconut-pieces
+      - copra-or-desiccated-coconut
+      - desiccated-coconut
+      - dried-coconut
+      - dry-coconut
+      - or-desiccated-coconut
+      - tablespoons-coconut
+      - tender-coconut
+      - tender-coconuts
+    aliases: [nariyal, narial, kobari, thengai, thenga, copra]
+    include_in_missing: true
+  - id: almonds
+    label: Almonds
+    kind: ingredient
+    family_id: nuts
+    ingredient_slugs:
+      - almonds
+      - blanched-almonds
+    aliases: [badam, badaam]
+    include_in_missing: true
+  - id: cashews
+    label: Cashews
+    kind: ingredient
+    family_id: nuts
+    ingredient_slugs:
+      - cashew-nuts
+      - cashew-nut-halves
+      - cashew-nut-paste
+      - broken-cashew-nuts
+    aliases: [kaju]
+    include_in_missing: true
+  - id: peanuts
+    label: Peanuts
+    kind: ingredient
+    family_id: nuts
+    ingredient_slugs:
+      - peanuts
+      - crushed-peanuts
+      - peanut-paste
+      - roasted-peanuts
+      - shelled-peanuts
+      - unsalted-peanuts
+    aliases: [groundnuts, moongphali, mungphali]
+    include_in_missing: true
+  - id: pistachios
+    label: Pistachios
+    kind: ingredient
+    family_id: nuts
+    ingredient_slugs:
+      - pistachio-nuts
+      - unsalted-pistachio-nuts
+      - unsalted-pistachios
+    aliases: [pista]
+    include_in_missing: true
+  - id: mixed-nuts
+    label: Mixed Nuts
+    kind: ingredient
+    family_id: nuts
+    ingredient_slugs:
+      - mixed-nuts
+      - pine-nuts
+      - walnut-halves
+      - chironji-kernels
+    aliases: [char magaz, chaar magaz]
+    include_in_missing: true
+  - id: sweet-corn
+    label: Sweet Corn
+    kind: ingredient
+    family_id: null
+    ingredient_slugs:
+      - baby-corn
+      - ears-sweetcorn
+      - sweetcorn-kernels
+      - sweetcorn-kernels-or-canned-kernels
+    aliases: [corn, makki, sweetcorn]
+    include_in_missing: true
+
+families:
+  - id: seafood
+    label: Seafood
+    chip_ids: [fish, prawns]
+    aliases: [seafood]
+  - id: dal-lentils
+    label: Dal/Lentils
+    chip_ids: [urad-dal, chana-dal, moong-dal, toor-arhar-dal, masoor-dal]
+    aliases: [dal, daal, dhal, lentils, pulses]
+  - id: gourds
+    label: Gourds
+    chip_ids: [bottle-gourd, pumpkin-ash-gourd, bitter-gourd, snake-ribbed-wax-gourd]
+    aliases: [gourd, gourds, lauki, ghiy, kaddu]
+  - id: greens
+    label: Greens
+    chip_ids: [spinach, fenugreek-greens, mustard-greens]
+    aliases: [greens, saag, palak, keerai]
+  - id: nuts
+    label: Nuts
+    chip_ids: [almonds, cashews, peanuts, pistachios, mixed-nuts]
+    aliases: [nuts, dry fruits, meva]
+
+excluded_ingredient_slugs:
+  - salt
+  - black-salt
+  - black-rock-salt
+  - rock-salt
+  - water
+  - cold-water
+  - warm-water
+  - hot-water-or-milk
+  - soda-water
+  - vegetable-oil
+  - vegetable-oil-or-ghee
+  - vegetable-oil-for-shallow-frying
+  - ghee
+  - ghee-or-vegetable-oil
+  - ghee-or-vegetable-oil-for-cooking
+  - ghee-or-oil
+  - ghee-or-butter
+  - ghee-or-mustard-oil
+  - hot-ghee
+  - melted-ghee
+  - butter
+  - butter-or-ghee
+  - melted-butter
+  - melted-ghee-or-butter
+  - melted-unsalted-butter
+  - unsalted-butter
+  - mustard-oil
+  - mustard-oil-or-ghee
+  - sesame-oil
+  - sesame-seed-oil
+  - groundnut-oil
+  - coconut-oil
+  - oil
+  - oil-or-ghee
+  - olive-oil
+  - malt-vinegar
+  - vinegar
+  - white-vinegar
+  - toddy-vinegar
+  - coconut-vinegar
+  - onion
+  - baby-onion
+  - boiled-onion-paste
+  - crisp-golden-fried-onion
+  - fried-onion
+  - fried-onion-paste
+  - onion-paste
+  - onion-rings
+  - onion-wedges-or-cubes
+  - spring-onion
+  - spring-onion-greens
+  - garlic
+  - clove-garlic
+  - cloves-garlic
+  - finely-garlic
+  - flakes-garlic
+  - fried-garlic-paste
+  - garlic-cloves
+  - garlic-paste
+  - garlic-powder
+  - garlic-water
+  - roughly-garlic
+  - ginger
+  - crushed-ginger
+  - finely-ginger
+  - ginger-chilli-paste
+  - ginger-juliennes
+  - ginger-paste
+  - green-chilli
+  - green-chilli-paste
+  - finely-green-chilli
+  - chilli
+  - chilli-powder
+  - coarsely-chilli-powder
+  - crushed-dried-red-chilli
+  - dried-kashmiri-red-chilli
+  - dried-red-chilli
+  - kashmiri-chilli-powder
+  - kashmiri-chilli-water
+  - kashmiri-red-chilli-powder
+  - red-chilli
+  - red-chilli-paste
+  - red-chilli-powder
+  - yellow-chilli-powder
+  - coriander-leaves
+  - finely-coriander-leaves
+  - tablespoon-coriander-leaves
+  - teaspoon-coriander-leaves
+  - coriander-paste
+  - mint
+  - mint-leaves
+  - mint-sprigs
+  - dried-mint
+  - dried-mint-leaves
+  - finely-mint-leaves
+  - curry-leaves
+  - sprig-curry-leaves
+  - turmeric
+  - turmeric-powder
+  - teaspoon-turmeric
+  - cumin
+  - cumin-powder
+  - cumin-seeds
+  - teaspoon-cumin-seeds
+  - coriander
+  - coriander-powder
+  - coriander-seeds
+  - tablespoon-coriander
+  - teaspoons-coriander
+  - teaspoons-coriander-seeds
+  - mustard-seeds
+  - black-mustard-seeds
+  - brown-mustard-seeds
+  - yellow-mustard-seeds
+  - mustard-paste
+  - mustard-powder
+  - yellow-and-black-mustard-seeds
+  - fenugreek
+  - fenugreek-seeds
+  - asafoetida
+  - asafoetida-diluted-in-a-little-water
+  - asafoetida-or-garlic-or-onion-powder
+  - garam-masala
+  - kashmiri-garam-masala
+  - such-bari-or-kashmiri-garam-masala
+  - chaat-masala
+  - dhansak-masala
+  - sambhar-masala
+  - tandoori-chaat-masala
+  - tandoori-masala
+  - black-pepper
+  - black-peppercorns
+  - coarsely-black-pepper
+  - crushed-black-peppercorns
+  - generous-pinch-of-coarsely-black-pepper
+  - peppercorns
+  - teaspoon-black-pepper
+  - teaspoons-black-peppercorns
+  - white-pepper
+  - cloves
+  - cinnamon
+  - cinnamon-stick
+  - cinnamon-sticks
+  - teaspoon-cinnamon
+  - cardamom
+  - cardamom-pods
+  - cardamom-seeds
+  - cardamoms
+  - green-cardamom
+  - green-cardamom-pods
+  - green-cardamom-seeds
+  - green-cardamoms
+  - black-cardamom
+  - black-cardamom-pod
+  - black-cardamom-pods
+  - black-cardamom-seeds
+  - brown-cardamom-pods
+  - white-cardamom-pods
+  - bay-leaf
+  - bay-leaves
+  - mace
+  - blade-mace
+  - blades-mace
+  - cardamom-and-mace
+  - flower-mace
+  - mace-flakes
+  - mace-or-nutmeg
+  - mace-powder
+  - nutmeg
+  - nutmeg-powder
+  - nutmegs
+  - saffron
+  - saffron-threads
+  - poppy-seeds
+  - poppy-seed-paste
+  - white-poppy-seeds
+  - kalonji-seeds
+  - ajwain-seeds
+  - teaspoon-ajwain-seeds
+  - fennel
+  - fennel-seeds
+  - amchoor
+  - aniseed
+  - sesame-seeds
+  - sugar
+  - caster-sugar
+  - brown-sugar
+  - boora-or-caster-sugar
+  - icing-sugar
+  - jaggery
+  - jaggery-or-soft-brown-sugar
+  - crushed-jaggery-or-soft-brown-sugar
+  - baking-powder
+  - bicarbonate-of-soda
+  - flour
+  - wholemeal-flour
+  - millet-flour
+  - gram-flour
+  - thali-peeth-flour
+  - self-raising-flour
+  - cornflour
+  - tablespoon-cornflour
+  - dough
+  - poori-dough
+  - breadcrumbs
+  - dried-breadcrumbs
+  - rice-flour
+  - rice-flour-or-breadcrumbs
+  - rosewater
+  - kewra-water
+  - kewra-water-or-rosewater
+  - choice-of-chutney
+  - chutney
+  - coconut-chutney
+  - mint-chutney
+  - raw-tamarind-chutney
+  - raw-tamarind-chutney-or-mint-chutney
+  - tamarind-ginger-chutney
+  - stock
+  - chicken-stock
+  - clear-chicken-stock
+  - lamb-stock
+  - vegetable-stock
+  - rasam
+  - spice-mixture-for-pepper-water

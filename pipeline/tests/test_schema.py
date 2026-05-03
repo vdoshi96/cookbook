@@ -8,10 +8,10 @@ from cookbook_pipeline.schema import (
     GlossaryEntry,
     GlossaryFile,
     GraphEdge,
+    IngredientMatcherFile,
     Recipe,
     RecipesFile,
     Section,
-    SectionsFile,
 )
 
 
@@ -128,6 +128,45 @@ def test_glossary_file_round_trip():
     assert gf.entries[1].recipe_id == "garam-masala"
 
 
+def test_ingredient_matcher_file_round_trip():
+    matcher = IngredientMatcherFile.model_validate(
+        {
+            "schema_version": 1,
+            "chips": [
+                {
+                    "id": "seafood",
+                    "label": "Seafood",
+                    "kind": "family",
+                    "family_id": None,
+                    "ingredient_slugs": [],
+                    "aliases": ["seafood"],
+                    "include_in_missing": False,
+                },
+                {
+                    "id": "fish",
+                    "label": "Fish",
+                    "kind": "ingredient",
+                    "family_id": "seafood",
+                    "ingredient_slugs": ["fish"],
+                    "aliases": ["meen"],
+                    "include_in_missing": True,
+                },
+            ],
+            "families": [
+                {
+                    "id": "seafood",
+                    "label": "Seafood",
+                    "chip_ids": ["fish"],
+                    "aliases": ["seafood"],
+                }
+            ],
+            "excluded_ingredient_slugs": ["salt"],
+        }
+    )
+    assert matcher.chips[0].kind == "family"
+    assert matcher.families[0].chip_ids == ["fish"]
+
+
 def test_repo_glossary_data_validates():
     """The committed glossary.json MUST validate against the schema."""
     project_root = Path(__file__).resolve().parents[2]
@@ -135,3 +174,12 @@ def test_repo_glossary_data_validates():
     payload = json.loads(p.read_text())
     gf = GlossaryFile.model_validate(payload)
     assert isinstance(gf.entries, list)
+
+
+def test_repo_ingredient_matcher_data_validates():
+    """The committed ingredient-matcher.json MUST validate against the schema."""
+    project_root = Path(__file__).resolve().parents[2]
+    p = project_root / "data" / "ingredient-matcher.json"
+    payload = json.loads(p.read_text())
+    matcher = IngredientMatcherFile.model_validate(payload)
+    assert any(chip.id == "fish" for chip in matcher.chips)
