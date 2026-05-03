@@ -23,6 +23,33 @@ describe("cookbook search", () => {
     expect(searchCookbook("tandoor").some((result) => result.kind === "tag" && result.id === "tandoor")).toBe(true);
   });
 
+  it("ranks recipe identity matches above cross-reference-only matches for English translation queries", () => {
+    const results = searchCookbook("tomato chutney", 10);
+
+    expect(results[0]).toMatchObject({
+      kind: "recipe",
+      id: "nariyal-tamatar-ki-chutney"
+    });
+    expect(results.findIndex((result) => result.id === "nariyal-tamatar-ki-chutney")).toBeLessThan(
+      results.findIndex((result) => result.id === "tandoori-bharwan-paneer")
+    );
+    expect(results.some((result) => result.id === "aloo-chutneywale")).toBe(false);
+  });
+
+  it("finds the same recipe from transliterated original-language dish terms", () => {
+    expect(searchCookbook("tamatar chutney", 10)[0]).toMatchObject({
+      kind: "recipe",
+      id: "nariyal-tamatar-ki-chutney"
+    });
+  });
+
+  it("keeps transliterated dish searches tolerant of close misspellings", () => {
+    expect(searchCookbook("tmataar chutney", 10)[0]).toMatchObject({
+      kind: "recipe",
+      id: "nariyal-tamatar-ki-chutney"
+    });
+  });
+
   it("ranks exact region matches before recipe matches", () => {
     expect(searchCookbook("awadh")[0]).toMatchObject({
       kind: "region",
