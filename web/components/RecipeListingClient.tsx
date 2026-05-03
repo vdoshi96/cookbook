@@ -7,30 +7,30 @@ import { FilterSideSheet } from "@/components/FilterSideSheet";
 import { FilterSidebar } from "@/components/FilterSidebar";
 import { RecipeCard } from "@/components/RecipeCard";
 import { applyRecipeFilters, getRecipeFilterOptions, parseRecipeFilters, searchRecipes, type RecipeFilters } from "@/lib/filters";
+import type { IngredientRecord } from "@/lib/types";
 import type { Recipe } from "@/lib/types";
 
 function searchQueryFromBrowserSearch(search: string) {
   return new URLSearchParams(search).get("q") ?? "";
 }
 
-function readBrowserSearchState() {
-  if (typeof window === "undefined") {
-    return { query: "", search: "" };
-  }
-
-  const search = window.location.search;
-
+function readSearchState(search: string) {
   return { query: searchQueryFromBrowserSearch(search), search };
 }
 
-function useChapterSearchState() {
-  const [state, setState] = useState(readBrowserSearchState);
+function readBrowserSearchState() {
+  return readSearchState(typeof window === "undefined" ? "" : window.location.search);
+}
+
+function useChapterSearchState(initialSearch: string) {
+  const [state, setState] = useState(() => readSearchState(initialSearch));
 
   useEffect(() => {
     function syncSearch() {
       setState(readBrowserSearchState());
     }
 
+    syncSearch();
     window.addEventListener("popstate", syncSearch);
 
     return () => window.removeEventListener("popstate", syncSearch);
@@ -47,6 +47,13 @@ function HiddenRecipeFilterInputs({ filters }: { filters: RecipeFilters }) {
   return (
     <>
       {filters.region ? <input type="hidden" name="region" value={filters.region} /> : null}
+      {filters.mainIngredient ? <input type="hidden" name="mainIngredient" value={filters.mainIngredient} /> : null}
+      {(filters.ingredients ?? []).map((ingredient) => (
+        <input key={`ingredient:${ingredient}`} type="hidden" name="ingredient" value={ingredient} />
+      ))}
+      {(filters.excludedIngredients ?? []).map((ingredient) => (
+        <input key={`excludeIngredient:${ingredient}`} type="hidden" name="excludeIngredient" value={ingredient} />
+      ))}
       {(filters.dietary ?? []).map((tag) => (
         <input key={`dietary:${tag}`} type="hidden" name="dietary" value={tag} />
       ))}
@@ -59,13 +66,26 @@ function HiddenRecipeFilterInputs({ filters }: { filters: RecipeFilters }) {
   );
 }
 
-export function RecipeListingClient({ recipes }: { recipes: Recipe[] }) {
+export function RecipeListingClient({
+  recipes,
+  ingredients,
+  ingredientSlugsByRecipeId,
+  initialSearch = ""
+}: {
+  recipes: Recipe[];
+  ingredients?: IngredientRecord[];
+  ingredientSlugsByRecipeId?: Record<string, string[]>;
+  initialSearch?: string;
+}) {
   const id = useId();
-  const { query, search, setQuery } = useChapterSearchState();
+  const { query, search, setQuery } = useChapterSearchState(initialSearch);
   const filters = useMemo(() => parseRecipeFilters(new URLSearchParams(search)), [search]);
   const activeQuery = query.trim();
-  const filteredRecipes = useMemo(() => searchRecipes(applyRecipeFilters(recipes, filters), activeQuery), [activeQuery, filters, recipes]);
-  const filterOptions = useMemo(() => getRecipeFilterOptions(recipes), [recipes]);
+  const filteredRecipes = useMemo(
+    () => searchRecipes(applyRecipeFilters(recipes, filters, { ingredientSlugsByRecipeId }), activeQuery),
+    [activeQuery, filters, ingredientSlugsByRecipeId, recipes]
+  );
+  const filterOptions = useMemo(() => getRecipeFilterOptions(recipes, ingredients), [ingredients, recipes]);
   const searchInputId = `${id}-chapter-search`;
 
   return (

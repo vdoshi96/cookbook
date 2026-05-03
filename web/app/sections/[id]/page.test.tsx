@@ -77,6 +77,55 @@ describe("SectionPage", () => {
     window.history.pushState({}, "", "/");
   });
 
+  it("filters recipes within a chapter by main ingredient", async () => {
+    window.history.pushState({}, "", "/sections/pickles-chutneys-and-raitas?mainIngredient=hemp-seeds");
+
+    render(
+      await SectionPage({
+        params: Promise.resolve({ id: "pickles-chutneys-and-raitas" })
+      })
+    );
+
+    expect(screen.getByRole("link", { name: /Bhaang Ki Chutney/i })).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /Nimboo Ka Achar/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("combobox", { name: "Main ingredient" })).toHaveValue("hemp-seeds");
+
+    window.history.pushState({}, "", "/");
+  });
+
+  it("filters recipes within a chapter by excluding ingredients", async () => {
+    window.history.pushState({}, "", "/sections/main-dishes?excludeIngredient=potato");
+
+    render(
+      await SectionPage({
+        params: Promise.resolve({ id: "main-dishes" })
+      })
+    );
+
+    expect(screen.getByRole("link", { name: /Chicken Masala/i })).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /Aloo Dum/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("listbox", { name: "Exclude ingredient" })).toHaveValue(["potato"]);
+
+    window.history.pushState({}, "", "/");
+  });
+
+  it("collapses inactive filter groups and opens active filter groups", async () => {
+    window.history.pushState({}, "", "/sections/snacks-and-appetizers?mainIngredient=paneer");
+
+    render(
+      await SectionPage({
+        params: Promise.resolve({ id: "snacks-and-appetizers" })
+      })
+    );
+
+    const desktopForm = screen.getByRole("form", { name: "Desktop recipe filters" });
+
+    expect(within(desktopForm).getByText("Region").closest("details")).not.toHaveAttribute("open");
+    expect(within(desktopForm).getAllByText("Main ingredient")[0].closest("details")).toHaveAttribute("open");
+
+    window.history.pushState({}, "", "/");
+  });
+
   it("does not expose paratext pages as section routes", async () => {
     await expect(
       SectionPage({

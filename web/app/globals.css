@@ -478,20 +478,53 @@ main {
 
 .filter-sidebar {
   display: grid;
-  gap: 18px;
+  gap: 12px;
   align-content: start;
   padding: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.filter-sidebar h2,
-.filter-sidebar h3 {
+.filter-sidebar h2 {
   margin: 0;
 }
 
 .filter-group {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.filter-group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.filter-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter-group-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.filter-group-chevron {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+
+.filter-group[open] .filter-group-chevron {
+  transform: rotate(180deg);
+}
+
+.filter-group-body {
   display: grid;
   gap: 9px;
+  padding-top: 10px;
 }
 
 .filter-group label {
@@ -502,6 +535,7 @@ main {
   font-size: 0.9rem;
 }
 
+.filter-group select,
 .filter-group input[type="number"] {
   width: 100%;
   min-width: 0;
@@ -510,6 +544,10 @@ main {
   border-radius: 6px;
   background: var(--page);
   color: var(--ink);
+}
+
+.filter-group select[multiple] {
+  min-height: 118px;
 }
 
 .search-filter-heading {

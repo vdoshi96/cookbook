@@ -6,6 +6,11 @@ import type { RecipeFilterOptions } from "@/lib/filters";
 
 const options: RecipeFilterOptions = {
   regions: [{ id: "awadh", name: "Awadh" }],
+  mainIngredients: [{ id: "paneer", name: "Paneer" }],
+  ingredients: [
+    { id: "paneer", name: "Paneer" },
+    { id: "potato", name: "potatoes" }
+  ],
   dietary: ["vegetarian"],
   techniques: ["grill"]
 };
