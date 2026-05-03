@@ -292,7 +292,9 @@ export function applySearchFilters(documents: SearchDocument[], filters: SearchF
 export function createSearchIndex(documents = buildSearchDocuments()) {
   return new Fuse(documents, {
     includeScore: true,
+    ignoreLocation: true,
     threshold: 0.32,
+    useExtendedSearch: true,
     keys: [
       { name: "title", weight: 0.45 },
       { name: "subtitle", weight: 0.2 },
