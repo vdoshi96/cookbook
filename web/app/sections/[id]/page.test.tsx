@@ -55,6 +55,28 @@ describe("SectionPage", () => {
     expect(screen.queryByText("227")).not.toBeInTheDocument();
   });
 
+  it("filters recipes within a chapter by search text", async () => {
+    const user = userEvent.setup();
+
+    window.history.pushState({}, "", "/sections/pickles-chutneys-and-raitas");
+
+    render(
+      await SectionPage({
+        params: Promise.resolve({ id: "pickles-chutneys-and-raitas" })
+      })
+    );
+
+    expect(screen.getByRole("link", { name: /Masoor Ki Chutney/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Bhaang Ki Chutney/i })).toBeInTheDocument();
+
+    await user.type(screen.getByRole("searchbox", { name: "Search this chapter" }), "bhaang");
+
+    expect(screen.getByRole("link", { name: /Bhaang Ki Chutney/i })).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /Masoor Ki Chutney/i })).not.toBeInTheDocument();
+
+    window.history.pushState({}, "", "/");
+  });
+
   it("does not expose paratext pages as section routes", async () => {
     await expect(
       SectionPage({

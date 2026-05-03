@@ -32,6 +32,26 @@ function cleanParamList(values: string[]) {
   return values.map((value) => value.trim()).filter(Boolean);
 }
 
+function normalizeRecipeSearch(value: string) {
+  return value.trim().toLowerCase();
+}
+
+function recipeSearchText(recipe: Recipe) {
+  return [
+    recipe.name,
+    recipe.subtitle,
+    recipe.section_name,
+    recipe.origin_region_name,
+    ...recipe.ingredients.flatMap((ingredient) => [ingredient.item, ingredient.notes ?? ""]),
+    ...recipe.dietary_tags,
+    ...recipe.technique_tags,
+    ...recipe.occasion_tags,
+    ...recipe.cross_refs.map((reference) => reference.name)
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
 export function getTotalMinutes(recipe: Recipe) {
   return recipe.prep_minutes + recipe.cook_minutes;
 }
@@ -59,6 +79,20 @@ export function applyRecipeFilters(recipes: Recipe[], filters: RecipeFilters): R
     }
 
     return true;
+  });
+}
+
+export function searchRecipes(recipes: Recipe[], query: string): Recipe[] {
+  const terms = normalizeRecipeSearch(query).split(/\s+/).filter(Boolean);
+
+  if (terms.length === 0) {
+    return recipes;
+  }
+
+  return recipes.filter((recipe) => {
+    const searchableText = recipeSearchText(recipe);
+
+    return terms.every((term) => searchableText.includes(term));
   });
 }
 

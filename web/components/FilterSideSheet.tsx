@@ -8,9 +8,10 @@ import { FilterSidebar } from "./FilterSidebar";
 interface FilterSideSheetProps {
   options: RecipeFilterOptions;
   filters: RecipeFilters;
+  query?: string;
 }
 
-export function FilterSideSheet({ options, filters }: FilterSideSheetProps) {
+export function FilterSideSheet({ options, filters, query }: FilterSideSheetProps) {
   const [open, setOpen] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const openButtonRef = useRef<HTMLButtonElement>(null);
@@ -80,6 +81,7 @@ export function FilterSideSheet({ options, filters }: FilterSideSheetProps) {
               <X aria-hidden="true" size={18} />
             </button>
             <form aria-label="Mobile recipe filters" method="get">
+              {query ? <input type="hidden" name="q" value={query} /> : null}
               <FilterSidebar options={options} filters={filters} />
             </form>
           </div>
