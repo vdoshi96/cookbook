@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cookWithPath } from "@/lib/routes";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
@@ -11,6 +12,7 @@ export function Header() {
         <Link href="/">Home</Link>
         <Link href="/chapters">Chapters</Link>
         <Link href="/regions">Regions</Link>
+        <Link href={cookWithPath()}>Cook With</Link>
         <Link href="/search">Search</Link>
         <Link href="/about">About</Link>
       </nav>

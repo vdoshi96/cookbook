@@ -1,11 +1,12 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { resolveRecipeImage } from "@/lib/curated-images";
 import { formatTagLabel, formatTotalTime } from "@/lib/format";
 import { recipePath } from "@/lib/routes";
 import type { Recipe } from "@/lib/types";
 import { RecipeImage } from "./RecipeImage";
 
-export function RecipeCard({ recipe }: { recipe: Recipe }) {
+export function RecipeCard({ recipe, children }: { recipe: Recipe; children?: ReactNode }) {
   const image = resolveRecipeImage(recipe);
 
   return (
@@ -22,6 +23,7 @@ export function RecipeCard({ recipe }: { recipe: Recipe }) {
           <span>{recipe.serves} servings</span>
           <span>{formatTagLabel(recipe.dietary_tags[0] ?? "recipe")}</span>
         </div>
+        {children ? <div className="recipe-card-extra">{children}</div> : null}
       </div>
     </article>
   );

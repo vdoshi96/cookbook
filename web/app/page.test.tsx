@@ -17,6 +17,7 @@ describe("Home", () => {
 
     expect(screen.getByRole("heading", { level: 1, name: "India Cookbook" })).toBeInTheDocument();
     expect(screen.getByRole("combobox", { name: "Search recipes, ingredients, regions" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Cook with what you have" })).toHaveAttribute("href", "/cook-with");
     expect(screen.getByRole("link", { name: "Browse chapters" })).toHaveAttribute("href", "/chapters");
     expect(screen.getByRole("link", { name: "Browse regions" })).toHaveAttribute("href", "/regions");
     expect(screen.getByRole("link", { name: "Read the front matter" })).toHaveAttribute("href", "/about");

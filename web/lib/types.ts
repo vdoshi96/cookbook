@@ -70,6 +70,32 @@ export interface IngredientRecord {
   count: number;
 }
 
+export type IngredientMatcherChipKind = "family" | "ingredient";
+
+export interface IngredientMatcherChip {
+  id: string;
+  label: string;
+  kind: IngredientMatcherChipKind;
+  family_id: string | null;
+  ingredient_slugs: string[];
+  aliases: string[];
+  include_in_missing: boolean;
+}
+
+export interface IngredientMatcherFamily {
+  id: string;
+  label: string;
+  chip_ids: string[];
+  aliases: string[];
+}
+
+export interface IngredientMatcher {
+  schema_version: 1;
+  chips: IngredientMatcherChip[];
+  families: IngredientMatcherFamily[];
+  excluded_ingredient_slugs: string[];
+}
+
 export type TagKind = "dietary" | "technique" | "occasion";
 
 export interface TagRecord {

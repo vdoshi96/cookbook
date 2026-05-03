@@ -236,6 +236,10 @@ main {
   font-size: 0.82rem;
 }
 
+.recipe-card-extra {
+  margin-top: 14px;
+}
+
 .recipe-meta {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -635,7 +639,7 @@ main {
 
 .browse-entry-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -802,6 +806,224 @@ main {
 .listing-page {
   display: grid;
   gap: 34px;
+}
+
+.cook-with-page {
+  display: grid;
+  gap: 26px;
+  padding-top: 52px;
+}
+
+.cook-with-hero {
+  display: grid;
+  gap: 12px;
+  max-width: 820px;
+}
+
+.cook-with-client {
+  display: grid;
+  gap: 18px;
+}
+
+.cook-with-panel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.cook-with-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(210px, 0.28fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.cook-with-typeahead {
+  position: relative;
+  display: grid;
+  gap: 9px;
+}
+
+.cook-with-typeahead label,
+.cook-with-section-filter,
+.cook-with-result-count,
+.cook-with-typeahead-note,
+.cook-with-match {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.cook-with-typeahead label,
+.cook-with-section-filter span,
+.cook-with-result-count,
+.cook-with-typeahead-note {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.cook-with-input-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--page);
+}
+
+.cook-with-input-wrap:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.cook-with-input-wrap input {
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
+.cook-with-options {
+  position: absolute;
+  z-index: 12;
+  top: calc(100% + 8px);
+  right: 0;
+  left: 0;
+  display: grid;
+  padding: 8px;
+  box-shadow: var(--shadow);
+}
+
+.cook-with-options button {
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.cook-with-options button:hover,
+.cook-with-options button:focus-visible {
+  background: var(--accent-soft);
+}
+
+.cook-with-options small {
+  color: var(--muted);
+}
+
+.cook-with-typeahead-note {
+  margin: 0;
+}
+
+.cook-with-section-filter {
+  display: grid;
+  gap: 9px;
+}
+
+.cook-with-section-filter select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--page);
+  color: var(--ink);
+}
+
+.cook-with-selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding-top: 2px;
+}
+
+.cook-with-chip {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 9px 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.cook-with-clear {
+  min-height: 34px;
+  padding: 7px 11px;
+}
+
+.cook-with-state {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+.cook-with-state h2,
+.cook-with-state p {
+  margin: 0;
+}
+
+.cook-with-state h2 {
+  font-size: 1.35rem;
+  line-height: 1.18;
+}
+
+.cook-with-state p:not(.eyebrow) {
+  max-width: 66ch;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.cook-with-results {
+  display: grid;
+  gap: 12px;
+}
+
+.cook-with-result-count {
+  margin: 0;
+}
+
+.cook-with-result-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cook-with-match {
+  display: grid;
+  gap: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.cook-with-match p {
+  margin: 0;
+}
+
+.cook-with-match strong {
+  color: var(--ink);
+}
+
+.cook-with-rank-label {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .fullscreen-hero {
@@ -1139,6 +1361,10 @@ main {
 
 @media (max-width: 860px) {
   .listing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cook-with-controls {
     grid-template-columns: 1fr;
   }
 
